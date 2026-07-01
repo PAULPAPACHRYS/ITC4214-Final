@@ -1,0 +1,289 @@
+
+/* === RESET & BASE === */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:    #0D1B2A;
+  --teal:    #2A9D8F;
+  --teal_lt: #3BBFB0;
+  --amber:   #E9C46A;
+  --coral:   #E76F51;
+  --cream:   #F2E8D5;
+  --cream_lt:#FAF6EF;
+  --white:   #FFFFFF;
+  --gray_lt: #E8E2D8;
+  --gray_mid:#B0A898;
+  --gray_dk: #6B6358;
+  --text:    #1A1410;
+
+  --font_display: 'Times New Roman', serif;
+  --font_body:    'Georgia', serif;
+
+  --radius_sm: 6px;
+  --radius_md: 12px;
+  --radius_lg: 20px;
+
+  --shadow_sm: 0 2px 8px rgba(13,27,42,.10);
+  --shadow_md: 0 4px 20px rgba(13,27,42,.15);
+  --shadow_lg: 0 8px 40px rgba(13,27,42,.20);
+}
+
+html { scroll-behavior: smooth;}
+
+body {
+  font-family: var(--font_body);
+  background: var(--cream_lt);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; font-family: inherit; }
+input, select { font-family: inherit; }
+
+/* General Containers */
+.hidden { display: none !important; }
+
+.section_container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* General Buttons */
+.button_primary {
+  display: inline-block;
+  background: var(--teal);
+  color: var(--white);
+  font-family: var(--font_display);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  border-radius: var(--radius_sm);
+  border: 2px solid var(--teal);
+  transition: background .18s, color .18s, transform .12s;
+}
+.button_primary:hover {
+  background: var(--teal_lt);
+  border-color: var(--teal_lt);
+  transform: translateY(-1px);
+}
+
+.button_secondary {
+  display: inline-block;
+  background: transparent;
+  color: var(--teal);
+  font-family: var(--font_display);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  border-radius: var(--radius_sm);
+  border: 2px solid var(--teal);
+  transition: background .18s, color .18s;
+}
+.button_secondary:hover {
+  background: var(--teal);
+  color: var(--white);
+}
+
+/* Header Section */
+.site_header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(13, 27, 42, .96);
+  backdrop-filter: blur(8px);
+  border-bottom: 3px solid var(--teal);
+  box-shadow: var(--shadow_md);
+}
+
+.nav_bar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav_logo {
+  font-family: var(--font_display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--white);
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+.nav_logo span { color: var(--teal); }
+
+.nav_links {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.nav_link {
+  font-family: var(--font_display);
+  font-weight: 600;
+  font-size: .95rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--gray_mid);
+  padding: 6px 12px;
+  border-radius: var(--radius_sm);
+  transition: color .15s, background .15s;
+}
+.nav_link:hover, .nav_link.active {
+  color: var(--white);
+  background: rgba(42,157,143,.15);
+}
+.nav_link.active { color: var(--teal); }
+
+.nav_cta { margin-left: 16px; }
+
+/* Product Cards (used on home and browse page) */
+.product_card {
+  background: var(--white);
+  border-radius: var(--radius_md);
+  overflow: hidden;
+  box-shadow: var(--shadow_sm);
+  transition: transform .18s, box-shadow .18s;
+  display: flex;
+  flex-direction: column;
+}
+.product_card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow_md);
+}
+
+.product_card_thumb {
+  background: var(--navy);
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.product_card_body {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.product_card_category {
+  font-size: .72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--teal);
+}
+
+.product_card_name {
+  font-family: var(--font_display);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--navy);
+  line-height: 1.2;
+}
+
+.product_card_brand { font-size: .82rem; color: var(--gray_dk); }
+
+.product_card_meta {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+}
+
+.product_tag {
+  font-size: .7rem;
+  background: var(--gray_lt);
+  color: var(--gray_dk);
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.product_card_footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid var(--gray_lt);
+}
+
+.product_card_price {
+  font-family: var(--font_display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--navy);
+}
+.product_card_price span {
+  font-size: .8rem;
+  font-weight: 400;
+  color: var(--gray_mid);
+}
+
+.button_add_to_order {
+  background: var(--teal);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius_sm);
+  padding: 6px 12px;
+  font-family: var(--font_display);
+  font-weight: 700;
+  font-size: .85rem;
+  letter-spacing: .03em;
+  transition: background .15s;
+}
+.button_add_to_order:hover { background: var(--teal_lt); }
+
+/* Footer Section */
+.site_footer {
+  background: var(--navy);
+  color: var(--gray_mid);
+  margin-top: auto;
+  padding: 32px 24px;
+}
+
+.footer_inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer_logo {
+  font-family: var(--font_display);
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--white);
+}
+.footer_logo span { color: var(--teal); }
+
+.footer_copy { font-size: .82rem; }
+
+.footer_nav { display: flex; gap: 20px; }
+.footer_nav a {
+  font-size: .85rem;
+  color: var(--gray_mid);
+  transition: color .15s;
+}
+.footer_nav a:hover { color: var(--teal); }
+

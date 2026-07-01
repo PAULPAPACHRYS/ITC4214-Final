@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name = "description" content="Login page">
+  <meta name= "author" content="Pavlos Papachrysanthou">
+  <meta name = "keywords" content="HTML">
+  <title>WaveBar Supply — Login / Register</title>
+  <link rel="stylesheet" href="general_style.css" />
+  <link rel="stylesheet" href="login_style.css" />
+  <script src="login.js" defer></script>
+  <script src="general_script.js" defer></script>
+</head>
+<body>
+
+<header class="site_header"></header>
+
+<!-- Authentication Section -->
+<section class="auth_section">
+  <div class="auth_container">
+
+    <!-- Login/Register Tabs -->
+    <div class="auth_tabs">
+      <button class="auth_tab active" id="tab_login">Login</button>
+      <button class="auth_tab" id="tab_register">Register</button>
+    </div>
+
+    <!-- Login Form -->
+    <div class="auth_panel" id="panel_login">
+      <h2 class="auth_title">Welcome back</h2>
+      <p class="auth_subtitle">Log in to your WaveBar account</p>
+
+      <div id="login_message" class="form_message hidden"></div>
+
+      <div class="form_group">
+        <label class="form_label" for="login_email">Email Address</label>
+        <input class="form_input" type="email" id="login_email" placeholder="you@yourbar.com" maxlength="100" />
+        <span class="form_error hidden" id="login_email_error"></span>
+      </div>
+      <div class="form_group">
+        <label class="form_label" for="login_password">Password</label>
+        <div class="input_with_toggle">
+          <input class="form_input" type="password" id="login_password" placeholder="******" maxlength="100" />
+          <button class="toggle_password_button" id="toggle_login_password" type="button">Show</button>
+        </div>
+        <span class="form_error hidden" id="login_password_error"></span>
+      </div>
+      <div class="form_row_space">
+        <label class="form_check_label">
+          <input type="checkbox" id="login_remember" /> Remember me
+        </label>
+        <a href="#" class="form_link">Forgot password?</a>
+      </div>
+      <button class="button_primary form_submit_button" id="login_submit_button">Log In</button>
+      <p class="auth_switch">Don't have an account? <a href="#" class="form_link" id="switch_to_register">Register here</a></p>
+    </div>
+
+    <!-- Register Form -->
+    <div class="auth_panel hidden" id="panel_register">
+      <h2 class="auth_title">Create trade account</h2>
+      <p class="auth_subtitle">Register to access wholesale pricing</p>
+
+      <div id="register_message" class="form_message hidden"></div>
+
+      <div class="form_row_two">
+        <div class="form_group">
+          <label class="form_label" for="reg_first_name">First Name</label>
+          <input class="form_input" type="text" id="reg_first_name" placeholder="Alex" maxlength="50" />
+          <span class="form_error hidden" id="reg_first_name_error"></span>
+        </div>
+        <div class="form_group">
+          <label class="form_label" for="reg_last_name">Last Name</label>
+          <input class="form_input" type="text" id="reg_last_name" placeholder="Costa" maxlength="50" />
+          <span class="form_error hidden" id="reg_last_name_error"></span>
+        </div>
+      </div>
+
+      <div class="form_group">
+        <label class="form_label" for="reg_bar_name">Beach Bar / Business Name</label>
+        <input class="form_input" type="text" id="reg_bar_name" placeholder="Sunset Beach Bar" maxlength="100" />
+        <span class="form_error hidden" id="reg_bar_name_error"></span>
+      </div>
+
+      <div class="form_group">
+        <label class="form_label" for="reg_email">Email Address</label>
+        <input class="form_input" type="email" id="reg_email" placeholder="you@yourbar.com" maxlength="100" />
+        <span class="form_error hidden" id="reg_email_error"></span>
+      </div>
+
+      <div class="form_group">
+        <label class="form_label" for="reg_phone">Phone Number</label>
+        <input class="form_input" type="tel" id="reg_phone" placeholder="+30 6900 000000" maxlength="20" />
+        <span class="form_error hidden" id="reg_phone_error"></span>
+      </div>
+
+      <div class="form_group">
+        <label class="form_label" for="reg_location">Location / Region</label>
+        <select class="form_input form_select" id="reg_location">
+          <option value="">Select your region…</option>
+          <option>Attica</option>
+          <option>Mykonos</option>
+          <option>Santorini</option>
+          <option>Rhodes</option>
+          <option>Corfu</option>
+          <option>Crete</option>
+          <option>Paros</option>
+          <option>Ios</option>
+          <option>Zakynthos</option>
+          <option>Halkidiki</option>
+          <option>Other</option>
+        </select>
+        <span class="form_error hidden" id="reg_location_error"></span>
+      </div>
+
+      <div class="form_group">
+        <label class="form_label" for="reg_password">Password</label>
+        <div class="input_with_toggle">
+          <input class="form_input" type="password" id="reg_password" placeholder="Min. 8 characters" maxlength="100" />
+          <button class="toggle_password_button" id="toggle_reg_password" type="button">Show</button>
+        </div>
+        <span class="form_error hidden" id="reg_password_error"></span>
+      </div>
+
+      <div class="form_group">
+        <label class="form_label" for="reg_confirm_password">Confirm Password</label>
+        <div class="input_with_toggle">
+          <input class="form_input" type="password" id="reg_confirm_password" placeholder="Repeat password" maxlength="100" />
+          <button class="toggle_password_button" id="toggle_reg_confirm" type="button">Show</button>
+        </div>
+        <span class="form_error hidden" id="reg_confirm_error"></span>
+      </div>
+
+      <div class="form_group">
+        <label class="form_check_label">
+          <input type="checkbox" id="reg_terms" />
+          I agree to the <a href="#" class="form_link">Terms & Conditions</a> and <a href="#" class="form_link">Privacy Policy</a>
+        </label>
+        <span class="form_error hidden" id="reg_terms_error"></span>
+      </div>
+
+      <button class="button_primary form_submit_button" id="register_submit_button">Create Account</button>
+      <p class="auth_switch">Already have an account? <a href="#" class="form_link" id="switch_to_login">Log in here</a></p>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site_footer"></footer>
+
+</body>
+</html>

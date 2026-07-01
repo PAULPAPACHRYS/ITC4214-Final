@@ -1,0 +1,217 @@
+/* Header Section*/
+.header_section {
+  background: var(--navy);
+  color: var(--white);
+  padding: 40px 24px;
+  border-bottom: 3px solid var(--teal);
+}
+
+.header_title {
+  font-family: var(--font_display);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  letter-spacing: .02em;
+}
+
+.header_subtitle { 
+  color: var(--gray_mid); 
+  margin-top: 4px; 
+}
+
+/* Browse */
+.browse_layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 32px;
+  padding-top: 32px;
+  padding-bottom: 60px;
+  align-items: start;
+}
+
+/* Filter bar */
+.filter_sidebar {
+  background: var(--white);
+  border-radius: var(--radius_md);
+  padding: 20px;
+  box-shadow: var(--shadow_sm);
+  position: sticky;
+  top: 84px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.filter_block {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--gray_lt);
+}
+.filter_block:last-of-type { border-bottom: none; }
+
+.filter_title {
+  font-family: var(--font_display);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.filter_category_tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.category_tab {
+  background: transparent;
+  border: 1px solid var(--gray_lt);
+  border-radius: var(--radius_sm);
+  padding: 8px 12px;
+  text-align: left;
+  font-size: .88rem;
+  font-weight: 500;
+  color: var(--gray_dk);
+  transition: background .15s, color .15s, border-color .15s;
+}
+.category_tab:hover {
+  background: var(--cream);
+  color: var(--navy);
+}
+.category_tab.active {
+  background: var(--teal);
+  color: var(--white);
+  border-color: var(--teal);
+}
+
+.filter_subcategory_list,
+.filter_brand_list,
+.filter_volume_list,
+.filter_alcohol_list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.filter_check_label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .88rem;
+  color: var(--gray_dk);
+  cursor: pointer;
+  padding: 3px 0;
+  transition: color .12s;
+}
+.filter_check_label:hover { color: var(--navy); }
+.filter_check_label input[type="checkbox"] { accent-color: var(--teal); width: 15px; height: 15px; }
+
+/* price range filter */
+.price_range_row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.range_slider {
+  width: 100%;
+  accent-color: var(--teal);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.filter_reset_button {
+  margin-top: 8px;
+  width: 100%;
+  font-size: .88rem;
+  padding: 8px;
+}
+
+.browse_main { min-width: 0; }
+
+/* search bar */
+.search_bar_wrap {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.search_input {
+  width: 100%;
+  padding: 12px 44px 12px 16px;
+  border: 2px solid var(--gray_lt);
+  border-radius: var(--radius_md);
+  font-size: .97rem;
+  background: var(--white);
+  color: var(--text);
+  transition: border-color .18s;
+}
+.search_input:focus {
+  outline: none;
+  border-color: var(--teal);
+}
+
+.search_clear_button {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--gray_mid);
+  padding: 4px;
+  transition: color .15s;
+}
+.search_clear_button:hover { color: var(--coral); }
+
+/* search results */
+.results_meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.results_count {
+  font-size: .88rem;
+  color: var(--gray_dk);
+}
+
+.sort_select {
+  border: 1px solid var(--gray_lt);
+  border-radius: var(--radius_sm);
+  padding: 6px 10px;
+  font-size: .88rem;
+  background: var(--white);
+  color: var(--text);
+}
+.sort_select:focus { outline: none; border-color: var(--teal); }
+
+/* search result products */
+.product_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 20px;
+}
+
+/* no results found */
+.empty_state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--gray_dk);
+}
+.empty_icon { font-size: 3rem; margin-bottom: 12px; }
+.empty_state h3 {
+  font-family: var(--font_display);
+  font-size: 1.4rem;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.empty_state p { margin-bottom: 20px; }
