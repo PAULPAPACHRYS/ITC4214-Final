@@ -1,3 +1,8 @@
+// The full catalogue is supplied by the Django view inside a
+// <script id="products_data"> block (Django's json_script filter), replacing
+// the old global PRODUCTS array that used to live in data.js.
+const PRODUCTS = JSON.parse(document.querySelector('#products_data').textContent);
+
 // track the state of the selected filters
 const state = {
   search:      '',
@@ -57,7 +62,7 @@ function build_brand_filter() {
   const all_brands = unique(PRODUCTS.map(p => p.brand)); //grabs all brands and removes dublicates
   const list = document.querySelector('#brand_filter_list');
   list.innerHTML = '';
-  
+
   //loops through the brands and create checkbox for each
   all_brands.forEach(brand => {
     const label = document.createElement('label');
@@ -76,12 +81,12 @@ function build_brand_filter() {
   });
 }
 
-//similar to the above but create the product volume filters 
+//similar to the above but create the product volume filters
 function build_volume_filter() {
   const all_volumes = unique(PRODUCTS.map(p => p.volume));
   const list = document.querySelector('#volume_filter_list');
   list.innerHTML = '';
-  
+
   all_volumes.forEach(vol => {
     const label = document.createElement('label');
     label.className = 'filter_check_label';
@@ -141,7 +146,7 @@ function filter_products() {
   // apply any sorting selected
   if (state.sort === 'price_asc')  results.sort((a,b) => a.price - b.price);
   if (state.sort === 'price_desc') results.sort((a,b) => b.price - a.price);
-  
+
   //localCompare is a better option because it compares strings according to language rules
   if (state.sort === 'name_asc')   results.sort((a,b) => a.name.localeCompare(b.name));
   if (state.sort === 'name_desc')  results.sort((a,b) => b.name.localeCompare(a.name));
@@ -238,7 +243,7 @@ function reset_filters() {
   render();
 }
 
-/* 
+/*
  * Event Listeners Section
  */
 

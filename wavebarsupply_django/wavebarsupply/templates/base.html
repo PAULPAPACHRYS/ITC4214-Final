@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{% block meta_description %}WaveBar Supply{% endblock %}">
+  <meta name="author" content="Pavlos Papachrysanthou">
+  <meta name="keywords" content="HTML">
+  <title>{% block title %}WaveBar Supply{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/general_style.css' %}" />
+  {% block extra_css %}{% endblock %}
+  <script src="{% static 'js/general_script.js' %}" defer></script>
+  {% block extra_js %}{% endblock %}
+</head>
+<body>
+
+<header class="site_header">
+  <nav class="nav_bar">
+    <a href="{% url 'home:index' %}" class="nav_logo">WaveBar<span>Supply</span></a>
+    <ul class="nav_links">
+      <li><a href="{% url 'home:index' %}" class="nav_link">Home</a></li>
+      <li><a href="{% url 'catalogue:browse' %}" class="nav_link">Browse</a></li>
+      {% if user.is_authenticated %}
+        <li><a href="{% url 'accounts:logout' %}" class="nav_link">Logout</a></li>
+      {% else %}
+        <li><a href="{% url 'accounts:login' %}" class="nav_link">Login / Register</a></li>
+      {% endif %}
+    </ul>
+    <a href="{% url 'catalogue:browse' %}" class="button_primary nav_cta">Shop Now</a>
+  </nav>
+</header>
+
+{% block content %}{% endblock %}
+
+<footer class="site_footer">
+  <div class="footer_inner">
+    <p class="footer_logo">WaveBar<span>Supply</span></p>
+    <p class="footer_copy">© 2025 WaveBar Supply. B2B wholesale beverages for beach bars.</p>
+    <nav class="footer_nav">
+      <a href="{% url 'home:index' %}">Home</a>
+      <a href="{% url 'catalogue:browse' %}">Browse</a>
+      <a href="{% url 'accounts:login' %}">Login</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

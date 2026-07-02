@@ -1,3 +1,7 @@
+// The featured products are chosen by the Django view and handed to this page
+// inside a <script id="products_data"> block (Django's json_script filter).
+const PRODUCTS = JSON.parse(document.querySelector('#products_data').textContent);
+
 // creates each featured product card on the homepage
 function build_product_card(product) {
   const card = document.createElement('div');
@@ -23,18 +27,11 @@ function build_product_card(product) {
 
 function render_featured_products() {
   const grid = document.querySelector('#featured_grid');
-
-  // Pick a varied selection, will change it later to be random or latest additions
-  const featured_ids = [22, 39, 50, 28, 19, 1, 46, 43];
-  //grab the product details from the data.js 
-  const selected = PRODUCTS.filter(p => featured_ids.includes(p.id));
-
-  //call build_product_card for each product to create the card with its information
-  selected.forEach(product => {
+  // The view already selected and ordered the featured products for us.
+  PRODUCTS.forEach(product => {
     grid.appendChild(build_product_card(product));
   });
 }
 
-//Initialize 
+// Initialize
 render_featured_products();
-

@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}WaveBar Supply — Login / Register{% endblock %}
+{% block meta_description %}Login page{% endblock %}
+
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/login_style.css' %}" />{% endblock %}
+{% block extra_js %}<script src="{% static 'js/login.js' %}" defer></script>{% endblock %}
+
+{% block content %}
+<section class="auth_section">
+  <div class="auth_container">
+
+    <!-- Login/Register Tabs -->
+    <div class="auth_tabs">
+      <button class="auth_tab {% if active_panel == 'login' %}active{% endif %}" id="tab_login">Login</button>
+      <button class="auth_tab {% if active_panel == 'register' %}active{% endif %}" id="tab_register">Register</button>
+    </div>
+
+    <!-- Login Form -->
+    <div class="auth_panel {% if active_panel != 'login' %}hidden{% endif %}" id="panel_login">
+      <h2 class="auth_title">Welcome back</h2>
+      <p class="auth_subtitle">Log in to your WaveBar account</p>
+
+      <form method="post" novalidate>
+        {% csrf_token %}
+
+        {% if login_form.non_field_errors %}
+          <div class="form_message error">{{ login_form.non_field_errors|join:" " }}</div>
+        {% endif %}
+
+        <div class="form_group">
+          <label class="form_label" for="{{ login_form.username.id_for_label }}">{{ login_form.username.label }}</label>
+          {{ login_form.username }}
+          {% for error in login_form.username.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
+        </div>
+
+        <div class="form_group">
+          <label class="form_label" for="{{ login_form.password.id_for_label }}">{{ login_form.password.label }}</label>
+          <div class="input_with_toggle">
+            {{ login_form.password }}
+            <button class="toggle_password_button" id="toggle_login_password" type="button">Show</button>
+          </div>
+          {% for error in login_form.password.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
+        </div>
+
+        <div class="form_row_space">
+          <label class="form_check_label">
+            <input type="checkbox" name="remember" /> Remember me
+          </label>
+          <a href="#" class="form_link">Forgot password?</a>
+        </div>
+
+        <button class="button_primary form_submit_button" type="submit" name="login_submit">Log In</button>
+        <p class="auth_switch">Don't have an account? <a href="#" class="form_link" id="switch_to_register">Register here</a></p>
+      </form>
+    </div>
+
+    <!-- Register Form -->
+    <div class="auth_panel {% if active_panel != 'register' %}hidden{% endif %}" id="panel_register">
+      <h2 class="auth_title">Create trade account</h2>
+      <p class="auth_subtitle">Register to access wholesale pricing</p>
+
+      <form method="post" novalidate>
+        {% csrf_token %}
+
+        {% if register_form.non_field_errors %}
+          <div class="form_message error">{{ register_form.non_field_errors|join:" " }}</div>
+        {% endif %}
+
+        <div class="form_row_two">
+          <div class="form_group">
+            <label class="form_label" for="{{ register_form.first_name.id_for_label }}">First Name</label>
+            {{ register_form.first_name }}
+            {% for error in register_form.first_name.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
+          </div>
+          <div class="form_group">
+            <label class="form_label" for="{{ register_form.last_name.id_for_label }}">Last Name</label>
+            {{ register_form.last_name }}
+            {% for error in register_form.last_name.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
+          </div>
+        </div>
+
+        <div class="form_group">
+          <label class="form_label" for="{{ register_form.bar_name.id_for_label }}">{{ register_form.bar_name.label }}</label>
+          {{ register_form.bar_name }}
+          {% for error in register_form.bar_name.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
+        </div>
+
+        <div class="form_group">
+          <label class="form_label" for="{{ register_form.email.id_for_label }}">{{ register_form.email.label }}</label>
+          {{ register_form.email }}
+          {% for error in register_form.email.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
+        </div>
+
+        <div class="form_group">
+          <label class="form_label" for="{{ register_form.phone.id_for_label }}">{{ register_form.phone.label }}</label>
+          {{ register_form.phone }}
+          {% for error in register_form.phone.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
+        </div>
+
+        <div class="form_group">
+          <label class="form_label" for="{{ register_form.location.id_for_label }}">{{ register_form.location.label }}</label>
+          {{ register_form.location }}
+          {% for error in register_form.location.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
+        </div>
+
+        <div class="form_group">
+          <label class="form_label" for="{{ register_form.password1.id_for_label }}">Password</label>
+          <div class="input_with_toggle">
+            {{ register_form.password1 }}
+            <button class="toggle_password_button" id="toggle_reg_password" type="button">Show</button>
+          </div>
+          {% for error in register_form.password1.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
+        </div>
+
+        <div class="form_group">
+          <label class="form_label" for="{{ register_form.password2.id_for_label }}">Confirm Password</label>
+          <div class="input_with_toggle">
+            {{ register_form.password2 }}
+            <button class="toggle_password_button" id="toggle_reg_confirm" type="button">Show</button>
+          </div>
+          {% for error in register_form.password2.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
+        </div>
+
+        <div class="form_group">
+          <label class="form_check_label">
+            {{ register_form.terms }} {{ register_form.terms.label }}
+          </label>
+          {% for error in register_form.terms.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
+        </div>
+
+        <button class="button_primary form_submit_button" type="submit" name="register_submit">Create Account</button>
+        <p class="auth_switch">Already have an account? <a href="#" class="form_link" id="switch_to_login">Log in here</a></p>
+      </form>
+    </div>
+
+  </div>
+</section>
+{% endblock %}
