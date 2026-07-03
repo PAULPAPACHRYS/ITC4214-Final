@@ -1,0 +1,135 @@
+/* Shared hero band for the About and Contact pages */
+.page_hero {
+  background: var(--navy);
+  color: var(--white);
+  padding: 60px 24px;
+  border-bottom: 3px solid var(--teal);
+}
+.page_title {
+  font-family: var(--font_display);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  letter-spacing: .02em;
+}
+.page_subtitle {
+  color: var(--gray_mid);
+  margin-top: 4px;
+}
+
+/* About page */
+.about_section { padding: 48px 0 60px; }
+.about_lead {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 16px;
+  max-width: 760px;
+}
+.about_section p {
+  margin-bottom: 16px;
+  max-width: 760px;
+  color: var(--gray_dk);
+}
+
+.about_values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 28px;
+}
+.about_value_card {
+  background: var(--white);
+  border-radius: var(--radius_md);
+  padding: 22px 20px;
+  box-shadow: var(--shadow_sm);
+  border-top: 3px solid var(--teal);
+}
+.about_value_card h3 {
+  font-family: var(--font_display);
+  color: var(--navy);
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+.about_value_card p {
+  font-size: .9rem;
+  color: var(--gray_dk);
+  margin: 0;
+}
+
+/* Contact page */
+.contact_section {
+  display: flex;
+  justify-content: center;
+  padding: 48px 24px 60px;
+}
+.contact_card {
+  background: var(--white);
+  border-radius: var(--radius_lg);
+  padding: 32px 36px;
+  width: 100%;
+  max-width: 560px;
+  box-shadow: var(--shadow_lg);
+}
+.contact_card h2 {
+  font-family: var(--font_display);
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.contact_subtitle {
+  color: var(--gray_dk);
+  font-size: .9rem;
+  margin-bottom: 20px;
+}
+
+.contact_form .form_group { margin-bottom: 16px; }
+.contact_form label {
+  display: block;
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 5px;
+}
+.contact_form input,
+.contact_form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--gray_lt);
+  border-radius: var(--radius_sm);
+  font-size: .95rem;
+  color: var(--text);
+  background: var(--cream_lt);
+  font-family: inherit;
+  transition: border-color .15s;
+}
+.contact_form input:focus,
+.contact_form textarea:focus {
+  outline: none;
+  border-color: var(--teal);
+  background: var(--white);
+}
+.contact_form textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+.contact_form .errorlist {
+  color: var(--coral);
+  font-size: .78rem;
+  margin-top: 4px;
+  padding-left: 0;
+}
+.contact_submit {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.contact_success {
+  background: #d4f1ec;
+  color: #1a7a6e;
+  border: 1px solid #a3dfd7;
+  border-radius: var(--radius_sm);
+  padding: 12px 14px;
+  font-size: .9rem;
+  margin-bottom: 16px;
+}

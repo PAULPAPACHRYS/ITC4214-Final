@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}WaveBar Supply — Contact{% endblock %}
+{% block meta_description %}Contact WaveBar Supply{% endblock %}
+
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages_style.css' %}" />{% endblock %}
+
+{% block content %}
+<div class="page_hero">
+  <div class="section_container">
+    <h1 class="page_title">Contact Us</h1>
+    <p class="page_subtitle">Questions about stock, pricing or delivery? Send us a message.</p>
+  </div>
+</div>
+
+<section class="contact_section">
+  <div class="contact_card">
+    <h2>Get in touch</h2>
+    <p class="contact_subtitle">We'll get back to you within one business day.</p>
+
+    {% if submitted %}
+      <div class="contact_success">Thanks! Your message has been sent — we'll be in touch soon.</div>
+    {% endif %}
+
+    <form class="contact_form" method="post" novalidate>
+      {% csrf_token %}
+
+      <div class="form_group">
+        <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+        {{ form.email }}
+        {{ form.email.errors }}
+      </div>
+
+      <div class="form_group">
+        <label for="{{ form.bar_name.id_for_label }}">{{ form.bar_name.label }}</label>
+        {{ form.bar_name }}
+        {{ form.bar_name.errors }}
+      </div>
+
+      <div class="form_group">
+        <label for="{{ form.message.id_for_label }}">{{ form.message.label }}</label>
+        {{ form.message }}
+        {{ form.message.errors }}
+      </div>
+
+      <button class="button_primary contact_submit" type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+{% endblock %}

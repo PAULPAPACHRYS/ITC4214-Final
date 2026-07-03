@@ -28,7 +28,7 @@
   --shadow_lg: 0 8px 40px rgba(13,27,42,.20);
 }
 
-html { scroll-behavior: smooth;}
+html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font_body);

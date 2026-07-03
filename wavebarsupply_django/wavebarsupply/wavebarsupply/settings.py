@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'home',
     'catalogue',
     'accounts',
+    'pages',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
