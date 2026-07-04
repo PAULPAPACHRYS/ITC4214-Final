@@ -21,6 +21,15 @@ function unique(arr) {
   return [...new Set(arr)].sort();
 }
 
+// abv is now a real number (e.g. 4.7, 13.0, 40.0). Map it to the same bands the
+// alcohol-content checkboxes use: none (0%), low (<8%), medium (8-20%), high (20%+).
+function abv_band(abv) {
+  if (abv === 0)  return 'none';
+  if (abv < 8)    return 'low';
+  if (abv < 20)   return 'medium';
+  return 'high';
+}
+
 //subcategory options table
 const SUBCATEGORIES = {
   'non-alcohol': ['Soft Drinks','Water','Juices','Ice Teas','Coffee','Energy Drinks'],
@@ -139,9 +148,9 @@ function filter_products() {
   if (state.volumes.length > 0)
     results = results.filter(p => state.volumes.includes(p.volume));
 
-  //keeps only products of selected alcohol precentage
+  //keeps only products of selected alcohol precentage (band derived from abv %)
   if (state.alcohol.length > 0)
-    results = results.filter(p => state.alcohol.includes(p.abv));
+    results = results.filter(p => state.alcohol.includes(abv_band(p.abv)));
 
   // apply any sorting selected
   if (state.sort === 'price_asc')  results.sort((a,b) => a.price - b.price);

@@ -1,0 +1,114 @@
+[
+  {
+    "model": "catalogue.category",
+    "pk": 1,
+    "fields": {
+      "name": "non-alcohol",
+      "subcategory": "Soft Drinks"
+    }
+  },
+  {
+    "model": "catalogue.category",
+    "pk": 2,
+    "fields": {
+      "name": "non-alcohol",
+      "subcategory": "Water"
+    }
+  },
+  {
+    "model": "catalogue.category",
+    "pk": 3,
+    "fields": {
+      "name": "non-alcohol",
+      "subcategory": "Juices"
+    }
+  },
+  {
+    "model": "catalogue.category",
+    "pk": 4,
+    "fields": {
+      "name": "non-alcohol",
+      "subcategory": "Ice Teas"
+    }
+  },
+  {
+    "model": "catalogue.category",
+    "pk": 5,
+    "fields": {
+      "name": "non-alcohol",
+      "subcategory": "Coffee"
+    }
+  },
+  {
+    "model": "catalogue.category",
+    "pk": 6,
+    "fields": {
+      "name": "non-alcohol",
+      "subcategory": "Energy Drinks"
+    }
+  },
+  {
+    "model": "catalogue.category",
+    "pk": 7,
+    "fields": {
+      "name": "fermented",
+      "subcategory": "Beer"
+    }
+  },
+  {
+    "model": "catalogue.category",
+    "pk": 8,
+    "fields": {
+      "name": "fermented",
+      "subcategory": "Wine"
+    }
+  },
+  {
+    "model": "catalogue.category",
+    "pk": 9,
+    "fields": {
+      "name": "fermented",
+      "subcategory": "Cider"
+    }
+  },
+  {
+    "model": "catalogue.category",
+    "pk": 10,
+    "fields": {
+      "name": "distilled",
+      "subcategory": "Whisky"
+    }
+  },
+  {
+    "model": "catalogue.category",
+    "pk": 11,
+    "fields": {
+      "name": "distilled",
+      "subcategory": "Vodka"
+    }
+  },
+  {
+    "model": "catalogue.category",
+    "pk": 12,
+    "fields": {
+      "name": "distilled",
+      "subcategory": "Rum"
+    }
+  },
+  {
+    "model": "catalogue.category",
+    "pk": 13,
+    "fields": {
+      "name": "distilled",
+      "subcategory": "Gin"
+    }
+  },
+  {
+    "model": "catalogue.category",
+    "pk": 14,
+    "fields": {
+      "name": "distilled",
+      "subcategory": "Tequila"
+    }
+  }
+]

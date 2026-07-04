@@ -3,17 +3,27 @@ from .models import Product
 
 
 def _products_as_dicts(queryset):
-    """Turn Product rows into plain dicts the front-end JS can read as JSON.
+    """Flatten Product rows (with their related category/brand) into the same
+    shape the front-end JavaScript already expects.
 
-    price is cast to float so JavaScript receives a number (DecimalField would
-    otherwise be serialised as a string and break product.price.toFixed()).
+    - brand / category / subcategory come from the related tables.
+    - volume is turned back into a display string (e.g. 330 -> "330ml").
+    - price and abv are cast to float so the JSON carries numbers, not strings.
     """
-    products = list(queryset.values(
-        'id', 'name', 'brand', 'category', 'subcategory',
-        'price', 'volume', 'abv', 'emoji', 'tags',
-    ))
-    for p in products:
-        p['price'] = float(p['price'])
+    products = []
+    for p in queryset.select_related('category', 'brand'):
+        products.append({
+            'id': p.id,
+            'name': p.name,
+            'brand': p.brand.name,
+            'category': p.category.name,
+            'subcategory': p.category.subcategory,
+            'price': float(p.price),
+            'volume': f"{p.volume}ml",
+            'abv': float(p.abv),
+            'emoji': p.emoji,
+            'tags': p.tags,
+        })
     return products
 
 

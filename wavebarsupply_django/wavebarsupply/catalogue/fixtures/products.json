@@ -4,18 +4,17 @@
     "pk": 1,
     "fields": {
       "name": "Coca-Cola Classic",
-      "brand": "Coca-Cola",
-      "category": "non-alcohol",
-      "subcategory": "Soft Drinks",
       "price": "1.20",
-      "volume": "330ml",
-      "abv": "none",
+      "volume": 330,
+      "abv": "0.0",
       "emoji": "🥤",
       "tags": [
         "cola",
         "classic",
         "carbonated"
-      ]
+      ],
+      "category": 1,
+      "brand": 1
     }
   },
   {
@@ -23,18 +22,17 @@
     "pk": 2,
     "fields": {
       "name": "Coca-Cola Zero",
-      "brand": "Coca-Cola",
-      "category": "non-alcohol",
-      "subcategory": "Soft Drinks",
       "price": "1.20",
-      "volume": "330ml",
-      "abv": "none",
+      "volume": 330,
+      "abv": "0.0",
       "emoji": "🥤",
       "tags": [
         "cola",
         "zero sugar",
         "carbonated"
-      ]
+      ],
+      "category": 1,
+      "brand": 1
     }
   },
   {
@@ -42,18 +40,17 @@
     "pk": 3,
     "fields": {
       "name": "Sprite Lemon-Lime",
-      "brand": "Sprite",
-      "category": "non-alcohol",
-      "subcategory": "Soft Drinks",
       "price": "1.15",
-      "volume": "330ml",
-      "abv": "none",
+      "volume": 330,
+      "abv": "0.0",
       "emoji": "🥤",
       "tags": [
         "lemon",
         "lime",
         "carbonated"
-      ]
+      ],
+      "category": 1,
+      "brand": 2
     }
   },
   {
@@ -61,18 +58,17 @@
     "pk": 4,
     "fields": {
       "name": "Fanta Orange",
-      "brand": "Fanta",
-      "category": "non-alcohol",
-      "subcategory": "Soft Drinks",
       "price": "1.15",
-      "volume": "330ml",
-      "abv": "none",
+      "volume": 330,
+      "abv": "0.0",
       "emoji": "🥤",
       "tags": [
         "orange",
         "fruity",
         "carbonated"
-      ]
+      ],
+      "category": 1,
+      "brand": 3
     }
   },
   {
@@ -80,18 +76,17 @@
     "pk": 5,
     "fields": {
       "name": "Pepsi Max",
-      "brand": "Pepsi",
-      "category": "non-alcohol",
-      "subcategory": "Soft Drinks",
       "price": "1.10",
-      "volume": "500ml",
-      "abv": "none",
+      "volume": 500,
+      "abv": "0.0",
       "emoji": "🥤",
       "tags": [
         "cola",
         "max",
         "carbonated"
-      ]
+      ],
+      "category": 1,
+      "brand": 4
     }
   },
   {
@@ -99,18 +94,17 @@
     "pk": 6,
     "fields": {
       "name": "Souroti Sparkling",
-      "brand": "Souroti",
-      "category": "non-alcohol",
-      "subcategory": "Water",
       "price": "0.80",
-      "volume": "500ml",
-      "abv": "none",
+      "volume": 500,
+      "abv": "0.0",
       "emoji": "💧",
       "tags": [
         "sparkling",
         "mineral",
         "greek"
-      ]
+      ],
+      "category": 2,
+      "brand": 5
     }
   },
   {
@@ -118,18 +112,17 @@
     "pk": 7,
     "fields": {
       "name": "Evian Still",
-      "brand": "Evian",
-      "category": "non-alcohol",
-      "subcategory": "Water",
       "price": "1.20",
-      "volume": "750ml",
-      "abv": "none",
+      "volume": 750,
+      "abv": "0.0",
       "emoji": "💧",
       "tags": [
         "still",
         "premium",
         "mineral"
-      ]
+      ],
+      "category": 2,
+      "brand": 6
     }
   },
   {
@@ -137,18 +130,17 @@
     "pk": 8,
     "fields": {
       "name": "Vikos Natural",
-      "brand": "Vikos",
-      "category": "non-alcohol",
-      "subcategory": "Water",
       "price": "0.60",
-      "volume": "500ml",
-      "abv": "none",
+      "volume": 500,
+      "abv": "0.0",
       "emoji": "💧",
       "tags": [
         "still",
         "natural",
         "greek"
-      ]
+      ],
+      "category": 2,
+      "brand": 7
     }
   },
   {
@@ -156,18 +148,17 @@
     "pk": 9,
     "fields": {
       "name": "San Pellegrino",
-      "brand": "San Pellegrino",
-      "category": "non-alcohol",
-      "subcategory": "Water",
       "price": "1.80",
-      "volume": "750ml",
-      "abv": "none",
+      "volume": 750,
+      "abv": "0.0",
       "emoji": "💧",
       "tags": [
         "sparkling",
         "italian",
         "premium"
-      ]
+      ],
+      "category": 2,
+      "brand": 8
     }
   },
   {
@@ -175,18 +166,17 @@
     "pk": 10,
     "fields": {
       "name": "Tropicana Orange",
-      "brand": "Tropicana",
-      "category": "non-alcohol",
-      "subcategory": "Juices",
       "price": "2.20",
-      "volume": "1L",
-      "abv": "none",
+      "volume": 1000,
+      "abv": "0.0",
       "emoji": "🍊",
       "tags": [
         "orange",
         "100% juice",
         "no added sugar"
-      ]
+      ],
+      "category": 3,
+      "brand": 9
     }
   },
   {
@@ -194,18 +184,17 @@
     "pk": 11,
     "fields": {
       "name": "Innocent Mango Smoothie",
-      "brand": "Innocent",
-      "category": "non-alcohol",
-      "subcategory": "Juices",
       "price": "2.80",
-      "volume": "750ml",
-      "abv": "none",
+      "volume": 750,
+      "abv": "0.0",
       "emoji": "🥭",
       "tags": [
         "mango",
         "smoothie",
         "tropical"
-      ]
+      ],
+      "category": 3,
+      "brand": 10
     }
   },
   {
@@ -213,18 +202,17 @@
     "pk": 12,
     "fields": {
       "name": "Amita Peach Juice",
-      "brand": "Amita",
-      "category": "non-alcohol",
-      "subcategory": "Juices",
       "price": "1.50",
-      "volume": "1L",
-      "abv": "none",
+      "volume": 1000,
+      "abv": "0.0",
       "emoji": "🍑",
       "tags": [
         "peach",
         "nectar",
         "greek"
-      ]
+      ],
+      "category": 3,
+      "brand": 11
     }
   },
   {
@@ -232,18 +220,17 @@
     "pk": 13,
     "fields": {
       "name": "Lipton Peach Ice Tea",
-      "brand": "Lipton",
-      "category": "non-alcohol",
-      "subcategory": "Ice Teas",
       "price": "1.30",
-      "volume": "500ml",
-      "abv": "none",
+      "volume": 500,
+      "abv": "0.0",
       "emoji": "🍵",
       "tags": [
         "peach",
         "sweet",
         "iced"
-      ]
+      ],
+      "category": 4,
+      "brand": 12
     }
   },
   {
@@ -251,18 +238,17 @@
     "pk": 14,
     "fields": {
       "name": "Nestea Lemon",
-      "brand": "Nestea",
-      "category": "non-alcohol",
-      "subcategory": "Ice Teas",
       "price": "1.25",
-      "volume": "500ml",
-      "abv": "none",
+      "volume": 500,
+      "abv": "0.0",
       "emoji": "🍵",
       "tags": [
         "lemon",
         "classic",
         "iced"
-      ]
+      ],
+      "category": 4,
+      "brand": 13
     }
   },
   {
@@ -270,18 +256,17 @@
     "pk": 15,
     "fields": {
       "name": "Gold Peak Green Tea",
-      "brand": "Gold Peak",
-      "category": "non-alcohol",
-      "subcategory": "Ice Teas",
       "price": "1.60",
-      "volume": "547ml",
-      "abv": "none",
+      "volume": 547,
+      "abv": "0.0",
       "emoji": "🍵",
       "tags": [
         "green",
         "unsweetened",
         "natural"
-      ]
+      ],
+      "category": 4,
+      "brand": 14
     }
   },
   {
@@ -289,18 +274,17 @@
     "pk": 16,
     "fields": {
       "name": "Nescafé Freddo Espresso",
-      "brand": "Nescafé",
-      "category": "non-alcohol",
-      "subcategory": "Coffee",
       "price": "1.50",
-      "volume": "250ml",
-      "abv": "none",
+      "volume": 250,
+      "abv": "0.0",
       "emoji": "☕",
       "tags": [
         "espresso",
         "cold",
         "greek"
-      ]
+      ],
+      "category": 5,
+      "brand": 15
     }
   },
   {
@@ -308,18 +292,17 @@
     "pk": 17,
     "fields": {
       "name": "Starbucks Cold Brew",
-      "brand": "Starbucks",
-      "category": "non-alcohol",
-      "subcategory": "Coffee",
       "price": "3.20",
-      "volume": "325ml",
-      "abv": "none",
+      "volume": 325,
+      "abv": "0.0",
       "emoji": "☕",
       "tags": [
         "cold brew",
         "premium",
         "smooth"
-      ]
+      ],
+      "category": 5,
+      "brand": 16
     }
   },
   {
@@ -327,18 +310,17 @@
     "pk": 18,
     "fields": {
       "name": "Lavazza Cappuccino Can",
-      "brand": "Lavazza",
-      "category": "non-alcohol",
-      "subcategory": "Coffee",
       "price": "2.20",
-      "volume": "250ml",
-      "abv": "none",
+      "volume": 250,
+      "abv": "0.0",
       "emoji": "☕",
       "tags": [
         "cappuccino",
         "can",
         "italian"
-      ]
+      ],
+      "category": 5,
+      "brand": 17
     }
   },
   {
@@ -346,18 +328,17 @@
     "pk": 19,
     "fields": {
       "name": "Red Bull Original",
-      "brand": "Red Bull",
-      "category": "non-alcohol",
-      "subcategory": "Energy Drinks",
       "price": "2.50",
-      "volume": "250ml",
-      "abv": "none",
+      "volume": 250,
+      "abv": "0.0",
       "emoji": "⚡",
       "tags": [
         "energy",
         "taurine",
         "original"
-      ]
+      ],
+      "category": 6,
+      "brand": 18
     }
   },
   {
@@ -365,18 +346,17 @@
     "pk": 20,
     "fields": {
       "name": "Monster Energy Green",
-      "brand": "Monster",
-      "category": "non-alcohol",
-      "subcategory": "Energy Drinks",
       "price": "2.30",
-      "volume": "500ml",
-      "abv": "none",
+      "volume": 500,
+      "abv": "0.0",
       "emoji": "⚡",
       "tags": [
         "energy",
         "large",
         "green"
-      ]
+      ],
+      "category": 6,
+      "brand": 19
     }
   },
   {
@@ -384,18 +364,17 @@
     "pk": 21,
     "fields": {
       "name": "Celsius Tropical",
-      "brand": "Celsius",
-      "category": "non-alcohol",
-      "subcategory": "Energy Drinks",
       "price": "2.80",
-      "volume": "355ml",
-      "abv": "none",
+      "volume": 355,
+      "abv": "0.0",
       "emoji": "⚡",
       "tags": [
         "energy",
         "fitness",
         "tropical"
-      ]
+      ],
+      "category": 6,
+      "brand": 20
     }
   },
   {
@@ -403,18 +382,17 @@
     "pk": 22,
     "fields": {
       "name": "Mythos Lager",
-      "brand": "Mythos",
-      "category": "fermented",
-      "subcategory": "Beer",
       "price": "1.80",
-      "volume": "500ml",
-      "abv": "low",
+      "volume": 500,
+      "abv": "4.7",
       "emoji": "🍺",
       "tags": [
         "lager",
         "greek",
         "refreshing"
-      ]
+      ],
+      "category": 7,
+      "brand": 21
     }
   },
   {
@@ -422,18 +400,17 @@
     "pk": 23,
     "fields": {
       "name": "Fix Hellas",
-      "brand": "Fix",
-      "category": "fermented",
-      "subcategory": "Beer",
       "price": "1.90",
-      "volume": "500ml",
-      "abv": "low",
+      "volume": 500,
+      "abv": "5.0",
       "emoji": "🍺",
       "tags": [
         "pilsner",
         "greek",
         "classic"
-      ]
+      ],
+      "category": 7,
+      "brand": 22
     }
   },
   {
@@ -441,18 +418,17 @@
     "pk": 24,
     "fields": {
       "name": "Heineken",
-      "brand": "Heineken",
-      "category": "fermented",
-      "subcategory": "Beer",
       "price": "2.20",
-      "volume": "330ml",
-      "abv": "low",
+      "volume": 330,
+      "abv": "5.0",
       "emoji": "🍺",
       "tags": [
         "lager",
         "dutch",
         "international"
-      ]
+      ],
+      "category": 7,
+      "brand": 23
     }
   },
   {
@@ -460,18 +436,17 @@
     "pk": 25,
     "fields": {
       "name": "Corona Extra",
-      "brand": "Corona",
-      "category": "fermented",
-      "subcategory": "Beer",
       "price": "2.50",
-      "volume": "330ml",
-      "abv": "low",
+      "volume": 330,
+      "abv": "4.5",
       "emoji": "🍺",
       "tags": [
         "lager",
         "mexican",
         "beach"
-      ]
+      ],
+      "category": 7,
+      "brand": 24
     }
   },
   {
@@ -479,18 +454,17 @@
     "pk": 26,
     "fields": {
       "name": "Alfa Lager",
-      "brand": "Alfa",
-      "category": "fermented",
-      "subcategory": "Beer",
       "price": "1.70",
-      "volume": "500ml",
-      "abv": "low",
+      "volume": 500,
+      "abv": "5.0",
       "emoji": "🍺",
       "tags": [
         "lager",
         "greek",
         "light"
-      ]
+      ],
+      "category": 7,
+      "brand": 25
     }
   },
   {
@@ -498,18 +472,17 @@
     "pk": 27,
     "fields": {
       "name": "Craft IPA Beach Brew",
-      "brand": "BrewDog",
-      "category": "fermented",
-      "subcategory": "Beer",
       "price": "3.40",
-      "volume": "440ml",
-      "abv": "medium",
+      "volume": 440,
+      "abv": "6.5",
       "emoji": "🍺",
       "tags": [
         "IPA",
         "craft",
         "hoppy"
-      ]
+      ],
+      "category": 7,
+      "brand": 26
     }
   },
   {
@@ -517,19 +490,18 @@
     "pk": 28,
     "fields": {
       "name": "Assyrtiko Santorini",
-      "brand": "Boutari",
-      "category": "fermented",
-      "subcategory": "Wine",
       "price": "12.00",
-      "volume": "750ml",
-      "abv": "medium",
+      "volume": 750,
+      "abv": "13.5",
       "emoji": "🍷",
       "tags": [
         "white",
         "dry",
         "greek",
         "volcanic"
-      ]
+      ],
+      "category": 8,
+      "brand": 27
     }
   },
   {
@@ -537,19 +509,18 @@
     "pk": 29,
     "fields": {
       "name": "Agiorgitiko Red",
-      "brand": "Gaia",
-      "category": "fermented",
-      "subcategory": "Wine",
       "price": "10.00",
-      "volume": "750ml",
-      "abv": "medium",
+      "volume": 750,
+      "abv": "13.0",
       "emoji": "🍷",
       "tags": [
         "red",
         "dry",
         "greek",
         "nemea"
-      ]
+      ],
+      "category": 8,
+      "brand": 28
     }
   },
   {
@@ -557,18 +528,17 @@
     "pk": 30,
     "fields": {
       "name": "Prosecco DOC",
-      "brand": "Mionetto",
-      "category": "fermented",
-      "subcategory": "Wine",
       "price": "9.00",
-      "volume": "750ml",
-      "abv": "medium",
+      "volume": 750,
+      "abv": "11.0",
       "emoji": "🥂",
       "tags": [
         "sparkling",
         "italian",
         "prosecco"
-      ]
+      ],
+      "category": 8,
+      "brand": 29
     }
   },
   {
@@ -576,18 +546,17 @@
     "pk": 31,
     "fields": {
       "name": "Rosé de Provence",
-      "brand": "Whispering Angel",
-      "category": "fermented",
-      "subcategory": "Wine",
       "price": "18.00",
-      "volume": "750ml",
-      "abv": "medium",
+      "volume": 750,
+      "abv": "13.0",
       "emoji": "🥂",
       "tags": [
         "rosé",
         "french",
         "premium"
-      ]
+      ],
+      "category": 8,
+      "brand": 30
     }
   },
   {
@@ -595,18 +564,17 @@
     "pk": 32,
     "fields": {
       "name": "Strongbow Original",
-      "brand": "Strongbow",
-      "category": "fermented",
-      "subcategory": "Cider",
       "price": "2.80",
-      "volume": "500ml",
-      "abv": "low",
+      "volume": 500,
+      "abv": "5.0",
       "emoji": "🍎",
       "tags": [
         "apple",
         "dry",
         "classic"
-      ]
+      ],
+      "category": 9,
+      "brand": 31
     }
   },
   {
@@ -614,18 +582,17 @@
     "pk": 33,
     "fields": {
       "name": "Rekorderlig Strawberry",
-      "brand": "Rekorderlig",
-      "category": "fermented",
-      "subcategory": "Cider",
       "price": "3.20",
-      "volume": "500ml",
-      "abv": "low",
+      "volume": 500,
+      "abv": "4.0",
       "emoji": "🍓",
       "tags": [
         "strawberry",
         "sweet",
         "fruity"
-      ]
+      ],
+      "category": 9,
+      "brand": 32
     }
   },
   {
@@ -633,18 +600,17 @@
     "pk": 34,
     "fields": {
       "name": "Kopparberg Mixed Fruit",
-      "brand": "Kopparberg",
-      "category": "fermented",
-      "subcategory": "Cider",
       "price": "3.10",
-      "volume": "500ml",
-      "abv": "low",
+      "volume": 500,
+      "abv": "4.0",
       "emoji": "🍏",
       "tags": [
         "mixed fruit",
         "swedish",
         "sweet"
-      ]
+      ],
+      "category": 9,
+      "brand": 33
     }
   },
   {
@@ -652,18 +618,17 @@
     "pk": 35,
     "fields": {
       "name": "Jack Daniel's No.7",
-      "brand": "Jack Daniel's",
-      "category": "distilled",
-      "subcategory": "Whisky",
       "price": "24.00",
-      "volume": "700ml",
-      "abv": "high",
+      "volume": 700,
+      "abv": "40.0",
       "emoji": "🥃",
       "tags": [
         "tennessee",
         "american",
         "classic"
-      ]
+      ],
+      "category": 10,
+      "brand": 34
     }
   },
   {
@@ -671,18 +636,17 @@
     "pk": 36,
     "fields": {
       "name": "Johnnie Walker Black",
-      "brand": "Johnnie Walker",
-      "category": "distilled",
-      "subcategory": "Whisky",
       "price": "28.00",
-      "volume": "700ml",
-      "abv": "high",
+      "volume": 700,
+      "abv": "40.0",
       "emoji": "🥃",
       "tags": [
         "blended",
         "scotch",
         "smoky"
-      ]
+      ],
+      "category": 10,
+      "brand": 35
     }
   },
   {
@@ -690,18 +654,17 @@
     "pk": 37,
     "fields": {
       "name": "Glenfiddich 12yr",
-      "brand": "Glenfiddich",
-      "category": "distilled",
-      "subcategory": "Whisky",
       "price": "36.00",
-      "volume": "700ml",
-      "abv": "high",
+      "volume": 700,
+      "abv": "40.0",
       "emoji": "🥃",
       "tags": [
         "single malt",
         "scotch",
         "premium"
-      ]
+      ],
+      "category": 10,
+      "brand": 36
     }
   },
   {
@@ -709,18 +672,17 @@
     "pk": 38,
     "fields": {
       "name": "Jameson Irish",
-      "brand": "Jameson",
-      "category": "distilled",
-      "subcategory": "Whisky",
       "price": "22.00",
-      "volume": "700ml",
-      "abv": "high",
+      "volume": 700,
+      "abv": "40.0",
       "emoji": "🥃",
       "tags": [
         "irish",
         "smooth",
         "blended"
-      ]
+      ],
+      "category": 10,
+      "brand": 37
     }
   },
   {
@@ -728,18 +690,17 @@
     "pk": 39,
     "fields": {
       "name": "Absolut Original",
-      "brand": "Absolut",
-      "category": "distilled",
-      "subcategory": "Vodka",
       "price": "18.00",
-      "volume": "700ml",
-      "abv": "high",
+      "volume": 700,
+      "abv": "40.0",
       "emoji": "🫙",
       "tags": [
         "swedish",
         "neutral",
         "classic"
-      ]
+      ],
+      "category": 11,
+      "brand": 38
     }
   },
   {
@@ -747,18 +708,17 @@
     "pk": 40,
     "fields": {
       "name": "Grey Goose",
-      "brand": "Grey Goose",
-      "category": "distilled",
-      "subcategory": "Vodka",
       "price": "34.00",
-      "volume": "700ml",
-      "abv": "high",
+      "volume": 700,
+      "abv": "40.0",
       "emoji": "🫙",
       "tags": [
         "french",
         "premium",
         "smooth"
-      ]
+      ],
+      "category": 11,
+      "brand": 39
     }
   },
   {
@@ -766,18 +726,17 @@
     "pk": 41,
     "fields": {
       "name": "Smirnoff No.21",
-      "brand": "Smirnoff",
-      "category": "distilled",
-      "subcategory": "Vodka",
       "price": "14.00",
-      "volume": "700ml",
-      "abv": "high",
+      "volume": 700,
+      "abv": "37.5",
       "emoji": "🫙",
       "tags": [
         "russian",
         "triple distilled",
         "value"
-      ]
+      ],
+      "category": 11,
+      "brand": 40
     }
   },
   {
@@ -785,18 +744,17 @@
     "pk": 42,
     "fields": {
       "name": "Belvedere Pure",
-      "brand": "Belvedere",
-      "category": "distilled",
-      "subcategory": "Vodka",
       "price": "38.00",
-      "volume": "700ml",
-      "abv": "high",
+      "volume": 700,
+      "abv": "40.0",
       "emoji": "🫙",
       "tags": [
         "polish",
         "rye",
         "ultra-premium"
-      ]
+      ],
+      "category": 11,
+      "brand": 41
     }
   },
   {
@@ -804,18 +762,17 @@
     "pk": 43,
     "fields": {
       "name": "Bacardi Carta Blanca",
-      "brand": "Bacardi",
-      "category": "distilled",
-      "subcategory": "Rum",
       "price": "16.00",
-      "volume": "700ml",
-      "abv": "high",
+      "volume": 700,
+      "abv": "37.5",
       "emoji": "🍹",
       "tags": [
         "white",
         "light",
         "cocktail"
-      ]
+      ],
+      "category": 12,
+      "brand": 42
     }
   },
   {
@@ -823,18 +780,17 @@
     "pk": 44,
     "fields": {
       "name": "Captain Morgan Spiced",
-      "brand": "Captain Morgan",
-      "category": "distilled",
-      "subcategory": "Rum",
       "price": "18.00",
-      "volume": "700ml",
-      "abv": "high",
+      "volume": 700,
+      "abv": "35.0",
       "emoji": "🍹",
       "tags": [
         "spiced",
         "golden",
         "sweet"
-      ]
+      ],
+      "category": 12,
+      "brand": 43
     }
   },
   {
@@ -842,19 +798,18 @@
     "pk": 45,
     "fields": {
       "name": "Diplomatico Reserva",
-      "brand": "Diplomatico",
-      "category": "distilled",
-      "subcategory": "Rum",
       "price": "32.00",
-      "volume": "700ml",
-      "abv": "high",
+      "volume": 700,
+      "abv": "40.0",
       "emoji": "🍹",
       "tags": [
         "venezuelan",
         "dark",
         "premium",
         "sipping"
-      ]
+      ],
+      "category": 12,
+      "brand": 44
     }
   },
   {
@@ -862,18 +817,17 @@
     "pk": 46,
     "fields": {
       "name": "Bombay Sapphire",
-      "brand": "Bombay",
-      "category": "distilled",
-      "subcategory": "Gin",
       "price": "22.00",
-      "volume": "700ml",
-      "abv": "high",
+      "volume": 700,
+      "abv": "40.0",
       "emoji": "🌿",
       "tags": [
         "london dry",
         "botanical",
         "classic"
-      ]
+      ],
+      "category": 13,
+      "brand": 45
     }
   },
   {
@@ -881,19 +835,18 @@
     "pk": 47,
     "fields": {
       "name": "Hendrick's",
-      "brand": "Hendrick's",
-      "category": "distilled",
-      "subcategory": "Gin",
       "price": "30.00",
-      "volume": "700ml",
-      "abv": "high",
+      "volume": 700,
+      "abv": "41.4",
       "emoji": "🌿",
       "tags": [
         "scottish",
         "cucumber",
         "floral",
         "premium"
-      ]
+      ],
+      "category": 13,
+      "brand": 46
     }
   },
   {
@@ -901,18 +854,17 @@
     "pk": 48,
     "fields": {
       "name": "Tanqueray No.Ten",
-      "brand": "Tanqueray",
-      "category": "distilled",
-      "subcategory": "Gin",
       "price": "28.00",
-      "volume": "700ml",
-      "abv": "high",
+      "volume": 700,
+      "abv": "47.3",
       "emoji": "🌿",
       "tags": [
         "citrus",
         "fresh",
         "premium"
-      ]
+      ],
+      "category": 13,
+      "brand": 47
     }
   },
   {
@@ -920,18 +872,17 @@
     "pk": 49,
     "fields": {
       "name": "Monkey 47",
-      "brand": "Monkey 47",
-      "category": "distilled",
-      "subcategory": "Gin",
       "price": "42.00",
-      "volume": "500ml",
-      "abv": "high",
+      "volume": 500,
+      "abv": "47.0",
       "emoji": "🌿",
       "tags": [
         "german",
         "47 botanicals",
         "ultra-premium"
-      ]
+      ],
+      "category": 13,
+      "brand": 48
     }
   },
   {
@@ -939,18 +890,17 @@
     "pk": 50,
     "fields": {
       "name": "Jose Cuervo Silver",
-      "brand": "Jose Cuervo",
-      "category": "distilled",
-      "subcategory": "Tequila",
       "price": "20.00",
-      "volume": "700ml",
-      "abv": "high",
+      "volume": 700,
+      "abv": "38.0",
       "emoji": "🌵",
       "tags": [
         "silver",
         "blanco",
         "cocktail"
-      ]
+      ],
+      "category": 14,
+      "brand": 49
     }
   },
   {
@@ -958,18 +908,17 @@
     "pk": 51,
     "fields": {
       "name": "Patron Silver",
-      "brand": "Patron",
-      "category": "distilled",
-      "subcategory": "Tequila",
       "price": "40.00",
-      "volume": "700ml",
-      "abv": "high",
+      "volume": 700,
+      "abv": "40.0",
       "emoji": "🌵",
       "tags": [
         "premium",
         "100% agave",
         "smooth"
-      ]
+      ],
+      "category": 14,
+      "brand": 50
     }
   },
   {
@@ -977,18 +926,17 @@
     "pk": 52,
     "fields": {
       "name": "Don Julio Blanco",
-      "brand": "Don Julio",
-      "category": "distilled",
-      "subcategory": "Tequila",
       "price": "48.00",
-      "volume": "700ml",
-      "abv": "high",
+      "volume": 700,
+      "abv": "40.0",
       "emoji": "🌵",
       "tags": [
         "ultra-premium",
         "100% agave",
         "clean"
-      ]
+      ],
+      "category": 14,
+      "brand": 51
     }
   }
 ]

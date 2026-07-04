@@ -5,19 +5,22 @@ from .forms import LoginForm, RegisterForm
 
 
 def auth_view(request):
-    """Single page that hosts both the login and register forms (tabbed UI)."""
+    """Single page hosting both the login and register forms (tabbed UI).
+
+    Uses Django's built-in auth: login() sets up the session, and request.user
+    is available in templates.
+    """
     login_form = LoginForm(request)
     register_form = RegisterForm()
     active_panel = 'login'
 
     if request.method == 'POST':
-        # The two submit buttons are named so we know which form was sent.
         if 'login_submit' in request.POST:
             login_form = LoginForm(request, data=request.POST)
+            active_panel = 'login'
             if login_form.is_valid():
                 login(request, login_form.get_user())
                 return redirect('catalogue:browse')
-            active_panel = 'login'
 
         elif 'register_submit' in request.POST:
             register_form = RegisterForm(request.POST)

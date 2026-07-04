@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'catalogue',
     'accounts',
     'pages',
+    'orders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -122,6 +123,17 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
 # Authentication redirects (use namespaced URL names, not hard-coded paths)
+# Use the custom Users table as Django's authentication user model, so the
+# built-in auth forms (UserCreationForm / AuthenticationForm) work with it.
+AUTH_USER_MODEL = 'accounts.Users'
+
+# Store passwords with bcrypt (listed first) instead of Django's default PBKDF2.
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+]
+
 LOGIN_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = 'catalogue:browse'
 LOGOUT_REDIRECT_URL = 'home:index'

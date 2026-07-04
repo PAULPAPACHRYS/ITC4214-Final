@@ -68,41 +68,34 @@
           <div class="form_message error">{{ register_form.non_field_errors|join:" " }}</div>
         {% endif %}
 
-        <div class="form_row_two">
-          <div class="form_group">
-            <label class="form_label" for="{{ register_form.first_name.id_for_label }}">First Name</label>
-            {{ register_form.first_name }}
-            {% for error in register_form.first_name.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
-          </div>
-          <div class="form_group">
-            <label class="form_label" for="{{ register_form.last_name.id_for_label }}">Last Name</label>
-            {{ register_form.last_name }}
-            {% for error in register_form.last_name.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
-          </div>
+        <div class="form_group">
+          <label class="form_label" for="{{ register_form.full_name.id_for_label }}">Full Name</label>
+          {{ register_form.full_name }}
+          {% for error in register_form.full_name.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
         </div>
 
         <div class="form_group">
-          <label class="form_label" for="{{ register_form.bar_name.id_for_label }}">{{ register_form.bar_name.label }}</label>
+          <label class="form_label" for="{{ register_form.bar_name.id_for_label }}">Beach Bar / Business Name</label>
           {{ register_form.bar_name }}
           {% for error in register_form.bar_name.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
         </div>
 
         <div class="form_group">
-          <label class="form_label" for="{{ register_form.email.id_for_label }}">{{ register_form.email.label }}</label>
+          <label class="form_label" for="{{ register_form.email.id_for_label }}">Email Address</label>
           {{ register_form.email }}
           {% for error in register_form.email.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
         </div>
 
         <div class="form_group">
-          <label class="form_label" for="{{ register_form.phone.id_for_label }}">{{ register_form.phone.label }}</label>
+          <label class="form_label" for="{{ register_form.phone.id_for_label }}">Phone Number</label>
           {{ register_form.phone }}
           {% for error in register_form.phone.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
         </div>
 
         <div class="form_group">
-          <label class="form_label" for="{{ register_form.location.id_for_label }}">{{ register_form.location.label }}</label>
-          {{ register_form.location }}
-          {% for error in register_form.location.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
+          <label class="form_label" for="{{ register_form.bar_location.id_for_label }}">{{ register_form.bar_location.label }}</label>
+          {{ register_form.bar_location }}
+          {% for error in register_form.bar_location.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
         </div>
 
         <div class="form_group">
