@@ -7,4 +7,5 @@ urlpatterns = [
     path('browse/', include('catalogue.urls')),
     path('accounts/', include('accounts.urls')),
     path('', include('pages.urls')),
+    path('database/', include('database.urls')),
 ]

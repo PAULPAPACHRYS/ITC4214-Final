@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}WaveBar Supply — {{ mode }} {{ label }}{% endblock %}
+{% block meta_description %}Database management{% endblock %}
+
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/database_style.css' %}" />{% endblock %}
+
+{% block content %}
+<div class="page_hero">
+  <div class="section_container">
+    <h1 class="page_title">{{ mode }} {{ label }}</h1>
+    <p class="page_subtitle">{{ label }} record</p>
+  </div>
+</div>
+
+<section class="db_section section_container">
+  <form class="db_form" method="post" novalidate>
+    {% csrf_token %}
+
+    {% if form.non_field_errors %}
+      <div class="db_message error">{{ form.non_field_errors|join:" " }}</div>
+    {% endif %}
+
+    {% for field in form %}
+      <div class="form_group">
+        <label class="form_label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field }}
+        {% if field.help_text %}<span class="db_help">{{ field.help_text }}</span>{% endif %}
+        {% for error in field.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
+      </div>
+    {% endfor %}
+
+    <div class="db_form_actions">
+      <button class="button_primary" type="submit">Save</button>
+      <a class="button_secondary" href="{% url 'database:table' key=key %}">Cancel</a>
+    </div>
+  </form>
+</section>
+{% endblock %}

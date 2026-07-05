@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}WaveBar Supply — My Account{% endblock %}
+{% block meta_description %}Account page{% endblock %}
+
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/account_style.css' %}" />{% endblock %}
+{% block extra_js %}<script src="{% static 'js/account.js' %}" defer></script>{% endblock %}
+
+{% block content %}
+<section class="account_section">
+  <div class="account_card">
+    <h2 class="account_title">My Account</h2>
+    <p class="account_role">Account type: <span>{{ user.get_role_display }}</span></p>
+
+    <!-- Read view -->
+    <div class="account_view {% if show_edit %}hidden{% endif %}" id="account_view">
+      <dl class="account_details">
+        <div><dt>Full Name</dt><dd>{{ user.full_name }}</dd></div>
+        <div><dt>Email Address</dt><dd>{{ user.email }}</dd></div>
+        <div><dt>Phone Number</dt><dd>{{ user.phone|default:"—" }}</dd></div>
+        <div><dt>Beach Bar / Business Name</dt><dd>{{ user.bar_name|default:"—" }}</dd></div>
+        <div><dt>Location / Region</dt><dd>{{ user.bar_location|default:"—" }}</dd></div>
+      </dl>
+      <div class="account_actions">
+        <button class="button_primary" id="edit_button" type="button">Edit Details</button>
+        <a class="button_secondary" href="{% url 'accounts:logout' %}">Log Out</a>
+      </div>
+    </div>
+
+    <!-- Edit view -->
+    <form class="account_edit {% if not show_edit %}hidden{% endif %}" id="account_edit" method="post" novalidate>
+      {% csrf_token %}
+      {% for field in form %}
+        <div class="form_group">
+          <label class="form_label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+          {{ field }}
+          {% for error in field.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
+        </div>
+      {% endfor %}
+      <div class="account_actions">
+        <button class="button_primary" type="submit">Save Changes</button>
+        <button class="button_secondary" id="cancel_button" type="button">Cancel</button>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}

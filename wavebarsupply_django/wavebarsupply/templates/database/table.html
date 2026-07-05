@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}WaveBar Supply — {{ label }}{% endblock %}
+{% block meta_description %}Database management{% endblock %}
+
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/database_style.css' %}" />{% endblock %}
+{% block extra_js %}<script src="{% static 'js/database.js' %}" defer></script>{% endblock %}
+
+{% block content %}
+<div class="page_hero">
+  <div class="section_container">
+    <h1 class="page_title">{{ label }}</h1>
+    <p class="page_subtitle">{{ rows|length }} record{{ rows|length|pluralize }} in this table</p>
+  </div>
+</div>
+
+<section class="db_section section_container">
+  {% if messages %}
+    <div class="db_messages">
+      {% for message in messages %}<div class="db_message {{ message.tags }}">{{ message }}</div>{% endfor %}
+    </div>
+  {% endif %}
+
+  <div class="db_toolbar">
+    <a class="button_secondary db_back" href="{% url 'database:home' %}">← All Tables</a>
+    <a class="button_primary" href="{% url 'database:add' key=key %}">+ Add New</a>
+  </div>
+
+  <div class="db_table_wrap">
+    <table class="db_table">
+      <thead>
+        <tr>
+          {% for col in columns %}<th>{{ col }}</th>{% endfor %}
+          <th class="db_actions_col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in rows %}
+          <tr>
+            {% for cell in row.cells %}<td>{{ cell }}</td>{% endfor %}
+            <td class="db_actions_col">
+              <a class="db_btn db_btn_edit" href="{% url 'database:edit' key=key pk=row.pk %}">Edit</a>
+              <form class="db_delete_form" method="post" action="{% url 'database:delete' key=key pk=row.pk %}">
+                {% csrf_token %}
+                <button class="db_btn db_btn_delete" type="submit">Delete</button>
+              </form>
+            </td>
+          </tr>
+        {% empty %}
+          <tr><td class="db_empty" colspan="{{ columns|length|add:1 }}">No records yet.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}

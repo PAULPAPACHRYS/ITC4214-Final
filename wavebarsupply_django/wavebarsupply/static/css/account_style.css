@@ -1,0 +1,95 @@
+.account_section {
+  display: flex;
+  justify-content: center;
+  padding: 48px 24px 60px;
+}
+
+.account_card {
+  background: var(--white);
+  border-radius: var(--radius_lg);
+  padding: 32px 36px;
+  width: 100%;
+  max-width: 620px;
+  box-shadow: var(--shadow_lg);
+}
+
+.account_title {
+  font-family: var(--font_display);
+  font-weight: 800;
+  font-size: 1.9rem;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.account_role {
+  font-size: .9rem;
+  color: var(--gray_dk);
+  margin-bottom: 24px;
+}
+.account_role span {
+  font-weight: 700;
+  color: var(--teal);
+  text-transform: capitalize;
+}
+
+/* Read view */
+.account_details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-bottom: 24px;
+}
+.account_details > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 4px;
+  border-bottom: 1px solid var(--gray_lt);
+}
+.account_details dt {
+  font-weight: 600;
+  color: var(--navy);
+  font-size: .9rem;
+}
+.account_details dd {
+  color: var(--gray_dk);
+  text-align: right;
+}
+
+/* Edit form */
+.account_edit .form_group { margin-bottom: 16px; }
+.account_edit .form_label {
+  display: block;
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 5px;
+}
+.account_edit .form_input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--gray_lt);
+  border-radius: var(--radius_sm);
+  font-size: .95rem;
+  color: var(--text);
+  background: var(--cream_lt);
+  font-family: inherit;
+}
+.account_edit .form_input:focus {
+  outline: none;
+  border-color: var(--teal);
+  background: var(--white);
+}
+.account_edit .form_error {
+  display: block;
+  font-size: .78rem;
+  color: var(--coral);
+  margin-top: 4px;
+}
+
+.account_actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}

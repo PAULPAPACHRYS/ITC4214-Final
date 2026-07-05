@@ -1,15 +1,15 @@
 from django.contrib.auth import login, logout
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
 
-from .forms import LoginForm, RegisterForm
+from .forms import AccountEditForm, LoginForm, RegisterForm
 
 
 def auth_view(request):
-    """Single page hosting both the login and register forms (tabbed UI).
+    """Login + register page (for guests). Logged-in users are sent to Account."""
+    if request.user.is_authenticated:
+        return redirect('accounts:account')
 
-    Uses Django's built-in auth: login() sets up the session, and request.user
-    is available in templates.
-    """
     login_form = LoginForm(request)
     register_form = RegisterForm()
     active_panel = 'login'
@@ -34,6 +34,25 @@ def auth_view(request):
         'login_form': login_form,
         'register_form': register_form,
         'active_panel': active_panel,
+    })
+
+
+@login_required
+def account(request):
+    """Shows the logged-in user's details and lets them edit them."""
+    show_edit = False
+    if request.method == 'POST':
+        form = AccountEditForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('accounts:account')
+        show_edit = True          # keep the edit form open to show errors
+    else:
+        form = AccountEditForm(instance=request.user)
+
+    return render(request, 'accounts/account.html', {
+        'form': form,
+        'show_edit': show_edit,
     })
 
 

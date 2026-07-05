@@ -46,3 +46,26 @@ class LoginForm(AuthenticationForm):
             {'class': 'form_input', 'placeholder': 'you@yourbar.com'})
         self.fields['password'].widget.attrs.update(
             {'class': 'form_input', 'placeholder': '******'})
+
+
+class AccountEditForm(forms.ModelForm):
+    """Lets a logged-in user edit their own details. Role is NOT included here,
+    so users cannot change their own role.
+    """
+
+    bar_location = forms.ChoiceField(choices=LOCATION_CHOICES, label='Location / Region')
+
+    class Meta:
+        model = Users
+        fields = ['full_name', 'email', 'phone', 'bar_name', 'bar_location']
+        labels = {
+            'full_name': 'Full Name',
+            'email': 'Email Address',
+            'phone': 'Phone Number',
+            'bar_name': 'Beach Bar / Business Name',
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field in self.fields.values():
+            field.widget.attrs.setdefault('class', 'form_input')

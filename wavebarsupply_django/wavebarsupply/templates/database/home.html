@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}WaveBar Supply — Database{% endblock %}
+{% block meta_description %}Database management{% endblock %}
+
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/database_style.css' %}" />{% endblock %}
+{% block extra_js %}<script src="{% static 'js/database.js' %}" defer></script>{% endblock %}
+
+{% block content %}
+<div class="page_hero">
+  <div class="section_container">
+    <h1 class="page_title">Database</h1>
+    <p class="page_subtitle">View and manage the WaveBar Supply data</p>
+  </div>
+</div>
+
+<section class="db_section section_container">
+  {% if messages %}
+    <div class="db_messages">
+      {% for message in messages %}<div class="db_message {{ message.tags }}">{{ message }}</div>{% endfor %}
+    </div>
+  {% endif %}
+
+  <p class="db_intro">Select a table to view or manage its records.</p>
+
+  <div class="db_table_cards">
+    {% for t in tables %}
+      <a class="db_table_card" href="{% url 'database:table' key=t.key %}">
+        <span class="db_table_name">{{ t.label }}</span>
+        <span class="db_table_count">{{ t.count }} record{{ t.count|pluralize }}</span>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

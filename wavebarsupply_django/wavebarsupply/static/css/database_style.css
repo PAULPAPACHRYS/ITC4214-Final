@@ -1,0 +1,154 @@
+.db_section { padding-top: 32px; padding-bottom: 60px; }
+
+.db_intro { color: var(--gray_dk); margin-bottom: 20px; }
+
+/* messages */
+.db_messages { margin-bottom: 20px; display: flex; flex-direction: column; gap: 8px; }
+.db_message {
+  border-radius: var(--radius_sm);
+  padding: 10px 14px;
+  font-size: .9rem;
+}
+.db_message.success { background: #d4f1ec; color: #1a7a6e; border: 1px solid #a3dfd7; }
+.db_message.error   { background: #fde8e3; color: #b94033; border: 1px solid #f5b7ae; }
+
+/* table overview cards */
+.db_table_cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+.db_table_card {
+  background: var(--white);
+  border-radius: var(--radius_md);
+  padding: 20px;
+  box-shadow: var(--shadow_sm);
+  border-top: 3px solid var(--teal);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform .15s, box-shadow .15s;
+}
+.db_table_card:hover { transform: translateY(-3px); box-shadow: var(--shadow_md); }
+.db_table_name {
+  font-family: var(--font_display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--navy);
+}
+.db_table_count { font-size: .85rem; color: var(--gray_dk); }
+
+/* toolbar */
+.db_toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+/* data table */
+.db_table_wrap {
+  overflow-x: auto;
+  background: var(--white);
+  border-radius: var(--radius_md);
+  box-shadow: var(--shadow_sm);
+}
+.db_table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .9rem;
+}
+.db_table th, .db_table td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--gray_lt);
+  white-space: nowrap;
+}
+.db_table th {
+  background: var(--navy);
+  color: var(--white);
+  font-family: var(--font_display);
+  letter-spacing: .03em;
+  text-transform: capitalize;
+}
+.db_table tbody tr:hover { background: var(--cream_lt); }
+.db_empty { text-align: center; color: var(--gray_dk); padding: 24px; }
+
+.db_actions_col { width: 1%; }
+.db_actions_col { text-align: right; }
+.db_table td.db_actions_col { display: flex; gap: 8px; justify-content: flex-end; }
+
+/* small action buttons */
+.db_btn {
+  display: inline-block;
+  border: none;
+  border-radius: var(--radius_sm);
+  padding: 5px 12px;
+  font-family: var(--font_display);
+  font-weight: 700;
+  font-size: .8rem;
+  letter-spacing: .03em;
+  cursor: pointer;
+}
+.db_btn_edit { background: var(--teal); color: var(--white); }
+.db_btn_edit:hover { background: var(--teal_lt); }
+.db_btn_delete { background: var(--coral); color: var(--white); }
+.db_btn_delete:hover { filter: brightness(1.05); }
+.db_delete_form { margin: 0; }
+
+/* add / edit form */
+.db_form {
+  background: var(--white);
+  border-radius: var(--radius_md);
+  padding: 28px 32px;
+  box-shadow: var(--shadow_sm);
+  max-width: 620px;
+}
+.db_form .form_group { margin-bottom: 16px; }
+.db_form .form_label {
+  display: block;
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 5px;
+}
+.db_form .form_input,
+.db_form select,
+.db_form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--gray_lt);
+  border-radius: var(--radius_sm);
+  font-size: .95rem;
+  color: var(--text);
+  background: var(--cream_lt);
+  font-family: inherit;
+}
+.db_form .form_input:focus,
+.db_form select:focus,
+.db_form textarea:focus {
+  outline: none;
+  border-color: var(--teal);
+  background: var(--white);
+}
+.db_form .form_error { display: block; font-size: .78rem; color: var(--coral); margin-top: 4px; }
+.db_help { display: block; font-size: .78rem; color: var(--gray_mid); margin-top: 4px; }
+
+.db_form_actions { display: flex; gap: 12px; margin-top: 8px; }
+
+/* Page hero band (same look as the About/Contact pages) */
+.page_hero {
+  background: var(--navy);
+  color: var(--white);
+  padding: 48px 24px;
+  border-bottom: 3px solid var(--teal);
+}
+.page_title {
+  font-family: var(--font_display);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: .02em;
+}
+.page_subtitle { color: var(--gray_mid); margin-top: 4px; }
