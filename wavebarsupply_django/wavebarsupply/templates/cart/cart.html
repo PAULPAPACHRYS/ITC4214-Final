@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}WaveBar Supply — Cart{% endblock %}
+{% block meta_description %}Shopping cart{% endblock %}
+
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/cart_style.css' %}" />{% endblock %}
+{% block extra_js %}<script src="{% static 'js/cart.js' %}" defer></script>{% endblock %}
+
+{% block content %}
+<div class="page_hero">
+  <div class="section_container">
+    <h1 class="page_title">Your Cart</h1>
+    <p class="page_subtitle">Review your items before checkout</p>
+  </div>
+</div>
+
+<section class="cart_layout section_container">
+
+  <!-- Left: item list -->
+  <div class="cart_items" id="cart_list"
+       data-update-url="{% url 'cart:update' %}"
+       data-remove-url="{% url 'cart:remove' %}">
+    {% for item in items %}
+      <div class="cart_item" data-item-id="{{ item.id }}">
+        <span class="cart_item_emoji">{{ item.emoji }}</span>
+        <div class="cart_item_info">
+          <p class="cart_item_name">{{ item.name }}</p>
+          <p class="cart_item_unit">€{{ item.unit_price }} / unit</p>
+        </div>
+        <div class="cart_item_controls">
+          <div class="qty_control">
+            <button class="qty_btn cart_minus" type="button">-</button>
+            <input class="qty_input cart_qty" type="number" min="1" value="{{ item.quantity }}" />
+            <button class="qty_btn cart_plus" type="button">+</button>
+          </div>
+          <p class="cart_line_total">€{{ item.line_total }}</p>
+          <button class="cart_remove" type="button">Remove</button>
+        </div>
+      </div>
+    {% empty %}
+      <div class="cart_empty">
+        <p class="cart_empty_icon">🛒</p>
+        <h3>Your cart is empty</h3>
+        <p>Browse the catalogue and add some products.</p>
+        <a class="button_primary" href="{% url 'catalogue:browse' %}">Browse Catalogue</a>
+      </div>
+    {% endfor %}
+  </div>
+
+  <!-- Right: summary -->
+  <aside class="cart_summary">
+    <h2 class="cart_summary_title">Order Summary</h2>
+    <div class="cart_summary_row">
+      <span>Total</span>
+      <span class="cart_total" id="cart_total">€{{ total }}</span>
+    </div>
+    <button class="button_primary cart_finalise" type="button">Finalise Purchase</button>
+  </aside>
+
+</section>
+{% endblock %}

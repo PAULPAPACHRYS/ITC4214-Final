@@ -218,12 +218,47 @@ input, select { font-family: inherit; }
 
 .product_card_footer {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 10px;
   margin-top: auto;
   padding-top: 10px;
   border-top: 1px solid var(--gray_lt);
 }
+
+/* Quantity stepper (used on product cards and the cart page) */
+.qty_control {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.qty_btn {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--gray_lt);
+  background: var(--cream_lt);
+  border-radius: var(--radius_sm);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--navy);
+  line-height: 1;
+}
+.qty_btn:hover { background: var(--cream); }
+.qty_input {
+  width: 52px;
+  height: 28px;
+  text-align: center;
+  border: 1px solid var(--gray_lt);
+  border-radius: var(--radius_sm);
+  font-family: inherit;
+  font-size: .9rem;
+  color: var(--text);
+  background: var(--white);
+}
+.qty_input:focus { outline: none; border-color: var(--teal); }
+/* hide the browser's number spinners since we have our own +/- buttons */
+.qty_input::-webkit-outer-spin-button,
+.qty_input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.qty_input { -moz-appearance: textfield; appearance: textfield; }
 
 .product_card_price {
   font-family: var(--font_display);

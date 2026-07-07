@@ -18,6 +18,11 @@ function build_product_card(product) {
       </div>
       <div class="product_card_footer">
         <p class="product_card_price">€${product.price.toFixed(2)}<span>/unit</span></p>
+        <div class="qty_control">
+          <button class="qty_btn qty_minus" type="button">-</button>
+          <input class="qty_input" type="number" min="1" value="1" />
+          <button class="qty_btn qty_plus" type="button">+</button>
+        </div>
         <button class="button_add_to_order" data-id="${product.id}">+ Order</button>
       </div>
     </div>

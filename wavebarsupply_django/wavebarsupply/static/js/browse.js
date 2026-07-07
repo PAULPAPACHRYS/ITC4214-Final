@@ -179,6 +179,11 @@ function build_product_card(product) {
       </div>
       <div class="product_card_footer">
         <p class="product_card_price">€${product.price.toFixed(2)}<span>/unit</span></p>
+        <div class="qty_control">
+          <button class="qty_btn qty_minus" type="button">-</button>
+          <input class="qty_input" type="number" min="1" value="1" />
+          <button class="qty_btn qty_plus" type="button">+</button>
+        </div>
         <button class="button_add_to_order" data-id="${product.id}">+ Order</button>
       </div>
     </div>
@@ -317,16 +322,6 @@ document.querySelector('#reset_filters_button').addEventListener('click', reset_
 
 // reset filters button on empty search
 document.querySelector('#empty_reset_button').addEventListener('click', reset_filters);
-
-//add to order button
-document.querySelector('#product_grid').addEventListener('click', (e) => {
-  const button = e.target.closest('.button_add_to_order');
-  if (!button) return;
-  const product = PRODUCTS.find(p => p.id === parseInt(button.dataset.id));
-  if (product) {
-    alert(`"${product.name}" added to your enquiry list!\n\nLog in or register to place orders.`);
-  }
-});
 
 // Initialize
 build_subcategory_filter();

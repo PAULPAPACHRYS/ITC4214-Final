@@ -1,0 +1,141 @@
+.cart_layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 28px;
+  align-items: start;
+  padding-top: 32px;
+  padding-bottom: 60px;
+}
+
+/* Item list (left) */
+.cart_items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cart_item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--white);
+  border-radius: var(--radius_md);
+  box-shadow: var(--shadow_sm);
+  padding: 14px 18px;
+}
+
+.cart_item_emoji {
+  font-size: 2rem;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--navy);
+  border-radius: var(--radius_sm);
+  flex-shrink: 0;
+}
+
+.cart_item_info { flex: 1; min-width: 0; }
+.cart_item_name {
+  font-family: var(--font_display);
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 1.05rem;
+}
+.cart_item_unit { font-size: .82rem; color: var(--gray_dk); }
+
+.cart_item_controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.cart_line_total {
+  font-family: var(--font_display);
+  font-weight: 700;
+  color: var(--navy);
+  min-width: 64px;
+  text-align: right;
+}
+.cart_remove {
+  background: none;
+  border: none;
+  color: var(--coral);
+  font-weight: 600;
+  font-size: .85rem;
+}
+.cart_remove:hover { text-decoration: underline; }
+
+/* Empty state */
+.cart_empty {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--gray_dk);
+  background: var(--white);
+  border-radius: var(--radius_md);
+  box-shadow: var(--shadow_sm);
+}
+.cart_empty_icon { font-size: 3rem; margin-bottom: 12px; }
+.cart_empty h3 {
+  font-family: var(--font_display);
+  color: var(--navy);
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+.cart_empty p { margin-bottom: 20px; }
+
+/* Summary (right) */
+.cart_summary {
+  background: var(--white);
+  border-radius: var(--radius_md);
+  box-shadow: var(--shadow_sm);
+  padding: 24px;
+  position: sticky;
+  top: 84px;
+  border-top: 3px solid var(--teal);
+}
+.cart_summary_title {
+  font-family: var(--font_display);
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--navy);
+  margin-bottom: 18px;
+}
+.cart_summary_row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--gray_lt);
+  font-size: .95rem;
+  color: var(--gray_dk);
+}
+.cart_total {
+  font-family: var(--font_display);
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: var(--navy);
+}
+.cart_finalise { width: 100%; }
+
+/* Page hero band (same look as the other pages) */
+.page_hero {
+  background: var(--navy);
+  color: var(--white);
+  padding: 48px 24px;
+  border-bottom: 3px solid var(--teal);
+}
+.page_title {
+  font-family: var(--font_display);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: .02em;
+}
+.page_subtitle { color: var(--gray_mid); margin-top: 4px; }
+
+/* stack on narrow screens */
+@media (max-width: 720px) {
+  .cart_layout { grid-template-columns: 1fr; }
+  .cart_item { flex-wrap: wrap; }
+}

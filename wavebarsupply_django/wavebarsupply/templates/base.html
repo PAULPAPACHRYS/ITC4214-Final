@@ -7,12 +7,13 @@
   <meta name="description" content="{% block meta_description %}WaveBar Supply{% endblock %}">
   <meta name="author" content="Pavlos Papachrysanthou">
   <meta name="keywords" content="HTML">
+  <meta name="csrf-token" content="{{ csrf_token }}">
   <title>{% block title %}WaveBar Supply{% endblock %}</title>
   <link rel="stylesheet" href="{% static 'css/general_style.css' %}" />
   {% block extra_css %}{% endblock %}
   {% block extra_js %}{% endblock %}
 </head>
-<body>
+<body data-authenticated="{{ user.is_authenticated|yesno:'true,false' }}" data-cart-add-url="{% url 'cart:add' %}">
 
 <header class="site_header">
   <nav class="nav_bar">
@@ -32,6 +33,7 @@
       {% endif %}
     </ul>
     <a href="{% url 'catalogue:browse' %}" class="button_primary nav_cta">Shop Now</a>
+    <a href="{% url 'cart:view' %}" class="button_secondary nav_cta">Cart</a>
   </nav>
 </header>
 

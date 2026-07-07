@@ -76,9 +76,11 @@
 .db_table tbody tr:hover { background: var(--cream_lt); }
 .db_empty { text-align: center; color: var(--gray_dk); padding: 24px; }
 
-.db_actions_col { width: 1%; }
-.db_actions_col { text-align: right; }
-.db_table td.db_actions_col { display: flex; gap: 8px; justify-content: flex-end; }
+.db_actions_col {
+  text-align: right;
+  white-space: nowrap;
+  width: 1%;
+}
 
 /* small action buttons */
 .db_btn {
@@ -96,7 +98,8 @@
 .db_btn_edit:hover { background: var(--teal_lt); }
 .db_btn_delete { background: var(--coral); color: var(--white); }
 .db_btn_delete:hover { filter: brightness(1.05); }
-.db_delete_form { margin: 0; }
+.db_btn_edit { margin-right: 6px; vertical-align: middle; }
+.db_delete_form { display: inline-block; margin: 0; vertical-align: middle; }
 
 /* add / edit form */
 .db_form {
