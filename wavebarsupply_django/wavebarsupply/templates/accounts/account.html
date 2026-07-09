@@ -16,7 +16,8 @@
     <!-- Read view -->
     <div class="account_view {% if show_edit %}hidden{% endif %}" id="account_view">
       <dl class="account_details">
-        <div><dt>Full Name</dt><dd>{{ user.full_name }}</dd></div>
+        <div><dt>First Name</dt><dd>{{ user.first_name }}</dd></div>
+        <div><dt>Last Name</dt><dd>{{ user.last_name }}</dd></div>
         <div><dt>Email Address</dt><dd>{{ user.email }}</dd></div>
         <div><dt>Phone Number</dt><dd>{{ user.phone|default:"—" }}</dd></div>
         <div><dt>Beach Bar / Business Name</dt><dd>{{ user.bar_name|default:"—" }}</dd></div>

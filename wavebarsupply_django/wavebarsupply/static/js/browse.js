@@ -35,6 +35,12 @@ const SUBCATEGORIES = {
   'non-alcohol': ['Soft Drinks','Water','Juices','Ice Teas','Coffee','Energy Drinks'],
   'fermented':   ['Beer','Wine','Cider'],
   'distilled':   ['Whisky','Vodka','Rum','Gin','Tequila'],
+  'cocktail':    ['Syrups','Mixers','Bitters','Garnishes'],
+  'ice':         ['Ice cubes','Crushed ice','Dry ice','Ice blocks'],
+  'dairy':       ['Milk','Oat milk','Almond milk','Coconut milk','Cream'],
+  'fresh':       ['Fruit','Berries','Aromatic herbs'],
+  'disposable':  ['Cups','Straws','Napkins'],
+  'snacks':      ['Chips','Mixed nuts','Popcorn','Crackers'],
 };
 
 //changes dynamicaly the product subcategories when the main category changes

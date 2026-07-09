@@ -39,7 +39,7 @@ TABLES = {
                     'columns': ['id', 'order', 'product', 'quantity', 'unit_price'],
                     'form': forms.OrderItemForm},
     'users':       {'model': Users,     'label': 'Users',       'admin_only': True,
-                    'columns': ['id', 'full_name', 'email', 'role', 'bar_name', 'bar_location'],
+                    'columns': ['id', 'first_name', 'last_name', 'email', 'role', 'bar_name', 'bar_location'],
                     'form': forms.UserEditForm, 'add_form': forms.UserCreateForm},
 }
 

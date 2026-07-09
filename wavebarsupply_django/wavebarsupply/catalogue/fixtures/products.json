@@ -1,942 +1,1489 @@
 [
-  {
-    "model": "catalogue.product",
-    "pk": 1,
-    "fields": {
-      "name": "Coca-Cola Classic",
-      "price": "1.20",
-      "volume": 330,
-      "abv": "0.0",
-      "emoji": "🥤",
-      "tags": [
-        "cola",
-        "classic",
-        "carbonated"
-      ],
-      "category": 1,
-      "brand": 1
+    {
+        "model": "catalogue.product",
+        "pk": 1,
+        "fields": {
+            "name": "Coca-Cola Classic",
+            "price": "1.20",
+            "volume": 330,
+            "abv": "0.0",
+            "emoji": "🥤",
+            "tags": [
+                "cola",
+                "classic",
+                "carbonated"
+            ],
+            "category": 1,
+            "brand": 1
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 2,
+        "fields": {
+            "name": "Coca-Cola Zero",
+            "price": "1.20",
+            "volume": 330,
+            "abv": "0.0",
+            "emoji": "🥤",
+            "tags": [
+                "cola",
+                "zero sugar",
+                "carbonated"
+            ],
+            "category": 1,
+            "brand": 1
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 3,
+        "fields": {
+            "name": "Sprite Lemon-Lime",
+            "price": "1.15",
+            "volume": 330,
+            "abv": "0.0",
+            "emoji": "🥤",
+            "tags": [
+                "lemon",
+                "lime",
+                "carbonated"
+            ],
+            "category": 1,
+            "brand": 2
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 4,
+        "fields": {
+            "name": "Fanta Orange",
+            "price": "1.15",
+            "volume": 330,
+            "abv": "0.0",
+            "emoji": "🥤",
+            "tags": [
+                "orange",
+                "fruity",
+                "carbonated"
+            ],
+            "category": 1,
+            "brand": 3
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 5,
+        "fields": {
+            "name": "Pepsi Max",
+            "price": "1.10",
+            "volume": 500,
+            "abv": "0.0",
+            "emoji": "🥤",
+            "tags": [
+                "cola",
+                "max",
+                "carbonated"
+            ],
+            "category": 1,
+            "brand": 4
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 6,
+        "fields": {
+            "name": "Souroti Sparkling",
+            "price": "0.80",
+            "volume": 500,
+            "abv": "0.0",
+            "emoji": "💧",
+            "tags": [
+                "sparkling",
+                "mineral",
+                "greek"
+            ],
+            "category": 2,
+            "brand": 5
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 7,
+        "fields": {
+            "name": "Evian Still",
+            "price": "1.20",
+            "volume": 750,
+            "abv": "0.0",
+            "emoji": "💧",
+            "tags": [
+                "still",
+                "premium",
+                "mineral"
+            ],
+            "category": 2,
+            "brand": 6
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 8,
+        "fields": {
+            "name": "Vikos Natural",
+            "price": "0.60",
+            "volume": 500,
+            "abv": "0.0",
+            "emoji": "💧",
+            "tags": [
+                "still",
+                "natural",
+                "greek"
+            ],
+            "category": 2,
+            "brand": 7
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 9,
+        "fields": {
+            "name": "San Pellegrino",
+            "price": "1.80",
+            "volume": 750,
+            "abv": "0.0",
+            "emoji": "💧",
+            "tags": [
+                "sparkling",
+                "italian",
+                "premium"
+            ],
+            "category": 2,
+            "brand": 8
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 10,
+        "fields": {
+            "name": "Tropicana Orange",
+            "price": "2.20",
+            "volume": 1000,
+            "abv": "0.0",
+            "emoji": "🍊",
+            "tags": [
+                "orange",
+                "100% juice",
+                "no added sugar"
+            ],
+            "category": 3,
+            "brand": 9
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 11,
+        "fields": {
+            "name": "Innocent Mango Smoothie",
+            "price": "2.80",
+            "volume": 750,
+            "abv": "0.0",
+            "emoji": "🥭",
+            "tags": [
+                "mango",
+                "smoothie",
+                "tropical"
+            ],
+            "category": 3,
+            "brand": 10
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 12,
+        "fields": {
+            "name": "Amita Peach Juice",
+            "price": "1.50",
+            "volume": 1000,
+            "abv": "0.0",
+            "emoji": "🍑",
+            "tags": [
+                "peach",
+                "nectar",
+                "greek"
+            ],
+            "category": 3,
+            "brand": 11
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 13,
+        "fields": {
+            "name": "Lipton Peach Ice Tea",
+            "price": "1.30",
+            "volume": 500,
+            "abv": "0.0",
+            "emoji": "🍵",
+            "tags": [
+                "peach",
+                "sweet",
+                "iced"
+            ],
+            "category": 4,
+            "brand": 12
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 14,
+        "fields": {
+            "name": "Nestea Lemon",
+            "price": "1.25",
+            "volume": 500,
+            "abv": "0.0",
+            "emoji": "🍵",
+            "tags": [
+                "lemon",
+                "classic",
+                "iced"
+            ],
+            "category": 4,
+            "brand": 13
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 15,
+        "fields": {
+            "name": "Gold Peak Green Tea",
+            "price": "1.60",
+            "volume": 547,
+            "abv": "0.0",
+            "emoji": "🍵",
+            "tags": [
+                "green",
+                "unsweetened",
+                "natural"
+            ],
+            "category": 4,
+            "brand": 14
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 16,
+        "fields": {
+            "name": "Nescafé Freddo Espresso",
+            "price": "1.50",
+            "volume": 250,
+            "abv": "0.0",
+            "emoji": "☕",
+            "tags": [
+                "espresso",
+                "cold",
+                "greek"
+            ],
+            "category": 5,
+            "brand": 15
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 17,
+        "fields": {
+            "name": "Starbucks Cold Brew",
+            "price": "3.20",
+            "volume": 325,
+            "abv": "0.0",
+            "emoji": "☕",
+            "tags": [
+                "cold brew",
+                "premium",
+                "smooth"
+            ],
+            "category": 5,
+            "brand": 16
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 18,
+        "fields": {
+            "name": "Lavazza Cappuccino Can",
+            "price": "2.20",
+            "volume": 250,
+            "abv": "0.0",
+            "emoji": "☕",
+            "tags": [
+                "cappuccino",
+                "can",
+                "italian"
+            ],
+            "category": 5,
+            "brand": 17
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 19,
+        "fields": {
+            "name": "Red Bull Original",
+            "price": "2.50",
+            "volume": 250,
+            "abv": "0.0",
+            "emoji": "⚡",
+            "tags": [
+                "energy",
+                "taurine",
+                "original"
+            ],
+            "category": 6,
+            "brand": 18
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 20,
+        "fields": {
+            "name": "Monster Energy Green",
+            "price": "2.30",
+            "volume": 500,
+            "abv": "0.0",
+            "emoji": "⚡",
+            "tags": [
+                "energy",
+                "large",
+                "green"
+            ],
+            "category": 6,
+            "brand": 19
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 21,
+        "fields": {
+            "name": "Celsius Tropical",
+            "price": "2.80",
+            "volume": 355,
+            "abv": "0.0",
+            "emoji": "⚡",
+            "tags": [
+                "energy",
+                "fitness",
+                "tropical"
+            ],
+            "category": 6,
+            "brand": 20
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 22,
+        "fields": {
+            "name": "Mythos Lager",
+            "price": "1.80",
+            "volume": 500,
+            "abv": "4.7",
+            "emoji": "🍺",
+            "tags": [
+                "lager",
+                "greek",
+                "refreshing"
+            ],
+            "category": 7,
+            "brand": 21
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 23,
+        "fields": {
+            "name": "Fix Hellas",
+            "price": "1.90",
+            "volume": 500,
+            "abv": "5.0",
+            "emoji": "🍺",
+            "tags": [
+                "pilsner",
+                "greek",
+                "classic"
+            ],
+            "category": 7,
+            "brand": 22
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 24,
+        "fields": {
+            "name": "Heineken",
+            "price": "2.20",
+            "volume": 330,
+            "abv": "5.0",
+            "emoji": "🍺",
+            "tags": [
+                "lager",
+                "dutch",
+                "international"
+            ],
+            "category": 7,
+            "brand": 23
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 25,
+        "fields": {
+            "name": "Corona Extra",
+            "price": "2.50",
+            "volume": 330,
+            "abv": "4.5",
+            "emoji": "🍺",
+            "tags": [
+                "lager",
+                "mexican",
+                "beach"
+            ],
+            "category": 7,
+            "brand": 24
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 26,
+        "fields": {
+            "name": "Alfa Lager",
+            "price": "1.70",
+            "volume": 500,
+            "abv": "5.0",
+            "emoji": "🍺",
+            "tags": [
+                "lager",
+                "greek",
+                "light"
+            ],
+            "category": 7,
+            "brand": 25
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 27,
+        "fields": {
+            "name": "Craft IPA Beach Brew",
+            "price": "3.40",
+            "volume": 440,
+            "abv": "6.5",
+            "emoji": "🍺",
+            "tags": [
+                "IPA",
+                "craft",
+                "hoppy"
+            ],
+            "category": 7,
+            "brand": 26
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 28,
+        "fields": {
+            "name": "Assyrtiko Santorini",
+            "price": "12.00",
+            "volume": 750,
+            "abv": "13.5",
+            "emoji": "🍷",
+            "tags": [
+                "white",
+                "dry",
+                "greek",
+                "volcanic"
+            ],
+            "category": 8,
+            "brand": 27
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 29,
+        "fields": {
+            "name": "Agiorgitiko Red",
+            "price": "10.00",
+            "volume": 750,
+            "abv": "13.0",
+            "emoji": "🍷",
+            "tags": [
+                "red",
+                "dry",
+                "greek",
+                "nemea"
+            ],
+            "category": 8,
+            "brand": 28
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 30,
+        "fields": {
+            "name": "Prosecco DOC",
+            "price": "9.00",
+            "volume": 750,
+            "abv": "11.0",
+            "emoji": "🥂",
+            "tags": [
+                "sparkling",
+                "italian",
+                "prosecco"
+            ],
+            "category": 8,
+            "brand": 29
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 31,
+        "fields": {
+            "name": "Rosé de Provence",
+            "price": "18.00",
+            "volume": 750,
+            "abv": "13.0",
+            "emoji": "🥂",
+            "tags": [
+                "rosé",
+                "french",
+                "premium"
+            ],
+            "category": 8,
+            "brand": 30
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 32,
+        "fields": {
+            "name": "Strongbow Original",
+            "price": "2.80",
+            "volume": 500,
+            "abv": "5.0",
+            "emoji": "🍎",
+            "tags": [
+                "apple",
+                "dry",
+                "classic"
+            ],
+            "category": 9,
+            "brand": 31
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 33,
+        "fields": {
+            "name": "Rekorderlig Strawberry",
+            "price": "3.20",
+            "volume": 500,
+            "abv": "4.0",
+            "emoji": "🍓",
+            "tags": [
+                "strawberry",
+                "sweet",
+                "fruity"
+            ],
+            "category": 9,
+            "brand": 32
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 34,
+        "fields": {
+            "name": "Kopparberg Mixed Fruit",
+            "price": "3.10",
+            "volume": 500,
+            "abv": "4.0",
+            "emoji": "🍏",
+            "tags": [
+                "mixed fruit",
+                "swedish",
+                "sweet"
+            ],
+            "category": 9,
+            "brand": 33
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 35,
+        "fields": {
+            "name": "Jack Daniel's No.7",
+            "price": "24.00",
+            "volume": 700,
+            "abv": "40.0",
+            "emoji": "🥃",
+            "tags": [
+                "tennessee",
+                "american",
+                "classic"
+            ],
+            "category": 10,
+            "brand": 34
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 36,
+        "fields": {
+            "name": "Johnnie Walker Black",
+            "price": "28.00",
+            "volume": 700,
+            "abv": "40.0",
+            "emoji": "🥃",
+            "tags": [
+                "blended",
+                "scotch",
+                "smoky"
+            ],
+            "category": 10,
+            "brand": 35
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 37,
+        "fields": {
+            "name": "Glenfiddich 12yr",
+            "price": "36.00",
+            "volume": 700,
+            "abv": "40.0",
+            "emoji": "🥃",
+            "tags": [
+                "single malt",
+                "scotch",
+                "premium"
+            ],
+            "category": 10,
+            "brand": 36
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 38,
+        "fields": {
+            "name": "Jameson Irish",
+            "price": "22.00",
+            "volume": 700,
+            "abv": "40.0",
+            "emoji": "🥃",
+            "tags": [
+                "irish",
+                "smooth",
+                "blended"
+            ],
+            "category": 10,
+            "brand": 37
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 39,
+        "fields": {
+            "name": "Absolut Original",
+            "price": "18.00",
+            "volume": 700,
+            "abv": "40.0",
+            "emoji": "🫙",
+            "tags": [
+                "swedish",
+                "neutral",
+                "classic"
+            ],
+            "category": 11,
+            "brand": 38
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 40,
+        "fields": {
+            "name": "Grey Goose",
+            "price": "34.00",
+            "volume": 700,
+            "abv": "40.0",
+            "emoji": "🫙",
+            "tags": [
+                "french",
+                "premium",
+                "smooth"
+            ],
+            "category": 11,
+            "brand": 39
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 41,
+        "fields": {
+            "name": "Smirnoff No.21",
+            "price": "14.00",
+            "volume": 700,
+            "abv": "37.5",
+            "emoji": "🫙",
+            "tags": [
+                "russian",
+                "triple distilled",
+                "value"
+            ],
+            "category": 11,
+            "brand": 40
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 42,
+        "fields": {
+            "name": "Belvedere Pure",
+            "price": "38.00",
+            "volume": 700,
+            "abv": "40.0",
+            "emoji": "🫙",
+            "tags": [
+                "polish",
+                "rye",
+                "ultra-premium"
+            ],
+            "category": 11,
+            "brand": 41
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 43,
+        "fields": {
+            "name": "Bacardi Carta Blanca",
+            "price": "16.00",
+            "volume": 700,
+            "abv": "37.5",
+            "emoji": "🍹",
+            "tags": [
+                "white",
+                "light",
+                "cocktail"
+            ],
+            "category": 12,
+            "brand": 42
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 44,
+        "fields": {
+            "name": "Captain Morgan Spiced",
+            "price": "18.00",
+            "volume": 700,
+            "abv": "35.0",
+            "emoji": "🍹",
+            "tags": [
+                "spiced",
+                "golden",
+                "sweet"
+            ],
+            "category": 12,
+            "brand": 43
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 45,
+        "fields": {
+            "name": "Diplomatico Reserva",
+            "price": "32.00",
+            "volume": 700,
+            "abv": "40.0",
+            "emoji": "🍹",
+            "tags": [
+                "venezuelan",
+                "dark",
+                "premium",
+                "sipping"
+            ],
+            "category": 12,
+            "brand": 44
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 46,
+        "fields": {
+            "name": "Bombay Sapphire",
+            "price": "22.00",
+            "volume": 700,
+            "abv": "40.0",
+            "emoji": "🌿",
+            "tags": [
+                "london dry",
+                "botanical",
+                "classic"
+            ],
+            "category": 13,
+            "brand": 45
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 47,
+        "fields": {
+            "name": "Hendrick's",
+            "price": "30.00",
+            "volume": 700,
+            "abv": "41.4",
+            "emoji": "🌿",
+            "tags": [
+                "scottish",
+                "cucumber",
+                "floral",
+                "premium"
+            ],
+            "category": 13,
+            "brand": 46
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 48,
+        "fields": {
+            "name": "Tanqueray No.Ten",
+            "price": "28.00",
+            "volume": 700,
+            "abv": "47.3",
+            "emoji": "🌿",
+            "tags": [
+                "citrus",
+                "fresh",
+                "premium"
+            ],
+            "category": 13,
+            "brand": 47
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 49,
+        "fields": {
+            "name": "Monkey 47",
+            "price": "42.00",
+            "volume": 500,
+            "abv": "47.0",
+            "emoji": "🌿",
+            "tags": [
+                "german",
+                "47 botanicals",
+                "ultra-premium"
+            ],
+            "category": 13,
+            "brand": 48
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 50,
+        "fields": {
+            "name": "Jose Cuervo Silver",
+            "price": "20.00",
+            "volume": 700,
+            "abv": "38.0",
+            "emoji": "🌵",
+            "tags": [
+                "silver",
+                "blanco",
+                "cocktail"
+            ],
+            "category": 14,
+            "brand": 49
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 51,
+        "fields": {
+            "name": "Patron Silver",
+            "price": "40.00",
+            "volume": 700,
+            "abv": "40.0",
+            "emoji": "🌵",
+            "tags": [
+                "premium",
+                "100% agave",
+                "smooth"
+            ],
+            "category": 14,
+            "brand": 50
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 52,
+        "fields": {
+            "name": "Don Julio Blanco",
+            "price": "48.00",
+            "volume": 700,
+            "abv": "40.0",
+            "emoji": "🌵",
+            "tags": [
+                "ultra-premium",
+                "100% agave",
+                "clean"
+            ],
+            "category": 14,
+            "brand": 51
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 53,
+        "fields": {
+            "name": "Monin Grenadine Syrup",
+            "price": "6.50",
+            "volume": 700,
+            "abv": "0.0",
+            "emoji": "🍯",
+            "tags": [
+                "syrup",
+                "grenadine",
+                "cocktail"
+            ],
+            "category": 15,
+            "brand": 52
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 54,
+        "fields": {
+            "name": "Monin Vanilla Syrup",
+            "price": "6.90",
+            "volume": 700,
+            "abv": "0.0",
+            "emoji": "🍯",
+            "tags": [
+                "syrup",
+                "vanilla",
+                "cocktail"
+            ],
+            "category": 15,
+            "brand": 52
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 55,
+        "fields": {
+            "name": "Fever-Tree Indian Tonic Water",
+            "price": "1.10",
+            "volume": 200,
+            "abv": "0.0",
+            "emoji": "🫧",
+            "tags": [
+                "tonic",
+                "mixer",
+                "cocktail"
+            ],
+            "category": 16,
+            "brand": 53
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 56,
+        "fields": {
+            "name": "Fever-Tree Ginger Beer",
+            "price": "1.20",
+            "volume": 200,
+            "abv": "0.0",
+            "emoji": "🫧",
+            "tags": [
+                "ginger beer",
+                "mixer",
+                "cocktail"
+            ],
+            "category": 16,
+            "brand": 53
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 57,
+        "fields": {
+            "name": "Angostura Aromatic Bitters",
+            "price": "12.90",
+            "volume": 200,
+            "abv": "44.7",
+            "emoji": "🧪",
+            "tags": [
+                "bitters",
+                "aromatic",
+                "cocktail"
+            ],
+            "category": 17,
+            "brand": 54
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 58,
+        "fields": {
+            "name": "Angostura Orange Bitters",
+            "price": "13.50",
+            "volume": 100,
+            "abv": "28.0",
+            "emoji": "🧪",
+            "tags": [
+                "bitters",
+                "orange",
+                "cocktail"
+            ],
+            "category": 17,
+            "brand": 54
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 59,
+        "fields": {
+            "name": "Luxardo Maraschino Cherries",
+            "price": "14.90",
+            "volume": 400,
+            "abv": "0.0",
+            "emoji": "🍒",
+            "tags": [
+                "garnish",
+                "cherry",
+                "cocktail"
+            ],
+            "category": 18,
+            "brand": 55
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 60,
+        "fields": {
+            "name": "Luxardo Cocktail Olives",
+            "price": "7.50",
+            "volume": 350,
+            "abv": "0.0",
+            "emoji": "🫒",
+            "tags": [
+                "garnish",
+                "olive",
+                "cocktail"
+            ],
+            "category": 18,
+            "brand": 55
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 61,
+        "fields": {
+            "name": "Kristal Ice Cubes 2kg",
+            "price": "3.50",
+            "volume": 2000,
+            "abv": "0.0",
+            "emoji": "🧊",
+            "tags": [
+                "ice",
+                "cubes"
+            ],
+            "category": 19,
+            "brand": 56
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 62,
+        "fields": {
+            "name": "Kristal Crushed Ice 2kg",
+            "price": "3.80",
+            "volume": 2000,
+            "abv": "0.0",
+            "emoji": "🧊",
+            "tags": [
+                "ice",
+                "crushed"
+            ],
+            "category": 20,
+            "brand": 56
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 63,
+        "fields": {
+            "name": "DryChill Dry Ice 3kg",
+            "price": "18.00",
+            "volume": 3000,
+            "abv": "0.0",
+            "emoji": "🌫️",
+            "tags": [
+                "ice",
+                "dry ice",
+                "effect"
+            ],
+            "category": 21,
+            "brand": 57
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 64,
+        "fields": {
+            "name": "Kristal Clear Ice Block",
+            "price": "9.00",
+            "volume": 5000,
+            "abv": "0.0",
+            "emoji": "🧊",
+            "tags": [
+                "ice",
+                "block",
+                "clear"
+            ],
+            "category": 22,
+            "brand": 56
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 65,
+        "fields": {
+            "name": "Delta Fresh Whole Milk 1L",
+            "price": "1.40",
+            "volume": 1000,
+            "abv": "0.0",
+            "emoji": "🥛",
+            "tags": [
+                "milk",
+                "dairy",
+                "fresh"
+            ],
+            "category": 23,
+            "brand": 58
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 66,
+        "fields": {
+            "name": "Oatly Barista Oat Milk 1L",
+            "price": "2.60",
+            "volume": 1000,
+            "abv": "0.0",
+            "emoji": "🥛",
+            "tags": [
+                "oat milk",
+                "barista",
+                "plant-based"
+            ],
+            "category": 24,
+            "brand": 59
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 67,
+        "fields": {
+            "name": "Alpro Almond Milk 1L",
+            "price": "2.30",
+            "volume": 1000,
+            "abv": "0.0",
+            "emoji": "🥛",
+            "tags": [
+                "almond milk",
+                "plant-based"
+            ],
+            "category": 25,
+            "brand": 60
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 68,
+        "fields": {
+            "name": "Alpro Coconut Milk 1L",
+            "price": "2.40",
+            "volume": 1000,
+            "abv": "0.0",
+            "emoji": "🥥",
+            "tags": [
+                "coconut milk",
+                "plant-based"
+            ],
+            "category": 26,
+            "brand": 60
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 69,
+        "fields": {
+            "name": "Delta Heavy Cream 500ml",
+            "price": "2.20",
+            "volume": 500,
+            "abv": "0.0",
+            "emoji": "🥛",
+            "tags": [
+                "cream",
+                "dairy"
+            ],
+            "category": 27,
+            "brand": 58
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 70,
+        "fields": {
+            "name": "Fresh Lemons (case)",
+            "price": "8.00",
+            "volume": 1000,
+            "abv": "0.0",
+            "emoji": "🍋",
+            "tags": [
+                "fruit",
+                "lemon",
+                "citrus"
+            ],
+            "category": 28,
+            "brand": 61
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 71,
+        "fields": {
+            "name": "Fresh Oranges (case)",
+            "price": "7.50",
+            "volume": 1000,
+            "abv": "0.0",
+            "emoji": "🍊",
+            "tags": [
+                "fruit",
+                "orange",
+                "citrus"
+            ],
+            "category": 28,
+            "brand": 61
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 72,
+        "fields": {
+            "name": "Fresh Limes (case)",
+            "price": "9.00",
+            "volume": 1000,
+            "abv": "0.0",
+            "emoji": "🍏",
+            "tags": [
+                "fruit",
+                "lime",
+                "citrus"
+            ],
+            "category": 28,
+            "brand": 61
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 73,
+        "fields": {
+            "name": "Fresh Strawberries 500g",
+            "price": "4.50",
+            "volume": 500,
+            "abv": "0.0",
+            "emoji": "🍓",
+            "tags": [
+                "berries",
+                "strawberry"
+            ],
+            "category": 29,
+            "brand": 61
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 74,
+        "fields": {
+            "name": "Fresh Blueberries 500g",
+            "price": "6.00",
+            "volume": 500,
+            "abv": "0.0",
+            "emoji": "🫐",
+            "tags": [
+                "berries",
+                "blueberry"
+            ],
+            "category": 29,
+            "brand": 61
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 75,
+        "fields": {
+            "name": "Fresh Mint Bunch",
+            "price": "1.80",
+            "volume": 100,
+            "abv": "0.0",
+            "emoji": "🌿",
+            "tags": [
+                "herbs",
+                "mint",
+                "garnish"
+            ],
+            "category": 30,
+            "brand": 61
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 76,
+        "fields": {
+            "name": "Fresh Basil Bunch",
+            "price": "1.90",
+            "volume": 100,
+            "abv": "0.0",
+            "emoji": "🌿",
+            "tags": [
+                "herbs",
+                "basil",
+                "garnish"
+            ],
+            "category": 30,
+            "brand": 61
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 77,
+        "fields": {
+            "name": "Huhtamaki Plastic Cups 500ml (50pk)",
+            "price": "5.50",
+            "volume": 500,
+            "abv": "0.0",
+            "emoji": "🥤",
+            "tags": [
+                "cups",
+                "disposable",
+                "plastic"
+            ],
+            "category": 31,
+            "brand": 62
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 78,
+        "fields": {
+            "name": "Huhtamaki Paper Straws (250pk)",
+            "price": "4.00",
+            "volume": 250,
+            "abv": "0.0",
+            "emoji": "🥤",
+            "tags": [
+                "straws",
+                "paper",
+                "disposable"
+            ],
+            "category": 32,
+            "brand": 62
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 79,
+        "fields": {
+            "name": "Duni Cocktail Napkins (500pk)",
+            "price": "6.50",
+            "volume": 500,
+            "abv": "0.0",
+            "emoji": "🧻",
+            "tags": [
+                "napkins",
+                "disposable"
+            ],
+            "category": 33,
+            "brand": 63
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 80,
+        "fields": {
+            "name": "Lay's Classic Chips 150g",
+            "price": "1.80",
+            "volume": 150,
+            "abv": "0.0",
+            "emoji": "🥔",
+            "tags": [
+                "chips",
+                "snack",
+                "potato"
+            ],
+            "category": 34,
+            "brand": 64
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 81,
+        "fields": {
+            "name": "Planters Mixed Nuts 200g",
+            "price": "3.50",
+            "volume": 200,
+            "abv": "0.0",
+            "emoji": "🥜",
+            "tags": [
+                "nuts",
+                "snack"
+            ],
+            "category": 35,
+            "brand": 65
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 82,
+        "fields": {
+            "name": "Propercorn Sweet & Salty 100g",
+            "price": "2.20",
+            "volume": 100,
+            "abv": "0.0",
+            "emoji": "🍿",
+            "tags": [
+                "popcorn",
+                "snack"
+            ],
+            "category": 36,
+            "brand": 66
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 83,
+        "fields": {
+            "name": "Tuc Original Crackers 100g",
+            "price": "1.60",
+            "volume": 200,
+            "abv": "0.0",
+            "emoji": "🍘",
+            "tags": [
+                "crackers",
+                "snack"
+            ],
+            "category": 37,
+            "brand": 67
+        }
     }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 2,
-    "fields": {
-      "name": "Coca-Cola Zero",
-      "price": "1.20",
-      "volume": 330,
-      "abv": "0.0",
-      "emoji": "🥤",
-      "tags": [
-        "cola",
-        "zero sugar",
-        "carbonated"
-      ],
-      "category": 1,
-      "brand": 1
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 3,
-    "fields": {
-      "name": "Sprite Lemon-Lime",
-      "price": "1.15",
-      "volume": 330,
-      "abv": "0.0",
-      "emoji": "🥤",
-      "tags": [
-        "lemon",
-        "lime",
-        "carbonated"
-      ],
-      "category": 1,
-      "brand": 2
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 4,
-    "fields": {
-      "name": "Fanta Orange",
-      "price": "1.15",
-      "volume": 330,
-      "abv": "0.0",
-      "emoji": "🥤",
-      "tags": [
-        "orange",
-        "fruity",
-        "carbonated"
-      ],
-      "category": 1,
-      "brand": 3
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 5,
-    "fields": {
-      "name": "Pepsi Max",
-      "price": "1.10",
-      "volume": 500,
-      "abv": "0.0",
-      "emoji": "🥤",
-      "tags": [
-        "cola",
-        "max",
-        "carbonated"
-      ],
-      "category": 1,
-      "brand": 4
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 6,
-    "fields": {
-      "name": "Souroti Sparkling",
-      "price": "0.80",
-      "volume": 500,
-      "abv": "0.0",
-      "emoji": "💧",
-      "tags": [
-        "sparkling",
-        "mineral",
-        "greek"
-      ],
-      "category": 2,
-      "brand": 5
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 7,
-    "fields": {
-      "name": "Evian Still",
-      "price": "1.20",
-      "volume": 750,
-      "abv": "0.0",
-      "emoji": "💧",
-      "tags": [
-        "still",
-        "premium",
-        "mineral"
-      ],
-      "category": 2,
-      "brand": 6
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 8,
-    "fields": {
-      "name": "Vikos Natural",
-      "price": "0.60",
-      "volume": 500,
-      "abv": "0.0",
-      "emoji": "💧",
-      "tags": [
-        "still",
-        "natural",
-        "greek"
-      ],
-      "category": 2,
-      "brand": 7
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 9,
-    "fields": {
-      "name": "San Pellegrino",
-      "price": "1.80",
-      "volume": 750,
-      "abv": "0.0",
-      "emoji": "💧",
-      "tags": [
-        "sparkling",
-        "italian",
-        "premium"
-      ],
-      "category": 2,
-      "brand": 8
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 10,
-    "fields": {
-      "name": "Tropicana Orange",
-      "price": "2.20",
-      "volume": 1000,
-      "abv": "0.0",
-      "emoji": "🍊",
-      "tags": [
-        "orange",
-        "100% juice",
-        "no added sugar"
-      ],
-      "category": 3,
-      "brand": 9
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 11,
-    "fields": {
-      "name": "Innocent Mango Smoothie",
-      "price": "2.80",
-      "volume": 750,
-      "abv": "0.0",
-      "emoji": "🥭",
-      "tags": [
-        "mango",
-        "smoothie",
-        "tropical"
-      ],
-      "category": 3,
-      "brand": 10
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 12,
-    "fields": {
-      "name": "Amita Peach Juice",
-      "price": "1.50",
-      "volume": 1000,
-      "abv": "0.0",
-      "emoji": "🍑",
-      "tags": [
-        "peach",
-        "nectar",
-        "greek"
-      ],
-      "category": 3,
-      "brand": 11
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 13,
-    "fields": {
-      "name": "Lipton Peach Ice Tea",
-      "price": "1.30",
-      "volume": 500,
-      "abv": "0.0",
-      "emoji": "🍵",
-      "tags": [
-        "peach",
-        "sweet",
-        "iced"
-      ],
-      "category": 4,
-      "brand": 12
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 14,
-    "fields": {
-      "name": "Nestea Lemon",
-      "price": "1.25",
-      "volume": 500,
-      "abv": "0.0",
-      "emoji": "🍵",
-      "tags": [
-        "lemon",
-        "classic",
-        "iced"
-      ],
-      "category": 4,
-      "brand": 13
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 15,
-    "fields": {
-      "name": "Gold Peak Green Tea",
-      "price": "1.60",
-      "volume": 547,
-      "abv": "0.0",
-      "emoji": "🍵",
-      "tags": [
-        "green",
-        "unsweetened",
-        "natural"
-      ],
-      "category": 4,
-      "brand": 14
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 16,
-    "fields": {
-      "name": "Nescafé Freddo Espresso",
-      "price": "1.50",
-      "volume": 250,
-      "abv": "0.0",
-      "emoji": "☕",
-      "tags": [
-        "espresso",
-        "cold",
-        "greek"
-      ],
-      "category": 5,
-      "brand": 15
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 17,
-    "fields": {
-      "name": "Starbucks Cold Brew",
-      "price": "3.20",
-      "volume": 325,
-      "abv": "0.0",
-      "emoji": "☕",
-      "tags": [
-        "cold brew",
-        "premium",
-        "smooth"
-      ],
-      "category": 5,
-      "brand": 16
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 18,
-    "fields": {
-      "name": "Lavazza Cappuccino Can",
-      "price": "2.20",
-      "volume": 250,
-      "abv": "0.0",
-      "emoji": "☕",
-      "tags": [
-        "cappuccino",
-        "can",
-        "italian"
-      ],
-      "category": 5,
-      "brand": 17
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 19,
-    "fields": {
-      "name": "Red Bull Original",
-      "price": "2.50",
-      "volume": 250,
-      "abv": "0.0",
-      "emoji": "⚡",
-      "tags": [
-        "energy",
-        "taurine",
-        "original"
-      ],
-      "category": 6,
-      "brand": 18
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 20,
-    "fields": {
-      "name": "Monster Energy Green",
-      "price": "2.30",
-      "volume": 500,
-      "abv": "0.0",
-      "emoji": "⚡",
-      "tags": [
-        "energy",
-        "large",
-        "green"
-      ],
-      "category": 6,
-      "brand": 19
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 21,
-    "fields": {
-      "name": "Celsius Tropical",
-      "price": "2.80",
-      "volume": 355,
-      "abv": "0.0",
-      "emoji": "⚡",
-      "tags": [
-        "energy",
-        "fitness",
-        "tropical"
-      ],
-      "category": 6,
-      "brand": 20
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 22,
-    "fields": {
-      "name": "Mythos Lager",
-      "price": "1.80",
-      "volume": 500,
-      "abv": "4.7",
-      "emoji": "🍺",
-      "tags": [
-        "lager",
-        "greek",
-        "refreshing"
-      ],
-      "category": 7,
-      "brand": 21
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 23,
-    "fields": {
-      "name": "Fix Hellas",
-      "price": "1.90",
-      "volume": 500,
-      "abv": "5.0",
-      "emoji": "🍺",
-      "tags": [
-        "pilsner",
-        "greek",
-        "classic"
-      ],
-      "category": 7,
-      "brand": 22
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 24,
-    "fields": {
-      "name": "Heineken",
-      "price": "2.20",
-      "volume": 330,
-      "abv": "5.0",
-      "emoji": "🍺",
-      "tags": [
-        "lager",
-        "dutch",
-        "international"
-      ],
-      "category": 7,
-      "brand": 23
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 25,
-    "fields": {
-      "name": "Corona Extra",
-      "price": "2.50",
-      "volume": 330,
-      "abv": "4.5",
-      "emoji": "🍺",
-      "tags": [
-        "lager",
-        "mexican",
-        "beach"
-      ],
-      "category": 7,
-      "brand": 24
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 26,
-    "fields": {
-      "name": "Alfa Lager",
-      "price": "1.70",
-      "volume": 500,
-      "abv": "5.0",
-      "emoji": "🍺",
-      "tags": [
-        "lager",
-        "greek",
-        "light"
-      ],
-      "category": 7,
-      "brand": 25
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 27,
-    "fields": {
-      "name": "Craft IPA Beach Brew",
-      "price": "3.40",
-      "volume": 440,
-      "abv": "6.5",
-      "emoji": "🍺",
-      "tags": [
-        "IPA",
-        "craft",
-        "hoppy"
-      ],
-      "category": 7,
-      "brand": 26
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 28,
-    "fields": {
-      "name": "Assyrtiko Santorini",
-      "price": "12.00",
-      "volume": 750,
-      "abv": "13.5",
-      "emoji": "🍷",
-      "tags": [
-        "white",
-        "dry",
-        "greek",
-        "volcanic"
-      ],
-      "category": 8,
-      "brand": 27
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 29,
-    "fields": {
-      "name": "Agiorgitiko Red",
-      "price": "10.00",
-      "volume": 750,
-      "abv": "13.0",
-      "emoji": "🍷",
-      "tags": [
-        "red",
-        "dry",
-        "greek",
-        "nemea"
-      ],
-      "category": 8,
-      "brand": 28
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 30,
-    "fields": {
-      "name": "Prosecco DOC",
-      "price": "9.00",
-      "volume": 750,
-      "abv": "11.0",
-      "emoji": "🥂",
-      "tags": [
-        "sparkling",
-        "italian",
-        "prosecco"
-      ],
-      "category": 8,
-      "brand": 29
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 31,
-    "fields": {
-      "name": "Rosé de Provence",
-      "price": "18.00",
-      "volume": 750,
-      "abv": "13.0",
-      "emoji": "🥂",
-      "tags": [
-        "rosé",
-        "french",
-        "premium"
-      ],
-      "category": 8,
-      "brand": 30
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 32,
-    "fields": {
-      "name": "Strongbow Original",
-      "price": "2.80",
-      "volume": 500,
-      "abv": "5.0",
-      "emoji": "🍎",
-      "tags": [
-        "apple",
-        "dry",
-        "classic"
-      ],
-      "category": 9,
-      "brand": 31
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 33,
-    "fields": {
-      "name": "Rekorderlig Strawberry",
-      "price": "3.20",
-      "volume": 500,
-      "abv": "4.0",
-      "emoji": "🍓",
-      "tags": [
-        "strawberry",
-        "sweet",
-        "fruity"
-      ],
-      "category": 9,
-      "brand": 32
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 34,
-    "fields": {
-      "name": "Kopparberg Mixed Fruit",
-      "price": "3.10",
-      "volume": 500,
-      "abv": "4.0",
-      "emoji": "🍏",
-      "tags": [
-        "mixed fruit",
-        "swedish",
-        "sweet"
-      ],
-      "category": 9,
-      "brand": 33
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 35,
-    "fields": {
-      "name": "Jack Daniel's No.7",
-      "price": "24.00",
-      "volume": 700,
-      "abv": "40.0",
-      "emoji": "🥃",
-      "tags": [
-        "tennessee",
-        "american",
-        "classic"
-      ],
-      "category": 10,
-      "brand": 34
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 36,
-    "fields": {
-      "name": "Johnnie Walker Black",
-      "price": "28.00",
-      "volume": 700,
-      "abv": "40.0",
-      "emoji": "🥃",
-      "tags": [
-        "blended",
-        "scotch",
-        "smoky"
-      ],
-      "category": 10,
-      "brand": 35
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 37,
-    "fields": {
-      "name": "Glenfiddich 12yr",
-      "price": "36.00",
-      "volume": 700,
-      "abv": "40.0",
-      "emoji": "🥃",
-      "tags": [
-        "single malt",
-        "scotch",
-        "premium"
-      ],
-      "category": 10,
-      "brand": 36
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 38,
-    "fields": {
-      "name": "Jameson Irish",
-      "price": "22.00",
-      "volume": 700,
-      "abv": "40.0",
-      "emoji": "🥃",
-      "tags": [
-        "irish",
-        "smooth",
-        "blended"
-      ],
-      "category": 10,
-      "brand": 37
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 39,
-    "fields": {
-      "name": "Absolut Original",
-      "price": "18.00",
-      "volume": 700,
-      "abv": "40.0",
-      "emoji": "🫙",
-      "tags": [
-        "swedish",
-        "neutral",
-        "classic"
-      ],
-      "category": 11,
-      "brand": 38
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 40,
-    "fields": {
-      "name": "Grey Goose",
-      "price": "34.00",
-      "volume": 700,
-      "abv": "40.0",
-      "emoji": "🫙",
-      "tags": [
-        "french",
-        "premium",
-        "smooth"
-      ],
-      "category": 11,
-      "brand": 39
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 41,
-    "fields": {
-      "name": "Smirnoff No.21",
-      "price": "14.00",
-      "volume": 700,
-      "abv": "37.5",
-      "emoji": "🫙",
-      "tags": [
-        "russian",
-        "triple distilled",
-        "value"
-      ],
-      "category": 11,
-      "brand": 40
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 42,
-    "fields": {
-      "name": "Belvedere Pure",
-      "price": "38.00",
-      "volume": 700,
-      "abv": "40.0",
-      "emoji": "🫙",
-      "tags": [
-        "polish",
-        "rye",
-        "ultra-premium"
-      ],
-      "category": 11,
-      "brand": 41
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 43,
-    "fields": {
-      "name": "Bacardi Carta Blanca",
-      "price": "16.00",
-      "volume": 700,
-      "abv": "37.5",
-      "emoji": "🍹",
-      "tags": [
-        "white",
-        "light",
-        "cocktail"
-      ],
-      "category": 12,
-      "brand": 42
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 44,
-    "fields": {
-      "name": "Captain Morgan Spiced",
-      "price": "18.00",
-      "volume": 700,
-      "abv": "35.0",
-      "emoji": "🍹",
-      "tags": [
-        "spiced",
-        "golden",
-        "sweet"
-      ],
-      "category": 12,
-      "brand": 43
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 45,
-    "fields": {
-      "name": "Diplomatico Reserva",
-      "price": "32.00",
-      "volume": 700,
-      "abv": "40.0",
-      "emoji": "🍹",
-      "tags": [
-        "venezuelan",
-        "dark",
-        "premium",
-        "sipping"
-      ],
-      "category": 12,
-      "brand": 44
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 46,
-    "fields": {
-      "name": "Bombay Sapphire",
-      "price": "22.00",
-      "volume": 700,
-      "abv": "40.0",
-      "emoji": "🌿",
-      "tags": [
-        "london dry",
-        "botanical",
-        "classic"
-      ],
-      "category": 13,
-      "brand": 45
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 47,
-    "fields": {
-      "name": "Hendrick's",
-      "price": "30.00",
-      "volume": 700,
-      "abv": "41.4",
-      "emoji": "🌿",
-      "tags": [
-        "scottish",
-        "cucumber",
-        "floral",
-        "premium"
-      ],
-      "category": 13,
-      "brand": 46
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 48,
-    "fields": {
-      "name": "Tanqueray No.Ten",
-      "price": "28.00",
-      "volume": 700,
-      "abv": "47.3",
-      "emoji": "🌿",
-      "tags": [
-        "citrus",
-        "fresh",
-        "premium"
-      ],
-      "category": 13,
-      "brand": 47
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 49,
-    "fields": {
-      "name": "Monkey 47",
-      "price": "42.00",
-      "volume": 500,
-      "abv": "47.0",
-      "emoji": "🌿",
-      "tags": [
-        "german",
-        "47 botanicals",
-        "ultra-premium"
-      ],
-      "category": 13,
-      "brand": 48
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 50,
-    "fields": {
-      "name": "Jose Cuervo Silver",
-      "price": "20.00",
-      "volume": 700,
-      "abv": "38.0",
-      "emoji": "🌵",
-      "tags": [
-        "silver",
-        "blanco",
-        "cocktail"
-      ],
-      "category": 14,
-      "brand": 49
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 51,
-    "fields": {
-      "name": "Patron Silver",
-      "price": "40.00",
-      "volume": 700,
-      "abv": "40.0",
-      "emoji": "🌵",
-      "tags": [
-        "premium",
-        "100% agave",
-        "smooth"
-      ],
-      "category": 14,
-      "brand": 50
-    }
-  },
-  {
-    "model": "catalogue.product",
-    "pk": 52,
-    "fields": {
-      "name": "Don Julio Blanco",
-      "price": "48.00",
-      "volume": 700,
-      "abv": "40.0",
-      "emoji": "🌵",
-      "tags": [
-        "ultra-premium",
-        "100% agave",
-        "clean"
-      ],
-      "category": 14,
-      "brand": 51
-    }
-  }
 ]

@@ -37,7 +37,8 @@ class Users(AbstractBaseUser, PermissionsMixin):
         ('admin', 'Admin'),
     ]
 
-    full_name = models.CharField(max_length=100)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
     role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='customer')
     bar_name = models.CharField(max_length=100, blank=True, default='')
     bar_location = models.CharField(max_length=100, blank=True, default='')
@@ -51,17 +52,17 @@ class Users(AbstractBaseUser, PermissionsMixin):
     objects = UsersManager()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['full_name']
+    REQUIRED_FIELDS = ['first_name', 'last_name']
 
     class Meta:
         db_table = 'users'
         verbose_name_plural = 'users'
 
     def get_full_name(self):
-        return self.full_name
+        return f"{self.first_name} {self.last_name}".strip()
 
     def get_short_name(self):
-        return self.full_name
+        return self.first_name
 
     def __str__(self):
-        return f"{self.full_name} ({self.email})"
+        return f"{self.get_full_name()} ({self.email})"

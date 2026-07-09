@@ -82,8 +82,8 @@ class UserEditForm(forms.ModelForm):
 
     class Meta:
         model = Users
-        fields = ['full_name', 'email', 'phone', 'bar_name', 'bar_location',
-                  'role', 'is_active']
+        fields = ['first_name', 'last_name', 'email', 'phone', 'bar_name',
+                  'bar_location', 'role', 'is_active']
 
     def __init__(self, *a, **k):
         super().__init__(*a, **k)
@@ -93,7 +93,8 @@ class UserEditForm(forms.ModelForm):
 class UserCreateForm(UserCreationForm):
     """Add a new user (built-in UserCreationForm) with a chosen role."""
 
-    full_name = forms.CharField(max_length=100)
+    first_name = forms.CharField(max_length=50)
+    last_name = forms.CharField(max_length=50)
     email = forms.EmailField(max_length=100)
     phone = forms.CharField(max_length=20, required=False)
     bar_name = forms.CharField(max_length=100, required=False)
@@ -101,7 +102,8 @@ class UserCreateForm(UserCreationForm):
 
     class Meta:
         model = Users
-        fields = ['full_name', 'email', 'phone', 'bar_name', 'bar_location', 'role']
+        fields = ['first_name', 'last_name', 'email', 'phone', 'bar_name',
+                  'bar_location', 'role']
 
     def __init__(self, *a, **k):
         super().__init__(*a, **k)

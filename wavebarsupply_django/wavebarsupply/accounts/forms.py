@@ -17,7 +17,8 @@ class RegisterForm(UserCreationForm):
     fields. It provides password1/password2 and hashes the password on save().
     """
 
-    full_name = forms.CharField(max_length=100, label='Full Name')
+    first_name = forms.CharField(max_length=50, label='First Name')
+    last_name = forms.CharField(max_length=50, label='Last Name')
     bar_name = forms.CharField(max_length=100, label='Beach Bar / Business Name')
     email = forms.EmailField(max_length=100, label='Email Address')
     phone = forms.CharField(max_length=20, label='Phone Number')
@@ -27,7 +28,7 @@ class RegisterForm(UserCreationForm):
 
     class Meta:
         model = Users
-        fields = ['full_name', 'bar_name', 'email', 'phone', 'bar_location']
+        fields = ['first_name', 'last_name', 'bar_name', 'email', 'phone', 'bar_location']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -57,9 +58,10 @@ class AccountEditForm(forms.ModelForm):
 
     class Meta:
         model = Users
-        fields = ['full_name', 'email', 'phone', 'bar_name', 'bar_location']
+        fields = ['first_name', 'last_name', 'email', 'phone', 'bar_name', 'bar_location']
         labels = {
-            'full_name': 'Full Name',
+            'first_name': 'First Name',
+            'last_name': 'Last Name',
             'email': 'Email Address',
             'phone': 'Phone Number',
             'bar_name': 'Beach Bar / Business Name',

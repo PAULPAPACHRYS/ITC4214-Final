@@ -149,7 +149,11 @@ input, select { font-family: inherit; }
 }
 .nav_link.active { color: var(--teal); }
 
-.nav_cta { margin-left: 16px; }
+.nav_cta {
+  margin-left: 16px;
+  flex-shrink: 0;      /* don't let a crowded nav squeeze the buttons */
+  white-space: nowrap; /* keep "Shop Now" on one line (no vertical stretch) */
+}
 
 /* Product Cards (used on home and browse page) */
 .product_card {

@@ -39,7 +39,7 @@ def view_cart(request):
         for item in (order.items.select_related('product') if order else [])
     ]
     checkout_form = CheckoutForm(initial={
-        'name': request.user.full_name,
+        'name': request.user.get_full_name(),
         'phone': request.user.phone,
         'email': request.user.email,
         'address': ', '.join(p for p in [request.user.bar_name,

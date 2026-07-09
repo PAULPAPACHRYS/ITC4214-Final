@@ -69,9 +69,15 @@
         {% endif %}
 
         <div class="form_group">
-          <label class="form_label" for="{{ register_form.full_name.id_for_label }}">Full Name</label>
-          {{ register_form.full_name }}
-          {% for error in register_form.full_name.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
+          <label class="form_label" for="{{ register_form.first_name.id_for_label }}">First Name</label>
+          {{ register_form.first_name }}
+          {% for error in register_form.first_name.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
+        </div>
+
+        <div class="form_group">
+          <label class="form_label" for="{{ register_form.last_name.id_for_label }}">Last Name</label>
+          {{ register_form.last_name }}
+          {% for error in register_form.last_name.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
         </div>
 
         <div class="form_group">

@@ -12,6 +12,12 @@ class Category(models.Model):
         ('non-alcohol', 'Non-Alcoholic'),
         ('fermented', 'Fermented'),
         ('distilled', 'Distilled'),
+        ('cocktail', 'Cocktail Ingredients'),
+        ('ice', 'Ice'),
+        ('dairy', 'Dairy Products'),
+        ('fresh', 'Fresh Products'),
+        ('disposable', 'Disposable Products'),
+        ('snacks', 'Bar Snacks'),
     ]
 
     name = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
