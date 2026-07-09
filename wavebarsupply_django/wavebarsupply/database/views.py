@@ -11,6 +11,12 @@ from orders.models import Order, OrderItem
 
 from . import forms
 
+def _objects(config):
+    """Rows for a table: use its custom queryset if it has one, else all rows."""
+    getter = config.get('queryset')
+    return getter() if getter else config['model'].objects.all()
+
+
 # Registry of the tables managed on the Database page.
 #   columns    -> fields shown in the list view
 #   form       -> ModelForm used to edit (and add, unless add_form is given)
@@ -27,7 +33,8 @@ TABLES = {
                     'form': forms.ProductForm},
     'orders':      {'model': Order,     'label': 'Orders',      'admin_only': False,
                     'columns': ['id', 'user', 'order_date', 'status'],
-                    'form': forms.OrderForm},
+                    'form': forms.OrderEditForm, 'add_form': forms.OrderCreateForm,
+                    'queryset': lambda: Order.objects.filter(is_cart=False)},
     'order_items': {'model': OrderItem, 'label': 'Order Items', 'admin_only': False,
                     'columns': ['id', 'order', 'product', 'quantity', 'unit_price'],
                     'form': forms.OrderItemForm},
@@ -64,7 +71,7 @@ def _get_config(request, key):
 def home(request):
     is_admin = request.user.role == 'admin'
     tables = [
-        {'key': key, 'label': cfg['label'], 'count': cfg['model'].objects.count()}
+        {'key': key, 'label': cfg['label'], 'count': _objects(cfg).count()}
         for key, cfg in TABLES.items()
         if not cfg['admin_only'] or is_admin
     ]
@@ -79,7 +86,7 @@ def table(request, key):
     columns = config['columns']
     rows = [
         {'pk': obj.pk, 'cells': [getattr(obj, col) for col in columns]}
-        for obj in config['model'].objects.all()
+        for obj in _objects(config)
     ]
     return render(request, 'database/table.html', {
         'key': key, 'label': config['label'], 'columns': columns, 'rows': rows,

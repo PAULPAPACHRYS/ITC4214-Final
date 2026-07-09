@@ -4,8 +4,8 @@
 {% block title %}WaveBar Supply — Cart{% endblock %}
 {% block meta_description %}Shopping cart{% endblock %}
 
-{% block extra_css %}<link rel="stylesheet" href="{% static 'css/cart_style.css' %}" />{% endblock %}
-{% block extra_js %}<script src="{% static 'js/cart.js' %}" defer></script>{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/cart_style.css' %}?v=7" />{% endblock %}
+{% block extra_js %}<script src="{% static 'js/cart.js' %}?v=7" defer></script><script src="{% static 'js/checkout.js' %}?v=7" defer></script>{% endblock %}
 
 {% block content %}
 <div class="page_hero">
@@ -55,8 +55,78 @@
       <span>Total</span>
       <span class="cart_total" id="cart_total">€{{ total }}</span>
     </div>
-    <button class="button_primary cart_finalise" type="button">Finalise Purchase</button>
+    <button class="button_primary cart_finalise" id="checkout_open" type="button" {% if not items %}disabled{% endif %}>Finalise Purchase</button>
   </aside>
 
 </section>
+
+<!-- Checkout overlay -->
+<div class="checkout_overlay hidden" id="checkout_overlay">
+  <div class="checkout_modal">
+    <button class="checkout_close" id="checkout_close" type="button" aria-label="Close">✕</button>
+
+    <!-- Step 1: details form -->
+    <div id="checkout_form_view">
+      <h2 class="checkout_heading">Checkout</h2>
+      <form id="checkout_form" data-checkout-url="{% url 'cart:checkout' %}" novalidate>
+        <div class="checkout_grid">
+
+          <div class="checkout_col">
+            <h3 class="checkout_subheading">Delivery Details</h3>
+            <div class="checkout_group">
+              <label class="form_label" for="{{ checkout_form.name.id_for_label }}">{{ checkout_form.name.label }}</label>
+              {{ checkout_form.name }}
+            </div>
+            <div class="checkout_group">
+              <label class="form_label" for="{{ checkout_form.address.id_for_label }}">{{ checkout_form.address.label }}</label>
+              {{ checkout_form.address }}
+            </div>
+            <div class="checkout_group">
+              <label class="form_label" for="{{ checkout_form.phone.id_for_label }}">{{ checkout_form.phone.label }}</label>
+              {{ checkout_form.phone }}
+            </div>
+            <div class="checkout_group">
+              <label class="form_label" for="{{ checkout_form.email.id_for_label }}">{{ checkout_form.email.label }}</label>
+              {{ checkout_form.email }}
+            </div>
+          </div>
+
+          <div class="checkout_col">
+            <h3 class="checkout_subheading">Payment</h3>
+            <p class="checkout_amount">Total <span id="checkout_total">€{{ total }}</span></p>
+            <div class="checkout_group">
+              <label class="form_label" for="{{ checkout_form.card_number.id_for_label }}">{{ checkout_form.card_number.label }}</label>
+              {{ checkout_form.card_number }}
+            </div>
+            <div class="checkout_group">
+              <label class="form_label" for="{{ checkout_form.card_holder.id_for_label }}">{{ checkout_form.card_holder.label }}</label>
+              {{ checkout_form.card_holder }}
+            </div>
+            <div class="checkout_row">
+              <div class="checkout_group">
+                <label class="form_label" for="{{ checkout_form.expiration.id_for_label }}">{{ checkout_form.expiration.label }}</label>
+                {{ checkout_form.expiration }}
+              </div>
+              <div class="checkout_group">
+                <label class="form_label" for="{{ checkout_form.cvv.id_for_label }}">{{ checkout_form.cvv.label }}</label>
+                {{ checkout_form.cvv }}
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <button class="button_primary checkout_proceed" id="checkout_proceed" type="submit" disabled>Proceed</button>
+      </form>
+    </div>
+
+    <!-- Step 2: confirmation -->
+    <div id="checkout_done" class="checkout_done hidden">
+      <p class="checkout_done_icon">✅</p>
+      <h2 class="checkout_heading">Thank you for your order!</h2>
+      <p class="checkout_done_text">Your order number is <strong id="checkout_order_number"></strong>.</p>
+      <p class="checkout_done_text">We'll get your stock on its way. 🍹</p>
+      <a class="button_primary" href="{% url 'catalogue:browse' %}">Continue Shopping</a>
+    </div>
+  </div>
+</div>
 {% endblock %}

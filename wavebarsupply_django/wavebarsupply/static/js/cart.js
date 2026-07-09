@@ -1,3 +1,6 @@
+// Wrapped in an IIFE so this file's top-level variables stay private
+// (cart.js and checkout.js load together and would otherwise clash).
+(function () {
 // Cart page: change quantities (+ / - / typed) and remove items, all persisted
 // through the cart endpoints. Line totals and the cart total update live.
 const cart_list = document.querySelector('#cart_list');
@@ -58,3 +61,4 @@ if (cart_list) {
     set_quantity(item, parseInt(input.value) || 1);
   });
 }
+})();

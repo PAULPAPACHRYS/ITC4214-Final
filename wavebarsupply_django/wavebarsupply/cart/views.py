@@ -8,12 +8,12 @@ from django.views.decorators.http import require_POST
 from catalogue.models import Product
 from orders.models import Order, OrderItem
 
-from .forms import AddToCartForm, RemoveCartForm, UpdateCartForm
+from .forms import AddToCartForm, CheckoutForm, RemoveCartForm, UpdateCartForm
 
 
 def _get_cart(user):
     """Return the user's active cart: their single 'pending' Order."""
-    order, _ = Order.objects.get_or_create(user=user, status='pending')
+    order, _ = Order.objects.get_or_create(user=user, is_cart=True)
     return order
 
 
@@ -26,7 +26,7 @@ def _cart_total(order):
 
 @login_required
 def view_cart(request):
-    order = _get_cart(request.user)
+    order = Order.objects.filter(user=request.user, is_cart=True).first()
     items = [
         {
             'id': item.id,
@@ -36,11 +36,20 @@ def view_cart(request):
             'quantity': item.quantity,
             'line_total': item.quantity * item.unit_price,
         }
-        for item in order.items.select_related('product')
+        for item in (order.items.select_related('product') if order else [])
     ]
+    checkout_form = CheckoutForm(initial={
+        'name': request.user.full_name,
+        'phone': request.user.phone,
+        'email': request.user.email,
+        'address': ', '.join(p for p in [request.user.bar_name,
+                                         request.user.bar_location] if p),
+    })
+
     return render(request, 'cart/cart.html', {
         'items': items,
-        'total': _cart_total(order),
+        'total': _cart_total(order) if order else 0,
+        'checkout_form': checkout_form,
     })
 
 
@@ -75,7 +84,7 @@ def update(request):
 
     item = get_object_or_404(
         OrderItem, pk=form.cleaned_data['item_id'],
-        order__user=request.user, order__status='pending',
+        order__user=request.user, order__is_cart=True,
     )
     item.quantity = form.cleaned_data['quantity']
     item.save()
@@ -97,7 +106,7 @@ def remove(request):
 
     item = get_object_or_404(
         OrderItem, pk=form.cleaned_data['item_id'],
-        order__user=request.user, order__status='pending',
+        order__user=request.user, order__is_cart=True,
     )
     order = item.order
     item.delete()
@@ -107,3 +116,31 @@ def remove(request):
         'cart_total': str(_cart_total(order)),
         'empty': not order.items.exists(),
     })
+
+
+@login_required
+@require_POST
+def checkout(request):
+    """Finalise the cart: record delivery details and mark the order completed.
+
+    This only simulates payment; no card data is stored. Completing the pending
+    order effectively empties the cart (the next visit starts a fresh one).
+    """
+    order = Order.objects.filter(user=request.user, is_cart=True).first()
+    if order is None or not order.items.exists():
+        return JsonResponse({'ok': False, 'error': 'Your cart is empty.'}, status=400)
+
+    form = CheckoutForm(request.POST)
+    if not form.is_valid():
+        return JsonResponse({'ok': False, 'errors': form.errors}, status=400)
+
+    data = form.cleaned_data
+    order.delivery_name = data['name']
+    order.delivery_address = data['address']
+    order.delivery_phone = data['phone']
+    order.delivery_email = data['email']
+    order.is_cart = False       # no longer the cart
+    order.status = 'pending'    # a newly placed order is pending
+    order.save()
+
+    return JsonResponse({'ok': True, 'order_number': order.id})

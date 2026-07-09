@@ -43,7 +43,19 @@ class ProductForm(forms.ModelForm):
         _style(self)
 
 
-class OrderForm(forms.ModelForm):
+class OrderCreateForm(forms.ModelForm):
+    """Adding an order: no status field, so a new order is always 'pending'."""
+    class Meta:
+        model = Order
+        fields = ['user']
+
+    def __init__(self, *a, **k):
+        super().__init__(*a, **k)
+        _style(self)
+
+
+class OrderEditForm(forms.ModelForm):
+    """Editing an order: status can be changed (e.g. to completed / canceled)."""
     class Meta:
         model = Order
         fields = ['user', 'status']

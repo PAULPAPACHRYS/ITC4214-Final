@@ -1,0 +1,97 @@
+[
+  {
+    "model": "accounts.users",
+    "pk": 1,
+    "fields": {
+      "password": "bcrypt_sha256$$2b$12$vtRDgVnFuhihahYLF9Z3LebTAOcz4lxtE.CL.rytP8YBqXJoJQOie",
+      "last_login": null,
+      "is_superuser": false,
+      "full_name": "Bobert BARatheon",
+      "role": "customer",
+      "bar_name": "Storms End Beach Bar",
+      "bar_location": "Rhodes",
+      "email": "bobert@wavebar.com",
+      "phone": "+30 6900 111111",
+      "is_active": true,
+      "is_staff": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "accounts.users",
+    "pk": 2,
+    "fields": {
+      "password": "bcrypt_sha256$$2b$12$SN7uEkxgE1T5T7/lhEKPhuzFsP46aaPAbBqeCUBFRR8619y8NgpzW",
+      "last_login": null,
+      "is_superuser": false,
+      "full_name": "Anakin Johnwalker",
+      "role": "customer",
+      "bar_name": "Tatooine Tiki",
+      "bar_location": "Mykonos",
+      "email": "anakin@wavebar.com",
+      "phone": "+30 6900 222222",
+      "is_active": true,
+      "is_staff": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "accounts.users",
+    "pk": 3,
+    "fields": {
+      "password": "bcrypt_sha256$$2b$12$fINpKZgrhxa4l9ab7sY.feyPSoNNWdolp0nW2jps.vExZEb/M1cX2",
+      "last_login": null,
+      "is_superuser": false,
+      "full_name": "Mace Mojito",
+      "role": "employee",
+      "bar_name": "",
+      "bar_location": "",
+      "email": "mace@wavebar.com",
+      "phone": "+30 6900 333333",
+      "is_active": true,
+      "is_staff": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "accounts.users",
+    "pk": 4,
+    "fields": {
+      "password": "bcrypt_sha256$$2b$12$Ik6ZPIbte1ArQOiGwyWw7emxSATuWIY4vtqpZtHhqxL/ZWIgfF27u",
+      "last_login": null,
+      "is_superuser": false,
+      "full_name": "Quigon Gin",
+      "role": "employee",
+      "bar_name": "",
+      "bar_location": "",
+      "email": "quigon@wavebar.com",
+      "phone": "+30 6900 444444",
+      "is_active": true,
+      "is_staff": false,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "accounts.users",
+    "pk": 5,
+    "fields": {
+      "password": "bcrypt_sha256$$2b$12$FvsvEw1cfRqvSlmicFBuQuKw3PBolVkJcslLRBosVo4lA/odF8w6a",
+      "last_login": null,
+      "is_superuser": true,
+      "full_name": "Darth Drinker",
+      "role": "admin",
+      "bar_name": "",
+      "bar_location": "",
+      "email": "darth@wavebar.com",
+      "phone": "+30 6900 555555",
+      "is_active": true,
+      "is_staff": true,
+      "groups": [],
+      "user_permissions": []
+    }
+  }
+]

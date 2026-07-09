@@ -13,6 +13,16 @@ class Order(models.Model):
     order_date = models.DateField(auto_now_add=True)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
 
+    # True only while this order is the user's in-progress cart. A placed order
+    # has is_cart=False, so a placed 'pending' order is never mistaken for a cart.
+    is_cart = models.BooleanField(default=False)
+
+    # Delivery details, filled in when the order is finalised at checkout.
+    delivery_name = models.CharField(max_length=100, blank=True, default='')
+    delivery_address = models.CharField(max_length=200, blank=True, default='')
+    delivery_phone = models.CharField(max_length=20, blank=True, default='')
+    delivery_email = models.EmailField(max_length=100, blank=True, default='')
+
     class Meta:
         db_table = 'orders'
 
