@@ -13,7 +13,7 @@
   {% block extra_css %}{% endblock %}
   {% block extra_js %}{% endblock %}
 </head>
-<body data-authenticated="{{ user.is_authenticated|yesno:'true,false' }}" data-cart-add-url="{% url 'cart:add' %}">
+<body data-authenticated="{{ user.is_authenticated|yesno:'true,false' }}" data-cart-add-url="{% url 'cart:add' %}" data-like-toggle-url="{% url 'likes:toggle' %}">
 
 <header class="site_header">
   <nav class="nav_bar">

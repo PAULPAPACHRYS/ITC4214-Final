@@ -25,6 +25,10 @@ function build_product_card(product) {
         </div>
         <button class="button_add_to_order" data-id="${product.id}">+ Order</button>
       </div>
+      <div class="like_control">
+        <button class="like_button ${product.liked ? 'liked' : ''}" type="button" data-id="${product.id}" aria-pressed="${product.liked ? 'true' : 'false'}"><span class="like_heart">♥</span> Like</button>
+        <span class="like_count">${product.like_count}</span>
+      </div>
     </div>
   `;
   return card;

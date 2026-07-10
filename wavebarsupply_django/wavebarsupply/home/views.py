@@ -6,7 +6,8 @@ from catalogue.views import _products_as_dicts
 def index(request):
     # A hand-picked, varied selection of products to feature on the homepage.
     featured_ids = [22, 39, 50, 28, 19, 1, 46, 43]
-    products = _products_as_dicts(Product.objects.filter(id__in=featured_ids))
+    products = _products_as_dicts(
+        Product.objects.filter(id__in=featured_ids), user=request.user)
 
     # Preserve the order given in featured_ids (the DB returns them id-sorted).
     order = {pid: i for i, pid in enumerate(featured_ids)}

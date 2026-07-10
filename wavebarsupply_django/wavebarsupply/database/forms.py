@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 from accounts.models import Users
 from catalogue.models import Brand, Category, Product
+from likes.models import Like
 from orders.models import Order, OrderItem
 
 
@@ -27,6 +28,16 @@ class BrandForm(forms.ModelForm):
     class Meta:
         model = Brand
         fields = ['name', 'country']
+
+    def __init__(self, *a, **k):
+        super().__init__(*a, **k)
+        _style(self)
+
+
+class LikeForm(forms.ModelForm):
+    class Meta:
+        model = Like
+        fields = ['product', 'user']
 
     def __init__(self, *a, **k):
         super().__init__(*a, **k)

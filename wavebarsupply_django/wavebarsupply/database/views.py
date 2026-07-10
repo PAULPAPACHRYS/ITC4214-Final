@@ -7,6 +7,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 
 from accounts.models import Users
 from catalogue.models import Brand, Category, Product
+from likes.models import Like
 from orders.models import Order, OrderItem
 
 from . import forms
@@ -38,6 +39,9 @@ TABLES = {
     'order_items': {'model': OrderItem, 'label': 'Order Items', 'admin_only': False,
                     'columns': ['id', 'order', 'product', 'quantity', 'unit_price'],
                     'form': forms.OrderItemForm},
+    'likes':       {'model': Like,      'label': 'Likes',       'admin_only': False,
+                    'columns': ['id', 'product', 'user'],
+                    'form': forms.LikeForm},
     'users':       {'model': Users,     'label': 'Users',       'admin_only': True,
                     'columns': ['id', 'first_name', 'last_name', 'email', 'role', 'bar_name', 'bar_location'],
                     'form': forms.UserEditForm, 'add_form': forms.UserCreateForm},

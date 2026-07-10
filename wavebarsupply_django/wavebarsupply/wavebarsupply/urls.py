@@ -9,4 +9,5 @@ urlpatterns = [
     path('', include('pages.urls')),
     path('database/', include('database.urls')),
     path('cart/', include('cart.urls')),
+    path('likes/', include('likes.urls')),
 ]
