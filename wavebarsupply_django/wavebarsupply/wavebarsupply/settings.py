@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'database',
     'cart',
     'likes',
+    'recommendations',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

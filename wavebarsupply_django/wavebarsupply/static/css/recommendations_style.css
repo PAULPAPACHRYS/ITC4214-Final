@@ -1,0 +1,19 @@
+/* "You might also like" strip on the cart page. */
+.recommend_section {
+  padding-bottom: 60px;
+}
+
+.recommend_title {
+  font-family: var(--font_display);
+  font-weight: 800;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+
+/* A responsive row of product cards. */
+.recommend_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+}

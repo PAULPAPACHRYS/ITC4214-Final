@@ -4,8 +4,8 @@
 {% block title %}WaveBar Supply — Cart{% endblock %}
 {% block meta_description %}Shopping cart{% endblock %}
 
-{% block extra_css %}<link rel="stylesheet" href="{% static 'css/cart_style.css' %}?v=7" />{% endblock %}
-{% block extra_js %}<script src="{% static 'js/cart.js' %}?v=7" defer></script><script src="{% static 'js/checkout.js' %}?v=7" defer></script>{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/cart_style.css' %}?v=7" /><link rel="stylesheet" href="{% static 'css/likes_style.css' %}" /><link rel="stylesheet" href="{% static 'css/recommendations_style.css' %}" />{% endblock %}
+{% block extra_js %}<script src="{% static 'js/cart.js' %}?v=7" defer></script><script src="{% static 'js/checkout.js' %}?v=7" defer></script><script src="{% static 'js/product_cart.js' %}" defer></script><script src="{% static 'js/vendor/jquery.min.js' %}" defer></script><script src="{% static 'js/likes.js' %}" defer></script><script src="{% static 'js/recommendations.js' %}" defer></script>{% endblock %}
 
 {% block content %}
 <div class="page_hero">
@@ -58,6 +58,12 @@
     <button class="button_primary cart_finalise" id="checkout_open" type="button" {% if not items %}disabled{% endif %}>Finalise Purchase</button>
   </aside>
 
+</section>
+
+<!-- "You might also like" — similar products, filled in by recommendations.js -->
+<section class="recommend_section section_container hidden" data-recommend-url="{% url 'recommendations:cart' %}">
+  <h2 class="recommend_title">You might also like</h2>
+  <div class="recommend_grid"></div>
 </section>
 
 <!-- Checkout overlay -->

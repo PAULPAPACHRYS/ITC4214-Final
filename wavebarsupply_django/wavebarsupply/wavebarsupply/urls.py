@@ -10,4 +10,5 @@ urlpatterns = [
     path('database/', include('database.urls')),
     path('cart/', include('cart.urls')),
     path('likes/', include('likes.urls')),
+    path('recommendations/', include('recommendations.urls')),
 ]
