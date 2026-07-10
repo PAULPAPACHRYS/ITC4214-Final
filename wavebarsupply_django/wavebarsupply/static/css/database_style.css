@@ -76,6 +76,59 @@
 .db_table tbody tr:hover { background: var(--cream_lt); }
 .db_empty { text-align: center; color: var(--gray_dk); padding: 24px; }
 
+/* sortable column headers */
+.db_table th.db_sortable {
+  cursor: pointer;
+  user-select: none;
+}
+.db_table th.db_sortable:hover { background: var(--teal); }
+.db_table th.db_sortable:focus {
+  outline: 2px solid var(--teal_lt);
+  outline-offset: -2px;
+}
+.db_table th.db_sorted { background: var(--teal); }
+.db_sort_arrow {
+  display: inline-block;
+  width: 1em;               /* reserve space so headers don't jump when sorted */
+  margin-left: 4px;
+  font-size: .8em;
+}
+
+/* per-table search bar */
+.db_search_wrap {
+  position: relative;
+  margin-bottom: 16px;
+  max-width: 360px;
+}
+.db_search_input {
+  width: 100%;
+  padding: 10px 34px 10px 14px;
+  border: 1.5px solid var(--gray_lt);
+  border-radius: var(--radius_sm);
+  font-size: .95rem;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--white);
+}
+.db_search_input:focus {
+  outline: none;
+  border-color: var(--teal);
+}
+.db_search_clear {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: var(--gray_mid);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px;
+}
+.db_search_clear:hover { color: var(--coral); }
+
 .db_actions_col {
   text-align: right;
   white-space: nowrap;

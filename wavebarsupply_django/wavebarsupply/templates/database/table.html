@@ -27,11 +27,16 @@
     <a class="button_primary" href="{% url 'database:add' key=key %}">+ Add New</a>
   </div>
 
+  <div class="db_search_wrap">
+    <input type="text" class="db_search_input" placeholder="Search this table…" />
+    <button type="button" class="db_search_clear" title="Clear search">✕</button>
+  </div>
+
   <div class="db_table_wrap">
     <table class="db_table">
       <thead>
         <tr>
-          {% for col in columns %}<th>{{ col }}</th>{% endfor %}
+          {% for col in columns %}<th class="db_sortable" tabindex="0"><span class="db_th_label">{{ col }}</span><span class="db_sort_arrow" aria-hidden="true"></span></th>{% endfor %}
           <th class="db_actions_col">Actions</th>
         </tr>
       </thead>
@@ -50,6 +55,7 @@
         {% empty %}
           <tr><td class="db_empty" colspan="{{ columns|length|add:1 }}">No records yet.</td></tr>
         {% endfor %}
+        <tr class="db_no_match hidden"><td class="db_empty" colspan="{{ columns|length|add:1 }}">No matching records.</td></tr>
       </tbody>
     </table>
   </div>
