@@ -21,7 +21,7 @@
 /* Browse */
 .browse_layout {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 260px 1fr 300px;
   gap: 32px;
   padding-top: 32px;
   padding-bottom: 60px;

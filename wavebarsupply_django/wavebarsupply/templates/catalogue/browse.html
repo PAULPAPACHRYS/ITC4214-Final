@@ -84,19 +84,6 @@
   <!-- page content -->
   <div class="browse_main">
 
-    <!-- Cocktail presets: one-click bundles that add all ingredients to the cart -->
-    <section class="preset_section">
-      <div class="preset_section_head">
-        <h2 class="preset_section_title">Cocktail Presets</h2>
-        {% if user.is_authenticated %}
-          <button class="button_primary preset_add_button" type="button">+ Add Cocktail Preset</button>
-        {% endif %}
-      </div>
-      <div class="preset_grid" data-add-url="{% url 'presets:add_to_cart' %}" data-create-url="{% url 'presets:create' %}">
-        <!-- filled by presets.js -->
-      </div>
-    </section>
-
     <!-- search bar -->
     <div class="search_bar_wrap">
       <input type="text" id="search_input" class="search_input" placeholder="Search by name, brand, flavour, type…" />
@@ -129,6 +116,21 @@
     </div>
 
   </div>
+
+  <!-- Cocktail presets column: one-click bundles that add all ingredients to the cart -->
+  <aside class="preset_column">
+    <section class="preset_section">
+      <div class="preset_section_head">
+        <h2 class="preset_section_title">Cocktail Presets</h2>
+        {% if user.is_authenticated %}
+          <button class="button_primary preset_add_button" type="button">+ Add Cocktail Preset</button>
+        {% endif %}
+      </div>
+      <div class="preset_grid" data-add-url="{% url 'presets:add_to_cart' %}" data-create-url="{% url 'presets:create' %}">
+        <!-- filled by presets.js -->
+      </div>
+    </section>
+  </aside>
 </div>
 
 {{ products|json_script:"products_data" }}

@@ -1,12 +1,15 @@
-/* ===== Cocktail presets section ===== */
+/* ===== Cocktail presets column (right of the product grid) ===== */
+.preset_column {
+  min-width: 0;   /* lets the column shrink cleanly inside the grid */
+}
 .preset_section {
   margin-bottom: 28px;
 }
 .preset_section_head {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
+  flex-direction: column;   /* title above a full-width button in the narrow column */
+  align-items: stretch;
+  gap: 12px;
   margin-bottom: 16px;
 }
 .preset_section_title {
@@ -15,18 +18,18 @@
   font-size: clamp(1.3rem, 3vw, 1.7rem);
   color: var(--navy);
 }
+.preset_add_button { width: 100%; }
 
-/* Horizontal, wrapping row of preset cards. */
+/* Cards stack vertically down the column. */
 .preset_grid {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 20px;
 }
 
 /* ===== Preset card (like a product card, but colour instead of an image) ===== */
 .preset_card {
-  flex: 1 1 240px;
-  max-width: 320px;
+  width: 100%;
   background: var(--white);
   border-radius: var(--radius_md);
   overflow: hidden;
