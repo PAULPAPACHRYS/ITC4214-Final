@@ -11,9 +11,15 @@
   margin-bottom: 20px;
 }
 
-/* A responsive row of product cards. */
+/* A horizontal row of product cards that wraps onto more lines when there are
+   too many to fit across the screen. Each card grows to help fill the row but is
+   capped so a lone card doesn't stretch too wide. */
 .recommend_grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
+}
+.recommend_grid .product_card {
+  flex: 1 1 200px;
+  max-width: 300px;
 }

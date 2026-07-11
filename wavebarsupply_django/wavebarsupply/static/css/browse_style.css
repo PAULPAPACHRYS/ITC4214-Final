@@ -39,6 +39,13 @@
   display: flex;
   flex-direction: column;
   gap: 0;
+  /* Keep the filters within one screen height and let them scroll on their own.
+     overscroll-behavior: contain stops the scroll from spilling to the page, so
+     hovering the filters and scrolling moves only the filters. */
+  max-height: calc(100vh - 104px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
 }
 
 .filter_block {

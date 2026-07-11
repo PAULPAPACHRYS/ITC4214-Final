@@ -48,7 +48,12 @@ if (cart_list) {
         if (!data.ok) return;
         item.remove();
         cart_total.textContent = '€' + data.cart_total;
-        if (data.empty) window.location.reload();   // show the empty-cart message
+        if (data.empty) {
+          window.location.reload();   // show the empty-cart message
+        } else {
+          // Cart contents changed -> let the recommendations strip refresh.
+          document.dispatchEvent(new CustomEvent('cart:changed'));
+        }
       });
     }
   });

@@ -43,12 +43,27 @@ if (recommend_section) {
     return card;
   }
 
-  fetch(url, { headers: { 'X-Requested-With': 'XMLHttpRequest' } })
-    .then(response => response.json())
-    .then(data => {
-      if (!data.ok || data.products.length === 0) return;   // nothing to show
-      data.products.forEach(product => grid.appendChild(build_product_card(product)));
-      recommend_section.classList.remove('hidden');
-    })
-    .catch(() => {});   // on failure, leave the strip hidden
+  // Fetch similar products and (re)fill the strip. Clearing the grid first means
+  // this can run again later — e.g. after the cart changes — and reflect the new
+  // cart. If nothing similar remains, the strip is hidden.
+  function load_recommendations() {
+    fetch(url, { headers: { 'X-Requested-With': 'XMLHttpRequest' } })
+      .then(response => response.json())
+      .then(data => {
+        grid.innerHTML = '';
+        if (!data.ok || data.products.length === 0) {
+          recommend_section.classList.add('hidden');   // nothing to show
+          return;
+        }
+        data.products.forEach(product => grid.appendChild(build_product_card(product)));
+        recommend_section.classList.remove('hidden');
+      })
+      .catch(() => {});   // on failure, leave the strip as it is
+  }
+
+  load_recommendations();
+
+  // The cart page fires this after an item is removed; refresh so the
+  // suggestions match the new cart (and disappear if nothing similar remains).
+  document.addEventListener('cart:changed', load_recommendations);
 }
