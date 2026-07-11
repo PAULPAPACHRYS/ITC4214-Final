@@ -1485,5 +1485,322 @@
             "category": 37,
             "brand": 67
         }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 84,
+        "fields": {
+            "name": "Lime Juice",
+            "price": "3.50",
+            "volume": 1000,
+            "abv": "0.0",
+            "emoji": "🧃",
+            "tags": [
+                "juice",
+                "lime",
+                "mixer"
+            ],
+            "category": 3,
+            "brand": 9
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 85,
+        "fields": {
+            "name": "Orange Juice",
+            "price": "3.00",
+            "volume": 1000,
+            "abv": "0.0",
+            "emoji": "🧃",
+            "tags": [
+                "juice",
+                "orange"
+            ],
+            "category": 3,
+            "brand": 9
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 86,
+        "fields": {
+            "name": "Cranberry Juice",
+            "price": "3.80",
+            "volume": 1000,
+            "abv": "0.0",
+            "emoji": "🧃",
+            "tags": [
+                "juice",
+                "cranberry"
+            ],
+            "category": 3,
+            "brand": 9
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 87,
+        "fields": {
+            "name": "Pineapple Juice",
+            "price": "3.60",
+            "volume": 1000,
+            "abv": "0.0",
+            "emoji": "🧃",
+            "tags": [
+                "juice",
+                "pineapple"
+            ],
+            "category": 3,
+            "brand": 9
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 88,
+        "fields": {
+            "name": "Passion Fruit Juice",
+            "price": "4.20",
+            "volume": 1000,
+            "abv": "0.0",
+            "emoji": "🧃",
+            "tags": [
+                "juice",
+                "passion fruit"
+            ],
+            "category": 3,
+            "brand": 9
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 89,
+        "fields": {
+            "name": "Soda Water",
+            "price": "1.20",
+            "volume": 200,
+            "abv": "0.0",
+            "emoji": "🫧",
+            "tags": [
+                "mixer",
+                "soda",
+                "water"
+            ],
+            "category": 16,
+            "brand": 53
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 90,
+        "fields": {
+            "name": "Salt",
+            "price": "1.50",
+            "volume": 250,
+            "abv": "0.0",
+            "emoji": "🧂",
+            "tags": [
+                "garnish",
+                "rimming",
+                "salt"
+            ],
+            "category": 18,
+            "brand": 69
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 91,
+        "fields": {
+            "name": "Orgeat Syrup",
+            "price": "7.50",
+            "volume": 700,
+            "abv": "0.0",
+            "emoji": "🍯",
+            "tags": [
+                "syrup",
+                "orgeat",
+                "almond"
+            ],
+            "category": 15,
+            "brand": 52
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 92,
+        "fields": {
+            "name": "Grenadine Syrup",
+            "price": "6.50",
+            "volume": 700,
+            "abv": "0.0",
+            "emoji": "🍯",
+            "tags": [
+                "syrup",
+                "grenadine"
+            ],
+            "category": 15,
+            "brand": 52
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 93,
+        "fields": {
+            "name": "Falernum Syrup",
+            "price": "7.90",
+            "volume": 700,
+            "abv": "0.0",
+            "emoji": "🍯",
+            "tags": [
+                "syrup",
+                "falernum",
+                "spiced"
+            ],
+            "category": 15,
+            "brand": 52
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 94,
+        "fields": {
+            "name": "Vanilla Syrup",
+            "price": "6.90",
+            "volume": 700,
+            "abv": "0.0",
+            "emoji": "🍯",
+            "tags": [
+                "syrup",
+                "vanilla"
+            ],
+            "category": 15,
+            "brand": 52
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 95,
+        "fields": {
+            "name": "Triple Sec",
+            "price": "14.00",
+            "volume": 700,
+            "abv": "15.0",
+            "emoji": "🍾",
+            "tags": [
+                "liqueur",
+                "orange",
+                "triple sec"
+            ],
+            "category": 38,
+            "brand": 68
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 96,
+        "fields": {
+            "name": "Orange Curacao Liqueur",
+            "price": "16.00",
+            "volume": 700,
+            "abv": "30.0",
+            "emoji": "🍾",
+            "tags": [
+                "liqueur",
+                "orange",
+                "curacao"
+            ],
+            "category": 38,
+            "brand": 68
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 97,
+        "fields": {
+            "name": "Peach Schnapps Liqueur",
+            "price": "13.50",
+            "volume": 700,
+            "abv": "20.0",
+            "emoji": "🍾",
+            "tags": [
+                "liqueur",
+                "peach",
+                "schnapps"
+            ],
+            "category": 38,
+            "brand": 68
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 98,
+        "fields": {
+            "name": "Passoa Liqueur",
+            "price": "15.00",
+            "volume": 700,
+            "abv": "17.0",
+            "emoji": "🍾",
+            "tags": [
+                "liqueur",
+                "passion fruit"
+            ],
+            "category": 38,
+            "brand": 68
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 99,
+        "fields": {
+            "name": "Apricot Brandy",
+            "price": "15.50",
+            "volume": 700,
+            "abv": "24.0",
+            "emoji": "🍾",
+            "tags": [
+                "liqueur",
+                "apricot",
+                "brandy"
+            ],
+            "category": 38,
+            "brand": 68
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 100,
+        "fields": {
+            "name": "Absolut Vanilla Vodka",
+            "price": "24.00",
+            "volume": 700,
+            "abv": "40.0",
+            "emoji": "🍸",
+            "tags": [
+                "vodka",
+                "vanilla",
+                "flavored"
+            ],
+            "category": 11,
+            "brand": 38
+        }
+    },
+    {
+        "model": "catalogue.product",
+        "pk": 101,
+        "fields": {
+            "name": "Fresh Passion Fruit",
+            "price": "4.50",
+            "volume": 500,
+            "abv": "0.0",
+            "emoji": "🍈",
+            "tags": [
+                "fruit",
+                "passion fruit",
+                "fresh"
+            ],
+            "category": 28,
+            "brand": 61
+        }
     }
 ]

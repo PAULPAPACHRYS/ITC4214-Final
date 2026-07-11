@@ -34,7 +34,7 @@ function abv_band(abv) {
 const SUBCATEGORIES = {
   'non-alcohol': ['Soft Drinks','Water','Juices','Ice Teas','Coffee','Energy Drinks'],
   'fermented':   ['Beer','Wine','Cider'],
-  'distilled':   ['Whisky','Vodka','Rum','Gin','Tequila'],
+  'distilled':   ['Whisky','Vodka','Rum','Gin','Tequila','Liqueurs'],
   'cocktail':    ['Syrups','Mixers','Bitters','Garnishes'],
   'ice':         ['Ice cubes','Crushed ice','Dry ice','Ice blocks'],
   'dairy':       ['Milk','Oat milk','Almond milk','Coconut milk','Cream'],

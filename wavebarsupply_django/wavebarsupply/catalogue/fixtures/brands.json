@@ -534,5 +534,21 @@
             "name": "Tuc",
             "country": "Belgium"
         }
+    },
+    {
+        "model": "catalogue.brand",
+        "pk": 68,
+        "fields": {
+            "name": "De Kuyper",
+            "country": "Netherlands"
+        }
+    },
+    {
+        "model": "catalogue.brand",
+        "pk": 69,
+        "fields": {
+            "name": "Bar Essentials",
+            "country": "Greece"
+        }
     }
 ]

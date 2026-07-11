@@ -294,5 +294,13 @@
             "name": "snacks",
             "subcategory": "Crackers"
         }
+    },
+    {
+        "model": "catalogue.category",
+        "pk": 38,
+        "fields": {
+            "name": "distilled",
+            "subcategory": "Liqueurs"
+        }
     }
 ]

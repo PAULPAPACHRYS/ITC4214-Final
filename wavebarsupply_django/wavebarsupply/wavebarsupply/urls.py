@@ -11,4 +11,5 @@ urlpatterns = [
     path('cart/', include('cart.urls')),
     path('likes/', include('likes.urls')),
     path('recommendations/', include('recommendations.urls')),
+    path('presets/', include('presets.urls')),
 ]

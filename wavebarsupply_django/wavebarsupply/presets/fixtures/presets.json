@@ -1,0 +1,106 @@
+[
+    {
+        "model": "presets.preset",
+        "pk": 1,
+        "fields": {
+            "name": "Mojito",
+            "color": "#7BB661",
+            "user": null,
+            "ingredients": [
+                43,
+                62,
+                75,
+                84,
+                89
+            ]
+        }
+    },
+    {
+        "model": "presets.preset",
+        "pk": 2,
+        "fields": {
+            "name": "Margarita",
+            "color": "#E6C84F",
+            "user": null,
+            "ingredients": [
+                50,
+                62,
+                84,
+                90,
+                95
+            ]
+        }
+    },
+    {
+        "model": "presets.preset",
+        "pk": 3,
+        "fields": {
+            "name": "Mai Tai",
+            "color": "#E8833A",
+            "user": null,
+            "ingredients": [
+                43,
+                45,
+                62,
+                84,
+                91,
+                96
+            ]
+        }
+    },
+    {
+        "model": "presets.preset",
+        "pk": 4,
+        "fields": {
+            "name": "Sex on the Beach",
+            "color": "#FF6B6B",
+            "user": null,
+            "ingredients": [
+                39,
+                62,
+                85,
+                86,
+                97
+            ]
+        }
+    },
+    {
+        "model": "presets.preset",
+        "pk": 5,
+        "fields": {
+            "name": "Zombie",
+            "color": "#C0392B",
+            "user": null,
+            "ingredients": [
+                43,
+                45,
+                57,
+                62,
+                84,
+                85,
+                87,
+                92,
+                93,
+                99
+            ]
+        }
+    },
+    {
+        "model": "presets.preset",
+        "pk": 6,
+        "fields": {
+            "name": "Pornstar Martini",
+            "color": "#F4B6C2",
+            "user": null,
+            "ingredients": [
+                62,
+                84,
+                88,
+                94,
+                98,
+                100,
+                101
+            ]
+        }
+    }
+]

@@ -1,7 +1,9 @@
-from django.db.models import Count
+from django.db.models import Count, Q
 from django.shortcuts import render
 
 from likes.models import Like
+from presets.forms import PresetForm
+from presets.models import Preset
 from .models import Product
 
 
@@ -49,4 +51,17 @@ def _products_as_dicts(queryset, user=None):
 
 def browse(request):
     products = _products_as_dicts(Product.objects.all(), user=request.user)
-    return render(request, 'catalogue/browse.html', {'products': products})
+
+    # Default presets (user is null) are shown to everyone; a logged-in user also
+    # sees the presets they created themselves.
+    preset_filter = Q(user=None)
+    if request.user.is_authenticated:
+        preset_filter |= Q(user=request.user)
+    presets = [p.to_dict() for p in
+               Preset.objects.filter(preset_filter).prefetch_related('ingredients')]
+
+    return render(request, 'catalogue/browse.html', {
+        'products': products,
+        'presets': presets,
+        'preset_form': PresetForm(),
+    })

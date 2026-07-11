@@ -1,0 +1,219 @@
+/* ===== Cocktail presets section ===== */
+.preset_section {
+  margin-bottom: 28px;
+}
+.preset_section_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.preset_section_title {
+  font-family: var(--font_display);
+  font-weight: 800;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  color: var(--navy);
+}
+
+/* Horizontal, wrapping row of preset cards. */
+.preset_grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* ===== Preset card (like a product card, but colour instead of an image) ===== */
+.preset_card {
+  flex: 1 1 240px;
+  max-width: 320px;
+  background: var(--white);
+  border-radius: var(--radius_md);
+  overflow: hidden;
+  box-shadow: var(--shadow_sm);
+  transition: transform .18s, box-shadow .18s;
+  display: flex;
+  flex-direction: column;
+}
+.preset_card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow_md);
+}
+.preset_card_thumb {
+  height: 80px;   /* solid block of the preset's colour, no image/emoji */
+}
+.preset_card_body {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+.preset_card_label {
+  font-size: .7rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--teal);
+  font-weight: 700;
+}
+.preset_card_name {
+  font-family: var(--font_display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--navy);
+}
+.preset_card_ingredients {
+  font-size: .82rem;
+  color: var(--gray_dk);
+  line-height: 1.35;
+}
+.preset_card_servings {
+  font-size: .82rem;
+  color: var(--navy);
+  font-weight: 600;
+}
+.preset_card_footer {
+  margin-top: auto;
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* "+ Order" button (styled to match the product cards' order button) */
+.preset_order_button {
+  background: var(--teal);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius_sm);
+  padding: 6px 12px;
+  font-family: var(--font_display);
+  font-weight: 700;
+  font-size: .85rem;
+  letter-spacing: .03em;
+  cursor: pointer;
+  transition: background .15s;
+}
+.preset_order_button:hover { background: var(--teal_lt); }
+.preset_order_button:disabled { opacity: .7; cursor: default; }
+
+/* ===== Create-preset overlay ===== */
+.preset_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 27, 42, .55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+.preset_modal {
+  background: var(--white);
+  border-radius: var(--radius_md);
+  box-shadow: var(--shadow_md);
+  width: 100%;
+  max-width: 460px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 24px;
+  position: relative;
+}
+.preset_modal_close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border: none;
+  background: transparent;
+  font-size: 1.1rem;
+  color: var(--gray_mid);
+  cursor: pointer;
+}
+.preset_modal_close:hover { color: var(--coral); }
+.preset_modal_title {
+  font-family: var(--font_display);
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--navy);
+  margin-bottom: 18px;
+}
+
+.preset_form { display: flex; flex-direction: column; gap: 16px; }
+.preset_field { display: flex; flex-direction: column; gap: 6px; }
+.preset_field > span {
+  font-weight: 700;
+  font-size: .85rem;
+  color: var(--navy);
+}
+.preset_field .form_input,
+.preset_ingredient_search {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1.5px solid var(--gray_lt);
+  border-radius: var(--radius_sm);
+  font-family: inherit;
+  font-size: .95rem;
+  color: var(--text);
+  background: var(--white);
+}
+.preset_field .form_input:focus,
+.preset_ingredient_search:focus { outline: none; border-color: var(--teal); }
+
+.preset_color_field { flex-direction: row; align-items: center; gap: 12px; }
+.preset_color_input {
+  width: 48px;
+  height: 34px;
+  padding: 2px;
+  border: 1.5px solid var(--gray_lt);
+  border-radius: var(--radius_sm);
+  background: var(--white);
+  cursor: pointer;
+}
+
+.preset_search_wrap { position: relative; }
+.preset_search_results {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 6px;
+}
+.preset_result_row {
+  text-align: left;
+  border: 1px solid var(--gray_lt);
+  background: var(--cream_lt);
+  border-radius: var(--radius_sm);
+  padding: 7px 10px;
+  font-size: .85rem;
+  color: var(--navy);
+  cursor: pointer;
+}
+.preset_result_row:hover:not(:disabled) { border-color: var(--teal); }
+.preset_result_row:disabled { opacity: .5; cursor: default; }
+
+.preset_selected {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+.preset_chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--teal);
+  color: var(--white);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: .8rem;
+}
+.preset_chip_remove {
+  border: none;
+  background: transparent;
+  color: var(--white);
+  font-size: .85rem;
+  cursor: pointer;
+  line-height: 1;
+}
+.preset_form_error { color: var(--coral); font-size: .85rem; min-height: 1em; }
+.preset_submit { cursor: pointer; }

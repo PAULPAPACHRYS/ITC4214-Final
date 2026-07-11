@@ -1,0 +1,53 @@
+from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
+from django.views.decorators.http import require_POST
+
+from orders.models import Order, OrderItem
+from .forms import PresetForm
+from .models import Preset
+
+
+@login_required
+@require_POST
+def create(request):
+    """Create a preset owned by the current user (used by the overlay form)."""
+    form = PresetForm(request.POST)
+    if not form.is_valid():
+        return JsonResponse({'ok': False, 'errors': form.errors}, status=400)
+
+    preset = form.save(commit=False)
+    preset.user = request.user
+    preset.save()
+    form.save_m2m()   # attach the chosen ingredients (a ManyToMany field)
+
+    return JsonResponse({'ok': True, 'preset': preset.to_dict()})
+
+
+@login_required
+@require_POST
+def add_to_cart(request):
+    """Add every ingredient of a preset to the cart, quantity = servings each."""
+    preset = get_object_or_404(Preset, pk=request.POST.get('preset_id'))
+
+    # A user may only use the default presets or their own.
+    if preset.user_id not in (None, request.user.id):
+        return JsonResponse({'ok': False}, status=404)
+
+    try:
+        servings = int(request.POST.get('servings', 1))
+    except (TypeError, ValueError):
+        servings = 1
+    servings = max(servings, 1)
+
+    order, _ = Order.objects.get_or_create(user=request.user, is_cart=True)
+    for product in preset.ingredients.all():
+        item, created = OrderItem.objects.get_or_create(
+            order=order, product=product,
+            defaults={'quantity': servings, 'unit_price': product.price})
+        if not created:
+            item.quantity += servings
+            item.save()
+
+    total = sum(i.quantity * i.unit_price for i in order.items.all())
+    return JsonResponse({'ok': True, 'servings': servings, 'cart_total': str(total)})
