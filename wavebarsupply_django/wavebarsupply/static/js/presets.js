@@ -26,9 +26,10 @@
   const delete_url = (id) => DELETE_URL.replace('/0/', '/' + id + '/');
 
   // ---- Build and render preset cards ----------------------------------------
-  function servings_line(count) {
-    const word = count === 1 ? 'serving' : 'servings';
-    return `Makes <span class="preset_servings_count">${count}</span> ${word}`;
+  // Each unit of a preset's ingredients makes roughly 10 servings, so the figure
+  // shown is (quantity × 10) and therefore moves in steps of 10.
+  function servings_line(quantity) {
+    return `About <span class="preset_servings_count">${quantity * 10}</span> servings`;
   }
 
   function build_preset_card(preset) {
@@ -65,6 +66,33 @@
     PRESETS.forEach(preset => grid.appendChild(build_preset_card(preset)));
   }
   render_presets();
+
+  // ---- Read-only ingredient overlay (opens when a card is clicked) -----------
+  const view_overlay = document.querySelector('.preset_view_overlay');
+
+  function open_view(preset) {
+    if (!view_overlay) return;
+    view_overlay.querySelector('.preset_view_title').textContent = preset.name;
+    const list = view_overlay.querySelector('.preset_view_list');
+    list.innerHTML = '';
+    preset.ingredient_names.forEach(name => {
+      const li = document.createElement('li');
+      li.textContent = name;
+      list.appendChild(li);
+    });
+    view_overlay.classList.remove('hidden');
+  }
+  function close_view() { if (view_overlay) view_overlay.classList.add('hidden'); }
+
+  if (view_overlay) {
+    view_overlay.querySelector('.preset_view_close').addEventListener('click', close_view);
+    view_overlay.addEventListener('click', (event) => {   // click on the backdrop
+      if (event.target === view_overlay) close_view();
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !view_overlay.classList.contains('hidden')) close_view();
+    });
+  }
 
   // ---- Servings stepper + "+ Order" + edit/delete ---------------------------
   function update_servings(card) {
@@ -120,30 +148,39 @@
 
     // "+ Order" -> add all ingredients of this preset to the cart
     const order = event.target.closest('.preset_order_button');
-    if (!order) return;
+    if (order) {
+      if (!AUTHED) {
+        alert('Please log in or register to add items to your cart.');
+        return;
+      }
 
-    if (!AUTHED) {
-      alert('Please log in or register to add items to your cart.');
+      const card = order.closest('.preset_card');
+      let servings = parseInt(card.querySelector('.preset_qty').value) || 1;
+      if (servings < 1) servings = 1;
+
+      const label = order.textContent;
+      order.disabled = true;
+      fetch(ADD_URL, {
+        method: 'POST',
+        headers: { 'X-CSRFToken': CSRF, 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `preset_id=${card.dataset.id}&servings=${servings}`,
+      })
+        .then(response => response.json())
+        .then(data => {
+          order.textContent = data.ok ? 'Added ✓' : '+ Order';
+          setTimeout(() => { order.textContent = label; order.disabled = false; }, 1200);
+        })
+        .catch(() => { order.textContent = label; order.disabled = false; });
       return;
     }
 
-    const card = order.closest('.preset_card');
-    let servings = parseInt(card.querySelector('.preset_qty').value) || 1;
-    if (servings < 1) servings = 1;
-
-    const label = order.textContent;
-    order.disabled = true;
-    fetch(ADD_URL, {
-      method: 'POST',
-      headers: { 'X-CSRFToken': CSRF, 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `preset_id=${card.dataset.id}&servings=${servings}`,
-    })
-      .then(response => response.json())
-      .then(data => {
-        order.textContent = data.ok ? 'Added ✓' : '+ Order';
-        setTimeout(() => { order.textContent = label; order.disabled = false; }, 1200);
-      })
-      .catch(() => { order.textContent = label; order.disabled = false; });
+    // A plain click anywhere else on the card opens the ingredient overlay
+    // (the quantity input is excluded so the user can still type in it).
+    const view_card = event.target.closest('.preset_card');
+    if (view_card && !event.target.closest('.preset_qty')) {
+      const preset = PRESETS.find(p => String(p.id) === String(view_card.dataset.id));
+      if (preset) open_view(preset);
+    }
   });
 
   // keep a typed servings value valid and the label in sync

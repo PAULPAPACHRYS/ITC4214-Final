@@ -5,11 +5,11 @@
 /* User info on the left, dashboard on the right. */
 .account_layout {
   display: grid;
-  grid-template-columns: minmax(300px, 360px) 1fr;
+  grid-template-columns: minmax(360px, 440px) 1fr;
   gap: 32px;
-  max-width: 1150px;
+  max-width: 1200px;
   margin: 0 auto;
-  align-items: start;
+  align-items: stretch;
 }
 
 .account_card {
@@ -106,22 +106,25 @@
 
 /* ===== Dashboard (right side) ===== */
 .dashboard {
+  background: var(--white);
+  border-radius: var(--radius_lg);
+  padding: 28px 32px;
+  box-shadow: var(--shadow_lg);
   display: flex;
   flex-direction: column;
-  gap: 28px;
 }
 .dashboard_title {
   font-family: var(--font_display);
   font-weight: 800;
   font-size: 1.9rem;
   color: var(--navy);
+  margin-bottom: 20px;
 }
 .dash_block {
-  background: var(--white);
-  border-radius: var(--radius_lg);
-  padding: 24px 28px;
-  box-shadow: var(--shadow_lg);
+  padding: 20px 0;
+  border-top: 1px solid var(--gray_lt);
 }
+.dash_block:last-child { padding-bottom: 0; }
 .dash_heading {
   font-family: var(--font_display);
   font-weight: 700;
@@ -144,12 +147,25 @@
 }
 .order_head {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   margin-bottom: 6px;
 }
-.order_id { font-weight: 700; color: var(--navy); }
+.order_toggle {
+  border: none;
+  background: var(--cream_lt);
+  color: var(--navy);
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius_sm);
+  cursor: pointer;
+  font-size: .8rem;
+  line-height: 1;
+  transition: transform .15s, background .15s;
+}
+.order_toggle:hover { background: var(--gray_lt); }
+.order_toggle.open { transform: rotate(180deg); }
+.order_id { font-weight: 700; color: var(--navy); margin-right: auto; }
 .order_status {
   font-size: .75rem;
   font-weight: 700;
@@ -190,6 +206,23 @@
   border-radius: var(--radius_sm);
   flex-shrink: 0;
 }
+.dash_preset_info { flex: 1; min-width: 0; }
+.dash_preset_actions { display: flex; gap: 6px; flex-shrink: 0; }
+.dash_preset_edit,
+.dash_preset_delete {
+  border: none;
+  background: var(--cream_lt);
+  color: var(--navy);
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius_sm);
+  cursor: pointer;
+  font-size: .9rem;
+  line-height: 1;
+  transition: background .15s, color .15s;
+}
+.dash_preset_edit:hover { background: var(--gray_lt); }
+.dash_preset_delete:hover { background: var(--coral); color: var(--white); }
 .dash_preset_name { font-weight: 700; color: var(--navy); font-size: .95rem; }
 .dash_preset_ingredients { font-size: .8rem; color: var(--gray_dk); line-height: 1.3; }
 

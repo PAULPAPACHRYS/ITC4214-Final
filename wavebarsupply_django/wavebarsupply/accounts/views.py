@@ -5,6 +5,7 @@ from django.shortcuts import redirect, render
 from catalogue.models import Product
 from orders.models import Order
 from presets.models import Preset
+from presets.forms import PresetForm
 from .forms import AccountEditForm, LoginForm, RegisterForm
 
 
@@ -58,12 +59,18 @@ def account(request):
               .filter(user=request.user, is_cart=False)
               .prefetch_related('items__product')
               .order_by('-order_date', '-id'))
-    my_presets = (Preset.objects
-                  .filter(user=request.user)
-                  .prefetch_related('ingredients'))
+    my_presets = list(Preset.objects
+                      .filter(user=request.user)
+                      .prefetch_related('ingredients'))
     liked_products = (Product.objects
                       .filter(likes__user=request.user)
                       .select_related('brand'))
+
+    # Extra data the edit-preset overlay needs (product search + prefill).
+    presets_json = [{**p.to_dict(), 'owned': True} for p in my_presets]
+    products_json = [{'id': p.id, 'name': p.name,
+                      'brand': p.brand.name, 'subcategory': p.category.subcategory}
+                     for p in Product.objects.select_related('brand', 'category')]
 
     return render(request, 'accounts/account.html', {
         'form': form,
@@ -71,6 +78,9 @@ def account(request):
         'orders': orders,
         'my_presets': my_presets,
         'liked_products': liked_products,
+        'preset_form': PresetForm(),
+        'presets_json': presets_json,
+        'products_json': products_json,
     })
 
 

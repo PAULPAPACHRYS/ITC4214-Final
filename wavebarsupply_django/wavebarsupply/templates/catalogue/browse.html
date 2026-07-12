@@ -140,6 +140,16 @@
 {{ products|json_script:"products_data" }}
 {{ presets|json_script:"presets_data" }}
 
+<!-- Read-only ingredient overlay (opens when a preset card is clicked) -->
+<div class="preset_view_overlay hidden">
+  <div class="preset_view_modal">
+    <button class="preset_view_close" type="button" title="Close">✕</button>
+    <h2 class="preset_view_title"></h2>
+    <p class="preset_view_subtitle">Ingredients</p>
+    <ul class="preset_view_list"></ul>
+  </div>
+</div>
+
 {% if user.is_authenticated %}
 <!-- Create-preset overlay -->
 <div class="preset_overlay hidden">

@@ -4,8 +4,8 @@
 {% block title %}WaveBar Supply — My Account{% endblock %}
 {% block meta_description %}Account page{% endblock %}
 
-{% block extra_css %}<link rel="stylesheet" href="{% static 'css/account_style.css' %}" />{% endblock %}
-{% block extra_js %}<script src="{% static 'js/account.js' %}" defer></script>{% endblock %}
+{% block extra_css %}<link rel="stylesheet" href="{% static 'css/account_style.css' %}" /><link rel="stylesheet" href="{% static 'css/presets_style.css' %}" />{% endblock %}
+{% block extra_js %}<script src="{% static 'js/account.js' %}" defer></script><script src="{% static 'js/dashboard.js' %}" defer></script>{% endblock %}
 
 {% block content %}
 <section class="account_section">
@@ -49,8 +49,8 @@
       </form>
     </div>
 
-    <!-- RIGHT: dashboard -->
-    <div class="dashboard">
+    <!-- RIGHT: dashboard (one container, with its own title inside) -->
+    <div class="dashboard" data-edit-url="{% url 'presets:edit' 0 %}" data-delete-url="{% url 'presets:delete' 0 %}">
       <h2 class="dashboard_title">Dashboard</h2>
 
       <!-- Orders -->
@@ -63,12 +63,13 @@
                 <div class="order_head">
                   <span class="order_id">Order #{{ order.id }}</span>
                   <span class="order_status status_{{ order.status }}">{{ order.get_status_display }}</span>
+                  <button class="order_toggle" type="button" title="Show items" aria-label="Show items">▾</button>
                 </div>
                 <p class="order_meta">Placed {{ order.order_date }} · <strong>Total €{{ order.total }}</strong></p>
                 {% if order.delivery_address %}
                   <p class="order_delivery">Delivery to {{ order.delivery_name }}, {{ order.delivery_address }}</p>
                 {% endif %}
-                <ul class="order_items">
+                <ul class="order_items hidden">
                   {% for item in order.items.all %}
                     <li><span>{{ item.quantity }} × {{ item.product.name }}</span><span>€{{ item.line_total }}</span></li>
                   {% endfor %}
@@ -87,11 +88,15 @@
         {% if my_presets %}
           <div class="dash_preset_list">
             {% for preset in my_presets %}
-              <div class="dash_preset_card">
+              <div class="dash_preset_card" data-id="{{ preset.id }}">
                 <span class="dash_preset_swatch" style="background: {{ preset.color }}"></span>
                 <div class="dash_preset_info">
                   <p class="dash_preset_name">{{ preset.name }}</p>
                   <p class="dash_preset_ingredients">{% for ing in preset.ingredients.all %}{{ ing.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+                </div>
+                <div class="dash_preset_actions">
+                  <button class="dash_preset_edit" type="button" title="Edit preset">✎</button>
+                  <button class="dash_preset_delete" type="button" title="Delete preset">🗑</button>
                 </div>
               </div>
             {% endfor %}
@@ -124,4 +129,39 @@
     </div>
   </div>
 </section>
+
+{{ products_json|json_script:"products_data" }}
+{{ presets_json|json_script:"presets_data" }}
+
+<!-- Edit-preset overlay (dashboard) -->
+<div class="preset_overlay hidden">
+  <div class="preset_modal">
+    <button class="preset_modal_close" type="button" title="Close">✕</button>
+    <h2 class="preset_modal_title">Edit Cocktail Preset</h2>
+
+    <form class="preset_form">
+      <label class="preset_field">
+        <span>Cocktail name</span>
+        {{ preset_form.name }}
+      </label>
+
+      <label class="preset_field preset_color_field">
+        <span>Preset colour</span>
+        {{ preset_form.color }}
+      </label>
+
+      <div class="preset_field">
+        <span>Ingredients</span>
+        <div class="preset_search_wrap">
+          <input type="text" class="preset_ingredient_search" placeholder="Search products to add…" />
+          <div class="preset_search_results"></div>
+        </div>
+        <div class="preset_selected"></div>
+      </div>
+
+      <p class="preset_form_error"></p>
+      <button class="button_primary preset_submit" type="submit">Save Changes</button>
+    </form>
+  </div>
+</div>
 {% endblock %}

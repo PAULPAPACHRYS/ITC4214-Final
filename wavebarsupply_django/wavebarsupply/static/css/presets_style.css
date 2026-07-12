@@ -238,3 +238,67 @@
 }
 .preset_form_error { color: var(--coral); font-size: .85rem; min-height: 1em; }
 .preset_submit { cursor: pointer; }
+
+/* ===== Read-only ingredient overlay (click a preset card) ===== */
+.preset_card { cursor: pointer; }   /* hint that the card is clickable */
+
+.preset_view_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 27, 42, .55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+.preset_view_modal {
+  background: var(--white);
+  border-radius: var(--radius_md);
+  box-shadow: var(--shadow_md);
+  width: 100%;
+  max-width: 420px;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 24px;
+  position: relative;
+}
+.preset_view_close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border: none;
+  background: transparent;
+  font-size: 1.1rem;
+  color: var(--gray_mid);
+  cursor: pointer;
+}
+.preset_view_close:hover { color: var(--coral); }
+.preset_view_title {
+  font-family: var(--font_display);
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.preset_view_subtitle {
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--teal);
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+.preset_view_list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.preset_view_list li {
+  padding: 10px 14px;
+  background: var(--cream_lt);
+  border-radius: var(--radius_sm);
+  color: var(--navy);
+  font-size: .95rem;
+}
