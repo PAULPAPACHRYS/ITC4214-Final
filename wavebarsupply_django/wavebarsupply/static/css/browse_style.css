@@ -21,11 +21,21 @@
 /* Browse */
 .browse_layout {
   display: grid;
-  grid-template-columns: 260px 1fr 300px;
-  gap: 32px;
+  grid-template-columns: 230px 1fr 260px;
+  column-gap: 24px;
+  row-gap: 16px;
   padding-top: 32px;
   padding-bottom: 60px;
   align-items: start;
+}
+
+/* Shared heading sitting above each of the three columns, all on one row. */
+.browse_column_title {
+  font-family: var(--font_display);
+  font-weight: 800;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  color: var(--navy);
+  margin: 0;
 }
 
 /* Filter bar */
@@ -204,7 +214,7 @@
 /* search result products */
 .product_grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 

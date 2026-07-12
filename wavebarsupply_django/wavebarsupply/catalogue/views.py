@@ -57,8 +57,11 @@ def browse(request):
     preset_filter = Q(user=None)
     if request.user.is_authenticated:
         preset_filter |= Q(user=request.user)
-    presets = [p.to_dict() for p in
-               Preset.objects.filter(preset_filter).prefetch_related('ingredients')]
+    presets = []
+    for p in Preset.objects.filter(preset_filter).prefetch_related('ingredients'):
+        data = p.to_dict()
+        data['owned'] = (request.user.is_authenticated and p.user_id == request.user.id)
+        presets.append(data)
 
     return render(request, 'catalogue/browse.html', {
         'products': products,

@@ -19,6 +19,11 @@
 <!-- Browse Sections -->
 <div class="browse_layout section_container">
 
+  <!-- Row 1: column headings, aligned across the three columns -->
+  <h2 class="browse_column_title">Filters</h2>
+  <h2 class="browse_column_title">Products</h2>
+  <h2 class="browse_column_title">Cocktail Presets</h2>
+
   <!-- Sidebar with the filters -->
   <aside class="filter_sidebar">
     <div class="filter_block">
@@ -120,13 +125,12 @@
   <!-- Cocktail presets column: one-click bundles that add all ingredients to the cart -->
   <aside class="preset_column">
     <section class="preset_section">
+      {% if user.is_authenticated %}
       <div class="preset_section_head">
-        <h2 class="preset_section_title">Cocktail Presets</h2>
-        {% if user.is_authenticated %}
-          <button class="button_primary preset_add_button" type="button">+ Add Cocktail Preset</button>
-        {% endif %}
+        <button class="button_primary preset_add_button" type="button">+ Add Cocktail Preset</button>
       </div>
-      <div class="preset_grid" data-add-url="{% url 'presets:add_to_cart' %}" data-create-url="{% url 'presets:create' %}">
+      {% endif %}
+      <div class="preset_grid" data-add-url="{% url 'presets:add_to_cart' %}" data-create-url="{% url 'presets:create' %}" data-edit-url="{% url 'presets:edit' 0 %}" data-delete-url="{% url 'presets:delete' 0 %}">
         <!-- filled by presets.js -->
       </div>
     </section>

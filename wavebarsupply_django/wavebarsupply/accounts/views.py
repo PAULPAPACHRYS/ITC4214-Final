@@ -2,6 +2,9 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
 
+from catalogue.models import Product
+from orders.models import Order
+from presets.models import Preset
 from .forms import AccountEditForm, LoginForm, RegisterForm
 
 
@@ -50,9 +53,24 @@ def account(request):
     else:
         form = AccountEditForm(instance=request.user)
 
+    # Dashboard data for the right-hand side of the page.
+    orders = (Order.objects
+              .filter(user=request.user, is_cart=False)
+              .prefetch_related('items__product')
+              .order_by('-order_date', '-id'))
+    my_presets = (Preset.objects
+                  .filter(user=request.user)
+                  .prefetch_related('ingredients'))
+    liked_products = (Product.objects
+                      .filter(likes__user=request.user)
+                      .select_related('brand'))
+
     return render(request, 'accounts/account.html', {
         'form': form,
         'show_edit': show_edit,
+        'orders': orders,
+        'my_presets': my_presets,
+        'liked_products': liked_products,
     })
 
 

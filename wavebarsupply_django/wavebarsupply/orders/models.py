@@ -29,6 +29,11 @@ class Order(models.Model):
     def __str__(self):
         return f"Order #{self.id} ({self.status})"
 
+    @property
+    def total(self):
+        """Sum of every line's total (quantity × unit price)."""
+        return sum(item.line_total for item in self.items.all())
+
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='items')
@@ -41,3 +46,7 @@ class OrderItem(models.Model):
 
     def __str__(self):
         return f"{self.quantity} x {self.product} (order #{self.order_id})"
+
+    @property
+    def line_total(self):
+        return self.quantity * self.unit_price

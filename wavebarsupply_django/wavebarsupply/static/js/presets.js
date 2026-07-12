@@ -3,7 +3,8 @@
 //   * builds a card per preset (default presets + the user's own),
 //   * each card has a servings stepper and a "+ Order" that adds EVERY ingredient
 //     to the cart (quantity = servings),
-//   * logged-in users can create their own presets via the overlay.
+//   * the user's OWN presets also get Edit and Delete buttons,
+//   * logged-in users can create/edit presets via the overlay.
 // All of this is vanilla JS and self-contained in an IIFE.
 // ----------------------------------------------------------------------------
 (function () {
@@ -14,9 +15,15 @@
   const AUTHED = document.body.dataset.authenticated === 'true';
   const ADD_URL = grid.dataset.addUrl;
   const CREATE_URL = grid.dataset.createUrl;
+  const EDIT_URL = grid.dataset.editUrl;      // .../presets/0/edit/  (0 is a placeholder)
+  const DELETE_URL = grid.dataset.deleteUrl;  // .../presets/0/delete/
 
   const PRESETS = JSON.parse(document.querySelector('#presets_data').textContent);
   const PRODUCTS = JSON.parse(document.querySelector('#products_data').textContent);
+
+  // Build a concrete edit/delete URL for a given preset id from the placeholder.
+  const edit_url = (id) => EDIT_URL.replace('/0/', '/' + id + '/');
+  const delete_url = (id) => DELETE_URL.replace('/0/', '/' + id + '/');
 
   // ---- Build and render preset cards ----------------------------------------
   function servings_line(count) {
@@ -28,8 +35,13 @@
     const card = document.createElement('div');
     card.className = 'preset_card';
     card.dataset.id = preset.id;
+    const owner_actions = preset.owned ? `
+      <div class="preset_owner_actions">
+        <button class="preset_edit_button" type="button" title="Edit preset">✎</button>
+        <button class="preset_delete_button" type="button" title="Delete preset">🗑</button>
+      </div>` : '';
     card.innerHTML = `
-      <div class="preset_card_thumb" style="background:${preset.color}"></div>
+      <div class="preset_card_thumb" style="background:${preset.color}">${owner_actions}</div>
       <div class="preset_card_body">
         <span class="preset_card_label">Cocktail Preset</span>
         <p class="preset_card_name">${preset.name}</p>
@@ -54,7 +66,7 @@
   }
   render_presets();
 
-  // ---- Servings stepper + "+ Order" -----------------------------------------
+  // ---- Servings stepper + "+ Order" + edit/delete ---------------------------
   function update_servings(card) {
     let value = parseInt(card.querySelector('.preset_qty').value) || 1;
     if (value < 1) value = 1;
@@ -73,6 +85,36 @@
       if (value < 1) value = 1;
       input.value = value;
       update_servings(card);
+      return;
+    }
+
+    // Delete the user's own preset
+    const del = event.target.closest('.preset_delete_button');
+    if (del) {
+      const card = del.closest('.preset_card');
+      const id = card.dataset.id;
+      if (!window.confirm('Delete this preset?')) return;
+      fetch(delete_url(id), {
+        method: 'POST',
+        headers: { 'X-CSRFToken': CSRF },
+      })
+        .then(response => response.json())
+        .then(data => {
+          if (!data.ok) return;
+          card.remove();
+          const idx = PRESETS.findIndex(p => String(p.id) === String(id));
+          if (idx !== -1) PRESETS.splice(idx, 1);
+        })
+        .catch(() => {});
+      return;
+    }
+
+    // Edit the user's own preset -> open the overlay pre-filled
+    const editBtn = event.target.closest('.preset_edit_button');
+    if (editBtn) {
+      const id = editBtn.closest('.preset_card').dataset.id;
+      const preset = PRESETS.find(p => String(p.id) === String(id));
+      if (preset) open_edit(preset);
       return;
     }
 
@@ -110,7 +152,7 @@
     if (input) update_servings(input.closest('.preset_card'));
   });
 
-  // ---- Create-preset overlay (logged-in users only) -------------------------
+  // ---- Create / edit overlay (logged-in users only) -------------------------
   const overlay = document.querySelector('.preset_overlay');
   const add_button = document.querySelector('.preset_add_button');
   if (!overlay || !add_button) return;
@@ -121,12 +163,56 @@
   const selected = overlay.querySelector('.preset_selected');
   const error = overlay.querySelector('.preset_form_error');
   const name_input = form.querySelector('input[name="name"]');
+  const color_input = form.querySelector('input[name="color"]');
+  const modal_title = overlay.querySelector('.preset_modal_title');
+  const submit_button = overlay.querySelector('.preset_submit');
   const chosen = new Set();   // product ids already added
+  let editing_id = null;      // null = creating, otherwise the preset being edited
 
-  function open_overlay() { overlay.classList.remove('hidden'); name_input.focus(); }
+  function reset_form() {
+    form.reset();
+    selected.innerHTML = '';
+    results.innerHTML = '';
+    error.textContent = '';
+    chosen.clear();
+  }
+
+  function add_ingredient(id, product_name) {
+    id = parseInt(id);
+    if (chosen.has(id)) return;
+    chosen.add(id);
+    const chip = document.createElement('span');
+    chip.className = 'preset_chip';
+    chip.dataset.id = id;
+    chip.innerHTML = `${product_name}<button type="button" class="preset_chip_remove" title="Remove">✕</button>` +
+                     `<input type="hidden" name="ingredients" value="${id}" />`;
+    selected.appendChild(chip);
+  }
+
+  function open_create() {
+    editing_id = null;
+    reset_form();
+    modal_title.textContent = 'Create a Cocktail Preset';
+    submit_button.textContent = 'Create Preset';
+    overlay.classList.remove('hidden');
+    name_input.focus();
+  }
+
+  function open_edit(preset) {
+    editing_id = preset.id;
+    reset_form();
+    name_input.value = preset.name;
+    if (color_input) color_input.value = preset.color;
+    preset.ingredient_ids.forEach((id, i) => add_ingredient(id, preset.ingredient_names[i]));
+    modal_title.textContent = 'Edit Cocktail Preset';
+    submit_button.textContent = 'Save Changes';
+    overlay.classList.remove('hidden');
+    name_input.focus();
+  }
+
   function close_overlay() { overlay.classList.add('hidden'); }
 
-  add_button.addEventListener('click', open_overlay);
+  add_button.addEventListener('click', open_create);
   overlay.querySelector('.preset_modal_close').addEventListener('click', close_overlay);
   overlay.addEventListener('click', (event) => {          // click on the backdrop
     if (event.target === overlay) close_overlay();
@@ -161,15 +247,7 @@
   results.addEventListener('click', (event) => {
     const row = event.target.closest('.preset_result_row');
     if (!row) return;
-    const id = parseInt(row.dataset.id);
-    if (chosen.has(id)) return;
-    chosen.add(id);
-    const chip = document.createElement('span');
-    chip.className = 'preset_chip';
-    chip.dataset.id = id;
-    chip.innerHTML = `${row.dataset.name}<button type="button" class="preset_chip_remove" title="Remove">✕</button>` +
-                     `<input type="hidden" name="ingredients" value="${id}" />`;
-    selected.appendChild(chip);
+    add_ingredient(row.dataset.id, row.dataset.name);
     row.disabled = true;
   });
 
@@ -182,7 +260,7 @@
     chip.remove();
   });
 
-  // Submit -> create the preset, then show it alongside the defaults.
+  // Submit -> create a new preset or save an edited one.
   form.addEventListener('submit', (event) => {
     event.preventDefault();
     error.textContent = '';
@@ -190,7 +268,8 @@
       error.textContent = 'Add at least one ingredient.';
       return;
     }
-    fetch(CREATE_URL, {
+    const url = editing_id ? edit_url(editing_id) : CREATE_URL;
+    fetch(url, {
       method: 'POST',
       headers: { 'X-CSRFToken': CSRF },
       body: new URLSearchParams(new FormData(form)),
@@ -198,15 +277,21 @@
       .then(response => response.json())
       .then(data => {
         if (!data.ok) {
-          error.textContent = 'Could not create the preset — check the name and ingredients.';
+          error.textContent = 'Could not save the preset — check the name and ingredients.';
           return;
         }
-        PRESETS.push(data.preset);
-        grid.appendChild(build_preset_card(data.preset));
-        form.reset();
-        selected.innerHTML = '';
-        results.innerHTML = '';
-        chosen.clear();
+        data.preset.owned = true;   // it's the current user's preset
+        if (editing_id) {
+          // replace the existing card and stored data
+          const idx = PRESETS.findIndex(p => String(p.id) === String(editing_id));
+          if (idx !== -1) PRESETS[idx] = data.preset;
+          const oldCard = grid.querySelector(`.preset_card[data-id="${editing_id}"]`);
+          if (oldCard) oldCard.replaceWith(build_preset_card(data.preset));
+        } else {
+          PRESETS.push(data.preset);
+          grid.appendChild(build_preset_card(data.preset));
+        }
+        reset_form();
         close_overlay();
       })
       .catch(() => { error.textContent = 'Something went wrong. Please try again.'; });

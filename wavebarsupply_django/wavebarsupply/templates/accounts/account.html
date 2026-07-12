@@ -9,41 +9,119 @@
 
 {% block content %}
 <section class="account_section">
-  <div class="account_card">
-    <h2 class="account_title">My Account</h2>
-    <p class="account_role">Account type: <span>{{ user.get_role_display }}</span></p>
+  <div class="account_layout">
 
-    <!-- Read view -->
-    <div class="account_view {% if show_edit %}hidden{% endif %}" id="account_view">
-      <dl class="account_details">
-        <div><dt>First Name</dt><dd>{{ user.first_name }}</dd></div>
-        <div><dt>Last Name</dt><dd>{{ user.last_name }}</dd></div>
-        <div><dt>Email Address</dt><dd>{{ user.email }}</dd></div>
-        <div><dt>Phone Number</dt><dd>{{ user.phone|default:"—" }}</dd></div>
-        <div><dt>Beach Bar / Business Name</dt><dd>{{ user.bar_name|default:"—" }}</dd></div>
-        <div><dt>Location / Region</dt><dd>{{ user.bar_location|default:"—" }}</dd></div>
-      </dl>
-      <div class="account_actions">
-        <button class="button_primary" id="edit_button" type="button">Edit Details</button>
-        <a class="button_secondary" href="{% url 'accounts:logout' %}">Log Out</a>
+    <!-- LEFT: user info -->
+    <div class="account_card">
+      <h2 class="account_title">My Account</h2>
+      <p class="account_role">Account type: <span>{{ user.get_role_display }}</span></p>
+
+      <!-- Read view -->
+      <div class="account_view {% if show_edit %}hidden{% endif %}" id="account_view">
+        <dl class="account_details">
+          <div><dt>First Name</dt><dd>{{ user.first_name }}</dd></div>
+          <div><dt>Last Name</dt><dd>{{ user.last_name }}</dd></div>
+          <div><dt>Email Address</dt><dd>{{ user.email }}</dd></div>
+          <div><dt>Phone Number</dt><dd>{{ user.phone|default:"—" }}</dd></div>
+          <div><dt>Beach Bar / Business Name</dt><dd>{{ user.bar_name|default:"—" }}</dd></div>
+          <div><dt>Location / Region</dt><dd>{{ user.bar_location|default:"—" }}</dd></div>
+        </dl>
+        <div class="account_actions">
+          <button class="button_primary" id="edit_button" type="button">Edit Details</button>
+          <a class="button_secondary" href="{% url 'accounts:logout' %}">Log Out</a>
+        </div>
       </div>
+
+      <!-- Edit view -->
+      <form class="account_edit {% if not show_edit %}hidden{% endif %}" id="account_edit" method="post" novalidate>
+        {% csrf_token %}
+        {% for field in form %}
+          <div class="form_group">
+            <label class="form_label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field }}
+            {% for error in field.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
+          </div>
+        {% endfor %}
+        <div class="account_actions">
+          <button class="button_primary" type="submit">Save Changes</button>
+          <button class="button_secondary" id="cancel_button" type="button">Cancel</button>
+        </div>
+      </form>
     </div>
 
-    <!-- Edit view -->
-    <form class="account_edit {% if not show_edit %}hidden{% endif %}" id="account_edit" method="post" novalidate>
-      {% csrf_token %}
-      {% for field in form %}
-        <div class="form_group">
-          <label class="form_label" for="{{ field.id_for_label }}">{{ field.label }}</label>
-          {{ field }}
-          {% for error in field.errors %}<span class="form_error">{{ error }}</span>{% endfor %}
-        </div>
-      {% endfor %}
-      <div class="account_actions">
-        <button class="button_primary" type="submit">Save Changes</button>
-        <button class="button_secondary" id="cancel_button" type="button">Cancel</button>
-      </div>
-    </form>
+    <!-- RIGHT: dashboard -->
+    <div class="dashboard">
+      <h2 class="dashboard_title">Dashboard</h2>
+
+      <!-- Orders -->
+      <section class="dash_block">
+        <h3 class="dash_heading">My Orders</h3>
+        {% if orders %}
+          <div class="order_list">
+            {% for order in orders %}
+              <div class="order_card">
+                <div class="order_head">
+                  <span class="order_id">Order #{{ order.id }}</span>
+                  <span class="order_status status_{{ order.status }}">{{ order.get_status_display }}</span>
+                </div>
+                <p class="order_meta">Placed {{ order.order_date }} · <strong>Total €{{ order.total }}</strong></p>
+                {% if order.delivery_address %}
+                  <p class="order_delivery">Delivery to {{ order.delivery_name }}, {{ order.delivery_address }}</p>
+                {% endif %}
+                <ul class="order_items">
+                  {% for item in order.items.all %}
+                    <li><span>{{ item.quantity }} × {{ item.product.name }}</span><span>€{{ item.line_total }}</span></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endfor %}
+          </div>
+        {% else %}
+          <p class="dash_empty">You haven't placed any orders yet.</p>
+        {% endif %}
+      </section>
+
+      <!-- Cocktail presets -->
+      <section class="dash_block">
+        <h3 class="dash_heading">My Cocktail Presets</h3>
+        {% if my_presets %}
+          <div class="dash_preset_list">
+            {% for preset in my_presets %}
+              <div class="dash_preset_card">
+                <span class="dash_preset_swatch" style="background: {{ preset.color }}"></span>
+                <div class="dash_preset_info">
+                  <p class="dash_preset_name">{{ preset.name }}</p>
+                  <p class="dash_preset_ingredients">{% for ing in preset.ingredients.all %}{{ ing.name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% else %}
+          <p class="dash_empty">You haven't created any cocktail presets yet.</p>
+        {% endif %}
+      </section>
+
+      <!-- Liked products -->
+      <section class="dash_block">
+        <h3 class="dash_heading">Liked Products</h3>
+        {% if liked_products %}
+          <div class="dash_like_list">
+            {% for product in liked_products %}
+              <div class="dash_like_card">
+                <span class="dash_like_emoji">{{ product.emoji }}</span>
+                <div class="dash_like_info">
+                  <p class="dash_like_name">{{ product.name }}</p>
+                  <p class="dash_like_brand">{{ product.brand.name }} · €{{ product.price }}</p>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% else %}
+          <p class="dash_empty">You haven't liked any products yet.</p>
+        {% endif %}
+      </section>
+
+    </div>
   </div>
 </section>
 {% endblock %}

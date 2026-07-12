@@ -7,16 +7,9 @@
 }
 .preset_section_head {
   display: flex;
-  flex-direction: column;   /* title above a full-width button in the narrow column */
+  flex-direction: column;
   align-items: stretch;
-  gap: 12px;
   margin-bottom: 16px;
-}
-.preset_section_title {
-  font-family: var(--font_display);
-  font-weight: 800;
-  font-size: clamp(1.3rem, 3vw, 1.7rem);
-  color: var(--navy);
 }
 .preset_add_button { width: 100%; }
 
@@ -44,7 +37,32 @@
 }
 .preset_card_thumb {
   height: 80px;   /* solid block of the preset's colour, no image/emoji */
+  position: relative;
 }
+
+/* Edit / delete buttons shown on the user's own presets (top-right of the thumb) */
+.preset_owner_actions {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  gap: 6px;
+}
+.preset_edit_button,
+.preset_delete_button {
+  border: none;
+  border-radius: var(--radius_sm);
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  font-size: .85rem;
+  line-height: 1;
+  background: rgba(255, 255, 255, .85);
+  color: var(--navy);
+  transition: background .15s;
+}
+.preset_edit_button:hover { background: var(--white); }
+.preset_delete_button:hover { background: var(--coral); color: var(--white); }
 .preset_card_body {
   padding: 14px 16px 16px;
   display: flex;

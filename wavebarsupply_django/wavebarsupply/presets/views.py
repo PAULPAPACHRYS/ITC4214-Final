@@ -26,6 +26,27 @@ def create(request):
 
 @login_required
 @require_POST
+def edit(request, preset_id):
+    """Update one of the current user's own presets."""
+    preset = get_object_or_404(Preset, pk=preset_id, user=request.user)
+    form = PresetForm(request.POST, instance=preset)
+    if not form.is_valid():
+        return JsonResponse({'ok': False, 'errors': form.errors}, status=400)
+    form.save()
+    return JsonResponse({'ok': True, 'preset': preset.to_dict()})
+
+
+@login_required
+@require_POST
+def delete(request, preset_id):
+    """Delete one of the current user's own presets."""
+    preset = get_object_or_404(Preset, pk=preset_id, user=request.user)
+    preset.delete()
+    return JsonResponse({'ok': True})
+
+
+@login_required
+@require_POST
 def add_to_cart(request):
     """Add every ingredient of a preset to the cart, quantity = servings each."""
     preset = get_object_or_404(Preset, pk=request.POST.get('preset_id'))
