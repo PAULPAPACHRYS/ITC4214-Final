@@ -63,6 +63,10 @@ def browse(request):
         data['owned'] = (request.user.is_authenticated and p.user_id == request.user.id)
         presets.append(data)
 
+    # Show the user's own presets before the default ones. sort() is stable, so
+    # presets keep their relative order within each group; owned=True sorts first.
+    presets.sort(key=lambda d: not d['owned'])
+
     return render(request, 'catalogue/browse.html', {
         'products': products,
         'presets': presets,

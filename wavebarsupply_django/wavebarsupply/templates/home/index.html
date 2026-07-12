@@ -15,22 +15,26 @@
     <p class="header_subtitle">Premium drinks, mixers and spirits delivered direct to beach bars across the coast. Browse our full catalogue and order in bulk.</p>
     <div class="header_buttons">
       <a href="{% url 'catalogue:browse' %}" class="button_primary">Browse Catalogue</a>
-      <a href="{% url 'accounts:login' %}" class="button_secondary">Create Account</a>
+      {% if user.is_authenticated %}
+        <a href="{% url 'accounts:account' %}" class="button_secondary">Your Account</a>
+      {% else %}
+        <a href="{% url 'accounts:login' %}" class="button_secondary">Create Account</a>
+      {% endif %}
     </div>
   </div>
   <div class="header_visual">
-    <div class="header_badge">500+ Products</div>
+    <div class="header_badge">{{ product_count }} Products</div>
     <div class="header_stat_grid">
       <div class="header_stat">
-        <span class="stat_number">3</span>
-        <span class="stat_label">Main Categories</span>
+        <span class="stat_number">{{ category_count }}</span>
+        <span class="stat_label">Categories</span>
       </div>
       <div class="header_stat">
-        <span class="stat_number">12</span>
+        <span class="stat_number">{{ subcategory_count }}</span>
         <span class="stat_label">Sub-categories</span>
       </div>
       <div class="header_stat">
-        <span class="stat_number">50+</span>
+        <span class="stat_number">{{ brand_count }}</span>
         <span class="stat_label">Top Brands</span>
       </div>
       <div class="header_stat">
@@ -44,7 +48,7 @@
 <!-- Product Categories Section -->
 <section class="categories_section">
   <div class="section_container">
-    <h2 class="section_title">Shop by Category</h2>
+    <h2 class="section_title">Shop by Popular Categories</h2>
     <div class="category_cards">
       <a href="{% url 'catalogue:browse' %}?cat=non-alcohol" class="category_card category_card--teal">
         <div class="category_icon">🥤</div>

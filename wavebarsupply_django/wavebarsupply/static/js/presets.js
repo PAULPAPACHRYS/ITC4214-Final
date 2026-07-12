@@ -67,6 +67,38 @@
   }
   render_presets();
 
+  // ---- Search the presets by name -------------------------------------------
+  // Filters the visible cards as the user types. Matching is by preset name and
+  // by ingredient names, so searching e.g. "rum" also finds presets using rum.
+  const preset_search = document.querySelector('.preset_search_input');
+  const preset_search_clear = document.querySelector('.preset_search_clear');
+  const preset_no_match = document.querySelector('.preset_no_match');
+
+  function filter_presets() {
+    const query = (preset_search ? preset_search.value : '').trim().toLowerCase();
+    let visible = 0;
+    grid.querySelectorAll('.preset_card').forEach(card => {
+      const preset = PRESETS.find(p => String(p.id) === String(card.dataset.id));
+      const haystack = preset
+        ? (preset.name + ' ' + preset.ingredient_names.join(' ')).toLowerCase()
+        : card.textContent.toLowerCase();
+      const match = query === '' || haystack.includes(query);
+      card.classList.toggle('hidden', !match);
+      if (match) visible += 1;
+    });
+    if (preset_no_match) preset_no_match.classList.toggle('hidden', visible !== 0);
+  }
+
+  if (preset_search) {
+    preset_search.addEventListener('input', filter_presets);
+  }
+  if (preset_search_clear) {
+    preset_search_clear.addEventListener('click', () => {
+      if (preset_search) preset_search.value = '';
+      filter_presets();
+    });
+  }
+
   // ---- Read-only ingredient overlay (opens when a card is clicked) -----------
   const view_overlay = document.querySelector('.preset_view_overlay');
 
@@ -132,6 +164,7 @@
           card.remove();
           const idx = PRESETS.findIndex(p => String(p.id) === String(id));
           if (idx !== -1) PRESETS.splice(idx, 1);
+          filter_presets();
         })
         .catch(() => {});
       return;
@@ -325,11 +358,14 @@
           const oldCard = grid.querySelector(`.preset_card[data-id="${editing_id}"]`);
           if (oldCard) oldCard.replaceWith(build_preset_card(data.preset));
         } else {
-          PRESETS.push(data.preset);
-          grid.appendChild(build_preset_card(data.preset));
+          // A brand-new preset belongs to the user, so it goes to the front,
+          // ahead of the default presets, matching the server-side ordering.
+          PRESETS.unshift(data.preset);
+          grid.prepend(build_preset_card(data.preset));
         }
         reset_form();
         close_overlay();
+        filter_presets();
       })
       .catch(() => { error.textContent = 'Something went wrong. Please try again.'; });
   });

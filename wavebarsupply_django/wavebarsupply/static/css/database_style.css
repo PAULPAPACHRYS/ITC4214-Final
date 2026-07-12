@@ -15,8 +15,16 @@
 /* table overview cards */
 .db_table_cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  /* Show four cards per row on wide screens. */
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
+}
+/* Fall back to fewer columns on narrower screens so cards never get squashed. */
+@media (max-width: 900px) {
+  .db_table_cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .db_table_cards { grid-template-columns: 1fr; }
 }
 .db_table_card {
   background: var(--white);

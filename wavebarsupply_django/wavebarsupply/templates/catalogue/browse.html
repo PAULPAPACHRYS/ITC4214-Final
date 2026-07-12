@@ -125,6 +125,10 @@
   <!-- Cocktail presets column: one-click bundles that add all ingredients to the cart -->
   <aside class="preset_column">
     <section class="preset_section">
+      <div class="preset_search_bar">
+        <input type="text" class="preset_search_input" placeholder="Search cocktail presets…" />
+        <button class="preset_search_clear" type="button" title="Clear search">✕</button>
+      </div>
       {% if user.is_authenticated %}
       <div class="preset_section_head">
         <button class="button_primary preset_add_button" type="button">+ Add Cocktail Preset</button>
@@ -133,6 +137,7 @@
       <div class="preset_grid" data-add-url="{% url 'presets:add_to_cart' %}" data-create-url="{% url 'presets:create' %}" data-edit-url="{% url 'presets:edit' 0 %}" data-delete-url="{% url 'presets:delete' 0 %}">
         <!-- filled by presets.js -->
       </div>
+      <p class="preset_no_match hidden">No presets match your search.</p>
     </section>
   </aside>
 </div>
