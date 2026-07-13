@@ -64,7 +64,7 @@ def account(request):
                       .prefetch_related('ingredients'))
     liked_products = (Product.objects
                       .filter(likes__user=request.user)
-                      .select_related('brand'))
+                      .select_related('brand', 'category'))
 
     # Extra data the edit-preset overlay needs (product search + prefill).
     presets_json = [{**p.to_dict(), 'owned': True} for p in my_presets]

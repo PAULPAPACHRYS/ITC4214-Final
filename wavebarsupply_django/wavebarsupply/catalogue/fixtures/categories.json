@@ -4,7 +4,8 @@
         "pk": 1,
         "fields": {
             "name": "non-alcohol",
-            "subcategory": "Soft Drinks"
+            "subcategory": "Soft Drinks",
+            "image": "soft_drinks.jpg"
         }
     },
     {
@@ -12,7 +13,8 @@
         "pk": 2,
         "fields": {
             "name": "non-alcohol",
-            "subcategory": "Water"
+            "subcategory": "Water",
+            "image": "water.jpg"
         }
     },
     {
@@ -20,7 +22,8 @@
         "pk": 3,
         "fields": {
             "name": "non-alcohol",
-            "subcategory": "Juices"
+            "subcategory": "Juices",
+            "image": "juices.jpg"
         }
     },
     {
@@ -28,7 +31,8 @@
         "pk": 4,
         "fields": {
             "name": "non-alcohol",
-            "subcategory": "Ice Teas"
+            "subcategory": "Ice Teas",
+            "image": "ice_tea.jpg"
         }
     },
     {
@@ -36,7 +40,8 @@
         "pk": 5,
         "fields": {
             "name": "non-alcohol",
-            "subcategory": "Coffee"
+            "subcategory": "Coffee",
+            "image": "coffee.jpg"
         }
     },
     {
@@ -44,7 +49,8 @@
         "pk": 6,
         "fields": {
             "name": "non-alcohol",
-            "subcategory": "Energy Drinks"
+            "subcategory": "Energy Drinks",
+            "image": "energy_drink.jpg"
         }
     },
     {
@@ -52,7 +58,8 @@
         "pk": 7,
         "fields": {
             "name": "fermented",
-            "subcategory": "Beer"
+            "subcategory": "Beer",
+            "image": "beer.jpg"
         }
     },
     {
@@ -60,7 +67,8 @@
         "pk": 8,
         "fields": {
             "name": "fermented",
-            "subcategory": "Wine"
+            "subcategory": "Wine",
+            "image": "wine.jpg"
         }
     },
     {
@@ -68,7 +76,8 @@
         "pk": 9,
         "fields": {
             "name": "fermented",
-            "subcategory": "Cider"
+            "subcategory": "Cider",
+            "image": "cider.jpg"
         }
     },
     {
@@ -76,7 +85,8 @@
         "pk": 10,
         "fields": {
             "name": "distilled",
-            "subcategory": "Whisky"
+            "subcategory": "Whisky",
+            "image": "whisky.jpg"
         }
     },
     {
@@ -84,7 +94,8 @@
         "pk": 11,
         "fields": {
             "name": "distilled",
-            "subcategory": "Vodka"
+            "subcategory": "Vodka",
+            "image": "vodka.jpg"
         }
     },
     {
@@ -92,7 +103,8 @@
         "pk": 12,
         "fields": {
             "name": "distilled",
-            "subcategory": "Rum"
+            "subcategory": "Rum",
+            "image": "rum.jpg"
         }
     },
     {
@@ -100,7 +112,8 @@
         "pk": 13,
         "fields": {
             "name": "distilled",
-            "subcategory": "Gin"
+            "subcategory": "Gin",
+            "image": "gin.jpg"
         }
     },
     {
@@ -108,7 +121,8 @@
         "pk": 14,
         "fields": {
             "name": "distilled",
-            "subcategory": "Tequila"
+            "subcategory": "Tequila",
+            "image": "tequila.jpg"
         }
     },
     {
@@ -116,7 +130,8 @@
         "pk": 15,
         "fields": {
             "name": "cocktail",
-            "subcategory": "Syrups"
+            "subcategory": "Syrups",
+            "image": "syrups.jpg"
         }
     },
     {
@@ -124,7 +139,8 @@
         "pk": 16,
         "fields": {
             "name": "cocktail",
-            "subcategory": "Mixers"
+            "subcategory": "Mixers",
+            "image": "mixers.jpg"
         }
     },
     {
@@ -132,7 +148,8 @@
         "pk": 17,
         "fields": {
             "name": "cocktail",
-            "subcategory": "Bitters"
+            "subcategory": "Bitters",
+            "image": "bitters.jpg"
         }
     },
     {
@@ -140,7 +157,8 @@
         "pk": 18,
         "fields": {
             "name": "cocktail",
-            "subcategory": "Garnishes"
+            "subcategory": "Garnishes",
+            "image": "garnishes.jpg"
         }
     },
     {
@@ -148,7 +166,8 @@
         "pk": 19,
         "fields": {
             "name": "ice",
-            "subcategory": "Ice cubes"
+            "subcategory": "Ice cubes",
+            "image": "ice_cubes.jpg"
         }
     },
     {
@@ -156,7 +175,8 @@
         "pk": 20,
         "fields": {
             "name": "ice",
-            "subcategory": "Crushed ice"
+            "subcategory": "Crushed ice",
+            "image": "crushed_ice.jpg"
         }
     },
     {
@@ -164,7 +184,8 @@
         "pk": 21,
         "fields": {
             "name": "ice",
-            "subcategory": "Dry ice"
+            "subcategory": "Dry ice",
+            "image": "dry_ice.jpg"
         }
     },
     {
@@ -172,7 +193,8 @@
         "pk": 22,
         "fields": {
             "name": "ice",
-            "subcategory": "Ice blocks"
+            "subcategory": "Ice blocks",
+            "image": "ice_block.jpg"
         }
     },
     {
@@ -180,7 +202,8 @@
         "pk": 23,
         "fields": {
             "name": "dairy",
-            "subcategory": "Milk"
+            "subcategory": "Milk",
+            "image": "milk.jpg"
         }
     },
     {
@@ -188,7 +211,8 @@
         "pk": 24,
         "fields": {
             "name": "dairy",
-            "subcategory": "Oat milk"
+            "subcategory": "Oat milk",
+            "image": "oat_milk.png"
         }
     },
     {
@@ -196,7 +220,8 @@
         "pk": 25,
         "fields": {
             "name": "dairy",
-            "subcategory": "Almond milk"
+            "subcategory": "Almond milk",
+            "image": "almond_milk.png"
         }
     },
     {
@@ -204,7 +229,8 @@
         "pk": 26,
         "fields": {
             "name": "dairy",
-            "subcategory": "Coconut milk"
+            "subcategory": "Coconut milk",
+            "image": "coconut_milk.jpg"
         }
     },
     {
@@ -212,7 +238,8 @@
         "pk": 27,
         "fields": {
             "name": "dairy",
-            "subcategory": "Cream"
+            "subcategory": "Cream",
+            "image": "cream.jpg"
         }
     },
     {
@@ -220,7 +247,8 @@
         "pk": 28,
         "fields": {
             "name": "fresh",
-            "subcategory": "Fruit"
+            "subcategory": "Fruit",
+            "image": "fruit.jpg"
         }
     },
     {
@@ -228,7 +256,8 @@
         "pk": 29,
         "fields": {
             "name": "fresh",
-            "subcategory": "Berries"
+            "subcategory": "Berries",
+            "image": "berries.jpg"
         }
     },
     {
@@ -236,7 +265,8 @@
         "pk": 30,
         "fields": {
             "name": "fresh",
-            "subcategory": "Aromatic herbs"
+            "subcategory": "Aromatic herbs",
+            "image": "aromatic_herbs.jpg"
         }
     },
     {
@@ -244,7 +274,8 @@
         "pk": 31,
         "fields": {
             "name": "disposable",
-            "subcategory": "Cups"
+            "subcategory": "Cups",
+            "image": "cups.jpg"
         }
     },
     {
@@ -252,7 +283,8 @@
         "pk": 32,
         "fields": {
             "name": "disposable",
-            "subcategory": "Straws"
+            "subcategory": "Straws",
+            "image": "straws.jpg"
         }
     },
     {
@@ -260,7 +292,8 @@
         "pk": 33,
         "fields": {
             "name": "disposable",
-            "subcategory": "Napkins"
+            "subcategory": "Napkins",
+            "image": "napkins.jpg"
         }
     },
     {
@@ -268,7 +301,8 @@
         "pk": 34,
         "fields": {
             "name": "snacks",
-            "subcategory": "Chips"
+            "subcategory": "Chips",
+            "image": "chips.jpg"
         }
     },
     {
@@ -276,7 +310,8 @@
         "pk": 35,
         "fields": {
             "name": "snacks",
-            "subcategory": "Mixed nuts"
+            "subcategory": "Mixed nuts",
+            "image": "mixed_nuts.jpg"
         }
     },
     {
@@ -284,7 +319,8 @@
         "pk": 36,
         "fields": {
             "name": "snacks",
-            "subcategory": "Popcorn"
+            "subcategory": "Popcorn",
+            "image": "popcorn.jpg"
         }
     },
     {
@@ -292,7 +328,8 @@
         "pk": 37,
         "fields": {
             "name": "snacks",
-            "subcategory": "Crackers"
+            "subcategory": "Crackers",
+            "image": "crackers.jpg"
         }
     },
     {
@@ -300,7 +337,8 @@
         "pk": 38,
         "fields": {
             "name": "distilled",
-            "subcategory": "Liqueurs"
+            "subcategory": "Liqueurs",
+            "image": "liquer.jpg"
         }
     }
 ]

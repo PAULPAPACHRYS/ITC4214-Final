@@ -23,7 +23,11 @@
        data-remove-url="{% url 'cart:remove' %}">
     {% for item in items %}
       <div class="cart_item" data-item-id="{{ item.id }}">
-        <span class="cart_item_emoji">{{ item.emoji }}</span>
+        <span class="cart_item_thumb">
+          {% if item.image %}
+            <img class="cart_item_image" src="{{ item.image }}" alt="{{ item.name }}">
+          {% endif %}
+        </span>
         <div class="cart_item_info">
           <p class="cart_item_name">{{ item.name }}</p>
           <p class="cart_item_unit">€{{ item.unit_price }} / unit</p>

@@ -113,7 +113,11 @@
           <div class="dash_like_list">
             {% for product in liked_products %}
               <div class="dash_like_card">
-                <span class="dash_like_emoji">{{ product.emoji }}</span>
+                <span class="dash_like_thumb">
+                  {% if product.image_url %}
+                    <img class="dash_like_image" src="{{ product.image_url }}" alt="{{ product.name }}">
+                  {% endif %}
+                </span>
                 <div class="dash_like_info">
                   <p class="dash_like_name">{{ product.name }}</p>
                   <p class="dash_like_brand">{{ product.brand.name }} · €{{ product.price }}</p>

@@ -17,7 +17,7 @@ def _style(form):
 class CategoryForm(forms.ModelForm):
     class Meta:
         model = Category
-        fields = ['name', 'subcategory']
+        fields = ['name', 'subcategory', 'image']
 
     def __init__(self, *a, **k):
         super().__init__(*a, **k)
@@ -47,7 +47,7 @@ class LikeForm(forms.ModelForm):
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ['name', 'brand', 'category', 'price', 'volume', 'abv', 'emoji', 'tags']
+        fields = ['name', 'brand', 'category', 'price', 'volume', 'abv', 'tags']
 
     def __init__(self, *a, **k):
         super().__init__(*a, **k)

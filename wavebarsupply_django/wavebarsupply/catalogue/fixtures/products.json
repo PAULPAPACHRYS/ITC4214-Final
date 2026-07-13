@@ -7,7 +7,6 @@
             "price": "1.20",
             "volume": 330,
             "abv": "0.0",
-            "emoji": "🥤",
             "tags": [
                 "cola",
                 "classic",
@@ -25,7 +24,6 @@
             "price": "1.20",
             "volume": 330,
             "abv": "0.0",
-            "emoji": "🥤",
             "tags": [
                 "cola",
                 "zero sugar",
@@ -43,7 +41,6 @@
             "price": "1.15",
             "volume": 330,
             "abv": "0.0",
-            "emoji": "🥤",
             "tags": [
                 "lemon",
                 "lime",
@@ -61,7 +58,6 @@
             "price": "1.15",
             "volume": 330,
             "abv": "0.0",
-            "emoji": "🥤",
             "tags": [
                 "orange",
                 "fruity",
@@ -79,7 +75,6 @@
             "price": "1.10",
             "volume": 500,
             "abv": "0.0",
-            "emoji": "🥤",
             "tags": [
                 "cola",
                 "max",
@@ -97,7 +92,6 @@
             "price": "0.80",
             "volume": 500,
             "abv": "0.0",
-            "emoji": "💧",
             "tags": [
                 "sparkling",
                 "mineral",
@@ -115,7 +109,6 @@
             "price": "1.20",
             "volume": 750,
             "abv": "0.0",
-            "emoji": "💧",
             "tags": [
                 "still",
                 "premium",
@@ -133,7 +126,6 @@
             "price": "0.60",
             "volume": 500,
             "abv": "0.0",
-            "emoji": "💧",
             "tags": [
                 "still",
                 "natural",
@@ -151,7 +143,6 @@
             "price": "1.80",
             "volume": 750,
             "abv": "0.0",
-            "emoji": "💧",
             "tags": [
                 "sparkling",
                 "italian",
@@ -169,7 +160,6 @@
             "price": "2.20",
             "volume": 1000,
             "abv": "0.0",
-            "emoji": "🍊",
             "tags": [
                 "orange",
                 "100% juice",
@@ -187,7 +177,6 @@
             "price": "2.80",
             "volume": 750,
             "abv": "0.0",
-            "emoji": "🥭",
             "tags": [
                 "mango",
                 "smoothie",
@@ -205,7 +194,6 @@
             "price": "1.50",
             "volume": 1000,
             "abv": "0.0",
-            "emoji": "🍑",
             "tags": [
                 "peach",
                 "nectar",
@@ -223,7 +211,6 @@
             "price": "1.30",
             "volume": 500,
             "abv": "0.0",
-            "emoji": "🍵",
             "tags": [
                 "peach",
                 "sweet",
@@ -241,7 +228,6 @@
             "price": "1.25",
             "volume": 500,
             "abv": "0.0",
-            "emoji": "🍵",
             "tags": [
                 "lemon",
                 "classic",
@@ -259,7 +245,6 @@
             "price": "1.60",
             "volume": 547,
             "abv": "0.0",
-            "emoji": "🍵",
             "tags": [
                 "green",
                 "unsweetened",
@@ -277,7 +262,6 @@
             "price": "1.50",
             "volume": 250,
             "abv": "0.0",
-            "emoji": "☕",
             "tags": [
                 "espresso",
                 "cold",
@@ -295,7 +279,6 @@
             "price": "3.20",
             "volume": 325,
             "abv": "0.0",
-            "emoji": "☕",
             "tags": [
                 "cold brew",
                 "premium",
@@ -313,7 +296,6 @@
             "price": "2.20",
             "volume": 250,
             "abv": "0.0",
-            "emoji": "☕",
             "tags": [
                 "cappuccino",
                 "can",
@@ -331,7 +313,6 @@
             "price": "2.50",
             "volume": 250,
             "abv": "0.0",
-            "emoji": "⚡",
             "tags": [
                 "energy",
                 "taurine",
@@ -349,7 +330,6 @@
             "price": "2.30",
             "volume": 500,
             "abv": "0.0",
-            "emoji": "⚡",
             "tags": [
                 "energy",
                 "large",
@@ -367,7 +347,6 @@
             "price": "2.80",
             "volume": 355,
             "abv": "0.0",
-            "emoji": "⚡",
             "tags": [
                 "energy",
                 "fitness",
@@ -385,7 +364,6 @@
             "price": "1.80",
             "volume": 500,
             "abv": "4.7",
-            "emoji": "🍺",
             "tags": [
                 "lager",
                 "greek",
@@ -403,7 +381,6 @@
             "price": "1.90",
             "volume": 500,
             "abv": "5.0",
-            "emoji": "🍺",
             "tags": [
                 "pilsner",
                 "greek",
@@ -421,7 +398,6 @@
             "price": "2.20",
             "volume": 330,
             "abv": "5.0",
-            "emoji": "🍺",
             "tags": [
                 "lager",
                 "dutch",
@@ -439,7 +415,6 @@
             "price": "2.50",
             "volume": 330,
             "abv": "4.5",
-            "emoji": "🍺",
             "tags": [
                 "lager",
                 "mexican",
@@ -457,7 +432,6 @@
             "price": "1.70",
             "volume": 500,
             "abv": "5.0",
-            "emoji": "🍺",
             "tags": [
                 "lager",
                 "greek",
@@ -475,7 +449,6 @@
             "price": "3.40",
             "volume": 440,
             "abv": "6.5",
-            "emoji": "🍺",
             "tags": [
                 "IPA",
                 "craft",
@@ -493,7 +466,6 @@
             "price": "12.00",
             "volume": 750,
             "abv": "13.5",
-            "emoji": "🍷",
             "tags": [
                 "white",
                 "dry",
@@ -512,7 +484,6 @@
             "price": "10.00",
             "volume": 750,
             "abv": "13.0",
-            "emoji": "🍷",
             "tags": [
                 "red",
                 "dry",
@@ -531,7 +502,6 @@
             "price": "9.00",
             "volume": 750,
             "abv": "11.0",
-            "emoji": "🥂",
             "tags": [
                 "sparkling",
                 "italian",
@@ -549,7 +519,6 @@
             "price": "18.00",
             "volume": 750,
             "abv": "13.0",
-            "emoji": "🥂",
             "tags": [
                 "rosé",
                 "french",
@@ -567,7 +536,6 @@
             "price": "2.80",
             "volume": 500,
             "abv": "5.0",
-            "emoji": "🍎",
             "tags": [
                 "apple",
                 "dry",
@@ -585,7 +553,6 @@
             "price": "3.20",
             "volume": 500,
             "abv": "4.0",
-            "emoji": "🍓",
             "tags": [
                 "strawberry",
                 "sweet",
@@ -603,7 +570,6 @@
             "price": "3.10",
             "volume": 500,
             "abv": "4.0",
-            "emoji": "🍏",
             "tags": [
                 "mixed fruit",
                 "swedish",
@@ -621,7 +587,6 @@
             "price": "24.00",
             "volume": 700,
             "abv": "40.0",
-            "emoji": "🥃",
             "tags": [
                 "tennessee",
                 "american",
@@ -639,7 +604,6 @@
             "price": "28.00",
             "volume": 700,
             "abv": "40.0",
-            "emoji": "🥃",
             "tags": [
                 "blended",
                 "scotch",
@@ -657,7 +621,6 @@
             "price": "36.00",
             "volume": 700,
             "abv": "40.0",
-            "emoji": "🥃",
             "tags": [
                 "single malt",
                 "scotch",
@@ -675,7 +638,6 @@
             "price": "22.00",
             "volume": 700,
             "abv": "40.0",
-            "emoji": "🥃",
             "tags": [
                 "irish",
                 "smooth",
@@ -693,7 +655,6 @@
             "price": "18.00",
             "volume": 700,
             "abv": "40.0",
-            "emoji": "🫙",
             "tags": [
                 "swedish",
                 "neutral",
@@ -711,7 +672,6 @@
             "price": "34.00",
             "volume": 700,
             "abv": "40.0",
-            "emoji": "🫙",
             "tags": [
                 "french",
                 "premium",
@@ -729,7 +689,6 @@
             "price": "14.00",
             "volume": 700,
             "abv": "37.5",
-            "emoji": "🫙",
             "tags": [
                 "russian",
                 "triple distilled",
@@ -747,7 +706,6 @@
             "price": "38.00",
             "volume": 700,
             "abv": "40.0",
-            "emoji": "🫙",
             "tags": [
                 "polish",
                 "rye",
@@ -765,7 +723,6 @@
             "price": "16.00",
             "volume": 700,
             "abv": "37.5",
-            "emoji": "🍹",
             "tags": [
                 "white",
                 "light",
@@ -783,7 +740,6 @@
             "price": "18.00",
             "volume": 700,
             "abv": "35.0",
-            "emoji": "🍹",
             "tags": [
                 "spiced",
                 "golden",
@@ -801,7 +757,6 @@
             "price": "32.00",
             "volume": 700,
             "abv": "40.0",
-            "emoji": "🍹",
             "tags": [
                 "venezuelan",
                 "dark",
@@ -820,7 +775,6 @@
             "price": "22.00",
             "volume": 700,
             "abv": "40.0",
-            "emoji": "🌿",
             "tags": [
                 "london dry",
                 "botanical",
@@ -838,7 +792,6 @@
             "price": "30.00",
             "volume": 700,
             "abv": "41.4",
-            "emoji": "🌿",
             "tags": [
                 "scottish",
                 "cucumber",
@@ -857,7 +810,6 @@
             "price": "28.00",
             "volume": 700,
             "abv": "47.3",
-            "emoji": "🌿",
             "tags": [
                 "citrus",
                 "fresh",
@@ -875,7 +827,6 @@
             "price": "42.00",
             "volume": 500,
             "abv": "47.0",
-            "emoji": "🌿",
             "tags": [
                 "german",
                 "47 botanicals",
@@ -893,7 +844,6 @@
             "price": "20.00",
             "volume": 700,
             "abv": "38.0",
-            "emoji": "🌵",
             "tags": [
                 "silver",
                 "blanco",
@@ -911,7 +861,6 @@
             "price": "40.00",
             "volume": 700,
             "abv": "40.0",
-            "emoji": "🌵",
             "tags": [
                 "premium",
                 "100% agave",
@@ -929,7 +878,6 @@
             "price": "48.00",
             "volume": 700,
             "abv": "40.0",
-            "emoji": "🌵",
             "tags": [
                 "ultra-premium",
                 "100% agave",
@@ -947,7 +895,6 @@
             "price": "6.50",
             "volume": 700,
             "abv": "0.0",
-            "emoji": "🍯",
             "tags": [
                 "syrup",
                 "grenadine",
@@ -965,7 +912,6 @@
             "price": "6.90",
             "volume": 700,
             "abv": "0.0",
-            "emoji": "🍯",
             "tags": [
                 "syrup",
                 "vanilla",
@@ -983,7 +929,6 @@
             "price": "1.10",
             "volume": 200,
             "abv": "0.0",
-            "emoji": "🫧",
             "tags": [
                 "tonic",
                 "mixer",
@@ -1001,7 +946,6 @@
             "price": "1.20",
             "volume": 200,
             "abv": "0.0",
-            "emoji": "🫧",
             "tags": [
                 "ginger beer",
                 "mixer",
@@ -1019,7 +963,6 @@
             "price": "12.90",
             "volume": 200,
             "abv": "44.7",
-            "emoji": "🧪",
             "tags": [
                 "bitters",
                 "aromatic",
@@ -1037,7 +980,6 @@
             "price": "13.50",
             "volume": 100,
             "abv": "28.0",
-            "emoji": "🧪",
             "tags": [
                 "bitters",
                 "orange",
@@ -1055,7 +997,6 @@
             "price": "14.90",
             "volume": 400,
             "abv": "0.0",
-            "emoji": "🍒",
             "tags": [
                 "garnish",
                 "cherry",
@@ -1073,7 +1014,6 @@
             "price": "7.50",
             "volume": 350,
             "abv": "0.0",
-            "emoji": "🫒",
             "tags": [
                 "garnish",
                 "olive",
@@ -1091,7 +1031,6 @@
             "price": "3.50",
             "volume": 2000,
             "abv": "0.0",
-            "emoji": "🧊",
             "tags": [
                 "ice",
                 "cubes"
@@ -1108,7 +1047,6 @@
             "price": "3.80",
             "volume": 2000,
             "abv": "0.0",
-            "emoji": "🧊",
             "tags": [
                 "ice",
                 "crushed"
@@ -1125,7 +1063,6 @@
             "price": "18.00",
             "volume": 3000,
             "abv": "0.0",
-            "emoji": "🌫️",
             "tags": [
                 "ice",
                 "dry ice",
@@ -1143,7 +1080,6 @@
             "price": "9.00",
             "volume": 5000,
             "abv": "0.0",
-            "emoji": "🧊",
             "tags": [
                 "ice",
                 "block",
@@ -1161,7 +1097,6 @@
             "price": "1.40",
             "volume": 1000,
             "abv": "0.0",
-            "emoji": "🥛",
             "tags": [
                 "milk",
                 "dairy",
@@ -1179,7 +1114,6 @@
             "price": "2.60",
             "volume": 1000,
             "abv": "0.0",
-            "emoji": "🥛",
             "tags": [
                 "oat milk",
                 "barista",
@@ -1197,7 +1131,6 @@
             "price": "2.30",
             "volume": 1000,
             "abv": "0.0",
-            "emoji": "🥛",
             "tags": [
                 "almond milk",
                 "plant-based"
@@ -1214,7 +1147,6 @@
             "price": "2.40",
             "volume": 1000,
             "abv": "0.0",
-            "emoji": "🥥",
             "tags": [
                 "coconut milk",
                 "plant-based"
@@ -1231,7 +1163,6 @@
             "price": "2.20",
             "volume": 500,
             "abv": "0.0",
-            "emoji": "🥛",
             "tags": [
                 "cream",
                 "dairy"
@@ -1248,7 +1179,6 @@
             "price": "8.00",
             "volume": 1000,
             "abv": "0.0",
-            "emoji": "🍋",
             "tags": [
                 "fruit",
                 "lemon",
@@ -1266,7 +1196,6 @@
             "price": "7.50",
             "volume": 1000,
             "abv": "0.0",
-            "emoji": "🍊",
             "tags": [
                 "fruit",
                 "orange",
@@ -1284,7 +1213,6 @@
             "price": "9.00",
             "volume": 1000,
             "abv": "0.0",
-            "emoji": "🍏",
             "tags": [
                 "fruit",
                 "lime",
@@ -1302,7 +1230,6 @@
             "price": "4.50",
             "volume": 500,
             "abv": "0.0",
-            "emoji": "🍓",
             "tags": [
                 "berries",
                 "strawberry"
@@ -1319,7 +1246,6 @@
             "price": "6.00",
             "volume": 500,
             "abv": "0.0",
-            "emoji": "🫐",
             "tags": [
                 "berries",
                 "blueberry"
@@ -1336,7 +1262,6 @@
             "price": "1.80",
             "volume": 100,
             "abv": "0.0",
-            "emoji": "🌿",
             "tags": [
                 "herbs",
                 "mint",
@@ -1354,7 +1279,6 @@
             "price": "1.90",
             "volume": 100,
             "abv": "0.0",
-            "emoji": "🌿",
             "tags": [
                 "herbs",
                 "basil",
@@ -1372,7 +1296,6 @@
             "price": "5.50",
             "volume": 500,
             "abv": "0.0",
-            "emoji": "🥤",
             "tags": [
                 "cups",
                 "disposable",
@@ -1390,7 +1313,6 @@
             "price": "4.00",
             "volume": 250,
             "abv": "0.0",
-            "emoji": "🥤",
             "tags": [
                 "straws",
                 "paper",
@@ -1408,7 +1330,6 @@
             "price": "6.50",
             "volume": 500,
             "abv": "0.0",
-            "emoji": "🧻",
             "tags": [
                 "napkins",
                 "disposable"
@@ -1425,7 +1346,6 @@
             "price": "1.80",
             "volume": 150,
             "abv": "0.0",
-            "emoji": "🥔",
             "tags": [
                 "chips",
                 "snack",
@@ -1443,7 +1363,6 @@
             "price": "3.50",
             "volume": 200,
             "abv": "0.0",
-            "emoji": "🥜",
             "tags": [
                 "nuts",
                 "snack"
@@ -1460,7 +1379,6 @@
             "price": "2.20",
             "volume": 100,
             "abv": "0.0",
-            "emoji": "🍿",
             "tags": [
                 "popcorn",
                 "snack"
@@ -1477,7 +1395,6 @@
             "price": "1.60",
             "volume": 200,
             "abv": "0.0",
-            "emoji": "🍘",
             "tags": [
                 "crackers",
                 "snack"
@@ -1494,7 +1411,6 @@
             "price": "3.50",
             "volume": 1000,
             "abv": "0.0",
-            "emoji": "🧃",
             "tags": [
                 "juice",
                 "lime",
@@ -1512,7 +1428,6 @@
             "price": "3.00",
             "volume": 1000,
             "abv": "0.0",
-            "emoji": "🧃",
             "tags": [
                 "juice",
                 "orange"
@@ -1529,7 +1444,6 @@
             "price": "3.80",
             "volume": 1000,
             "abv": "0.0",
-            "emoji": "🧃",
             "tags": [
                 "juice",
                 "cranberry"
@@ -1546,7 +1460,6 @@
             "price": "3.60",
             "volume": 1000,
             "abv": "0.0",
-            "emoji": "🧃",
             "tags": [
                 "juice",
                 "pineapple"
@@ -1563,7 +1476,6 @@
             "price": "4.20",
             "volume": 1000,
             "abv": "0.0",
-            "emoji": "🧃",
             "tags": [
                 "juice",
                 "passion fruit"
@@ -1580,7 +1492,6 @@
             "price": "1.20",
             "volume": 200,
             "abv": "0.0",
-            "emoji": "🫧",
             "tags": [
                 "mixer",
                 "soda",
@@ -1598,7 +1509,6 @@
             "price": "1.50",
             "volume": 250,
             "abv": "0.0",
-            "emoji": "🧂",
             "tags": [
                 "garnish",
                 "rimming",
@@ -1616,7 +1526,6 @@
             "price": "7.50",
             "volume": 700,
             "abv": "0.0",
-            "emoji": "🍯",
             "tags": [
                 "syrup",
                 "orgeat",
@@ -1634,7 +1543,6 @@
             "price": "6.50",
             "volume": 700,
             "abv": "0.0",
-            "emoji": "🍯",
             "tags": [
                 "syrup",
                 "grenadine"
@@ -1651,7 +1559,6 @@
             "price": "7.90",
             "volume": 700,
             "abv": "0.0",
-            "emoji": "🍯",
             "tags": [
                 "syrup",
                 "falernum",
@@ -1669,7 +1576,6 @@
             "price": "6.90",
             "volume": 700,
             "abv": "0.0",
-            "emoji": "🍯",
             "tags": [
                 "syrup",
                 "vanilla"
@@ -1686,7 +1592,6 @@
             "price": "14.00",
             "volume": 700,
             "abv": "15.0",
-            "emoji": "🍾",
             "tags": [
                 "liqueur",
                 "orange",
@@ -1704,7 +1609,6 @@
             "price": "16.00",
             "volume": 700,
             "abv": "30.0",
-            "emoji": "🍾",
             "tags": [
                 "liqueur",
                 "orange",
@@ -1722,7 +1626,6 @@
             "price": "13.50",
             "volume": 700,
             "abv": "20.0",
-            "emoji": "🍾",
             "tags": [
                 "liqueur",
                 "peach",
@@ -1740,7 +1643,6 @@
             "price": "15.00",
             "volume": 700,
             "abv": "17.0",
-            "emoji": "🍾",
             "tags": [
                 "liqueur",
                 "passion fruit"
@@ -1757,7 +1659,6 @@
             "price": "15.50",
             "volume": 700,
             "abv": "24.0",
-            "emoji": "🍾",
             "tags": [
                 "liqueur",
                 "apricot",
@@ -1775,7 +1676,6 @@
             "price": "24.00",
             "volume": 700,
             "abv": "40.0",
-            "emoji": "🍸",
             "tags": [
                 "vodka",
                 "vanilla",
@@ -1793,7 +1693,6 @@
             "price": "4.50",
             "volume": 500,
             "abv": "0.0",
-            "emoji": "🍈",
             "tags": [
                 "fruit",
                 "passion fruit",

@@ -76,7 +76,7 @@
   box-shadow: var(--shadow_md);
 }
 .preset_card_thumb {
-  height: 80px;   /* solid block of the preset's colour, no image/emoji */
+  height: 80px;   /* solid block of the preset's colour, no picture */
   position: relative;
 }
 

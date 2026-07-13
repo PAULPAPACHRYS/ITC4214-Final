@@ -8,7 +8,7 @@ function build_product_card(product) {
   card.className = 'product_card';
 
   card.innerHTML = `
-    <div class="product_card_thumb">${product.emoji}</div>
+    <div class="product_card_thumb">${product.image ? `<img class="product_card_image" src="${product.image}" alt="${product.name}">` : ''}</div>
     <div class="product_card_body">
       <span class="product_card_category">${product.subcategory}</span>
       <p class="product_card_name">${product.name}</p>

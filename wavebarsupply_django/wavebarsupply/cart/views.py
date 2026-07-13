@@ -30,13 +30,13 @@ def view_cart(request):
     items = [
         {
             'id': item.id,
-            'emoji': item.product.emoji,
+            'image': item.product.image_url,
             'name': item.product.name,
             'unit_price': item.unit_price,
             'quantity': item.quantity,
             'line_total': item.quantity * item.unit_price,
         }
-        for item in (order.items.select_related('product') if order else [])
+        for item in (order.items.select_related('product__category') if order else [])
     ]
     checkout_form = CheckoutForm(initial={
         'name': request.user.get_full_name(),

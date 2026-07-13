@@ -41,7 +41,7 @@ def _products_as_dicts(queryset, user=None):
             'price': float(p.price),
             'volume': f"{p.volume}ml",
             'abv': float(p.abv),
-            'emoji': p.emoji,
+            'image': p.image_url,
             'tags': p.tags,
             'like_count': p.like_count,
             'liked': p.id in liked_ids,
