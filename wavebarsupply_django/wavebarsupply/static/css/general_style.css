@@ -126,11 +126,8 @@ input, select { font-family: inherit; }
 }
 .nav_logo span { color: var(--teal); }
 
-.nav_links {
-  display: flex;
-  gap: 8px;
-  margin-left: auto;
-}
+/* .nav_links needs no rules of its own: Bootstrap's "d-flex gap-2 ms-auto"
+   utilities in base.html give the same flex row, 8px gap and auto left margin. */
 
 .nav_link {
   font-family: var(--font_display);

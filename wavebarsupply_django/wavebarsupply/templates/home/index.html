@@ -13,7 +13,7 @@
   <div class="header_content">
     <h1 class="header_title">Stock Your Beach Bar.<br>Keep the Party Going.</h1>
     <p class="header_subtitle">Premium drinks, mixers and spirits delivered direct to beach bars across the coast. Browse our full catalogue and order in bulk.</p>
-    <div class="header_buttons">
+    <div class="header_buttons d-flex flex-wrap">
       <a href="{% url 'catalogue:browse' %}" class="button_primary">Browse Catalogue</a>
       {% if user.is_authenticated %}
         <a href="{% url 'accounts:account' %}" class="button_secondary">Your Account</a>
@@ -49,27 +49,34 @@
 <section class="categories_section">
   <div class="section_container">
     <h2 class="section_title">Shop by Popular Categories</h2>
-    <div class="category_cards">
-      <a href="{% url 'catalogue:browse' %}?cat=non-alcohol" class="category_card category_card--teal">
-        <div class="category_icon">🥤</div>
-        <h3 class="category_name">Non-Alcoholic</h3>
-        <p class="category_desc">Soft drinks, water, juices, ice teas, coffee &amp; energy drinks</p>
-        <span class="category_link">Browse →</span>
-      </a>
+    <!-- Bootstrap grid: three category cards per row, stacking on small screens. -->
+    <div class="category_cards row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <a href="{% url 'catalogue:browse' %}?cat=non-alcohol" class="category_card category_card--teal h-100">
+          <div class="category_icon">🥤</div>
+          <h3 class="category_name">Non-Alcoholic</h3>
+          <p class="category_desc">Soft drinks, water, juices, ice teas, coffee &amp; energy drinks</p>
+          <span class="category_link">Browse →</span>
+        </a>
+      </div>
 
-      <a href="{% url 'catalogue:browse' %}?cat=fermented" class="category_card category_card--amber">
-        <div class="category_icon">🍺</div>
-        <h3 class="category_name">Fermented Beverages</h3>
-        <p class="category_desc">Beer, wine &amp; cider from top producers worldwide</p>
-        <span class="category_link">Browse →</span>
-      </a>
+      <div class="col">
+        <a href="{% url 'catalogue:browse' %}?cat=fermented" class="category_card category_card--amber h-100">
+          <div class="category_icon">🍺</div>
+          <h3 class="category_name">Fermented Beverages</h3>
+          <p class="category_desc">Beer, wine &amp; cider from top producers worldwide</p>
+          <span class="category_link">Browse →</span>
+        </a>
+      </div>
 
-      <a href="{% url 'catalogue:browse' %}?cat=distilled" class="category_card category_card--coral">
-        <div class="category_icon">🥃</div>
-        <h3 class="category_name">Distilled Beverages</h3>
-        <p class="category_desc">Whisky, vodka, rum, gin &amp; tequila — full bar range</p>
-        <span class="category_link">Browse →</span>
-      </a>
+      <div class="col">
+        <a href="{% url 'catalogue:browse' %}?cat=distilled" class="category_card category_card--coral h-100">
+          <div class="category_icon">🥃</div>
+          <h3 class="category_name">Distilled Beverages</h3>
+          <p class="category_desc">Whisky, vodka, rum, gin &amp; tequila — full bar range</p>
+          <span class="category_link">Browse →</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -77,7 +84,7 @@
 <!-- Featured Products Section -->
 <section class="featured_section">
   <div class="section_container">
-    <div class="featured_header">
+    <div class="featured_header d-flex align-items-center justify-content-between flex-wrap">
       <h2 class="section_title">Featured Products</h2>
       <a href="{% url 'catalogue:browse' %}" class="button_secondary">View All</a>
     </div>

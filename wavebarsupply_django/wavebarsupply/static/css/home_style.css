@@ -28,10 +28,10 @@
   max-width: 460px;
 }
 
-.header_buttons { 
-  display: flex; 
-  gap: 12px; 
-  flex-wrap: wrap; 
+/* display + wrap come from Bootstrap's "d-flex flex-wrap" in the template;
+   only the 12px gap stays here, as Bootstrap's gap scale has no 12px step. */
+.header_buttons {
+  gap: 12px;
 }
 
 .header_visual {
@@ -99,11 +99,9 @@
   color: var(--navy);
 }
 
-.category_cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-}
+/* The three-column layout is handled by Bootstrap's grid in the template
+   (row row-cols-1 row-cols-md-3 g-4); g-4 is exactly the 24px gap used before,
+   so no grid rules are needed here any more. */
 
 .category_card {
   border-radius: var(--radius_md);
@@ -174,12 +172,11 @@
   background: var(--cream_lit); 
 }
 
+/* Flexbox row (display/align/justify/wrap) is handled by Bootstrap utilities in
+   the template: d-flex align-items-center justify-content-between flex-wrap.
+   Only the spacing values Bootstrap's scale cannot express exactly stay here. */
 .featured_header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   margin-bottom: 36px;
-  flex-wrap: wrap;
   gap: 12px;
 }
 .featured_header .section_title { margin-bottom: 0; }

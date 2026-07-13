@@ -7,11 +7,9 @@
 }
 
 /* Search bar above the "+ Add Cocktail Preset" button. Matches the product
-   search bar so both searches look and behave the same. */
-.preset_search_bar {
-  position: relative;
-  margin-bottom: 16px;
-}
+   search bar so both searches look and behave the same.
+   The wrapper needs no CSS of its own: Bootstrap's "position-relative mb-3"
+   utilities in the template supply the positioning context and the 16px gap. */
 .preset_search_input {
   width: 100%;
   padding: 12px 44px 12px 16px;

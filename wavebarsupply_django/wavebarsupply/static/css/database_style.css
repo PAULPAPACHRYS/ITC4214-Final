@@ -3,7 +3,9 @@
 .db_intro { color: var(--gray_dk); margin-bottom: 20px; }
 
 /* messages */
-.db_messages { margin-bottom: 20px; display: flex; flex-direction: column; gap: 8px; }
+/* Layout comes from Bootstrap's "d-flex flex-column gap-2" in the template
+   (gap-2 is exactly the 8px used before); only the bottom margin stays here. */
+.db_messages { margin-bottom: 20px; }
 .db_message {
   border-radius: var(--radius_sm);
   padding: 10px 14px;

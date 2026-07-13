@@ -17,7 +17,7 @@
 
 <section class="db_section section_container">
   {% if messages %}
-    <div class="db_messages">
+    <div class="db_messages d-flex flex-column gap-2">
       {% for message in messages %}<div class="db_message {{ message.tags }}">{{ message }}</div>{% endfor %}
     </div>
   {% endif %}
