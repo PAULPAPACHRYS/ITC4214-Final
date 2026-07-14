@@ -4,7 +4,7 @@ from django.shortcuts import render
 from likes.models import Like
 from presets.forms import PresetForm
 from presets.models import Preset
-from .models import Product
+from .models import Product, Subcategory
 
 
 def _products_as_dicts(queryset, user=None):
@@ -21,7 +21,7 @@ def _products_as_dicts(queryset, user=None):
     products the current user already liked is fetched once.
     """
     queryset = (queryset
-                .select_related('category', 'brand')
+                .select_related('subcategory__category', 'brand')
                 .annotate(like_count=Count('likes', distinct=True)))
 
     liked_ids = set()
@@ -36,8 +36,8 @@ def _products_as_dicts(queryset, user=None):
             'id': p.id,
             'name': p.name,
             'brand': p.brand.name,
-            'category': p.category.name,
-            'subcategory': p.category.subcategory,
+            'category': p.subcategory.category.name,
+            'subcategory': p.subcategory.name,
             'price': float(p.price),
             'volume': f"{p.volume}ml",
             'abv': float(p.abv),
@@ -67,8 +67,17 @@ def browse(request):
     # presets keep their relative order within each group; owned=True sorts first.
     presets.sort(key=lambda d: not d['owned'])
 
+    # The sub-category filter options, grouped under their category. This is
+    # built from the Subcategory table, so a sub-category added on the Database
+    # page shows up in the filter straight away (it used to be a hard-coded list
+    # in the JavaScript, which had to be edited by hand to stay in step).
+    subcategories = {}
+    for sub in Subcategory.objects.select_related('category').order_by('id'):
+        subcategories.setdefault(sub.category.name, []).append(sub.name)
+
     return render(request, 'catalogue/browse.html', {
         'products': products,
         'presets': presets,
+        'subcategories': subcategories,
         'preset_form': PresetForm(),
     })

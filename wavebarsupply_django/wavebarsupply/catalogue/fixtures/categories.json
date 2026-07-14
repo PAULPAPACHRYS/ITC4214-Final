@@ -3,342 +3,63 @@
         "model": "catalogue.category",
         "pk": 1,
         "fields": {
-            "name": "non-alcohol",
-            "subcategory": "Soft Drinks",
-            "image": "soft_drinks.jpg"
+            "name": "non-alcohol"
         }
     },
     {
         "model": "catalogue.category",
         "pk": 2,
         "fields": {
-            "name": "non-alcohol",
-            "subcategory": "Water",
-            "image": "water.jpg"
+            "name": "fermented"
         }
     },
     {
         "model": "catalogue.category",
         "pk": 3,
         "fields": {
-            "name": "non-alcohol",
-            "subcategory": "Juices",
-            "image": "juices.jpg"
+            "name": "distilled"
         }
     },
     {
         "model": "catalogue.category",
         "pk": 4,
         "fields": {
-            "name": "non-alcohol",
-            "subcategory": "Ice Teas",
-            "image": "ice_tea.jpg"
+            "name": "cocktail"
         }
     },
     {
         "model": "catalogue.category",
         "pk": 5,
         "fields": {
-            "name": "non-alcohol",
-            "subcategory": "Coffee",
-            "image": "coffee.jpg"
+            "name": "ice"
         }
     },
     {
         "model": "catalogue.category",
         "pk": 6,
         "fields": {
-            "name": "non-alcohol",
-            "subcategory": "Energy Drinks",
-            "image": "energy_drink.jpg"
+            "name": "dairy"
         }
     },
     {
         "model": "catalogue.category",
         "pk": 7,
         "fields": {
-            "name": "fermented",
-            "subcategory": "Beer",
-            "image": "beer.jpg"
+            "name": "fresh"
         }
     },
     {
         "model": "catalogue.category",
         "pk": 8,
         "fields": {
-            "name": "fermented",
-            "subcategory": "Wine",
-            "image": "wine.jpg"
+            "name": "disposable"
         }
     },
     {
         "model": "catalogue.category",
         "pk": 9,
         "fields": {
-            "name": "fermented",
-            "subcategory": "Cider",
-            "image": "cider.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 10,
-        "fields": {
-            "name": "distilled",
-            "subcategory": "Whisky",
-            "image": "whisky.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 11,
-        "fields": {
-            "name": "distilled",
-            "subcategory": "Vodka",
-            "image": "vodka.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 12,
-        "fields": {
-            "name": "distilled",
-            "subcategory": "Rum",
-            "image": "rum.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 13,
-        "fields": {
-            "name": "distilled",
-            "subcategory": "Gin",
-            "image": "gin.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 14,
-        "fields": {
-            "name": "distilled",
-            "subcategory": "Tequila",
-            "image": "tequila.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 15,
-        "fields": {
-            "name": "cocktail",
-            "subcategory": "Syrups",
-            "image": "syrups.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 16,
-        "fields": {
-            "name": "cocktail",
-            "subcategory": "Mixers",
-            "image": "mixers.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 17,
-        "fields": {
-            "name": "cocktail",
-            "subcategory": "Bitters",
-            "image": "bitters.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 18,
-        "fields": {
-            "name": "cocktail",
-            "subcategory": "Garnishes",
-            "image": "garnishes.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 19,
-        "fields": {
-            "name": "ice",
-            "subcategory": "Ice cubes",
-            "image": "ice_cubes.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 20,
-        "fields": {
-            "name": "ice",
-            "subcategory": "Crushed ice",
-            "image": "crushed_ice.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 21,
-        "fields": {
-            "name": "ice",
-            "subcategory": "Dry ice",
-            "image": "dry_ice.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 22,
-        "fields": {
-            "name": "ice",
-            "subcategory": "Ice blocks",
-            "image": "ice_block.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 23,
-        "fields": {
-            "name": "dairy",
-            "subcategory": "Milk",
-            "image": "milk.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 24,
-        "fields": {
-            "name": "dairy",
-            "subcategory": "Oat milk",
-            "image": "oat_milk.png"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 25,
-        "fields": {
-            "name": "dairy",
-            "subcategory": "Almond milk",
-            "image": "almond_milk.png"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 26,
-        "fields": {
-            "name": "dairy",
-            "subcategory": "Coconut milk",
-            "image": "coconut_milk.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 27,
-        "fields": {
-            "name": "dairy",
-            "subcategory": "Cream",
-            "image": "cream.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 28,
-        "fields": {
-            "name": "fresh",
-            "subcategory": "Fruit",
-            "image": "fruit.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 29,
-        "fields": {
-            "name": "fresh",
-            "subcategory": "Berries",
-            "image": "berries.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 30,
-        "fields": {
-            "name": "fresh",
-            "subcategory": "Aromatic herbs",
-            "image": "aromatic_herbs.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 31,
-        "fields": {
-            "name": "disposable",
-            "subcategory": "Cups",
-            "image": "cups.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 32,
-        "fields": {
-            "name": "disposable",
-            "subcategory": "Straws",
-            "image": "straws.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 33,
-        "fields": {
-            "name": "disposable",
-            "subcategory": "Napkins",
-            "image": "napkins.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 34,
-        "fields": {
-            "name": "snacks",
-            "subcategory": "Chips",
-            "image": "chips.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 35,
-        "fields": {
-            "name": "snacks",
-            "subcategory": "Mixed nuts",
-            "image": "mixed_nuts.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 36,
-        "fields": {
-            "name": "snacks",
-            "subcategory": "Popcorn",
-            "image": "popcorn.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 37,
-        "fields": {
-            "name": "snacks",
-            "subcategory": "Crackers",
-            "image": "crackers.jpg"
-        }
-    },
-    {
-        "model": "catalogue.category",
-        "pk": 38,
-        "fields": {
-            "name": "distilled",
-            "subcategory": "Liqueurs",
-            "image": "liquer.jpg"
+            "name": "snacks"
         }
     }
 ]

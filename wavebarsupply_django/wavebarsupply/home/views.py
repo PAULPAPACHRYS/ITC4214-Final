@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from catalogue.models import Brand, Category, Product
+from catalogue.models import Brand, Category, Product, Subcategory
 from catalogue.views import _products_as_dicts
 
 
@@ -15,17 +15,12 @@ def index(request):
 
     # Live counts for the stat cards, read straight from the database so the
     # numbers stay in sync with the catalogue instead of being hard-coded.
-    # Categories are the distinct top-level names; sub-categories are the
-    # distinct subcategory values on the Category table.
-    category_count = (Category.objects
-                      .values('name').distinct().count())
-    subcategory_count = (Category.objects
-                         .values('subcategory').distinct().count())
-
+    # Now that sub-categories have their own table, both counts are simply the
+    # number of rows in each table (no distinct() needed any more).
     return render(request, 'home/index.html', {
         'featured_products': products,
         'product_count': Product.objects.count(),
-        'category_count': category_count,
-        'subcategory_count': subcategory_count,
+        'category_count': Category.objects.count(),
+        'subcategory_count': Subcategory.objects.count(),
         'brand_count': Brand.objects.count(),
     })

@@ -1,0 +1,344 @@
+[
+    {
+        "model": "catalogue.subcategory",
+        "pk": 1,
+        "fields": {
+            "name": "Soft Drinks",
+            "category": 1,
+            "image": "soft_drinks.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 2,
+        "fields": {
+            "name": "Water",
+            "category": 1,
+            "image": "water.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 3,
+        "fields": {
+            "name": "Juices",
+            "category": 1,
+            "image": "juices.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 4,
+        "fields": {
+            "name": "Ice Teas",
+            "category": 1,
+            "image": "ice_tea.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 5,
+        "fields": {
+            "name": "Coffee",
+            "category": 1,
+            "image": "coffee.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 6,
+        "fields": {
+            "name": "Energy Drinks",
+            "category": 1,
+            "image": "energy_drink.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 7,
+        "fields": {
+            "name": "Beer",
+            "category": 2,
+            "image": "beer.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 8,
+        "fields": {
+            "name": "Wine",
+            "category": 2,
+            "image": "wine.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 9,
+        "fields": {
+            "name": "Cider",
+            "category": 2,
+            "image": "cider.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 10,
+        "fields": {
+            "name": "Whisky",
+            "category": 3,
+            "image": "whisky.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 11,
+        "fields": {
+            "name": "Vodka",
+            "category": 3,
+            "image": "vodka.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 12,
+        "fields": {
+            "name": "Rum",
+            "category": 3,
+            "image": "rum.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 13,
+        "fields": {
+            "name": "Gin",
+            "category": 3,
+            "image": "gin.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 14,
+        "fields": {
+            "name": "Tequila",
+            "category": 3,
+            "image": "tequila.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 15,
+        "fields": {
+            "name": "Syrups",
+            "category": 4,
+            "image": "syrups.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 16,
+        "fields": {
+            "name": "Mixers",
+            "category": 4,
+            "image": "mixers.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 17,
+        "fields": {
+            "name": "Bitters",
+            "category": 4,
+            "image": "bitters.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 18,
+        "fields": {
+            "name": "Garnishes",
+            "category": 4,
+            "image": "garnishes.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 19,
+        "fields": {
+            "name": "Ice cubes",
+            "category": 5,
+            "image": "ice_cubes.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 20,
+        "fields": {
+            "name": "Crushed ice",
+            "category": 5,
+            "image": "crushed_ice.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 21,
+        "fields": {
+            "name": "Dry ice",
+            "category": 5,
+            "image": "dry_ice.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 22,
+        "fields": {
+            "name": "Ice blocks",
+            "category": 5,
+            "image": "ice_block.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 23,
+        "fields": {
+            "name": "Milk",
+            "category": 6,
+            "image": "milk.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 24,
+        "fields": {
+            "name": "Oat milk",
+            "category": 6,
+            "image": "oat_milk.png"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 25,
+        "fields": {
+            "name": "Almond milk",
+            "category": 6,
+            "image": "almond_milk.png"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 26,
+        "fields": {
+            "name": "Coconut milk",
+            "category": 6,
+            "image": "coconut_milk.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 27,
+        "fields": {
+            "name": "Cream",
+            "category": 6,
+            "image": "cream.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 28,
+        "fields": {
+            "name": "Fruit",
+            "category": 7,
+            "image": "fruit.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 29,
+        "fields": {
+            "name": "Berries",
+            "category": 7,
+            "image": "berries.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 30,
+        "fields": {
+            "name": "Aromatic herbs",
+            "category": 7,
+            "image": "aromatic_herbs.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 31,
+        "fields": {
+            "name": "Cups",
+            "category": 8,
+            "image": "cups.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 32,
+        "fields": {
+            "name": "Straws",
+            "category": 8,
+            "image": "straws.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 33,
+        "fields": {
+            "name": "Napkins",
+            "category": 8,
+            "image": "napkins.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 34,
+        "fields": {
+            "name": "Chips",
+            "category": 9,
+            "image": "chips.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 35,
+        "fields": {
+            "name": "Mixed nuts",
+            "category": 9,
+            "image": "mixed_nuts.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 36,
+        "fields": {
+            "name": "Popcorn",
+            "category": 9,
+            "image": "popcorn.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 37,
+        "fields": {
+            "name": "Crackers",
+            "category": 9,
+            "image": "crackers.jpg"
+        }
+    },
+    {
+        "model": "catalogue.subcategory",
+        "pk": 38,
+        "fields": {
+            "name": "Liqueurs",
+            "category": 3,
+            "image": "liquer.jpg"
+        }
+    }
+]

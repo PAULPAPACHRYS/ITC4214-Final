@@ -27,12 +27,13 @@ def _similarity(target, candidate):
     """Score how similar `candidate` is to `target` (both Product instances)."""
     score = 0
 
-    # Category / subcategory. Two products in the same Category row share both
-    # the top-level category and the subcategory, so that's the strong match;
-    # otherwise a shared top-level category name is a weaker match.
-    if target.category_id == candidate.category_id:
+    # Category / sub-category. Sharing the sub-category is the strong match;
+    # otherwise sharing only the top-level category is a weaker one. Now that
+    # sub-categories are their own table, both checks are a plain id comparison
+    # (product -> subcategory -> category).
+    if target.subcategory_id == candidate.subcategory_id:
         score += SAME_SUBCATEGORY
-    elif target.category.name == candidate.category.name:
+    elif target.subcategory.category_id == candidate.subcategory.category_id:
         score += SAME_CATEGORY
 
     if target.brand_id == candidate.brand_id:
@@ -76,7 +77,7 @@ def for_cart(request):
     """
     order = Order.objects.filter(user=request.user, is_cart=True).first()
     cart_items = list(
-        order.items.select_related('product', 'product__category', 'product__brand')
+        order.items.select_related('product', 'product__subcategory', 'product__brand')
     ) if order else []
 
     if not cart_items:
@@ -86,7 +87,7 @@ def for_cart(request):
     cart_ids = {p.id for p in cart_products}
 
     candidates = (Product.objects
-                  .select_related('category', 'brand')
+                  .select_related('subcategory__category', 'brand')
                   .exclude(id__in=cart_ids))
 
     ranked = _rank(cart_products, candidates)

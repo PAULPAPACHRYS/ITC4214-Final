@@ -6,7 +6,7 @@ from django.http import Http404
 from django.shortcuts import get_object_or_404, redirect, render
 
 from accounts.models import Users
-from catalogue.models import Brand, Category, Product
+from catalogue.models import Brand, Category, Product, Subcategory
 from likes.models import Like
 from orders.models import Order, OrderItem
 
@@ -24,13 +24,16 @@ def _objects(config):
 #   admin_only -> table is only visible/editable by admins (the Users table)
 TABLES = {
     'categories':  {'model': Category,  'label': 'Categories',  'admin_only': False,
-                    'columns': ['id', 'name', 'subcategory'],
+                    'columns': ['id', 'name'],
                     'form': forms.CategoryForm},
+    'subcategories': {'model': Subcategory, 'label': 'Sub-categories', 'admin_only': False,
+                      'columns': ['id', 'name', 'category', 'image'],
+                      'form': forms.SubcategoryForm},
     'brands':      {'model': Brand,     'label': 'Brands',      'admin_only': False,
                     'columns': ['id', 'name', 'country'],
                     'form': forms.BrandForm},
     'products':    {'model': Product,   'label': 'Products',    'admin_only': False,
-                    'columns': ['id', 'name', 'brand', 'category', 'price', 'volume', 'abv'],
+                    'columns': ['id', 'name', 'brand', 'subcategory', 'price', 'volume', 'abv'],
                     'form': forms.ProductForm},
     'orders':      {'model': Order,     'label': 'Orders',      'admin_only': False,
                     'columns': ['id', 'user', 'order_date', 'status'],

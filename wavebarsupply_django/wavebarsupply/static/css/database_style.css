@@ -181,6 +181,7 @@
   margin-bottom: 5px;
 }
 .db_form .form_input,
+.db_form .form_select,
 .db_form select,
 .db_form textarea {
   width: 100%;
@@ -193,6 +194,7 @@
   font-family: inherit;
 }
 .db_form .form_input:focus,
+.db_form .form_select:focus,
 .db_form select:focus,
 .db_form textarea:focus {
   outline: none;

@@ -36,7 +36,7 @@ def view_cart(request):
             'quantity': item.quantity,
             'line_total': item.quantity * item.unit_price,
         }
-        for item in (order.items.select_related('product__category') if order else [])
+        for item in (order.items.select_related('product__subcategory') if order else [])
     ]
     checkout_form = CheckoutForm(initial={
         'name': request.user.get_full_name(),

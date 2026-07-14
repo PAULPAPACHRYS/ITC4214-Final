@@ -12,8 +12,8 @@
                 "classic",
                 "carbonated"
             ],
-            "category": 1,
-            "brand": 1
+            "brand": 1,
+            "subcategory": 1
         }
     },
     {
@@ -29,8 +29,8 @@
                 "zero sugar",
                 "carbonated"
             ],
-            "category": 1,
-            "brand": 1
+            "brand": 1,
+            "subcategory": 1
         }
     },
     {
@@ -46,8 +46,8 @@
                 "lime",
                 "carbonated"
             ],
-            "category": 1,
-            "brand": 2
+            "brand": 2,
+            "subcategory": 1
         }
     },
     {
@@ -63,8 +63,8 @@
                 "fruity",
                 "carbonated"
             ],
-            "category": 1,
-            "brand": 3
+            "brand": 3,
+            "subcategory": 1
         }
     },
     {
@@ -80,8 +80,8 @@
                 "max",
                 "carbonated"
             ],
-            "category": 1,
-            "brand": 4
+            "brand": 4,
+            "subcategory": 1
         }
     },
     {
@@ -97,8 +97,8 @@
                 "mineral",
                 "greek"
             ],
-            "category": 2,
-            "brand": 5
+            "brand": 5,
+            "subcategory": 2
         }
     },
     {
@@ -114,8 +114,8 @@
                 "premium",
                 "mineral"
             ],
-            "category": 2,
-            "brand": 6
+            "brand": 6,
+            "subcategory": 2
         }
     },
     {
@@ -131,8 +131,8 @@
                 "natural",
                 "greek"
             ],
-            "category": 2,
-            "brand": 7
+            "brand": 7,
+            "subcategory": 2
         }
     },
     {
@@ -148,8 +148,8 @@
                 "italian",
                 "premium"
             ],
-            "category": 2,
-            "brand": 8
+            "brand": 8,
+            "subcategory": 2
         }
     },
     {
@@ -165,8 +165,8 @@
                 "100% juice",
                 "no added sugar"
             ],
-            "category": 3,
-            "brand": 9
+            "brand": 9,
+            "subcategory": 3
         }
     },
     {
@@ -182,8 +182,8 @@
                 "smoothie",
                 "tropical"
             ],
-            "category": 3,
-            "brand": 10
+            "brand": 10,
+            "subcategory": 3
         }
     },
     {
@@ -199,8 +199,8 @@
                 "nectar",
                 "greek"
             ],
-            "category": 3,
-            "brand": 11
+            "brand": 11,
+            "subcategory": 3
         }
     },
     {
@@ -216,8 +216,8 @@
                 "sweet",
                 "iced"
             ],
-            "category": 4,
-            "brand": 12
+            "brand": 12,
+            "subcategory": 4
         }
     },
     {
@@ -233,8 +233,8 @@
                 "classic",
                 "iced"
             ],
-            "category": 4,
-            "brand": 13
+            "brand": 13,
+            "subcategory": 4
         }
     },
     {
@@ -250,8 +250,8 @@
                 "unsweetened",
                 "natural"
             ],
-            "category": 4,
-            "brand": 14
+            "brand": 14,
+            "subcategory": 4
         }
     },
     {
@@ -267,8 +267,8 @@
                 "cold",
                 "greek"
             ],
-            "category": 5,
-            "brand": 15
+            "brand": 15,
+            "subcategory": 5
         }
     },
     {
@@ -284,8 +284,8 @@
                 "premium",
                 "smooth"
             ],
-            "category": 5,
-            "brand": 16
+            "brand": 16,
+            "subcategory": 5
         }
     },
     {
@@ -301,8 +301,8 @@
                 "can",
                 "italian"
             ],
-            "category": 5,
-            "brand": 17
+            "brand": 17,
+            "subcategory": 5
         }
     },
     {
@@ -318,8 +318,8 @@
                 "taurine",
                 "original"
             ],
-            "category": 6,
-            "brand": 18
+            "brand": 18,
+            "subcategory": 6
         }
     },
     {
@@ -335,8 +335,8 @@
                 "large",
                 "green"
             ],
-            "category": 6,
-            "brand": 19
+            "brand": 19,
+            "subcategory": 6
         }
     },
     {
@@ -352,8 +352,8 @@
                 "fitness",
                 "tropical"
             ],
-            "category": 6,
-            "brand": 20
+            "brand": 20,
+            "subcategory": 6
         }
     },
     {
@@ -369,8 +369,8 @@
                 "greek",
                 "refreshing"
             ],
-            "category": 7,
-            "brand": 21
+            "brand": 21,
+            "subcategory": 7
         }
     },
     {
@@ -386,8 +386,8 @@
                 "greek",
                 "classic"
             ],
-            "category": 7,
-            "brand": 22
+            "brand": 22,
+            "subcategory": 7
         }
     },
     {
@@ -403,8 +403,8 @@
                 "dutch",
                 "international"
             ],
-            "category": 7,
-            "brand": 23
+            "brand": 23,
+            "subcategory": 7
         }
     },
     {
@@ -420,8 +420,8 @@
                 "mexican",
                 "beach"
             ],
-            "category": 7,
-            "brand": 24
+            "brand": 24,
+            "subcategory": 7
         }
     },
     {
@@ -437,8 +437,8 @@
                 "greek",
                 "light"
             ],
-            "category": 7,
-            "brand": 25
+            "brand": 25,
+            "subcategory": 7
         }
     },
     {
@@ -454,8 +454,8 @@
                 "craft",
                 "hoppy"
             ],
-            "category": 7,
-            "brand": 26
+            "brand": 26,
+            "subcategory": 7
         }
     },
     {
@@ -472,8 +472,8 @@
                 "greek",
                 "volcanic"
             ],
-            "category": 8,
-            "brand": 27
+            "brand": 27,
+            "subcategory": 8
         }
     },
     {
@@ -490,8 +490,8 @@
                 "greek",
                 "nemea"
             ],
-            "category": 8,
-            "brand": 28
+            "brand": 28,
+            "subcategory": 8
         }
     },
     {
@@ -507,8 +507,8 @@
                 "italian",
                 "prosecco"
             ],
-            "category": 8,
-            "brand": 29
+            "brand": 29,
+            "subcategory": 8
         }
     },
     {
@@ -524,8 +524,8 @@
                 "french",
                 "premium"
             ],
-            "category": 8,
-            "brand": 30
+            "brand": 30,
+            "subcategory": 8
         }
     },
     {
@@ -541,8 +541,8 @@
                 "dry",
                 "classic"
             ],
-            "category": 9,
-            "brand": 31
+            "brand": 31,
+            "subcategory": 9
         }
     },
     {
@@ -558,8 +558,8 @@
                 "sweet",
                 "fruity"
             ],
-            "category": 9,
-            "brand": 32
+            "brand": 32,
+            "subcategory": 9
         }
     },
     {
@@ -575,8 +575,8 @@
                 "swedish",
                 "sweet"
             ],
-            "category": 9,
-            "brand": 33
+            "brand": 33,
+            "subcategory": 9
         }
     },
     {
@@ -592,8 +592,8 @@
                 "american",
                 "classic"
             ],
-            "category": 10,
-            "brand": 34
+            "brand": 34,
+            "subcategory": 10
         }
     },
     {
@@ -609,8 +609,8 @@
                 "scotch",
                 "smoky"
             ],
-            "category": 10,
-            "brand": 35
+            "brand": 35,
+            "subcategory": 10
         }
     },
     {
@@ -626,8 +626,8 @@
                 "scotch",
                 "premium"
             ],
-            "category": 10,
-            "brand": 36
+            "brand": 36,
+            "subcategory": 10
         }
     },
     {
@@ -643,8 +643,8 @@
                 "smooth",
                 "blended"
             ],
-            "category": 10,
-            "brand": 37
+            "brand": 37,
+            "subcategory": 10
         }
     },
     {
@@ -660,8 +660,8 @@
                 "neutral",
                 "classic"
             ],
-            "category": 11,
-            "brand": 38
+            "brand": 38,
+            "subcategory": 11
         }
     },
     {
@@ -677,8 +677,8 @@
                 "premium",
                 "smooth"
             ],
-            "category": 11,
-            "brand": 39
+            "brand": 39,
+            "subcategory": 11
         }
     },
     {
@@ -694,8 +694,8 @@
                 "triple distilled",
                 "value"
             ],
-            "category": 11,
-            "brand": 40
+            "brand": 40,
+            "subcategory": 11
         }
     },
     {
@@ -711,8 +711,8 @@
                 "rye",
                 "ultra-premium"
             ],
-            "category": 11,
-            "brand": 41
+            "brand": 41,
+            "subcategory": 11
         }
     },
     {
@@ -728,8 +728,8 @@
                 "light",
                 "cocktail"
             ],
-            "category": 12,
-            "brand": 42
+            "brand": 42,
+            "subcategory": 12
         }
     },
     {
@@ -745,8 +745,8 @@
                 "golden",
                 "sweet"
             ],
-            "category": 12,
-            "brand": 43
+            "brand": 43,
+            "subcategory": 12
         }
     },
     {
@@ -763,8 +763,8 @@
                 "premium",
                 "sipping"
             ],
-            "category": 12,
-            "brand": 44
+            "brand": 44,
+            "subcategory": 12
         }
     },
     {
@@ -780,8 +780,8 @@
                 "botanical",
                 "classic"
             ],
-            "category": 13,
-            "brand": 45
+            "brand": 45,
+            "subcategory": 13
         }
     },
     {
@@ -798,8 +798,8 @@
                 "floral",
                 "premium"
             ],
-            "category": 13,
-            "brand": 46
+            "brand": 46,
+            "subcategory": 13
         }
     },
     {
@@ -815,8 +815,8 @@
                 "fresh",
                 "premium"
             ],
-            "category": 13,
-            "brand": 47
+            "brand": 47,
+            "subcategory": 13
         }
     },
     {
@@ -832,8 +832,8 @@
                 "47 botanicals",
                 "ultra-premium"
             ],
-            "category": 13,
-            "brand": 48
+            "brand": 48,
+            "subcategory": 13
         }
     },
     {
@@ -849,8 +849,8 @@
                 "blanco",
                 "cocktail"
             ],
-            "category": 14,
-            "brand": 49
+            "brand": 49,
+            "subcategory": 14
         }
     },
     {
@@ -866,8 +866,8 @@
                 "100% agave",
                 "smooth"
             ],
-            "category": 14,
-            "brand": 50
+            "brand": 50,
+            "subcategory": 14
         }
     },
     {
@@ -883,8 +883,8 @@
                 "100% agave",
                 "clean"
             ],
-            "category": 14,
-            "brand": 51
+            "brand": 51,
+            "subcategory": 14
         }
     },
     {
@@ -900,8 +900,8 @@
                 "grenadine",
                 "cocktail"
             ],
-            "category": 15,
-            "brand": 52
+            "brand": 52,
+            "subcategory": 15
         }
     },
     {
@@ -917,8 +917,8 @@
                 "vanilla",
                 "cocktail"
             ],
-            "category": 15,
-            "brand": 52
+            "brand": 52,
+            "subcategory": 15
         }
     },
     {
@@ -934,8 +934,8 @@
                 "mixer",
                 "cocktail"
             ],
-            "category": 16,
-            "brand": 53
+            "brand": 53,
+            "subcategory": 16
         }
     },
     {
@@ -951,8 +951,8 @@
                 "mixer",
                 "cocktail"
             ],
-            "category": 16,
-            "brand": 53
+            "brand": 53,
+            "subcategory": 16
         }
     },
     {
@@ -968,8 +968,8 @@
                 "aromatic",
                 "cocktail"
             ],
-            "category": 17,
-            "brand": 54
+            "brand": 54,
+            "subcategory": 17
         }
     },
     {
@@ -985,8 +985,8 @@
                 "orange",
                 "cocktail"
             ],
-            "category": 17,
-            "brand": 54
+            "brand": 54,
+            "subcategory": 17
         }
     },
     {
@@ -1002,8 +1002,8 @@
                 "cherry",
                 "cocktail"
             ],
-            "category": 18,
-            "brand": 55
+            "brand": 55,
+            "subcategory": 18
         }
     },
     {
@@ -1019,8 +1019,8 @@
                 "olive",
                 "cocktail"
             ],
-            "category": 18,
-            "brand": 55
+            "brand": 55,
+            "subcategory": 18
         }
     },
     {
@@ -1035,8 +1035,8 @@
                 "ice",
                 "cubes"
             ],
-            "category": 19,
-            "brand": 56
+            "brand": 56,
+            "subcategory": 19
         }
     },
     {
@@ -1051,8 +1051,8 @@
                 "ice",
                 "crushed"
             ],
-            "category": 20,
-            "brand": 56
+            "brand": 56,
+            "subcategory": 20
         }
     },
     {
@@ -1068,8 +1068,8 @@
                 "dry ice",
                 "effect"
             ],
-            "category": 21,
-            "brand": 57
+            "brand": 57,
+            "subcategory": 21
         }
     },
     {
@@ -1085,8 +1085,8 @@
                 "block",
                 "clear"
             ],
-            "category": 22,
-            "brand": 56
+            "brand": 56,
+            "subcategory": 22
         }
     },
     {
@@ -1102,8 +1102,8 @@
                 "dairy",
                 "fresh"
             ],
-            "category": 23,
-            "brand": 58
+            "brand": 58,
+            "subcategory": 23
         }
     },
     {
@@ -1119,8 +1119,8 @@
                 "barista",
                 "plant-based"
             ],
-            "category": 24,
-            "brand": 59
+            "brand": 59,
+            "subcategory": 24
         }
     },
     {
@@ -1135,8 +1135,8 @@
                 "almond milk",
                 "plant-based"
             ],
-            "category": 25,
-            "brand": 60
+            "brand": 60,
+            "subcategory": 25
         }
     },
     {
@@ -1151,8 +1151,8 @@
                 "coconut milk",
                 "plant-based"
             ],
-            "category": 26,
-            "brand": 60
+            "brand": 60,
+            "subcategory": 26
         }
     },
     {
@@ -1167,8 +1167,8 @@
                 "cream",
                 "dairy"
             ],
-            "category": 27,
-            "brand": 58
+            "brand": 58,
+            "subcategory": 27
         }
     },
     {
@@ -1184,8 +1184,8 @@
                 "lemon",
                 "citrus"
             ],
-            "category": 28,
-            "brand": 61
+            "brand": 61,
+            "subcategory": 28
         }
     },
     {
@@ -1201,8 +1201,8 @@
                 "orange",
                 "citrus"
             ],
-            "category": 28,
-            "brand": 61
+            "brand": 61,
+            "subcategory": 28
         }
     },
     {
@@ -1218,8 +1218,8 @@
                 "lime",
                 "citrus"
             ],
-            "category": 28,
-            "brand": 61
+            "brand": 61,
+            "subcategory": 28
         }
     },
     {
@@ -1234,8 +1234,8 @@
                 "berries",
                 "strawberry"
             ],
-            "category": 29,
-            "brand": 61
+            "brand": 61,
+            "subcategory": 29
         }
     },
     {
@@ -1250,8 +1250,8 @@
                 "berries",
                 "blueberry"
             ],
-            "category": 29,
-            "brand": 61
+            "brand": 61,
+            "subcategory": 29
         }
     },
     {
@@ -1267,8 +1267,8 @@
                 "mint",
                 "garnish"
             ],
-            "category": 30,
-            "brand": 61
+            "brand": 61,
+            "subcategory": 30
         }
     },
     {
@@ -1284,8 +1284,8 @@
                 "basil",
                 "garnish"
             ],
-            "category": 30,
-            "brand": 61
+            "brand": 61,
+            "subcategory": 30
         }
     },
     {
@@ -1301,8 +1301,8 @@
                 "disposable",
                 "plastic"
             ],
-            "category": 31,
-            "brand": 62
+            "brand": 62,
+            "subcategory": 31
         }
     },
     {
@@ -1318,8 +1318,8 @@
                 "paper",
                 "disposable"
             ],
-            "category": 32,
-            "brand": 62
+            "brand": 62,
+            "subcategory": 32
         }
     },
     {
@@ -1334,8 +1334,8 @@
                 "napkins",
                 "disposable"
             ],
-            "category": 33,
-            "brand": 63
+            "brand": 63,
+            "subcategory": 33
         }
     },
     {
@@ -1351,8 +1351,8 @@
                 "snack",
                 "potato"
             ],
-            "category": 34,
-            "brand": 64
+            "brand": 64,
+            "subcategory": 34
         }
     },
     {
@@ -1367,8 +1367,8 @@
                 "nuts",
                 "snack"
             ],
-            "category": 35,
-            "brand": 65
+            "brand": 65,
+            "subcategory": 35
         }
     },
     {
@@ -1383,8 +1383,8 @@
                 "popcorn",
                 "snack"
             ],
-            "category": 36,
-            "brand": 66
+            "brand": 66,
+            "subcategory": 36
         }
     },
     {
@@ -1399,8 +1399,8 @@
                 "crackers",
                 "snack"
             ],
-            "category": 37,
-            "brand": 67
+            "brand": 67,
+            "subcategory": 37
         }
     },
     {
@@ -1416,8 +1416,8 @@
                 "lime",
                 "mixer"
             ],
-            "category": 3,
-            "brand": 9
+            "brand": 9,
+            "subcategory": 3
         }
     },
     {
@@ -1432,8 +1432,8 @@
                 "juice",
                 "orange"
             ],
-            "category": 3,
-            "brand": 9
+            "brand": 9,
+            "subcategory": 3
         }
     },
     {
@@ -1448,8 +1448,8 @@
                 "juice",
                 "cranberry"
             ],
-            "category": 3,
-            "brand": 9
+            "brand": 9,
+            "subcategory": 3
         }
     },
     {
@@ -1464,8 +1464,8 @@
                 "juice",
                 "pineapple"
             ],
-            "category": 3,
-            "brand": 9
+            "brand": 9,
+            "subcategory": 3
         }
     },
     {
@@ -1480,8 +1480,8 @@
                 "juice",
                 "passion fruit"
             ],
-            "category": 3,
-            "brand": 9
+            "brand": 9,
+            "subcategory": 3
         }
     },
     {
@@ -1497,8 +1497,8 @@
                 "soda",
                 "water"
             ],
-            "category": 16,
-            "brand": 53
+            "brand": 53,
+            "subcategory": 16
         }
     },
     {
@@ -1514,8 +1514,8 @@
                 "rimming",
                 "salt"
             ],
-            "category": 18,
-            "brand": 69
+            "brand": 69,
+            "subcategory": 18
         }
     },
     {
@@ -1531,8 +1531,8 @@
                 "orgeat",
                 "almond"
             ],
-            "category": 15,
-            "brand": 52
+            "brand": 52,
+            "subcategory": 15
         }
     },
     {
@@ -1547,8 +1547,8 @@
                 "syrup",
                 "grenadine"
             ],
-            "category": 15,
-            "brand": 52
+            "brand": 52,
+            "subcategory": 15
         }
     },
     {
@@ -1564,8 +1564,8 @@
                 "falernum",
                 "spiced"
             ],
-            "category": 15,
-            "brand": 52
+            "brand": 52,
+            "subcategory": 15
         }
     },
     {
@@ -1580,8 +1580,8 @@
                 "syrup",
                 "vanilla"
             ],
-            "category": 15,
-            "brand": 52
+            "brand": 52,
+            "subcategory": 15
         }
     },
     {
@@ -1597,8 +1597,8 @@
                 "orange",
                 "triple sec"
             ],
-            "category": 38,
-            "brand": 68
+            "brand": 68,
+            "subcategory": 38
         }
     },
     {
@@ -1614,8 +1614,8 @@
                 "orange",
                 "curacao"
             ],
-            "category": 38,
-            "brand": 68
+            "brand": 68,
+            "subcategory": 38
         }
     },
     {
@@ -1631,8 +1631,8 @@
                 "peach",
                 "schnapps"
             ],
-            "category": 38,
-            "brand": 68
+            "brand": 68,
+            "subcategory": 38
         }
     },
     {
@@ -1647,8 +1647,8 @@
                 "liqueur",
                 "passion fruit"
             ],
-            "category": 38,
-            "brand": 68
+            "brand": 68,
+            "subcategory": 38
         }
     },
     {
@@ -1664,8 +1664,8 @@
                 "apricot",
                 "brandy"
             ],
-            "category": 38,
-            "brand": 68
+            "brand": 68,
+            "subcategory": 38
         }
     },
     {
@@ -1681,8 +1681,8 @@
                 "vanilla",
                 "flavored"
             ],
-            "category": 11,
-            "brand": 38
+            "brand": 38,
+            "subcategory": 11
         }
     },
     {
@@ -1698,8 +1698,8 @@
                 "passion fruit",
                 "fresh"
             ],
-            "category": 28,
-            "brand": 61
+            "brand": 61,
+            "subcategory": 28
         }
     }
 ]

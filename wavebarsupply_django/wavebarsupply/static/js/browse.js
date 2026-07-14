@@ -30,18 +30,10 @@ function abv_band(abv) {
   return 'high';
 }
 
-//subcategory options table
-const SUBCATEGORIES = {
-  'non-alcohol': ['Soft Drinks','Water','Juices','Ice Teas','Coffee','Energy Drinks'],
-  'fermented':   ['Beer','Wine','Cider'],
-  'distilled':   ['Whisky','Vodka','Rum','Gin','Tequila','Liqueurs'],
-  'cocktail':    ['Syrups','Mixers','Bitters','Garnishes'],
-  'ice':         ['Ice cubes','Crushed ice','Dry ice','Ice blocks'],
-  'dairy':       ['Milk','Oat milk','Almond milk','Coconut milk','Cream'],
-  'fresh':       ['Fruit','Berries','Aromatic herbs'],
-  'disposable':  ['Cups','Straws','Napkins'],
-  'snacks':      ['Chips','Mixed nuts','Popcorn','Crackers'],
-};
+//subcategory options, grouped by category, sent by the server from the
+//Subcategory table (so adding a sub-category in the Database page is enough)
+const SUBCATEGORIES = JSON.parse(
+  document.querySelector('#subcategories_data').textContent);
 
 //changes dynamicaly the product subcategories when the main category changes
 function build_subcategory_filter() {
