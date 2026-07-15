@@ -5,7 +5,7 @@
 {% block meta_description %}Account page{% endblock %}
 
 {% block extra_css %}<link rel="stylesheet" href="{% static 'css/account_style.css' %}" /><link rel="stylesheet" href="{% static 'css/presets_style.css' %}" />{% endblock %}
-{% block extra_js %}<script src="{% static 'js/account.js' %}" defer></script><script src="{% static 'js/dashboard.js' %}" defer></script>{% endblock %}
+{% block extra_js %}<script src="{% static 'js/account.js' %}" defer></script><script src="{% static 'js/dashboard.js' %}" defer></script><script src="{% static 'js/name_check.js' %}" defer></script>{% endblock %}
 
 {% block content %}
 <section class="account_section">
@@ -33,7 +33,7 @@
       </div>
 
       <!-- Edit view -->
-      <form class="account_edit {% if not show_edit %}hidden{% endif %}" id="account_edit" method="post" novalidate>
+      <form class="account_edit {% if not show_edit %}hidden{% endif %}" id="account_edit" method="post">
         {% csrf_token %}
         {% for field in form %}
           <div class="form_group">

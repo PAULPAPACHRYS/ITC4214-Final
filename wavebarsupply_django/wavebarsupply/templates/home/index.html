@@ -81,16 +81,16 @@
   </div>
 </section>
 
-<!-- Featured Products Section -->
+<!-- Latest Products Section -->
 <section class="featured_section">
   <div class="section_container">
     <div class="featured_header d-flex align-items-center justify-content-between flex-wrap">
-      <h2 class="section_title">Featured Products</h2>
+      <h2 class="section_title">Latest Products</h2>
       <a href="{% url 'catalogue:browse' %}" class="button_secondary">View All</a>
     </div>
     <div class="featured_grid" id="featured_grid"></div>
   </div>
 </section>
 
-{{ featured_products|json_script:"products_data" }}
+{{ latest_products|json_script:"products_data" }}
 {% endblock %}

@@ -1,0 +1,52 @@
+/* ===== "Page not found" page ===== */
+
+.error_section {
+  flex: 1;                     /* fills the space between header and footer */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  background: var(--cream_lt);
+}
+
+.error_card {
+  max-width: 640px;
+  text-align: center;
+}
+
+/* The big 404. It is decorative, so it is kept quiet rather than shouty. */
+.error_code {
+  font-family: var(--font_display);
+  font-weight: 800;
+  font-size: 6rem;
+  line-height: 1;
+  color: var(--teal);
+  opacity: .25;
+  margin-bottom: 8px;
+}
+
+.error_title {
+  font-family: var(--font_display);
+  font-weight: 700;
+  font-size: 1.9rem;
+  color: var(--navy);
+  margin-bottom: 14px;
+}
+
+.error_text {
+  color: var(--gray_dk);
+  font-size: 1rem;
+  margin-bottom: 28px;
+}
+
+.error_actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;             /* the two buttons stack on a narrow screen */
+}
+
+@media (max-width: 520px) {
+  .error_code { font-size: 4.5rem; }
+  .error_title { font-size: 1.45rem; }
+}

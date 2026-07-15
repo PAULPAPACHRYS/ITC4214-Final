@@ -3,6 +3,8 @@ from django.contrib.auth.models import (
 )
 from django.db import models
 
+from .validators import clean_email, clean_text, name_validator, phone_validator
+
 
 class UsersManager(BaseUserManager):
     """Manager required by Django for a custom auth user model."""
@@ -10,7 +12,8 @@ class UsersManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
         if not email:
             raise ValueError('An email address is required.')
-        email = self.normalize_email(email)
+        # normalize_email() only lowercases the domain, so lowercase it all.
+        email = clean_email(self.normalize_email(email))
         user = self.model(email=email, **extra_fields)
         user.set_password(password)          # hashed with bcrypt (see PASSWORD_HASHERS)
         user.save(using=self._db)
@@ -37,13 +40,14 @@ class Users(AbstractBaseUser, PermissionsMixin):
         ('admin', 'Admin'),
     ]
 
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
+    first_name = models.CharField(max_length=50, validators=[name_validator])
+    last_name = models.CharField(max_length=50, validators=[name_validator])
     role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='customer')
     bar_name = models.CharField(max_length=100, blank=True, default='')
     bar_location = models.CharField(max_length=100, blank=True, default='')
     email = models.EmailField(max_length=100, unique=True)
-    phone = models.CharField(max_length=20, blank=True, default='')
+    phone = models.CharField(max_length=20, blank=True, default='',
+                             validators=[phone_validator])
 
     # Flags Django's auth/admin need.
     is_active = models.BooleanField(default=True)
@@ -57,6 +61,17 @@ class Users(AbstractBaseUser, PermissionsMixin):
     class Meta:
         db_table = 'users'
         verbose_name_plural = 'users'
+
+    def save(self, *args, **kwargs):
+        # Tidy the text here as well as in the forms, so a user saved from
+        # anywhere (a form, the shell, a fixture) is stored the same way. The
+        # email in particular MUST be lowercased here, because that is what
+        # makes the unique constraint on it actually work.
+        self.email = clean_email(self.email)
+        self.first_name = clean_text(self.first_name)
+        self.last_name = clean_text(self.last_name)
+        self.bar_name = clean_text(self.bar_name)
+        return super().save(*args, **kwargs)
 
     def get_full_name(self):
         return f"{self.first_name} {self.last_name}".strip()

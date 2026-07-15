@@ -110,7 +110,7 @@ def add(request, key):
         raise Http404
     form_class = config.get('add_form', config['form'])
     if request.method == 'POST':
-        form = form_class(request.POST)
+        form = form_class(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             messages.success(request, f"{config['label']} entry added.")
@@ -129,7 +129,7 @@ def edit(request, key, pk):
         raise Http404
     obj = get_object_or_404(config['model'], pk=pk)
     if request.method == 'POST':
-        form = config['form'](request.POST, instance=obj)
+        form = config['form'](request.POST, request.FILES, instance=obj)
         if form.is_valid():
             form.save()
             messages.success(request, f"{config['label']} entry updated.")

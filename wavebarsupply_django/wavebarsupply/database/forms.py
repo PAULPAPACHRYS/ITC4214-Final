@@ -1,10 +1,12 @@
 import os
+import re
 
 from django import forms
 from django.conf import settings
 from django.contrib.auth.forms import UserCreationForm
 
-from accounts.forms import LOCATION_CHOICES
+from accounts.forms import LOCATION_CHOICES, UserFieldsMixin
+from accounts.validators import name_validator, phone_validator
 from accounts.models import Users
 from catalogue.models import Brand, Category, Product, Subcategory, Tag
 from likes.models import Like
@@ -65,6 +67,39 @@ class ProductPriceSelect(forms.Select):
         return option
 
 
+def _images_dir():
+    """The static/images/ folder, created if it does not exist yet."""
+    folder = settings.BASE_DIR / 'static' / 'images'
+    folder.mkdir(parents=True, exist_ok=True)
+    return folder
+
+
+def _save_uploaded_image(upload):
+    """Copy an uploaded picture into static/images/ and return its file name.
+
+    The name is tidied to letters, numbers, dots, dashes and underscores, so an
+    odd name from the person's computer cannot become an odd file name (or a
+    path like ../../something). If a file of that name already exists, a number
+    is added so the existing picture is never overwritten.
+    """
+    base = os.path.basename(upload.name)               # drop any folder part
+    stem, ext = os.path.splitext(base)
+    stem = re.sub(r'[^A-Za-z0-9._-]', '_', stem) or 'image'
+    ext = ext.lower()
+
+    folder = _images_dir()
+    filename = f'{stem}{ext}'
+    counter = 1
+    while (folder / filename).exists():
+        filename = f'{stem}_{counter}{ext}'            # soft_drinks_1.jpg, etc.
+        counter += 1
+
+    with open(folder / filename, 'wb') as destination:
+        for chunk in upload.chunks():                  # chunks() handles big files
+            destination.write(chunk)
+    return filename
+
+
 def _image_choices():
     """The picture files that actually exist in static/images/.
 
@@ -112,8 +147,21 @@ class CategoryForm(forms.ModelForm):
 
 class SubcategoryForm(forms.ModelForm):
     """A sub-category belongs to a category, chosen from a drop-down of the
-    categories that exist, and shows a picture chosen from a drop-down of the
-    files that exist in static/images/."""
+    categories that exist, and shows a picture.
+
+    The picture can be chosen two ways: pick one of the files already in
+    static/images/ from the drop-down, OR upload a new file, which is copied into
+    static/images/ and then used. Uploading is optional; if a file is uploaded it
+    wins over the drop-down choice.
+    """
+    # Lets the employee add a brand-new picture instead of only choosing an
+    # existing one. It is not a model field - it is handled in save() below.
+    # FileField (not ImageField) is used on purpose, so the project does not
+    # depend on the Pillow library; the file is checked by clean_upload instead.
+    upload = forms.FileField(
+        required=False, label='...or upload a new picture',
+        help_text='Choose an image file to add it to the library and use it here.')
+
     class Meta:
         model = Subcategory
         fields = ['name', 'category', 'image']
@@ -131,6 +179,20 @@ class SubcategoryForm(forms.ModelForm):
     def clean_name(self):
         return _clean_text(self.cleaned_data['name'])
 
+    def clean_upload(self):
+        """Check an uploaded picture is a sensible type and size."""
+        upload = self.cleaned_data.get('upload')
+        if not upload:
+            return upload
+        allowed = ('.jpg', '.jpeg', '.png', '.webp', '.gif')
+        ext = os.path.splitext(upload.name)[1].lower()
+        if ext not in allowed:
+            raise forms.ValidationError(
+                'Please upload an image file (jpg, png, webp or gif).')
+        if upload.size > 5 * 1024 * 1024:          # 5 MB
+            raise forms.ValidationError('Please keep the image under 5 MB.')
+        return upload
+
     def clean(self):
         # A sub-category name only has to be unique WITHIN its category: two
         # categories may each have their own 'Mixers'.
@@ -144,6 +206,16 @@ class SubcategoryForm(forms.ModelForm):
                 self.add_error('name',
                                'This category already has a sub-category with this name.')
         return cleaned
+
+    def save(self, commit=True):
+        # If a new picture was uploaded, copy it into static/images/ and point
+        # the image field at it. This runs before the row is saved, so the
+        # sub-category is stored already referring to the new file.
+        upload = self.cleaned_data.get('upload')
+        if upload:
+            filename = _save_uploaded_image(upload)
+            self.instance.image = filename
+        return super().save(commit=commit)
 
 
 class BrandForm(forms.ModelForm):
@@ -303,11 +375,12 @@ class OrderItemForm(forms.ModelForm):
 
 # --- Users (admin only) ---
 
-class UserEditForm(forms.ModelForm):
+class UserEditForm(UserFieldsMixin, forms.ModelForm):
     """Edit an existing user, including their role. No password field here.
 
     bar_location uses the same fixed list of regions the registration form uses,
-    so a user's location cannot be typed differently here than it is on sign-up.
+    and UserFieldsMixin brings the same name / email / tidying rules, so a user
+    edited here is held to exactly the same standard as one who signed up.
     """
 
     bar_location = forms.ChoiceField(choices=LOCATION_CHOICES, required=False,
@@ -317,19 +390,25 @@ class UserEditForm(forms.ModelForm):
         model = Users
         fields = ['first_name', 'last_name', 'email', 'phone', 'bar_name',
                   'bar_location', 'role', 'is_active']
+        help_texts = {'phone': 'e.g. +30 6900 111111'}
 
     def __init__(self, *a, **k):
         super().__init__(*a, **k)
+        self.apply_field_hints()
         _style(self)
 
 
-class UserCreateForm(UserCreationForm):
+class UserCreateForm(UserFieldsMixin, UserCreationForm):
     """Add a new user (built-in UserCreationForm) with a chosen role."""
 
-    first_name = forms.CharField(max_length=50)
-    last_name = forms.CharField(max_length=50)
+    # These are declared fields, so the validators are attached here explicitly
+    # rather than relying on the ones on the model.
+    first_name = forms.CharField(max_length=50, validators=[name_validator])
+    last_name = forms.CharField(max_length=50, validators=[name_validator])
     email = forms.EmailField(max_length=100)
-    phone = forms.CharField(max_length=20, required=False)
+    phone = forms.CharField(max_length=20, required=False,
+                            validators=[phone_validator],
+                            help_text='e.g. +30 6900 111111')
     bar_name = forms.CharField(max_length=100, required=False)
     bar_location = forms.ChoiceField(choices=LOCATION_CHOICES, required=False,
                                      label='Location / Region')
@@ -341,4 +420,5 @@ class UserCreateForm(UserCreationForm):
 
     def __init__(self, *a, **k):
         super().__init__(*a, **k)
+        self.apply_field_hints()
         _style(self)
