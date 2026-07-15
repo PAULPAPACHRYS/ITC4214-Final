@@ -201,6 +201,13 @@
   border-color: var(--teal);
   background: var(--white);
 }
+/* The tags field is a multiple-selection list, so give it room to show several
+   options at once rather than a single squashed line. */
+.db_form select[multiple] {
+  min-height: 150px;
+  padding: 8px 10px;
+}
+
 .db_form .form_error { display: block; font-size: .78rem; color: var(--coral); margin-top: 4px; }
 .db_help { display: block; font-size: .78rem; color: var(--gray_mid); margin-top: 4px; }
 

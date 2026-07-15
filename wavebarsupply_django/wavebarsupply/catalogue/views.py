@@ -4,7 +4,7 @@ from django.shortcuts import render
 from likes.models import Like
 from presets.forms import PresetForm
 from presets.models import Preset
-from .models import Product, Subcategory
+from .models import Category, Product, Subcategory
 
 
 def _products_as_dicts(queryset, user=None):
@@ -22,6 +22,7 @@ def _products_as_dicts(queryset, user=None):
     """
     queryset = (queryset
                 .select_related('subcategory__category', 'brand')
+                .prefetch_related('tags')
                 .annotate(like_count=Count('likes', distinct=True)))
 
     liked_ids = set()
@@ -42,7 +43,7 @@ def _products_as_dicts(queryset, user=None):
             'volume': f"{p.volume}ml",
             'abv': float(p.abv),
             'image': p.image_url,
-            'tags': p.tags,
+            'tags': [t.name for t in p.tags.all()],
             'like_count': p.like_count,
             'liked': p.id in liked_ids,
         })
@@ -75,9 +76,16 @@ def browse(request):
     for sub in Subcategory.objects.select_related('category').order_by('id'):
         subcategories.setdefault(sub.category.name, []).append(sub.name)
 
+    # The category tabs, also built from the database. They used to be typed out
+    # by hand in the template, which meant a category added on the Database page
+    # never got a tab here.
+    categories = [{'slug': c.name, 'label': c.display_name}
+                  for c in Category.objects.order_by('id')]
+
     return render(request, 'catalogue/browse.html', {
         'products': products,
         'presets': presets,
         'subcategories': subcategories,
+        'categories': categories,
         'preset_form': PresetForm(),
     })

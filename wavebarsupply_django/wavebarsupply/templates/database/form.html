@@ -5,6 +5,7 @@
 {% block meta_description %}Database management{% endblock %}
 
 {% block extra_css %}<link rel="stylesheet" href="{% static 'css/database_style.css' %}" />{% endblock %}
+{% block extra_js %}<script src="{% static 'js/database_form.js' %}" defer></script>{% endblock %}
 
 {% block content %}
 <div class="page_hero">
@@ -15,7 +16,7 @@
 </div>
 
 <section class="db_section section_container">
-  <form class="db_form" method="post" novalidate>
+  <form class="db_form" method="post">
     {% csrf_token %}
 
     {% if form.non_field_errors %}

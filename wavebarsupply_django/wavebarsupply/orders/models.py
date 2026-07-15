@@ -1,4 +1,7 @@
+from decimal import Decimal
+
 from django.conf import settings
+from django.core.validators import MinValueValidator
 from django.db import models
 
 
@@ -38,8 +41,13 @@ class Order(models.Model):
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='items')
     product = models.ForeignKey('catalogue.Product', on_delete=models.PROTECT)
-    quantity = models.PositiveIntegerField(default=1)
-    unit_price = models.DecimalField(max_digits=6, decimal_places=2)
+    # An order line must be for at least one item, and a price can never be
+    # negative.
+    quantity = models.PositiveIntegerField(
+        default=1, validators=[MinValueValidator(1)])
+    unit_price = models.DecimalField(
+        max_digits=6, decimal_places=2,
+        validators=[MinValueValidator(Decimal('0'))])
 
     class Meta:
         db_table = 'order_items'

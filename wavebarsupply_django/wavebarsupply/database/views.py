@@ -6,7 +6,7 @@ from django.http import Http404
 from django.shortcuts import get_object_or_404, redirect, render
 
 from accounts.models import Users
-from catalogue.models import Brand, Category, Product, Subcategory
+from catalogue.models import Brand, Category, Product, Subcategory, Tag
 from likes.models import Like
 from orders.models import Order, OrderItem
 
@@ -29,6 +29,9 @@ TABLES = {
     'subcategories': {'model': Subcategory, 'label': 'Sub-categories', 'admin_only': False,
                       'columns': ['id', 'name', 'category', 'image'],
                       'form': forms.SubcategoryForm},
+    'tags':        {'model': Tag,       'label': 'Tags',        'admin_only': False,
+                    'columns': ['id', 'name'],
+                    'form': forms.TagForm},
     'brands':      {'model': Brand,     'label': 'Brands',      'admin_only': False,
                     'columns': ['id', 'name', 'country'],
                     'form': forms.BrandForm},

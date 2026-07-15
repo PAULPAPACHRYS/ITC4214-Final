@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Brand, Category, Product, Subcategory
+from .models import Brand, Category, Product, Subcategory, Tag
 
 
 @admin.register(Category)
@@ -11,6 +11,12 @@ class CategoryAdmin(admin.ModelAdmin):
 class SubcategoryAdmin(admin.ModelAdmin):
     list_display = ('id', 'name', 'category', 'image')
     list_filter = ('category',)
+
+
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name')
+    search_fields = ('name',)
 
 
 @admin.register(Brand)

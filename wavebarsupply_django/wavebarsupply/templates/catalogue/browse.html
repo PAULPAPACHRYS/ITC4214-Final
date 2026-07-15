@@ -30,15 +30,9 @@
       <h3 class="filter_title">Category</h3>
       <div class="filter_category_tabs">
         <button class="category_tab active" data-cat="all">All</button>
-        <button class="category_tab" data-cat="non-alcohol">Non-Alcoholic</button>
-        <button class="category_tab" data-cat="fermented">Fermented</button>
-        <button class="category_tab" data-cat="distilled">Distilled</button>
-        <button class="category_tab" data-cat="cocktail">Cocktail Ingredients</button>
-        <button class="category_tab" data-cat="ice">Ice</button>
-        <button class="category_tab" data-cat="dairy">Dairy Products</button>
-        <button class="category_tab" data-cat="fresh">Fresh Products</button>
-        <button class="category_tab" data-cat="disposable">Disposable Products</button>
-        <button class="category_tab" data-cat="snacks">Bar Snacks</button>
+        {% for cat in categories %}
+          <button class="category_tab" data-cat="{{ cat.slug }}">{{ cat.label }}</button>
+        {% endfor %}
       </div>
     </div>
 

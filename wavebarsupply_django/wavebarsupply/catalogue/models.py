@@ -1,5 +1,15 @@
+from decimal import Decimal
+
+from django.core.validators import (MaxValueValidator, MinValueValidator,
+                                    RegexValidator)
 from django.db import models
 from django.templatetags.static import static
+
+# A category name is used as a code (it appears in the browse filter, e.g.
+# ?cat=non-alcohol), so it must be a slug: lowercase letters joined by hyphens.
+slug_validator = RegexValidator(
+    regex=r'^[a-z]+(-[a-z]+)*$',
+    message='Use lowercase letters and hyphens only, e.g. non-alcohol.')
 
 
 class Category(models.Model):
@@ -26,8 +36,10 @@ class Category(models.Model):
     }
 
     # unique: the same category can only appear once in the table.
-    # No `choices` here, so the name is typed in freely when adding a category.
-    name = models.CharField(max_length=20, unique=True)
+    # No `choices` here, so the name is typed in freely when adding a category,
+    # but it must still be a valid slug (see slug_validator above).
+    name = models.CharField(max_length=20, unique=True,
+                            validators=[slug_validator])
 
     class Meta:
         db_table = 'categories'
@@ -38,9 +50,12 @@ class Category(models.Model):
         """The label to show for this category.
 
         Known categories get their tidy label ('non-alcohol' -> 'Non-Alcoholic');
-        a newly added one is simply shown exactly as it was typed.
+        a newly added one is tidied up from its slug ('soft-drinks' -> 'Soft
+        Drinks'), so it reads properly on the Browse page tabs.
         """
-        return self.CATEGORY_LABELS.get(self.name, self.name)
+        if self.name in self.CATEGORY_LABELS:
+            return self.CATEGORY_LABELS[self.name]
+        return self.name.replace('-', ' ').title()
 
     def __str__(self):
         return self.display_name
@@ -71,6 +86,12 @@ class Subcategory(models.Model):
     class Meta:
         db_table = 'subcategories'
         verbose_name_plural = 'subcategories'
+        constraints = [
+            # The same sub-category name cannot be added twice under the same
+            # category (two different categories may both have e.g. 'Mixers').
+            models.UniqueConstraint(fields=['category', 'name'],
+                                    name='unique_subcategory_per_category'),
+        ]
 
     @property
     def image_url(self):
@@ -83,10 +104,30 @@ class Subcategory(models.Model):
         return f"{self.category.display_name} · {self.name}"
 
 
+class Tag(models.Model):
+    """A keyword that can be attached to products, e.g. 'cola' or 'citrus'.
+
+    Tags used to be free text typed into each product, which meant the same idea
+    could be spelled three different ways ('cola', 'Cola', 'colaa') without any
+    warning. They are now rows in their own table, so a product picks the tags it
+    wants from the list, and a new tag is added once, deliberately.
+    """
+
+    name = models.CharField(max_length=30, unique=True)
+
+    class Meta:
+        db_table = 'tags'
+        ordering = ['name']
+
+    def __str__(self):
+        return self.name
+
+
 class Brand(models.Model):
     """`name` keeps the old Product.brand max length; `country` is new."""
 
-    name = models.CharField(max_length=100)
+    # unique: the same brand cannot be entered twice.
+    name = models.CharField(max_length=100, unique=True)
     country = models.CharField(max_length=60)
 
     class Meta:
@@ -104,17 +145,33 @@ class Product(models.Model):
     """
 
     name = models.CharField(max_length=100)
-    price = models.DecimalField(max_digits=6, decimal_places=2)
-    volume = models.PositiveIntegerField(help_text='Volume in millilitres')
-    abv = models.DecimalField(max_digits=4, decimal_places=1,
-                              help_text='Alcohol by volume, %')
-    tags = models.JSONField(default=list)
+    # The validators below stop nonsense numbers being saved: a price must be
+    # positive, a volume must be a sensible number of millilitres, and alcohol
+    # by volume can only be a percentage (0-100).
+    price = models.DecimalField(
+        max_digits=6, decimal_places=2,
+        validators=[MinValueValidator(Decimal('0.01'))])
+    volume = models.PositiveIntegerField(
+        help_text='Volume in millilitres',
+        validators=[MinValueValidator(1), MaxValueValidator(20000)])
+    abv = models.DecimalField(
+        max_digits=4, decimal_places=1, help_text='Alcohol by volume, %',
+        validators=[MinValueValidator(Decimal('0')),
+                    MaxValueValidator(Decimal('100'))])
+    tags = models.ManyToManyField(Tag, blank=True, related_name='products')
     subcategory = models.ForeignKey(
         Subcategory, on_delete=models.PROTECT, related_name='products')
     brand = models.ForeignKey(Brand, on_delete=models.PROTECT)
 
     class Meta:
         db_table = 'products'
+        constraints = [
+            # The same drink, from the same brand, in the same size, should only
+            # exist once. (The same name in a different size is a real product,
+            # so volume is part of the check.)
+            models.UniqueConstraint(fields=['name', 'brand', 'volume'],
+                                    name='unique_product_name_brand_volume'),
+        ]
 
     @property
     def category(self):

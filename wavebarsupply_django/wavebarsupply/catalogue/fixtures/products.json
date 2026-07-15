@@ -8,9 +8,9 @@
             "volume": 330,
             "abv": "0.0",
             "tags": [
-                "cola",
-                "classic",
-                "carbonated"
+                32,
+                27,
+                23
             ],
             "brand": 1,
             "subcategory": 1
@@ -25,9 +25,9 @@
             "volume": 330,
             "abv": "0.0",
             "tags": [
-                "cola",
-                "zero sugar",
-                "carbonated"
+                32,
+                157,
+                23
             ],
             "brand": 1,
             "subcategory": 1
@@ -42,9 +42,9 @@
             "volume": 330,
             "abv": "0.0",
             "tags": [
-                "lemon",
-                "lime",
-                "carbonated"
+                79,
+                81,
+                23
             ],
             "brand": 2,
             "subcategory": 1
@@ -59,9 +59,9 @@
             "volume": 330,
             "abv": "0.0",
             "tags": [
-                "orange",
-                "fruity",
-                "carbonated"
+                101,
+                60,
+                23
             ],
             "brand": 3,
             "subcategory": 1
@@ -76,9 +76,9 @@
             "volume": 500,
             "abv": "0.0",
             "tags": [
-                "cola",
-                "max",
-                "carbonated"
+                32,
+                85,
+                23
             ],
             "brand": 4,
             "subcategory": 1
@@ -93,9 +93,9 @@
             "volume": 500,
             "abv": "0.0",
             "tags": [
-                "sparkling",
-                "mineral",
-                "greek"
+                134,
+                88,
+                65
             ],
             "brand": 5,
             "subcategory": 2
@@ -110,9 +110,9 @@
             "volume": 750,
             "abv": "0.0",
             "tags": [
-                "still",
-                "premium",
-                "mineral"
+                136,
+                114,
+                88
             ],
             "brand": 6,
             "subcategory": 2
@@ -127,9 +127,9 @@
             "volume": 500,
             "abv": "0.0",
             "tags": [
-                "still",
-                "natural",
-                "greek"
+                136,
+                93,
+                65
             ],
             "brand": 7,
             "subcategory": 2
@@ -144,9 +144,9 @@
             "volume": 750,
             "abv": "0.0",
             "tags": [
-                "sparkling",
-                "italian",
-                "premium"
+                134,
+                75,
+                114
             ],
             "brand": 8,
             "subcategory": 2
@@ -161,9 +161,9 @@
             "volume": 1000,
             "abv": "0.0",
             "tags": [
-                "orange",
-                "100% juice",
-                "no added sugar"
+                101,
+                2,
+                97
             ],
             "brand": 9,
             "subcategory": 3
@@ -178,9 +178,9 @@
             "volume": 750,
             "abv": "0.0",
             "tags": [
-                "mango",
-                "smoothie",
-                "tropical"
+                84,
+                131,
+                147
             ],
             "brand": 10,
             "subcategory": 3
@@ -195,9 +195,9 @@
             "volume": 1000,
             "abv": "0.0",
             "tags": [
-                "peach",
-                "nectar",
-                "greek"
+                106,
+                94,
+                65
             ],
             "brand": 11,
             "subcategory": 3
@@ -212,9 +212,9 @@
             "volume": 500,
             "abv": "0.0",
             "tags": [
-                "peach",
-                "sweet",
-                "iced"
+                106,
+                140,
+                71
             ],
             "brand": 12,
             "subcategory": 4
@@ -229,9 +229,9 @@
             "volume": 500,
             "abv": "0.0",
             "tags": [
-                "lemon",
-                "classic",
-                "iced"
+                79,
+                27,
+                71
             ],
             "brand": 13,
             "subcategory": 4
@@ -246,9 +246,9 @@
             "volume": 547,
             "abv": "0.0",
             "tags": [
-                "green",
-                "unsweetened",
-                "natural"
+                66,
+                149,
+                93
             ],
             "brand": 14,
             "subcategory": 4
@@ -263,9 +263,9 @@
             "volume": 250,
             "abv": "0.0",
             "tags": [
-                "espresso",
-                "cold",
-                "greek"
+                52,
+                33,
+                65
             ],
             "brand": 15,
             "subcategory": 5
@@ -280,9 +280,9 @@
             "volume": 325,
             "abv": "0.0",
             "tags": [
-                "cold brew",
-                "premium",
-                "smooth"
+                34,
+                114,
+                130
             ],
             "brand": 16,
             "subcategory": 5
@@ -297,9 +297,9 @@
             "volume": 250,
             "abv": "0.0",
             "tags": [
-                "cappuccino",
-                "can",
-                "italian"
+                22,
+                21,
+                75
             ],
             "brand": 17,
             "subcategory": 5
@@ -314,9 +314,9 @@
             "volume": 250,
             "abv": "0.0",
             "tags": [
-                "energy",
-                "taurine",
-                "original"
+                51,
+                142,
+                103
             ],
             "brand": 18,
             "subcategory": 6
@@ -331,9 +331,9 @@
             "volume": 500,
             "abv": "0.0",
             "tags": [
-                "energy",
-                "large",
-                "green"
+                51,
+                78,
+                66
             ],
             "brand": 19,
             "subcategory": 6
@@ -348,9 +348,9 @@
             "volume": 355,
             "abv": "0.0",
             "tags": [
-                "energy",
-                "fitness",
-                "tropical"
+                51,
+                54,
+                147
             ],
             "brand": 20,
             "subcategory": 6
@@ -365,9 +365,9 @@
             "volume": 500,
             "abv": "4.7",
             "tags": [
-                "lager",
-                "greek",
-                "refreshing"
+                77,
+                65,
+                117
             ],
             "brand": 21,
             "subcategory": 7
@@ -382,9 +382,9 @@
             "volume": 500,
             "abv": "5.0",
             "tags": [
-                "pilsner",
-                "greek",
-                "classic"
+                107,
+                65,
+                27
             ],
             "brand": 22,
             "subcategory": 7
@@ -399,9 +399,9 @@
             "volume": 330,
             "abv": "5.0",
             "tags": [
-                "lager",
-                "dutch",
-                "international"
+                77,
+                49,
+                72
             ],
             "brand": 23,
             "subcategory": 7
@@ -416,9 +416,9 @@
             "volume": 330,
             "abv": "4.5",
             "tags": [
-                "lager",
-                "mexican",
-                "beach"
+                77,
+                86,
+                12
             ],
             "brand": 24,
             "subcategory": 7
@@ -433,9 +433,9 @@
             "volume": 500,
             "abv": "5.0",
             "tags": [
-                "lager",
-                "greek",
-                "light"
+                77,
+                65,
+                80
             ],
             "brand": 25,
             "subcategory": 7
@@ -450,9 +450,9 @@
             "volume": 440,
             "abv": "6.5",
             "tags": [
-                "IPA",
-                "craft",
-                "hoppy"
+                73,
+                36,
+                69
             ],
             "brand": 26,
             "subcategory": 7
@@ -467,10 +467,10 @@
             "volume": 750,
             "abv": "13.5",
             "tags": [
-                "white",
-                "dry",
-                "greek",
-                "volcanic"
+                156,
+                47,
+                65,
+                154
             ],
             "brand": 27,
             "subcategory": 8
@@ -485,10 +485,10 @@
             "volume": 750,
             "abv": "13.0",
             "tags": [
-                "red",
-                "dry",
-                "greek",
-                "nemea"
+                116,
+                47,
+                65,
+                95
             ],
             "brand": 28,
             "subcategory": 8
@@ -503,9 +503,9 @@
             "volume": 750,
             "abv": "11.0",
             "tags": [
-                "sparkling",
-                "italian",
-                "prosecco"
+                134,
+                75,
+                115
             ],
             "brand": 29,
             "subcategory": 8
@@ -520,9 +520,9 @@
             "volume": 750,
             "abv": "13.0",
             "tags": [
-                "rosé",
-                "french",
-                "premium"
+                119,
+                57,
+                114
             ],
             "brand": 30,
             "subcategory": 8
@@ -537,9 +537,9 @@
             "volume": 500,
             "abv": "5.0",
             "tags": [
-                "apple",
-                "dry",
-                "classic"
+                7,
+                47,
+                27
             ],
             "brand": 31,
             "subcategory": 9
@@ -554,9 +554,9 @@
             "volume": 500,
             "abv": "4.0",
             "tags": [
-                "strawberry",
-                "sweet",
-                "fruity"
+                137,
+                140,
+                60
             ],
             "brand": 32,
             "subcategory": 9
@@ -571,9 +571,9 @@
             "volume": 500,
             "abv": "4.0",
             "tags": [
-                "mixed fruit",
-                "swedish",
-                "sweet"
+                90,
+                139,
+                140
             ],
             "brand": 33,
             "subcategory": 9
@@ -588,9 +588,9 @@
             "volume": 700,
             "abv": "40.0",
             "tags": [
-                "tennessee",
-                "american",
-                "classic"
+                143,
+                6,
+                27
             ],
             "brand": 34,
             "subcategory": 10
@@ -605,9 +605,9 @@
             "volume": 700,
             "abv": "40.0",
             "tags": [
-                "blended",
-                "scotch",
-                "smoky"
+                16,
+                124,
+                129
             ],
             "brand": 35,
             "subcategory": 10
@@ -622,9 +622,9 @@
             "volume": 700,
             "abv": "40.0",
             "tags": [
-                "single malt",
-                "scotch",
-                "premium"
+                127,
+                124,
+                114
             ],
             "brand": 36,
             "subcategory": 10
@@ -639,9 +639,9 @@
             "volume": 700,
             "abv": "40.0",
             "tags": [
-                "irish",
-                "smooth",
-                "blended"
+                74,
+                130,
+                16
             ],
             "brand": 37,
             "subcategory": 10
@@ -656,9 +656,9 @@
             "volume": 700,
             "abv": "40.0",
             "tags": [
-                "swedish",
-                "neutral",
-                "classic"
+                139,
+                96,
+                27
             ],
             "brand": 38,
             "subcategory": 11
@@ -673,9 +673,9 @@
             "volume": 700,
             "abv": "40.0",
             "tags": [
-                "french",
-                "premium",
-                "smooth"
+                57,
+                114,
+                130
             ],
             "brand": 39,
             "subcategory": 11
@@ -690,9 +690,9 @@
             "volume": 700,
             "abv": "37.5",
             "tags": [
-                "russian",
-                "triple distilled",
-                "value"
+                120,
+                145,
+                150
             ],
             "brand": 40,
             "subcategory": 11
@@ -707,9 +707,9 @@
             "volume": 700,
             "abv": "40.0",
             "tags": [
-                "polish",
-                "rye",
-                "ultra-premium"
+                111,
+                121,
+                148
             ],
             "brand": 41,
             "subcategory": 11
@@ -724,9 +724,9 @@
             "volume": 700,
             "abv": "37.5",
             "tags": [
-                "white",
-                "light",
-                "cocktail"
+                156,
+                80,
+                30
             ],
             "brand": 42,
             "subcategory": 12
@@ -741,9 +741,9 @@
             "volume": 700,
             "abv": "35.0",
             "tags": [
-                "spiced",
-                "golden",
-                "sweet"
+                135,
+                64,
+                140
             ],
             "brand": 43,
             "subcategory": 12
@@ -758,10 +758,10 @@
             "volume": 700,
             "abv": "40.0",
             "tags": [
-                "venezuelan",
-                "dark",
-                "premium",
-                "sipping"
+                152,
+                45,
+                114,
+                128
             ],
             "brand": 44,
             "subcategory": 12
@@ -776,9 +776,9 @@
             "volume": 700,
             "abv": "40.0",
             "tags": [
-                "london dry",
-                "botanical",
-                "classic"
+                83,
+                19,
+                27
             ],
             "brand": 45,
             "subcategory": 13
@@ -793,10 +793,10 @@
             "volume": 700,
             "abv": "41.4",
             "tags": [
-                "scottish",
-                "cucumber",
-                "floral",
-                "premium"
+                125,
+                41,
+                56,
+                114
             ],
             "brand": 46,
             "subcategory": 13
@@ -811,9 +811,9 @@
             "volume": 700,
             "abv": "47.3",
             "tags": [
-                "citrus",
-                "fresh",
-                "premium"
+                26,
+                58,
+                114
             ],
             "brand": 47,
             "subcategory": 13
@@ -828,9 +828,9 @@
             "volume": 500,
             "abv": "47.0",
             "tags": [
-                "german",
-                "47 botanicals",
-                "ultra-premium"
+                62,
+                3,
+                148
             ],
             "brand": 48,
             "subcategory": 13
@@ -845,9 +845,9 @@
             "volume": 700,
             "abv": "38.0",
             "tags": [
-                "silver",
-                "blanco",
-                "cocktail"
+                126,
+                15,
+                30
             ],
             "brand": 49,
             "subcategory": 14
@@ -862,9 +862,9 @@
             "volume": 700,
             "abv": "40.0",
             "tags": [
-                "premium",
-                "100% agave",
-                "smooth"
+                114,
+                1,
+                130
             ],
             "brand": 50,
             "subcategory": 14
@@ -879,9 +879,9 @@
             "volume": 700,
             "abv": "40.0",
             "tags": [
-                "ultra-premium",
-                "100% agave",
-                "clean"
+                148,
+                1,
+                28
             ],
             "brand": 51,
             "subcategory": 14
@@ -896,9 +896,9 @@
             "volume": 700,
             "abv": "0.0",
             "tags": [
-                "syrup",
-                "grenadine",
-                "cocktail"
+                141,
+                67,
+                30
             ],
             "brand": 52,
             "subcategory": 15
@@ -913,9 +913,9 @@
             "volume": 700,
             "abv": "0.0",
             "tags": [
-                "syrup",
-                "vanilla",
-                "cocktail"
+                141,
+                151,
+                30
             ],
             "brand": 52,
             "subcategory": 15
@@ -930,9 +930,9 @@
             "volume": 200,
             "abv": "0.0",
             "tags": [
-                "tonic",
-                "mixer",
-                "cocktail"
+                144,
+                91,
+                30
             ],
             "brand": 53,
             "subcategory": 16
@@ -947,9 +947,9 @@
             "volume": 200,
             "abv": "0.0",
             "tags": [
-                "ginger beer",
-                "mixer",
-                "cocktail"
+                63,
+                91,
+                30
             ],
             "brand": 53,
             "subcategory": 16
@@ -964,9 +964,9 @@
             "volume": 200,
             "abv": "44.7",
             "tags": [
-                "bitters",
-                "aromatic",
-                "cocktail"
+                14,
+                9,
+                30
             ],
             "brand": 54,
             "subcategory": 17
@@ -981,9 +981,9 @@
             "volume": 100,
             "abv": "28.0",
             "tags": [
-                "bitters",
-                "orange",
-                "cocktail"
+                14,
+                101,
+                30
             ],
             "brand": 54,
             "subcategory": 17
@@ -998,9 +998,9 @@
             "volume": 400,
             "abv": "0.0",
             "tags": [
-                "garnish",
-                "cherry",
-                "cocktail"
+                61,
+                24,
+                30
             ],
             "brand": 55,
             "subcategory": 18
@@ -1015,9 +1015,9 @@
             "volume": 350,
             "abv": "0.0",
             "tags": [
-                "garnish",
-                "olive",
-                "cocktail"
+                61,
+                100,
+                30
             ],
             "brand": 55,
             "subcategory": 18
@@ -1032,8 +1032,8 @@
             "volume": 2000,
             "abv": "0.0",
             "tags": [
-                "ice",
-                "cubes"
+                70,
+                40
             ],
             "brand": 56,
             "subcategory": 19
@@ -1048,8 +1048,8 @@
             "volume": 2000,
             "abv": "0.0",
             "tags": [
-                "ice",
-                "crushed"
+                70,
+                39
             ],
             "brand": 56,
             "subcategory": 20
@@ -1064,9 +1064,9 @@
             "volume": 3000,
             "abv": "0.0",
             "tags": [
-                "ice",
-                "dry ice",
-                "effect"
+                70,
+                48,
+                50
             ],
             "brand": 57,
             "subcategory": 21
@@ -1081,9 +1081,9 @@
             "volume": 5000,
             "abv": "0.0",
             "tags": [
-                "ice",
-                "block",
-                "clear"
+                70,
+                17,
+                29
             ],
             "brand": 56,
             "subcategory": 22
@@ -1098,9 +1098,9 @@
             "volume": 1000,
             "abv": "0.0",
             "tags": [
-                "milk",
-                "dairy",
-                "fresh"
+                87,
+                44,
+                58
             ],
             "brand": 58,
             "subcategory": 23
@@ -1115,9 +1115,9 @@
             "volume": 1000,
             "abv": "0.0",
             "tags": [
-                "oat milk",
-                "barista",
-                "plant-based"
+                99,
+                10,
+                109
             ],
             "brand": 59,
             "subcategory": 24
@@ -1132,8 +1132,8 @@
             "volume": 1000,
             "abv": "0.0",
             "tags": [
-                "almond milk",
-                "plant-based"
+                5,
+                109
             ],
             "brand": 60,
             "subcategory": 25
@@ -1148,8 +1148,8 @@
             "volume": 1000,
             "abv": "0.0",
             "tags": [
-                "coconut milk",
-                "plant-based"
+                31,
+                109
             ],
             "brand": 60,
             "subcategory": 26
@@ -1164,8 +1164,8 @@
             "volume": 500,
             "abv": "0.0",
             "tags": [
-                "cream",
-                "dairy"
+                38,
+                44
             ],
             "brand": 58,
             "subcategory": 27
@@ -1180,9 +1180,9 @@
             "volume": 1000,
             "abv": "0.0",
             "tags": [
-                "fruit",
-                "lemon",
-                "citrus"
+                59,
+                79,
+                26
             ],
             "brand": 61,
             "subcategory": 28
@@ -1197,9 +1197,9 @@
             "volume": 1000,
             "abv": "0.0",
             "tags": [
-                "fruit",
-                "orange",
-                "citrus"
+                59,
+                101,
+                26
             ],
             "brand": 61,
             "subcategory": 28
@@ -1214,9 +1214,9 @@
             "volume": 1000,
             "abv": "0.0",
             "tags": [
-                "fruit",
-                "lime",
-                "citrus"
+                59,
+                81,
+                26
             ],
             "brand": 61,
             "subcategory": 28
@@ -1231,8 +1231,8 @@
             "volume": 500,
             "abv": "0.0",
             "tags": [
-                "berries",
-                "strawberry"
+                13,
+                137
             ],
             "brand": 61,
             "subcategory": 29
@@ -1247,8 +1247,8 @@
             "volume": 500,
             "abv": "0.0",
             "tags": [
-                "berries",
-                "blueberry"
+                13,
+                18
             ],
             "brand": 61,
             "subcategory": 29
@@ -1263,9 +1263,9 @@
             "volume": 100,
             "abv": "0.0",
             "tags": [
-                "herbs",
-                "mint",
-                "garnish"
+                68,
+                89,
+                61
             ],
             "brand": 61,
             "subcategory": 30
@@ -1280,9 +1280,9 @@
             "volume": 100,
             "abv": "0.0",
             "tags": [
-                "herbs",
-                "basil",
-                "garnish"
+                68,
+                11,
+                61
             ],
             "brand": 61,
             "subcategory": 30
@@ -1297,9 +1297,9 @@
             "volume": 500,
             "abv": "0.0",
             "tags": [
-                "cups",
-                "disposable",
-                "plastic"
+                42,
+                46,
+                110
             ],
             "brand": 62,
             "subcategory": 31
@@ -1314,9 +1314,9 @@
             "volume": 250,
             "abv": "0.0",
             "tags": [
-                "straws",
-                "paper",
-                "disposable"
+                138,
+                104,
+                46
             ],
             "brand": 62,
             "subcategory": 32
@@ -1331,8 +1331,8 @@
             "volume": 500,
             "abv": "0.0",
             "tags": [
-                "napkins",
-                "disposable"
+                92,
+                46
             ],
             "brand": 63,
             "subcategory": 33
@@ -1347,9 +1347,9 @@
             "volume": 150,
             "abv": "0.0",
             "tags": [
-                "chips",
-                "snack",
-                "potato"
+                25,
+                132,
+                113
             ],
             "brand": 64,
             "subcategory": 34
@@ -1364,8 +1364,8 @@
             "volume": 200,
             "abv": "0.0",
             "tags": [
-                "nuts",
-                "snack"
+                98,
+                132
             ],
             "brand": 65,
             "subcategory": 35
@@ -1380,8 +1380,8 @@
             "volume": 100,
             "abv": "0.0",
             "tags": [
-                "popcorn",
-                "snack"
+                112,
+                132
             ],
             "brand": 66,
             "subcategory": 36
@@ -1396,8 +1396,8 @@
             "volume": 200,
             "abv": "0.0",
             "tags": [
-                "crackers",
-                "snack"
+                35,
+                132
             ],
             "brand": 67,
             "subcategory": 37
@@ -1412,9 +1412,9 @@
             "volume": 1000,
             "abv": "0.0",
             "tags": [
-                "juice",
-                "lime",
-                "mixer"
+                76,
+                81,
+                91
             ],
             "brand": 9,
             "subcategory": 3
@@ -1429,8 +1429,8 @@
             "volume": 1000,
             "abv": "0.0",
             "tags": [
-                "juice",
-                "orange"
+                76,
+                101
             ],
             "brand": 9,
             "subcategory": 3
@@ -1445,8 +1445,8 @@
             "volume": 1000,
             "abv": "0.0",
             "tags": [
-                "juice",
-                "cranberry"
+                76,
+                37
             ],
             "brand": 9,
             "subcategory": 3
@@ -1461,8 +1461,8 @@
             "volume": 1000,
             "abv": "0.0",
             "tags": [
-                "juice",
-                "pineapple"
+                76,
+                108
             ],
             "brand": 9,
             "subcategory": 3
@@ -1477,8 +1477,8 @@
             "volume": 1000,
             "abv": "0.0",
             "tags": [
-                "juice",
-                "passion fruit"
+                76,
+                105
             ],
             "brand": 9,
             "subcategory": 3
@@ -1493,9 +1493,9 @@
             "volume": 200,
             "abv": "0.0",
             "tags": [
-                "mixer",
-                "soda",
-                "water"
+                91,
+                133,
+                155
             ],
             "brand": 53,
             "subcategory": 16
@@ -1510,9 +1510,9 @@
             "volume": 250,
             "abv": "0.0",
             "tags": [
-                "garnish",
-                "rimming",
-                "salt"
+                61,
+                118,
+                122
             ],
             "brand": 69,
             "subcategory": 18
@@ -1527,9 +1527,9 @@
             "volume": 700,
             "abv": "0.0",
             "tags": [
-                "syrup",
-                "orgeat",
-                "almond"
+                141,
+                102,
+                4
             ],
             "brand": 52,
             "subcategory": 15
@@ -1544,8 +1544,8 @@
             "volume": 700,
             "abv": "0.0",
             "tags": [
-                "syrup",
-                "grenadine"
+                141,
+                67
             ],
             "brand": 52,
             "subcategory": 15
@@ -1560,9 +1560,9 @@
             "volume": 700,
             "abv": "0.0",
             "tags": [
-                "syrup",
-                "falernum",
-                "spiced"
+                141,
+                53,
+                135
             ],
             "brand": 52,
             "subcategory": 15
@@ -1577,8 +1577,8 @@
             "volume": 700,
             "abv": "0.0",
             "tags": [
-                "syrup",
-                "vanilla"
+                141,
+                151
             ],
             "brand": 52,
             "subcategory": 15
@@ -1593,9 +1593,9 @@
             "volume": 700,
             "abv": "15.0",
             "tags": [
-                "liqueur",
-                "orange",
-                "triple sec"
+                82,
+                101,
+                146
             ],
             "brand": 68,
             "subcategory": 38
@@ -1610,9 +1610,9 @@
             "volume": 700,
             "abv": "30.0",
             "tags": [
-                "liqueur",
-                "orange",
-                "curacao"
+                82,
+                101,
+                43
             ],
             "brand": 68,
             "subcategory": 38
@@ -1627,9 +1627,9 @@
             "volume": 700,
             "abv": "20.0",
             "tags": [
-                "liqueur",
-                "peach",
-                "schnapps"
+                82,
+                106,
+                123
             ],
             "brand": 68,
             "subcategory": 38
@@ -1644,8 +1644,8 @@
             "volume": 700,
             "abv": "17.0",
             "tags": [
-                "liqueur",
-                "passion fruit"
+                82,
+                105
             ],
             "brand": 68,
             "subcategory": 38
@@ -1660,9 +1660,9 @@
             "volume": 700,
             "abv": "24.0",
             "tags": [
-                "liqueur",
-                "apricot",
-                "brandy"
+                82,
+                8,
+                20
             ],
             "brand": 68,
             "subcategory": 38
@@ -1677,9 +1677,9 @@
             "volume": 700,
             "abv": "40.0",
             "tags": [
-                "vodka",
-                "vanilla",
-                "flavored"
+                153,
+                151,
+                55
             ],
             "brand": 38,
             "subcategory": 11
@@ -1694,9 +1694,9 @@
             "volume": 500,
             "abv": "0.0",
             "tags": [
-                "fruit",
-                "passion fruit",
-                "fresh"
+                59,
+                105,
+                58
             ],
             "brand": 61,
             "subcategory": 28

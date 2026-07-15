@@ -1,0 +1,1101 @@
+[
+    {
+        "model": "catalogue.tag",
+        "pk": 1,
+        "fields": {
+            "name": "100% agave"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 2,
+        "fields": {
+            "name": "100% juice"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 3,
+        "fields": {
+            "name": "47 botanicals"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 4,
+        "fields": {
+            "name": "almond"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 5,
+        "fields": {
+            "name": "almond milk"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 6,
+        "fields": {
+            "name": "american"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 7,
+        "fields": {
+            "name": "apple"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 8,
+        "fields": {
+            "name": "apricot"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 9,
+        "fields": {
+            "name": "aromatic"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 10,
+        "fields": {
+            "name": "barista"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 11,
+        "fields": {
+            "name": "basil"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 12,
+        "fields": {
+            "name": "beach"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 13,
+        "fields": {
+            "name": "berries"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 14,
+        "fields": {
+            "name": "bitters"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 15,
+        "fields": {
+            "name": "blanco"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 16,
+        "fields": {
+            "name": "blended"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 17,
+        "fields": {
+            "name": "block"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 18,
+        "fields": {
+            "name": "blueberry"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 19,
+        "fields": {
+            "name": "botanical"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 20,
+        "fields": {
+            "name": "brandy"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 21,
+        "fields": {
+            "name": "can"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 22,
+        "fields": {
+            "name": "cappuccino"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 23,
+        "fields": {
+            "name": "carbonated"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 24,
+        "fields": {
+            "name": "cherry"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 25,
+        "fields": {
+            "name": "chips"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 26,
+        "fields": {
+            "name": "citrus"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 27,
+        "fields": {
+            "name": "classic"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 28,
+        "fields": {
+            "name": "clean"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 29,
+        "fields": {
+            "name": "clear"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 30,
+        "fields": {
+            "name": "cocktail"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 31,
+        "fields": {
+            "name": "coconut milk"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 32,
+        "fields": {
+            "name": "cola"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 33,
+        "fields": {
+            "name": "cold"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 34,
+        "fields": {
+            "name": "cold brew"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 35,
+        "fields": {
+            "name": "crackers"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 36,
+        "fields": {
+            "name": "craft"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 37,
+        "fields": {
+            "name": "cranberry"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 38,
+        "fields": {
+            "name": "cream"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 39,
+        "fields": {
+            "name": "crushed"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 40,
+        "fields": {
+            "name": "cubes"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 41,
+        "fields": {
+            "name": "cucumber"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 42,
+        "fields": {
+            "name": "cups"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 43,
+        "fields": {
+            "name": "curacao"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 44,
+        "fields": {
+            "name": "dairy"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 45,
+        "fields": {
+            "name": "dark"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 46,
+        "fields": {
+            "name": "disposable"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 47,
+        "fields": {
+            "name": "dry"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 48,
+        "fields": {
+            "name": "dry ice"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 49,
+        "fields": {
+            "name": "dutch"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 50,
+        "fields": {
+            "name": "effect"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 51,
+        "fields": {
+            "name": "energy"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 52,
+        "fields": {
+            "name": "espresso"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 53,
+        "fields": {
+            "name": "falernum"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 54,
+        "fields": {
+            "name": "fitness"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 55,
+        "fields": {
+            "name": "flavored"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 56,
+        "fields": {
+            "name": "floral"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 57,
+        "fields": {
+            "name": "french"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 58,
+        "fields": {
+            "name": "fresh"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 59,
+        "fields": {
+            "name": "fruit"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 60,
+        "fields": {
+            "name": "fruity"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 61,
+        "fields": {
+            "name": "garnish"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 62,
+        "fields": {
+            "name": "german"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 63,
+        "fields": {
+            "name": "ginger beer"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 64,
+        "fields": {
+            "name": "golden"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 65,
+        "fields": {
+            "name": "greek"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 66,
+        "fields": {
+            "name": "green"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 67,
+        "fields": {
+            "name": "grenadine"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 68,
+        "fields": {
+            "name": "herbs"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 69,
+        "fields": {
+            "name": "hoppy"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 70,
+        "fields": {
+            "name": "ice"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 71,
+        "fields": {
+            "name": "iced"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 72,
+        "fields": {
+            "name": "international"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 73,
+        "fields": {
+            "name": "ipa"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 74,
+        "fields": {
+            "name": "irish"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 75,
+        "fields": {
+            "name": "italian"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 76,
+        "fields": {
+            "name": "juice"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 77,
+        "fields": {
+            "name": "lager"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 78,
+        "fields": {
+            "name": "large"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 79,
+        "fields": {
+            "name": "lemon"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 80,
+        "fields": {
+            "name": "light"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 81,
+        "fields": {
+            "name": "lime"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 82,
+        "fields": {
+            "name": "liqueur"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 83,
+        "fields": {
+            "name": "london dry"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 84,
+        "fields": {
+            "name": "mango"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 85,
+        "fields": {
+            "name": "max"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 86,
+        "fields": {
+            "name": "mexican"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 87,
+        "fields": {
+            "name": "milk"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 88,
+        "fields": {
+            "name": "mineral"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 89,
+        "fields": {
+            "name": "mint"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 90,
+        "fields": {
+            "name": "mixed fruit"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 91,
+        "fields": {
+            "name": "mixer"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 92,
+        "fields": {
+            "name": "napkins"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 93,
+        "fields": {
+            "name": "natural"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 94,
+        "fields": {
+            "name": "nectar"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 95,
+        "fields": {
+            "name": "nemea"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 96,
+        "fields": {
+            "name": "neutral"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 97,
+        "fields": {
+            "name": "no added sugar"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 98,
+        "fields": {
+            "name": "nuts"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 99,
+        "fields": {
+            "name": "oat milk"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 100,
+        "fields": {
+            "name": "olive"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 101,
+        "fields": {
+            "name": "orange"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 102,
+        "fields": {
+            "name": "orgeat"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 103,
+        "fields": {
+            "name": "original"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 104,
+        "fields": {
+            "name": "paper"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 105,
+        "fields": {
+            "name": "passion fruit"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 106,
+        "fields": {
+            "name": "peach"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 107,
+        "fields": {
+            "name": "pilsner"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 108,
+        "fields": {
+            "name": "pineapple"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 109,
+        "fields": {
+            "name": "plant-based"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 110,
+        "fields": {
+            "name": "plastic"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 111,
+        "fields": {
+            "name": "polish"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 112,
+        "fields": {
+            "name": "popcorn"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 113,
+        "fields": {
+            "name": "potato"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 114,
+        "fields": {
+            "name": "premium"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 115,
+        "fields": {
+            "name": "prosecco"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 116,
+        "fields": {
+            "name": "red"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 117,
+        "fields": {
+            "name": "refreshing"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 118,
+        "fields": {
+            "name": "rimming"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 119,
+        "fields": {
+            "name": "rosé"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 120,
+        "fields": {
+            "name": "russian"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 121,
+        "fields": {
+            "name": "rye"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 122,
+        "fields": {
+            "name": "salt"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 123,
+        "fields": {
+            "name": "schnapps"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 124,
+        "fields": {
+            "name": "scotch"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 125,
+        "fields": {
+            "name": "scottish"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 126,
+        "fields": {
+            "name": "silver"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 127,
+        "fields": {
+            "name": "single malt"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 128,
+        "fields": {
+            "name": "sipping"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 129,
+        "fields": {
+            "name": "smoky"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 130,
+        "fields": {
+            "name": "smooth"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 131,
+        "fields": {
+            "name": "smoothie"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 132,
+        "fields": {
+            "name": "snack"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 133,
+        "fields": {
+            "name": "soda"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 134,
+        "fields": {
+            "name": "sparkling"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 135,
+        "fields": {
+            "name": "spiced"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 136,
+        "fields": {
+            "name": "still"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 137,
+        "fields": {
+            "name": "strawberry"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 138,
+        "fields": {
+            "name": "straws"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 139,
+        "fields": {
+            "name": "swedish"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 140,
+        "fields": {
+            "name": "sweet"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 141,
+        "fields": {
+            "name": "syrup"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 142,
+        "fields": {
+            "name": "taurine"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 143,
+        "fields": {
+            "name": "tennessee"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 144,
+        "fields": {
+            "name": "tonic"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 145,
+        "fields": {
+            "name": "triple distilled"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 146,
+        "fields": {
+            "name": "triple sec"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 147,
+        "fields": {
+            "name": "tropical"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 148,
+        "fields": {
+            "name": "ultra-premium"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 149,
+        "fields": {
+            "name": "unsweetened"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 150,
+        "fields": {
+            "name": "value"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 151,
+        "fields": {
+            "name": "vanilla"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 152,
+        "fields": {
+            "name": "venezuelan"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 153,
+        "fields": {
+            "name": "vodka"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 154,
+        "fields": {
+            "name": "volcanic"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 155,
+        "fields": {
+            "name": "water"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 156,
+        "fields": {
+            "name": "white"
+        }
+    },
+    {
+        "model": "catalogue.tag",
+        "pk": 157,
+        "fields": {
+            "name": "zero sugar"
+        }
+    }
+]

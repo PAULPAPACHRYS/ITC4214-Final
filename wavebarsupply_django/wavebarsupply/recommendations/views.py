@@ -39,8 +39,10 @@ def _similarity(target, candidate):
     if target.brand_id == candidate.brand_id:
         score += SAME_BRAND
 
-    shared_tags = set(target.tags or []) & set(candidate.tags or [])
-    score += SHARED_TAG * len(shared_tags)
+    # Tags are rows now, so compare them by id.
+    target_tags = {t.id for t in target.tags.all()}
+    candidate_tags = {t.id for t in candidate.tags.all()}
+    score += SHARED_TAG * len(target_tags & candidate_tags)
 
     price_gap = abs(float(target.price) - float(candidate.price))
     if price_gap <= 2:
@@ -78,6 +80,7 @@ def for_cart(request):
     order = Order.objects.filter(user=request.user, is_cart=True).first()
     cart_items = list(
         order.items.select_related('product', 'product__subcategory', 'product__brand')
+                   .prefetch_related('product__tags')
     ) if order else []
 
     if not cart_items:
@@ -88,6 +91,7 @@ def for_cart(request):
 
     candidates = (Product.objects
                   .select_related('subcategory__category', 'brand')
+                  .prefetch_related('tags')
                   .exclude(id__in=cart_ids))
 
     ranked = _rank(cart_products, candidates)
