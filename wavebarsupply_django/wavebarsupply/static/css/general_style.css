@@ -1,5 +1,3 @@
-
-/* === RESET & BASE === */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -46,7 +44,6 @@ img { max-width: 100%; display: block; }
 button { cursor: pointer; font-family: inherit; }
 input, select { font-family: inherit; }
 
-/* General Containers */
 .hidden { display: none !important; }
 
 .section_container {
@@ -55,7 +52,6 @@ input, select { font-family: inherit; }
   padding: 0 24px;
 }
 
-/* General Buttons */
 .button_primary {
   display: inline-block;
   background: var(--teal);
@@ -95,7 +91,6 @@ input, select { font-family: inherit; }
   color: var(--white);
 }
 
-/* Header Section */
 .site_header {
   position: sticky;
   top: 0;
@@ -126,9 +121,6 @@ input, select { font-family: inherit; }
 }
 .nav_logo span { color: var(--teal); }
 
-/* .nav_links needs no rules of its own: Bootstrap's "d-flex gap-2 ms-auto"
-   utilities in base.html give the same flex row, 8px gap and auto left margin. */
-
 .nav_link {
   font-family: var(--font_display);
   font-weight: 600;
@@ -148,14 +140,10 @@ input, select { font-family: inherit; }
 
 .nav_cta {
   margin-left: 16px;
-  flex-shrink: 0;      /* don't let a crowded nav squeeze the buttons */
-  white-space: nowrap; /* keep "Shop Now" on one line (no vertical stretch) */
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
-/* On narrow screens (phones/small tablets) the fixed-height single row can't
-   fit the logo, links and both buttons, so the Cart button used to spill off
-   the right edge of the page. Letting the bar grow taller and wrap its items
-   onto new lines keeps everything inside the screen. */
 @media (max-width: 900px) {
   .nav_bar {
     height: auto;
@@ -172,7 +160,6 @@ input, select { font-family: inherit; }
   .nav_cta { margin-left: 0; }
 }
 
-/* Product Cards (used on home and browse page) */
 .product_card {
   background: var(--white);
   border-radius: var(--radius_md);
@@ -193,13 +180,9 @@ input, select { font-family: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;   /* keeps the image inside the card's rounded corners */
+  overflow: hidden;
 }
 
-/* The sub-category picture fills the whole thumb area. object-fit: cover crops
-   it to the box instead of stretching it, so any picture size still looks right.
-   While a sub-category has no picture yet, the thumb simply stays a plain
-   navy block. */
 .product_card_image {
   width: 100%;
   height: 100%;
@@ -231,7 +214,10 @@ input, select { font-family: inherit; }
   line-height: 1.2;
 }
 
-.product_card_brand { font-size: .82rem; color: var(--gray_dk); }
+.product_card_brand { 
+  font-size: .82rem; 
+  color: var(--gray_dk); 
+}
 
 .product_card_meta {
   display: flex;
@@ -257,7 +243,6 @@ input, select { font-family: inherit; }
   border-top: 1px solid var(--gray_lt);
 }
 
-/* Quantity stepper (used on product cards and the cart page) */
 .qty_control {
   display: flex;
   align-items: center;
@@ -287,7 +272,6 @@ input, select { font-family: inherit; }
   background: var(--white);
 }
 .qty_input:focus { outline: none; border-color: var(--teal); }
-/* hide the browser's number spinners since we have our own +/- buttons */
 .qty_input::-webkit-outer-spin-button,
 .qty_input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
 .qty_input { -moz-appearance: textfield; appearance: textfield; }
@@ -318,7 +302,6 @@ input, select { font-family: inherit; }
 }
 .button_add_to_order:hover { background: var(--teal_lt); }
 
-/* Footer Section */
 .site_footer {
   background: var(--navy);
   color: var(--gray_mid);

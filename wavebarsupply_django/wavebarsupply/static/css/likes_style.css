@@ -1,4 +1,3 @@
-/* Like control on product cards: a heart button plus the total count beside it. */
 .like_control {
   display: flex;
   align-items: center;
@@ -22,18 +21,25 @@
   cursor: pointer;
   transition: border-color .15s, color .15s, background .15s;
 }
-.like_button .like_heart { font-size: 1rem; line-height: 1; }
-.like_button:hover { border-color: var(--coral); color: var(--coral); }
+.like_button .like_heart { 
+  font-size: 1rem; 
+  line-height: 1; 
+}
+.like_button:hover { 
+  border-color: var(--coral); 
+  color: var(--coral); 
+}
 
-/* Liked state: filled coral heart + coral outline. */
 .like_button.liked {
   border-color: var(--coral);
   color: var(--coral);
   background: #fdece8;
 }
 
-/* Faded while a request is in flight (prevents double-clicks). */
-.like_button.is_busy { opacity: .6; cursor: default; }
+.like_button.is_busy { 
+  opacity: .6; 
+  cursor: default; 
+}
 
 .like_count {
   font-size: .85rem;

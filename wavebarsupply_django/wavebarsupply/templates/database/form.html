@@ -4,8 +4,13 @@
 {% block title %}WaveBar Supply — {{ mode }} {{ label }}{% endblock %}
 {% block meta_description %}Database management{% endblock %}
 
-{% block extra_css %}<link rel="stylesheet" href="{% static 'css/database_style.css' %}" />{% endblock %}
-{% block extra_js %}<script src="{% static 'js/database_form.js' %}" defer></script><script src="{% static 'js/name_check.js' %}" defer></script>{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/database_style.css' %}" />
+{% endblock %}
+{% block extra_js %}
+<script src="{% static 'js/database_form.js' %}" defer></script>
+<script src="{% static 'js/name_check.js' %}" defer></script>
+{% endblock %}
 
 {% block content %}
 <div class="page_hero">

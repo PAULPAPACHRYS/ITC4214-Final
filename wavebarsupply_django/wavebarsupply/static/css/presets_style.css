@@ -1,15 +1,10 @@
-/* ===== Cocktail presets column (right of the product grid) ===== */
 .preset_column {
-  min-width: 0;   /* lets the column shrink cleanly inside the grid */
+  min-width: 0;
 }
 .preset_section {
   margin-bottom: 28px;
 }
 
-/* Search bar above the "+ Add Cocktail Preset" button. Matches the product
-   search bar so both searches look and behave the same.
-   The wrapper needs no CSS of its own: Bootstrap's "position-relative mb-3"
-   utilities in the template supply the positioning context and the 16px gap. */
 .preset_search_input {
   width: 100%;
   padding: 12px 44px 12px 16px;
@@ -38,7 +33,6 @@
 }
 .preset_search_clear:hover { color: var(--coral); }
 
-/* Message shown when a search matches no presets. */
 .preset_no_match {
   color: var(--gray_dk);
   font-size: .9rem;
@@ -53,14 +47,12 @@
 }
 .preset_add_button { width: 100%; }
 
-/* Cards stack vertically down the column. */
 .preset_grid {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* ===== Preset card (like a product card, but colour instead of an image) ===== */
 .preset_card {
   width: 100%;
   background: var(--white);
@@ -76,11 +68,10 @@
   box-shadow: var(--shadow_md);
 }
 .preset_card_thumb {
-  height: 80px;   /* solid block of the preset's colour, no picture */
+  height: 80px;
   position: relative;
 }
 
-/* Edit / delete buttons shown on the user's own presets (top-right of the thumb) */
 .preset_owner_actions {
   position: absolute;
   top: 8px;
@@ -102,7 +93,10 @@
   transition: background .15s;
 }
 .preset_edit_button:hover { background: var(--white); }
-.preset_delete_button:hover { background: var(--coral); color: var(--white); }
+.preset_delete_button:hover { 
+  background: var(--coral); 
+  color: var(--white); 
+}
 .preset_card_body {
   padding: 14px 16px 16px;
   display: flex;
@@ -142,7 +136,6 @@
   flex-wrap: wrap;
 }
 
-/* "+ Order" button (styled to match the product cards' order button) */
 .preset_order_button {
   background: var(--teal);
   color: var(--white);
@@ -159,7 +152,6 @@
 .preset_order_button:hover { background: var(--teal_lt); }
 .preset_order_button:disabled { opacity: .7; cursor: default; }
 
-/* ===== Create-preset overlay ===== */
 .preset_overlay {
   position: fixed;
   inset: 0;
@@ -200,8 +192,16 @@
   margin-bottom: 18px;
 }
 
-.preset_form { display: flex; flex-direction: column; gap: 16px; }
-.preset_field { display: flex; flex-direction: column; gap: 6px; }
+.preset_form { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 16px; 
+}
+.preset_field { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 6px; 
+}
 .preset_field > span {
   font-weight: 700;
   font-size: .85rem;
@@ -219,9 +219,16 @@
   background: var(--white);
 }
 .preset_field .form_input:focus,
-.preset_ingredient_search:focus { outline: none; border-color: var(--teal); }
+.preset_ingredient_search:focus { 
+  outline: none; 
+  border-color: var(--teal); 
+}
 
-.preset_color_field { flex-direction: row; align-items: center; gap: 12px; }
+.preset_color_field { 
+  flex-direction: row; 
+  align-items: center; 
+  gap: 12px; 
+}
 .preset_color_input {
   width: 48px;
   height: 34px;
@@ -250,7 +257,10 @@
   cursor: pointer;
 }
 .preset_result_row:hover:not(:disabled) { border-color: var(--teal); }
-.preset_result_row:disabled { opacity: .5; cursor: default; }
+.preset_result_row:disabled { 
+  opacity: .5; 
+  cursor: default; 
+}
 
 .preset_selected {
   display: flex;
@@ -279,8 +289,7 @@
 .preset_form_error { color: var(--coral); font-size: .85rem; min-height: 1em; }
 .preset_submit { cursor: pointer; }
 
-/* ===== Read-only ingredient overlay (click a preset card) ===== */
-.preset_card { cursor: pointer; }   /* hint that the card is clickable */
+.preset_card { cursor: pointer; }
 
 .preset_view_overlay {
   position: fixed;

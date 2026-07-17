@@ -1,4 +1,3 @@
-/* Header Section*/
 .header_section {
   background: var(--navy);
   color: var(--white);
@@ -18,10 +17,7 @@
   margin-top: 4px; 
 }
 
-/* Browse */
 .browse_layout {
-  /* Wider than the site-wide 1200px container so the middle products column
-     gets more room and the cards no longer look cramped on large screens. */
   max-width: 1400px;
   display: grid;
   grid-template-columns: 230px 1fr 260px;
@@ -32,7 +28,6 @@
   align-items: start;
 }
 
-/* Shared heading sitting above each of the three columns, all on one row. */
 .browse_column_title {
   font-family: var(--font_display);
   font-weight: 800;
@@ -41,7 +36,6 @@
   margin: 0;
 }
 
-/* Filter bar */
 .filter_sidebar {
   background: var(--white);
   border-radius: var(--radius_md);
@@ -52,9 +46,6 @@
   display: flex;
   flex-direction: column;
   gap: 0;
-  /* Keep the filters within one screen height and let them scroll on their own.
-     overscroll-behavior: contain stops the scroll from spilling to the page, so
-     hovering the filters and scrolling moves only the filters. */
   max-height: calc(100vh - 104px);
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -126,9 +117,12 @@
   transition: color .12s;
 }
 .filter_check_label:hover { color: var(--navy); }
-.filter_check_label input[type="checkbox"] { accent-color: var(--teal); width: 15px; height: 15px; }
+.filter_check_label input[type="checkbox"] { 
+  accent-color: var(--teal); 
+  width: 15px; 
+  height: 15px; 
+}
 
-/* price range filter */
 .price_range_row {
   display: flex;
   justify-content: space-between;
@@ -154,7 +148,6 @@
 
 .browse_main { min-width: 0; }
 
-/* search bar */
 .search_bar_wrap {
   position: relative;
   margin-bottom: 20px;
@@ -189,7 +182,6 @@
 }
 .search_clear_button:hover { color: var(--coral); }
 
-/* search results */
 .results_meta {
   display: flex;
   align-items: center;
@@ -214,14 +206,12 @@
 }
 .sort_select:focus { outline: none; border-color: var(--teal); }
 
-/* search result products */
 .product_grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-/* no results found */
 .empty_state {
   text-align: center;
   padding: 60px 20px;
@@ -236,16 +226,9 @@
 }
 .empty_state p { margin-bottom: 20px; }
 
-/* On phones/small tablets the rigid three-column grid squeezed the middle
-   column so three product cards were crammed together. Below 900px we stack
-   the whole page into one column and drop the product grid to two cards per
-   row so each card keeps a comfortable width. */
 @media (max-width: 900px) {
   .browse_layout { grid-template-columns: 1fr; }
 
-  /* In a single column the six grid items would otherwise appear as all three
-     headings first, then all three sections. `order` re-pairs each heading with
-     its own section: Filters, filters; Products, products; Presets, presets. */
   .browse_column_title:nth-of-type(1) { order: 1; }
   .filter_sidebar                     { order: 2; }
   .browse_column_title:nth-of-type(2) { order: 3; }
@@ -253,7 +236,6 @@
   .browse_column_title:nth-of-type(3) { order: 5; }
   .preset_column                      { order: 6; }
 
-  /* Once stacked, the filters no longer need to stick or cap their height. */
   .filter_sidebar {
     position: static;
     max-height: none;
@@ -262,7 +244,6 @@
   .product_grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-/* On the narrowest phones, one product per row reads best. */
 @media (max-width: 520px) {
   .product_grid { grid-template-columns: 1fr; }
 }

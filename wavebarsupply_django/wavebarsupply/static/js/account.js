@@ -1,4 +1,4 @@
-// Toggles the account page between the read view and the edit form.
+// toggles the Account page between the read view and the edit form
 const account_view = document.querySelector('#account_view');
 const account_edit = document.querySelector('#account_edit');
 const edit_button = document.querySelector('#edit_button');

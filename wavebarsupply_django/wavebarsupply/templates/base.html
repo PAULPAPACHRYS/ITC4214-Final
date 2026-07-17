@@ -9,11 +9,11 @@
   <meta name="keywords" content="HTML">
   <meta name="csrf-token" content="{{ csrf_token }}">
   <title>{% block title %}WaveBar Supply{% endblock %}</title>
-  <!-- Bootstrap (grid + utilities only). Loaded before the project's own CSS so
-       the site's styles always win where the two overlap. -->
   <link rel="stylesheet" href="{% static 'css/vendor/bootstrap-grid.min.css' %}" />
   <link rel="stylesheet" href="{% static 'css/vendor/bootstrap-utilities.min.css' %}" />
   <link rel="stylesheet" href="{% static 'css/general_style.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/message_overlay.css' %}" />
+  <script src="{% static 'js/message_overlay.js' %}" defer></script>
   {% block extra_css %}{% endblock %}
   {% block extra_js %}{% endblock %}
 </head>
@@ -58,6 +58,13 @@
     </nav>
   </div>
 </footer>
+
+<div class="message_overlay hidden" id="message_overlay">
+  <div class="message_modal">
+    <p class="message_text"></p>
+    <button class="button_primary message_close" type="button">OK</button>
+  </div>
+</div>
 
 </body>
 </html>

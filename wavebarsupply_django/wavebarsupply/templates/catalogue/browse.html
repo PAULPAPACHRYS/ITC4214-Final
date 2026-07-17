@@ -4,8 +4,18 @@
 {% block title %}WaveBar Supply — Browse{% endblock %}
 {% block meta_description %}Browse page{% endblock %}
 
-{% block extra_css %}<link rel="stylesheet" href="{% static 'css/browse_style.css' %}" /><link rel="stylesheet" href="{% static 'css/likes_style.css' %}" /><link rel="stylesheet" href="{% static 'css/presets_style.css' %}" />{% endblock %}
-{% block extra_js %}<script src="{% static 'js/browse.js' %}" defer></script><script src="{% static 'js/product_cart.js' %}" defer></script><script src="{% static 'js/vendor/jquery.min.js' %}" defer></script><script src="{% static 'js/likes.js' %}" defer></script><script src="{% static 'js/presets.js' %}" defer></script>{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/browse_style.css' %}" />
+<link rel="stylesheet" href="{% static 'css/likes_style.css' %}" />
+<link rel="stylesheet" href="{% static 'css/presets_style.css' %}" />
+{% endblock %}
+{% block extra_js %}
+<script src="{% static 'js/browse.js' %}" defer></script>
+<script src="{% static 'js/product_cart.js' %}" defer></script>
+<script src="{% static 'js/vendor/jquery.min.js' %}" defer></script>
+<script src="{% static 'js/likes.js' %}" defer></script>
+<script src="{% static 'js/presets.js' %}" defer></script>
+{% endblock %}
 
 {% block content %}
 <!-- Page Header -->
@@ -19,7 +29,7 @@
 <!-- Browse Sections -->
 <div class="browse_layout section_container">
 
-  <!-- Row 1: column headings, aligned across the three columns -->
+  <!-- Column Headings -->
   <h2 class="browse_column_title">Filters</h2>
   <h2 class="browse_column_title">Products</h2>
   <h2 class="browse_column_title">Cocktail Presets</h2>
@@ -38,9 +48,7 @@
 
     <div class="filter_block" id="subcategory_filter">
       <h3 class="filter_title">Sub-category</h3>
-      <div class="filter_subcategory_list" id="subcategory_list">
-        <!-- placeholder for browse.js -->
-      </div>
+      <div class="filter_subcategory_list" id="subcategory_list"></div>
     </div>
 
     <div class="filter_block">
@@ -55,16 +63,12 @@
 
     <div class="filter_block">
       <h3 class="filter_title">Brand</h3>
-      <div class="filter_brand_list" id="brand_filter_list">
-        <!-- placeholder for browse.js -->
-      </div>
+      <div class="filter_brand_list" id="brand_filter_list"></div>
     </div>
 
     <div class="filter_block">
       <h3 class="filter_title">Volume</h3>
-      <div class="filter_volume_list" id="volume_filter_list">
-        <!-- placeholder for browse.js -->
-      </div>
+      <div class="filter_volume_list" id="volume_filter_list"></div>
     </div>
 
     <div class="filter_block">
@@ -80,16 +84,16 @@
     <button class="button_secondary filter_reset_button" id="reset_filters_button">Reset Filters</button>
   </aside>
 
-  <!-- page content -->
+  <!-- Page content -->
   <div class="browse_main">
 
-    <!-- search bar -->
+    <!-- Search bar -->
     <div class="search_bar_wrap">
       <input type="text" id="search_input" class="search_input" placeholder="Search by name, brand, flavour, type…" />
       <button class="search_clear_button" id="search_clear_button" title="Clear search">✕</button>
     </div>
 
-    <!-- search results -->
+    <!-- Search results -->
     <div class="results_meta">
       <span id="results_count" class="results_count">Showing all products</span>
       <select id="sort_select" class="sort_select">
@@ -101,12 +105,10 @@
       </select>
     </div>
 
-    <!-- products -->
-    <div class="product_grid" id="product_grid">
-      <!-- placeholder for browse.js -->
-    </div>
+    <!-- Products -->
+    <div class="product_grid" id="product_grid"></div>
 
-    <!-- no search results found -->
+    <!-- No search results found -->
     <div class="empty_state hidden" id="empty_state">
       <p class="empty_icon">🔍</p>
       <h3>No products found</h3>
@@ -116,7 +118,7 @@
 
   </div>
 
-  <!-- Cocktail presets column: one-click bundles that add all ingredients to the cart -->
+  <!-- Cocktail presets column -->
   <aside class="preset_column">
     <section class="preset_section">
       <div class="preset_search_bar position-relative mb-3">
@@ -129,7 +131,6 @@
       </div>
       {% endif %}
       <div class="preset_grid" data-add-url="{% url 'presets:add_to_cart' %}" data-create-url="{% url 'presets:create' %}" data-edit-url="{% url 'presets:edit' 0 %}" data-delete-url="{% url 'presets:delete' 0 %}">
-        <!-- filled by presets.js -->
       </div>
       <p class="preset_no_match hidden">No presets match your search.</p>
     </section>
@@ -140,7 +141,7 @@
 {{ subcategories|json_script:"subcategories_data" }}
 {{ presets|json_script:"presets_data" }}
 
-<!-- Read-only ingredient overlay (opens when a preset card is clicked) -->
+<!-- Ingredient overlay -->
 <div class="preset_view_overlay hidden">
   <div class="preset_view_modal">
     <button class="preset_view_close" type="button" title="Close">✕</button>
@@ -151,7 +152,7 @@
 </div>
 
 {% if user.is_authenticated %}
-<!-- Create-preset overlay -->
+<!-- Create preset overlay menu -->
 <div class="preset_overlay hidden">
   <div class="preset_modal">
     <button class="preset_modal_close" type="button" title="Close">✕</button>
@@ -174,9 +175,7 @@
           <input type="text" class="preset_ingredient_search" placeholder="Search products to add…" />
           <div class="preset_search_results"></div>
         </div>
-        <div class="preset_selected">
-          <!-- selected ingredient chips + hidden inputs, added by presets.js -->
-        </div>
+        <div class="preset_selected"></div>
       </div>
 
       <p class="preset_form_error"></p>

@@ -4,14 +4,21 @@
 {% block title %}WaveBar Supply — My Account{% endblock %}
 {% block meta_description %}Account page{% endblock %}
 
-{% block extra_css %}<link rel="stylesheet" href="{% static 'css/account_style.css' %}" /><link rel="stylesheet" href="{% static 'css/presets_style.css' %}" />{% endblock %}
-{% block extra_js %}<script src="{% static 'js/account.js' %}" defer></script><script src="{% static 'js/dashboard.js' %}" defer></script><script src="{% static 'js/name_check.js' %}" defer></script>{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/account_style.css' %}" />
+<link rel="stylesheet" href="{% static 'css/presets_style.css' %}" />
+{% endblock %}
+{% block extra_js %}
+<script src="{% static 'js/account.js' %}" defer></script>
+<script src="{% static 'js/dashboard.js' %}" defer></script>
+<script src="{% static 'js/name_check.js' %}" defer></script>
+{% endblock %}
 
 {% block content %}
 <section class="account_section">
   <div class="account_layout">
 
-    <!-- LEFT: user info -->
+    <!-- User info -->
     <div class="account_card">
       <h2 class="account_title">My Account</h2>
       <p class="account_role">Account type: <span>{{ user.get_role_display }}</span></p>
@@ -49,11 +56,11 @@
       </form>
     </div>
 
-    <!-- RIGHT: dashboard (one container, with its own title inside) -->
+    <!-- Dashboard Section -->
     <div class="dashboard" data-edit-url="{% url 'presets:edit' 0 %}" data-delete-url="{% url 'presets:delete' 0 %}">
       <h2 class="dashboard_title">Dashboard</h2>
 
-      <!-- Orders -->
+      <!-- Orders Section-->
       <section class="dash_block">
         <h3 class="dash_heading">My Orders</h3>
         {% if orders %}
@@ -82,7 +89,7 @@
         {% endif %}
       </section>
 
-      <!-- Cocktail presets -->
+      <!-- Cocktail Presets Section -->
       <section class="dash_block">
         <h3 class="dash_heading">My Cocktail Presets</h3>
         {% if my_presets %}
@@ -106,7 +113,7 @@
         {% endif %}
       </section>
 
-      <!-- Liked products -->
+      <!-- Liked Products -->
       <section class="dash_block">
         <h3 class="dash_heading">Liked Products</h3>
         {% if liked_products %}
@@ -137,7 +144,7 @@
 {{ products_json|json_script:"products_data" }}
 {{ presets_json|json_script:"presets_data" }}
 
-<!-- Edit-preset overlay (dashboard) -->
+<!-- Edit preset overlay -->
 <div class="preset_overlay hidden">
   <div class="preset_modal">
     <button class="preset_modal_close" type="button" title="Close">✕</button>

@@ -4,8 +4,16 @@
 {% block title %}WaveBar Supply — Home{% endblock %}
 {% block meta_description %}Home page{% endblock %}
 
-{% block extra_css %}<link rel="stylesheet" href="{% static 'css/home_style.css' %}" /><link rel="stylesheet" href="{% static 'css/likes_style.css' %}" />{% endblock %}
-{% block extra_js %}<script src="{% static 'js/home.js' %}" defer></script><script src="{% static 'js/product_cart.js' %}" defer></script><script src="{% static 'js/vendor/jquery.min.js' %}" defer></script><script src="{% static 'js/likes.js' %}" defer></script>{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home_style.css' %}" />
+<link rel="stylesheet" href="{% static 'css/likes_style.css' %}" />
+{% endblock %}
+{% block extra_js %}
+<script src="{% static 'js/home.js' %}" defer></script>
+<script src="{% static 'js/product_cart.js' %}" defer></script>
+<script src="{% static 'js/vendor/jquery.min.js' %}" defer></script>
+<script src="{% static 'js/likes.js' %}" defer></script>
+{% endblock %}
 
 {% block content %}
 <!-- Page Header -->
@@ -49,7 +57,6 @@
 <section class="categories_section">
   <div class="section_container">
     <h2 class="section_title">Shop by Popular Categories</h2>
-    <!-- Bootstrap grid: three category cards per row, stacking on small screens. -->
     <div class="category_cards row row-cols-1 row-cols-md-3 g-4">
       <div class="col">
         <a href="{% url 'catalogue:browse' %}?cat=non-alcohol" class="category_card category_card--teal h-100">

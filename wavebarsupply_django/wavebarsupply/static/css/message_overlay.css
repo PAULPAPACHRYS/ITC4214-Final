@@ -1,0 +1,31 @@
+.message_overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 27, 42, .6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 300;
+}
+
+.message_modal {
+  background: var(--white);
+  border-radius: var(--radius_lg);
+  box-shadow: var(--shadow_lg);
+  padding: 28px 32px;
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.message_text {
+  font-size: 1rem;
+  color: var(--navy);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.message_close {
+  min-width: 120px;
+}

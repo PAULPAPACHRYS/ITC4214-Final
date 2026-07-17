@@ -1,7 +1,7 @@
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import PasswordResetForm
 from django.shortcuts import redirect, render
-
 from catalogue.models import Product
 from orders.models import Order
 from presets.models import Preset
@@ -10,7 +10,7 @@ from .forms import AccountEditForm, LoginForm, RegisterForm
 
 
 def auth_view(request):
-    # login + register page (for guests), logged-in users are sent to Account page.
+    # login and register page, logged in users are sent to Account instead
     if request.user.is_authenticated:
         return redirect('accounts:account')
 
@@ -38,12 +38,13 @@ def auth_view(request):
         'login_form': login_form,
         'register_form': register_form,
         'active_panel': active_panel,
+        'password_reset_form': PasswordResetForm(prefix='forgot'),
     })
 
 
 @login_required
 def account(request):
-    # displays the logged-in user's details and lets them edit them
+    #shows the logged in user's details and lets them edit them
     show_edit = False
     if request.method == 'POST':
         form = AccountEditForm(request.POST, instance=request.user)

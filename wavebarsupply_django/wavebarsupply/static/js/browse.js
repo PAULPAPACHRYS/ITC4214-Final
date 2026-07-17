@@ -1,9 +1,6 @@
-// The full catalogue is supplied by the Django view inside a
-// <script id="products_data"> block (Django's json_script filter), replacing
-// the old global PRODUCTS array that used to live in data.js.
 const PRODUCTS = JSON.parse(document.querySelector('#products_data').textContent);
 
-// track the state of the selected filters
+//track the state of the selected filters
 const state = {
   search:      '',
   category:    'all',
@@ -21,8 +18,6 @@ function unique(arr) {
   return [...new Set(arr)].sort();
 }
 
-// abv is now a real number (e.g. 4.7, 13.0, 40.0). Map it to the same bands the
-// alcohol-content checkboxes use: none (0%), low (<8%), medium (8-20%), high (20%+).
 function abv_band(abv) {
   if (abv === 0)  return 'none';
   if (abv < 8)    return 'low';
@@ -30,21 +25,19 @@ function abv_band(abv) {
   return 'high';
 }
 
-//subcategory options, grouped by category, sent by the server from the
-//Subcategory table (so adding a sub-category in the Database page is enough)
 const SUBCATEGORIES = JSON.parse(
   document.querySelector('#subcategories_data').textContent);
 
-//changes dynamicaly the product subcategories when the main category changes
+// changes dynamicaly the product subcategories when the main category changes
 function build_subcategory_filter() {
   const list = document.querySelector('#subcategory_list');
   list.innerHTML = '';
 
-  //if no category is selected then load all elements of the 3 arrays inside SUBCATEGORIES into subs (using .flat() at the end)
+  //if no category is selected then load all elements of the 3 arrays inside SUBCATEGORIES into subs
   //otherwise only take the elements from the subcategory array or an empty one if it does not exist
   const subs = state.category === 'all' ? Object.values(SUBCATEGORIES).flat() : (SUBCATEGORIES[state.category] || []);
 
-  //loops through the list and create a checkbox for each element
+  // loops through the list and create a checkbox for each element
   subs.forEach(sub => {
     const label = document.createElement('label');
     label.className = 'filter_check_label';
@@ -53,7 +46,7 @@ function build_subcategory_filter() {
     list.appendChild(label);
   });
 
-  // attach listeners to every new sub_filter_check we created previously
+  // attach listeners to every new sub_filter_check created previously
   list.querySelectorAll('.sub_filter_check').forEach(cb => {
     cb.addEventListener('change', () => {
       // the ... converts the type to an array so that .map() can be used to get the value of each element
@@ -79,7 +72,7 @@ function build_brand_filter() {
     list.appendChild(label);
   });
 
-  // attach event listeners for every brand_filter_check we create
+  // attach event listeners for every brand_filter_check created
   list.querySelectorAll('.brand_filter_check').forEach(cb => {
     cb.addEventListener('change', () => {
       state.brands = [...list.querySelectorAll('.brand_filter_check:checked')].map(c => c.value);
@@ -259,24 +252,17 @@ function reset_filters() {
   render();
 }
 
-/*
- * Event Listeners Section
- */
-
-// search input
 document.querySelector('#search_input').addEventListener('input', (e) => {
   state.search = e.target.value;
   render();
 });
 
-// clear search
 document.querySelector('#search_clear_button').addEventListener('click', () => {
   state.search = '';
   document.querySelector('#search_input').value = '';
   render();
 });
 
-// category tabs
 document.querySelectorAll('.category_tab').forEach(tab => {
   tab.addEventListener('click', () => {
     document.querySelectorAll('.category_tab').forEach(t => t.classList.remove('active'));
@@ -288,7 +274,6 @@ document.querySelectorAll('.category_tab').forEach(tab => {
   });
 });
 
-// price sliders for min and max price
 document.querySelector('#price_min_slider').addEventListener('input', (e) => {
   let val = parseInt(e.target.value);
   if (val > state.price_max - 1) val = state.price_max - 1;
@@ -307,22 +292,17 @@ document.querySelector('#price_max_slider').addEventListener('input', (e) => {
   render();
 });
 
-//alcohol filter checkboxes
 document.querySelector('#alcohol_filter_list').addEventListener('change', () => {
   state.alcohol = [...document.querySelectorAll('.alcohol_filter_check:checked')].map(c => c.value);
   render();
 });
 
-//sort selection
 document.querySelector('#sort_select').addEventListener('change', (e) => {
   state.sort = e.target.value;
   render();
 });
 
-// reset filters button on the sidebar
 document.querySelector('#reset_filters_button').addEventListener('click', reset_filters);
-
-// reset filters button on empty search
 document.querySelector('#empty_reset_button').addEventListener('click', reset_filters);
 
 // Initialize

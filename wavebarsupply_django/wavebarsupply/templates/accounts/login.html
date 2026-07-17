@@ -4,8 +4,13 @@
 {% block title %}WaveBar Supply — Login / Register{% endblock %}
 {% block meta_description %}Login page{% endblock %}
 
-{% block extra_css %}<link rel="stylesheet" href="{% static 'css/login_style.css' %}" />{% endblock %}
-{% block extra_js %}<script src="{% static 'js/login.js' %}" defer></script><script src="{% static 'js/name_check.js' %}" defer></script>{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/login_style.css' %}" />
+{% endblock %}
+{% block extra_js %}
+<script src="{% static 'js/login.js' %}" defer></script>
+<script src="{% static 'js/name_check.js' %}" defer></script>
+{% endblock %}
 
 {% block content %}
 <section class="auth_section">
@@ -45,10 +50,7 @@
         </div>
 
         <div class="form_row_space">
-          <label class="form_check_label">
-            <input type="checkbox" name="remember" /> Remember me
-          </label>
-          <a href="#" class="form_link">Forgot password?</a>
+          <a href="#" class="form_link" id="forgot_password_link">Forgot password?</a>
         </div>
 
         <button class="button_primary form_submit_button" type="submit" name="login_submit">Log In</button>
@@ -136,4 +138,29 @@
 
   </div>
 </section>
+
+<!-- Forgot-password overlay -->
+<div class="forgot_overlay hidden" id="forgot_overlay">
+  <div class="forgot_modal">
+    <button class="forgot_close" id="forgot_close" type="button" title="Close">✕</button>
+
+    <div id="forgot_request">
+      <h2 class="forgot_title">Reset your password</h2>
+      <p class="forgot_subtitle">Enter your email and we'll send you a link to reset it.</p>
+      <form id="forgot_form">
+        <div class="form_group">
+          <label class="form_label" for="{{ password_reset_form.email.id_for_label }}">Email Address</label>
+          {{ password_reset_form.email }}
+        </div>
+        <button class="button_primary form_submit_button" type="submit">Send reset link</button>
+      </form>
+    </div>
+
+    <div id="forgot_success" class="hidden">
+      <h2 class="forgot_title">Check your inbox</h2>
+      <p class="forgot_message">An email has been sent to you to change password</p>
+      <button class="button_primary form_submit_button" id="forgot_done" type="button">Done</button>
+    </div>
+  </div>
+</div>
 {% endblock %}

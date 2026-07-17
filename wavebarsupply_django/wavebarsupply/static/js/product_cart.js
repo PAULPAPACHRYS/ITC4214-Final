@@ -1,11 +1,9 @@
-// Product cards (Browse + Home): the quantity stepper and the "+ Order" button.
-// Adding to the cart is an AJAX POST so the user stays on the page.
+// product cards, adding it to the cart is an AJAX POST so the user stays on the page
 const csrf_el = document.querySelector('meta[name="csrf-token"]');
 const CSRF = csrf_el ? csrf_el.content : '';
 const AUTHED = document.body.dataset.authenticated === 'true';
 const CART_ADD_URL = document.body.dataset.cartAddUrl;
 
-// + / - stepper buttons on the product cards
 document.addEventListener('click', (event) => {
   const step = event.target.closest('.qty_plus, .qty_minus');
   if (step) {
@@ -17,12 +15,11 @@ document.addEventListener('click', (event) => {
     return;
   }
 
-  // "+ Order" button
   const order_button = event.target.closest('.button_add_to_order');
   if (!order_button) return;
 
   if (!AUTHED) {
-    alert('Please log in or register to add items to your cart.');
+    showMessage('Please log in or register to add items to your cart.');
     return;
   }
 
@@ -53,7 +50,7 @@ document.addEventListener('click', (event) => {
     .catch(() => {});
 });
 
-// keep a typed quantity valid (at least 1)
+//keep a typed quantity valid
 document.addEventListener('change', (event) => {
   const input = event.target.closest('.product_card .qty_input');
   if (!input) return;

@@ -7,7 +7,6 @@
   padding-bottom: 60px;
 }
 
-/* Item list (left) */
 .cart_items {
   display: flex;
   flex-direction: column;
@@ -43,14 +42,21 @@
   display: block;
 }
 
-.cart_item_info { flex: 1; min-width: 0; }
+.cart_item_info { 
+  flex: 1; 
+  min-width: 0; 
+}
+
 .cart_item_name {
   font-family: var(--font_display);
   font-weight: 700;
   color: var(--navy);
   font-size: 1.05rem;
 }
-.cart_item_unit { font-size: .82rem; color: var(--gray_dk); }
+.cart_item_unit { 
+  font-size: .82rem; 
+  color: var(--gray_dk); 
+}
 
 .cart_item_controls {
   display: flex;
@@ -73,7 +79,6 @@
 }
 .cart_remove:hover { text-decoration: underline; }
 
-/* Empty state */
 .cart_empty {
   text-align: center;
   padding: 60px 20px;
@@ -82,7 +87,10 @@
   border-radius: var(--radius_md);
   box-shadow: var(--shadow_sm);
 }
-.cart_empty_icon { font-size: 3rem; margin-bottom: 12px; }
+.cart_empty_icon { 
+  font-size: 3rem; 
+  margin-bottom: 12px; 
+}
 .cart_empty h3 {
   font-family: var(--font_display);
   color: var(--navy);
@@ -91,7 +99,6 @@
 }
 .cart_empty p { margin-bottom: 20px; }
 
-/* Summary (right) */
 .cart_summary {
   background: var(--white);
   border-radius: var(--radius_md);
@@ -126,7 +133,6 @@
 }
 .cart_finalise { width: 100%; }
 
-/* Page hero band (same look as the other pages) */
 .page_hero {
   background: var(--navy);
   color: var(--white);
@@ -141,13 +147,11 @@
 }
 .page_subtitle { color: var(--gray_mid); margin-top: 4px; }
 
-/* stack on narrow screens */
 @media (max-width: 720px) {
   .cart_layout { grid-template-columns: 1fr; }
   .cart_item { flex-wrap: wrap; }
 }
 
-/* Disabled finalise button (empty cart) */
 .button_primary:disabled,
 .button_primary[disabled] {
   background: var(--gray_mid);
@@ -156,7 +160,6 @@
   transform: none;
 }
 
-/* Checkout overlay */
 .checkout_overlay {
   position: fixed;
   inset: 0;
@@ -262,10 +265,18 @@
 
 .checkout_proceed { width: 100%; }
 
-/* Confirmation */
-.checkout_done { text-align: center; padding: 20px 10px; }
-.checkout_done_icon { font-size: 3rem; margin-bottom: 10px; }
-.checkout_done_text { color: var(--gray_dk); margin-bottom: 10px; }
+.checkout_done { 
+  text-align: center; 
+  padding: 20px 10px; 
+}
+.checkout_done_icon { 
+  font-size: 3rem; 
+  margin-bottom: 10px; 
+}
+.checkout_done_text { 
+  color: var(--gray_dk); 
+  margin-bottom: 10px; 
+}
 .checkout_done .button_primary { margin-top: 12px; }
 
 @media (max-width: 640px) {

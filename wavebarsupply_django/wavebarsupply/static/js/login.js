@@ -1,7 +1,3 @@
-// Form validation and submission are now handled server-side by Django's
-// built-in forms (AuthenticationForm + UserCreationForm). This file keeps only
-// the front-end UI behaviours: tab switching and the show/hide password toggle.
-
 // hides or reveals the selected form (Login or Register)
 function switch_panel(panel_name) {
   const login_panel    = document.querySelector('#panel_login');
@@ -38,17 +34,16 @@ function setup_toggle(button_id, input_id) {
   });
 }
 
-// Initialise password toggles. The password inputs are rendered by Django, so
-// their ids follow the "id_<field name>" convention.
+//initialise password toggles
 setup_toggle('toggle_login_password', 'id_password');
 setup_toggle('toggle_reg_password',   'id_password1');
 setup_toggle('toggle_reg_confirm',    'id_password2');
 
-// Tab buttons
+//tab buttons
 document.querySelector('#tab_login').addEventListener('click',    () => switch_panel('login'));
 document.querySelector('#tab_register').addEventListener('click', () => switch_panel('register'));
 
-// Panel switch links inside each form
+// panel switch links inside each form
 document.querySelector('#switch_to_register').addEventListener('click', (e) => {
   e.preventDefault();
   switch_panel('register');
@@ -57,3 +52,46 @@ document.querySelector('#switch_to_login').addEventListener('click', (e) => {
   e.preventDefault();
   switch_panel('login');
 });
+
+// forgot password overlay and message
+(function () {
+  const link     = document.querySelector('#forgot_password_link');
+  const overlay  = document.querySelector('#forgot_overlay');
+  const close_btn = document.querySelector('#forgot_close');
+  const done_btn  = document.querySelector('#forgot_done');
+  const form      = document.querySelector('#forgot_form');
+  const request_step = document.querySelector('#forgot_request');
+  const success_step = document.querySelector('#forgot_success');
+  if (!link || !overlay) return;
+
+  function open_overlay() {
+    request_step.classList.remove('hidden');
+    success_step.classList.add('hidden');
+    overlay.classList.remove('hidden');
+  }
+
+  function close_overlay() {
+    overlay.classList.add('hidden');
+  }
+
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    open_overlay();
+  });
+
+  close_btn.addEventListener('click', close_overlay);
+  done_btn.addEventListener('click', close_overlay);
+
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      close_overlay();
+    }
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    request_step.classList.add('hidden');
+    success_step.classList.remove('hidden');
+  });
+})();

@@ -4,7 +4,9 @@
 {% block title %}WaveBar Supply — Contact{% endblock %}
 {% block meta_description %}Contact WaveBar Supply{% endblock %}
 
-{% block extra_css %}<link rel="stylesheet" href="{% static 'css/pages_style.css' %}" />{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/pages_style.css' %}" />
+{% endblock %}
 
 {% block content %}
 <div class="page_hero">
@@ -17,10 +19,10 @@
 <section class="contact_section">
   <div class="contact_card">
     <h2>Get in touch</h2>
-    <p class="contact_subtitle">We'll get back to you within one business day.</p>
+    <p class="contact_subtitle">We'll get back to you within one to two business days.</p>
 
     {% if submitted %}
-      <div class="contact_success">Thanks! Your message has been sent — we'll be in touch soon.</div>
+      <div class="contact_success">Thanks! Your message has been sent, we'll be in touch soon.</div>
     {% endif %}
 
     <form class="contact_form" method="post" novalidate>

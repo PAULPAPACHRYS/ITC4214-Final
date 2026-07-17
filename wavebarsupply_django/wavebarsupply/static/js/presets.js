@@ -183,7 +183,7 @@
     const order = event.target.closest('.preset_order_button');
     if (order) {
       if (!AUTHED) {
-        alert('Please log in or register to add items to your cart.');
+        showMessage('Please log in or register to add items to your cart.');
         return;
       }
 

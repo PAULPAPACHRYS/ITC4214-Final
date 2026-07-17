@@ -2,7 +2,6 @@
   padding: 48px 24px 60px;
 }
 
-/* User info on the left, dashboard on the right. */
 .account_layout {
   display: grid;
   grid-template-columns: minmax(360px, 440px) 1fr;
@@ -42,7 +41,6 @@
   text-transform: capitalize;
 }
 
-/* Read view */
 .account_details {
   display: flex;
   flex-direction: column;
@@ -66,7 +64,6 @@
   text-align: right;
 }
 
-/* Edit form */
 .account_edit .form_group { margin-bottom: 16px; }
 .account_edit .form_label {
   display: block;
@@ -104,7 +101,6 @@
   flex-wrap: wrap;
 }
 
-/* ===== Dashboard (right side) ===== */
 .dashboard {
   background: var(--white);
   border-radius: var(--radius_lg);
@@ -138,7 +134,6 @@
   font-style: italic;
 }
 
-/* Orders */
 .order_list { display: flex; flex-direction: column; gap: 16px; }
 .order_card {
   border: 1px solid var(--gray_lt);
@@ -177,9 +172,26 @@
 .status_pending   { background: #fff3cd; color: #8a6d00; }
 .status_completed { background: #d7f5e3; color: #1b7a44; }
 .status_canceled  { background: #f8d7da; color: #a12832; }
-.order_meta { font-size: .88rem; color: var(--gray_dk); margin-bottom: 6px; }
-.order_delivery { font-size: .82rem; color: var(--gray_dk); margin-bottom: 8px; }
-.order_items { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+
+.order_meta { 
+  font-size: .88rem; 
+  color: var(--gray_dk); 
+  margin-bottom: 6px; 
+}
+
+.order_delivery { 
+  font-size: .82rem; 
+  color: var(--gray_dk); 
+  margin-bottom: 8px; 
+}
+
+.order_items { 
+  list-style: none; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 4px; 
+}
+
 .order_items li {
   display: flex;
   justify-content: space-between;
@@ -190,8 +202,12 @@
   border-top: 1px solid var(--gray_lt);
 }
 
-/* Presets */
-.dash_preset_list { display: flex; flex-direction: column; gap: 12px; }
+.dash_preset_list { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 12px; 
+}
+
 .dash_preset_card {
   display: flex;
   align-items: center;
@@ -206,8 +222,17 @@
   border-radius: var(--radius_sm);
   flex-shrink: 0;
 }
-.dash_preset_info { flex: 1; min-width: 0; }
-.dash_preset_actions { display: flex; gap: 6px; flex-shrink: 0; }
+.dash_preset_info { 
+  flex: 1; 
+  min-width: 0; 
+}
+
+.dash_preset_actions { 
+  display: flex; 
+  gap: 6px; 
+  flex-shrink: 0; 
+}
+
 .dash_preset_edit,
 .dash_preset_delete {
   border: none;
@@ -222,11 +247,21 @@
   transition: background .15s, color .15s;
 }
 .dash_preset_edit:hover { background: var(--gray_lt); }
-.dash_preset_delete:hover { background: var(--coral); color: var(--white); }
-.dash_preset_name { font-weight: 700; color: var(--navy); font-size: .95rem; }
-.dash_preset_ingredients { font-size: .8rem; color: var(--gray_dk); line-height: 1.3; }
+.dash_preset_delete:hover { 
+  background: var(--coral);
+  color: var(--white); 
+}
+.dash_preset_name { 
+  font-weight: 700; 
+  color: var(--navy); 
+  font-size: .95rem; 
+}
+.dash_preset_ingredients { 
+  font-size: .8rem; 
+  color: var(--gray_dk); 
+  line-height: 1.3; 
+}
 
-/* Liked products */
 .dash_like_list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -249,9 +284,21 @@
   overflow: hidden;
   display: flex;
 }
-.dash_like_image { width: 100%; height: 100%; object-fit: cover; display: block; }
-.dash_like_name { font-weight: 600; color: var(--navy); font-size: .9rem; }
-.dash_like_brand { font-size: .8rem; color: var(--gray_dk); }
+.dash_like_image { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+  display: block; 
+}
+.dash_like_name { 
+  font-weight: 600; 
+  color: var(--navy); 
+  font-size: .9rem; 
+}
+.dash_like_brand { 
+  font-size: .8rem; 
+  color: var(--gray_dk); 
+}
 
 @media (max-width: 800px) {
   .dash_like_list { grid-template-columns: 1fr; }

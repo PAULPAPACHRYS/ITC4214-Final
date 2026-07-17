@@ -1,4 +1,3 @@
-/* Header Section*/
 .header_section {
   background: var(--navy);
   color: var(--white);
@@ -28,11 +27,7 @@
   max-width: 460px;
 }
 
-/* display + wrap come from Bootstrap's "d-flex flex-wrap" in the template;
-   only the 12px gap stays here, as Bootstrap's gap scale has no 12px step. */
-.header_buttons {
-  gap: 12px;
-}
+.header_buttons { gap: 12px; }
 
 .header_visual {
   display: flex;
@@ -84,7 +79,6 @@
   letter-spacing: .06em;
 }
 
-/* Product Categories Section */
 .categories_section {
   padding: 80px 0;
   background: var(--cream);
@@ -98,10 +92,6 @@
   margin-bottom: 36px;
   color: var(--navy);
 }
-
-/* The three-column layout is handled by Bootstrap's grid in the template
-   (row row-cols-1 row-cols-md-3 g-4); g-4 is exactly the 24px gap used before,
-   so no grid rules are needed here any more. */
 
 .category_card {
   border-radius: var(--radius_md);
@@ -166,15 +156,11 @@
 .category_card--amber .category_link { color: var(--amber); }
 .category_card--coral .category_link { color: var(--coral); }
 
-/* Fetured Products Section */
 .featured_section { 
   padding: 80px 0; 
   background: var(--cream_lit); 
 }
 
-/* Flexbox row (display/align/justify/wrap) is handled by Bootstrap utilities in
-   the template: d-flex align-items-center justify-content-between flex-wrap.
-   Only the spacing values Bootstrap's scale cannot express exactly stay here. */
 .featured_header {
   margin-bottom: 36px;
   gap: 12px;

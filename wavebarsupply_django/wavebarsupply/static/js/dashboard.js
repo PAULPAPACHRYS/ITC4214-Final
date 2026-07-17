@@ -1,16 +1,10 @@
-// ----------------------------------------------------------------------------
-// Account dashboard interactions:
-//   * expand/collapse an order's item list,
-//   * edit or delete one of the user's cocktail presets.
-// Vanilla JS, self-contained in an IIFE.
-// ----------------------------------------------------------------------------
 (function () {
   const dashboard = document.querySelector('.dashboard');
   if (!dashboard) return;
 
   const CSRF = (document.querySelector('meta[name="csrf-token"]') || {}).content || '';
-  const EDIT_URL = dashboard.dataset.editUrl;      // .../presets/0/edit/
-  const DELETE_URL = dashboard.dataset.deleteUrl;  // .../presets/0/delete/
+  const EDIT_URL = dashboard.dataset.editUrl;
+  const DELETE_URL = dashboard.dataset.deleteUrl;
   const edit_url = (id) => EDIT_URL.replace('/0/', '/' + id + '/');
   const delete_url = (id) => DELETE_URL.replace('/0/', '/' + id + '/');
 
@@ -19,7 +13,7 @@
   const PRESETS = presets_el ? JSON.parse(presets_el.textContent) : [];
   const PRODUCTS = products_el ? JSON.parse(products_el.textContent) : [];
 
-  // ---- Orders: reveal / hide the item list ----------------------------------
+  //reveal and hide the orders item list
   dashboard.addEventListener('click', (event) => {
     const toggle = event.target.closest('.order_toggle');
     if (!toggle) return;
@@ -28,7 +22,7 @@
     toggle.classList.toggle('open', !nowHidden);
   });
 
-  // ---- Presets: delete ------------------------------------------------------
+  // delete preset
   dashboard.addEventListener('click', (event) => {
     const del = event.target.closest('.dash_preset_delete');
     if (!del) return;
@@ -57,7 +51,7 @@
     }
   }
 
-  // ---- Presets: edit overlay ------------------------------------------------
+  // edit preset
   const overlay = document.querySelector('.preset_overlay');
   if (!overlay) return;
 
@@ -98,7 +92,7 @@
   }
   function close_overlay() { overlay.classList.add('hidden'); }
 
-  // Open the overlay from a preset card's edit button.
+  // open the overlay from a preset card's edit button
   dashboard.addEventListener('click', (event) => {
     const editBtn = event.target.closest('.dash_preset_edit');
     if (!editBtn) return;
@@ -113,7 +107,7 @@
     if (event.key === 'Escape' && !overlay.classList.contains('hidden')) close_overlay();
   });
 
-  // Search the catalogue for ingredients to add.
+  //search the catalogue for ingredients to add
   search.addEventListener('input', () => {
     const query = search.value.trim().toLowerCase();
     results.innerHTML = '';
@@ -150,7 +144,7 @@
     chip.remove();
   });
 
-  // Save the edit and update the card in place.
+  // save the changes and update
   form.addEventListener('submit', (event) => {
     event.preventDefault();
     error.textContent = '';

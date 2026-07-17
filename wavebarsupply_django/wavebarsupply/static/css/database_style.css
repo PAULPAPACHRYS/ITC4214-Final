@@ -1,27 +1,36 @@
-.db_section { padding-top: 32px; padding-bottom: 60px; }
+.db_section { 
+  padding-top: 32px; 
+  padding-bottom: 60px; 
+}
 
-.db_intro { color: var(--gray_dk); margin-bottom: 20px; }
+.db_intro { 
+  color: var(--gray_dk); 
+  margin-bottom: 20px; 
+}
 
-/* messages */
-/* Layout comes from Bootstrap's "d-flex flex-column gap-2" in the template
-   (gap-2 is exactly the 8px used before); only the bottom margin stays here. */
 .db_messages { margin-bottom: 20px; }
 .db_message {
   border-radius: var(--radius_sm);
   padding: 10px 14px;
   font-size: .9rem;
 }
-.db_message.success { background: #d4f1ec; color: #1a7a6e; border: 1px solid #a3dfd7; }
-.db_message.error   { background: #fde8e3; color: #b94033; border: 1px solid #f5b7ae; }
+.db_message.success { 
+  background: #d4f1ec; 
+  color: #1a7a6e; 
+  border: 1px solid #a3dfd7; 
+}
+.db_message.error   { 
+  background: #fde8e3; 
+  color: #b94033; 
+  border: 1px solid #f5b7ae; 
+}
 
-/* table overview cards */
 .db_table_cards {
   display: grid;
-  /* Show four cards per row on wide screens. */
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 }
-/* Fall back to fewer columns on narrower screens so cards never get squashed. */
+
 @media (max-width: 900px) {
   .db_table_cards { grid-template-columns: repeat(2, 1fr); }
 }
@@ -48,7 +57,6 @@
 }
 .db_table_count { font-size: .85rem; color: var(--gray_dk); }
 
-/* toolbar */
 .db_toolbar {
   display: flex;
   justify-content: space-between;
@@ -58,7 +66,6 @@
   flex-wrap: wrap;
 }
 
-/* data table */
 .db_table_wrap {
   overflow-x: auto;
   background: var(--white);
@@ -84,9 +91,12 @@
   text-transform: capitalize;
 }
 .db_table tbody tr:hover { background: var(--cream_lt); }
-.db_empty { text-align: center; color: var(--gray_dk); padding: 24px; }
+.db_empty { 
+  text-align: center; 
+  color: var(--gray_dk); 
+  padding: 24px; 
+}
 
-/* sortable column headers */
 .db_table th.db_sortable {
   cursor: pointer;
   user-select: none;
@@ -99,12 +109,11 @@
 .db_table th.db_sorted { background: var(--teal); }
 .db_sort_arrow {
   display: inline-block;
-  width: 1em;               /* reserve space so headers don't jump when sorted */
+  width: 1em;
   margin-left: 4px;
   font-size: .8em;
 }
 
-/* per-table search bar */
 .db_search_wrap {
   position: relative;
   margin-bottom: 16px;
@@ -145,7 +154,6 @@
   width: 1%;
 }
 
-/* small action buttons */
 .db_btn {
   display: inline-block;
   border: none;
@@ -157,14 +165,26 @@
   letter-spacing: .03em;
   cursor: pointer;
 }
-.db_btn_edit { background: var(--teal); color: var(--white); }
+.db_btn_edit { 
+  background: var(--teal); 
+  color: var(--white); 
+}
 .db_btn_edit:hover { background: var(--teal_lt); }
-.db_btn_delete { background: var(--coral); color: var(--white); }
+.db_btn_delete { 
+  background: var(--coral); 
+  color: var(--white); 
+}
 .db_btn_delete:hover { filter: brightness(1.05); }
-.db_btn_edit { margin-right: 6px; vertical-align: middle; }
-.db_delete_form { display: inline-block; margin: 0; vertical-align: middle; }
+.db_btn_edit { 
+  margin-right: 6px; 
+  vertical-align: middle; 
+}
+.db_delete_form { 
+  display: inline-block; 
+  margin: 0; 
+  vertical-align: middle; 
+}
 
-/* add / edit form */
 .db_form {
   background: var(--white);
   border-radius: var(--radius_md);
@@ -201,19 +221,32 @@
   border-color: var(--teal);
   background: var(--white);
 }
-/* The tags field is a multiple-selection list, so give it room to show several
-   options at once rather than a single squashed line. */
+
 .db_form select[multiple] {
   min-height: 150px;
   padding: 8px 10px;
 }
 
-.db_form .form_error { display: block; font-size: .78rem; color: var(--coral); margin-top: 4px; }
-.db_help { display: block; font-size: .78rem; color: var(--gray_mid); margin-top: 4px; }
+.db_form .form_error { 
+  display: block; 
+  font-size: .78rem; 
+  color: var(--coral); 
+  margin-top: 4px; 
+}
 
-.db_form_actions { display: flex; gap: 12px; margin-top: 8px; }
+.db_help { 
+  display: block; 
+  font-size: .78rem; 
+  color: var(--gray_mid); 
+  margin-top: 4px; 
+}
 
-/* Page hero band (same look as the About/Contact pages) */
+.db_form_actions { 
+  display: flex; 
+  gap: 12px; 
+  margin-top: 8px; 
+}
+
 .page_hero {
   background: var(--navy);
   color: var(--white);
@@ -226,4 +259,7 @@
   font-size: clamp(1.8rem, 4vw, 2.6rem);
   letter-spacing: .02em;
 }
-.page_subtitle { color: var(--gray_mid); margin-top: 4px; }
+.page_subtitle { 
+  color: var(--gray_mid); 
+  margin-top: 4px; 
+}

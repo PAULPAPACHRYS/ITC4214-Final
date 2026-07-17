@@ -1,8 +1,4 @@
-// Wrapped in an IIFE so this file's top-level variables stay private
-// (cart.js and checkout.js load together and would otherwise clash).
 (function () {
-// Cart page: change quantities (+ / - / typed) and remove items, all persisted
-// through the cart endpoints. Line totals and the cart total update live.
 const cart_list = document.querySelector('#cart_list');
 const cart_total = document.querySelector('#cart_total');
 const csrf_meta = document.querySelector('meta[name="csrf-token"]');
@@ -32,7 +28,6 @@ function set_quantity(item, quantity) {
 }
 
 if (cart_list) {
-  // + / - / remove buttons
   cart_list.addEventListener('click', (event) => {
     const item = event.target.closest('.cart_item');
     if (!item) return;
@@ -49,16 +44,16 @@ if (cart_list) {
         item.remove();
         cart_total.textContent = '€' + data.cart_total;
         if (data.empty) {
-          window.location.reload();   // show the empty-cart message
+          window.location.reload();   //show the empty-cart message
         } else {
-          // Cart contents changed -> let the recommendations strip refresh.
+          // cart contents changed, let the recommendations refresh
           document.dispatchEvent(new CustomEvent('cart:changed'));
         }
       });
     }
   });
 
-  // typed quantity
+  //typed quantity
   cart_list.addEventListener('change', (event) => {
     const input = event.target.closest('.cart_qty');
     if (!input) return;

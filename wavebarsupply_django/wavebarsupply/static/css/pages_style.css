@@ -1,4 +1,3 @@
-/* Shared hero band for the About and Contact pages */
 .page_hero {
   background: var(--navy);
   color: var(--white);
@@ -16,7 +15,6 @@
   margin-top: 4px;
 }
 
-/* About page */
 .about_section { padding: 48px 0 60px; }
 .about_lead {
   font-size: 1.15rem;
@@ -56,7 +54,6 @@
   margin: 0;
 }
 
-/* Contact page */
 .contact_section {
   display: flex;
   justify-content: center;

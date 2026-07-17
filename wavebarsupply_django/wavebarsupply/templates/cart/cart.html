@@ -4,8 +4,19 @@
 {% block title %}WaveBar Supply — Cart{% endblock %}
 {% block meta_description %}Shopping cart{% endblock %}
 
-{% block extra_css %}<link rel="stylesheet" href="{% static 'css/cart_style.css' %}?v=7" /><link rel="stylesheet" href="{% static 'css/likes_style.css' %}" /><link rel="stylesheet" href="{% static 'css/recommendations_style.css' %}" />{% endblock %}
-{% block extra_js %}<script src="{% static 'js/cart.js' %}?v=7" defer></script><script src="{% static 'js/checkout.js' %}?v=7" defer></script><script src="{% static 'js/product_cart.js' %}" defer></script><script src="{% static 'js/vendor/jquery.min.js' %}" defer></script><script src="{% static 'js/likes.js' %}" defer></script><script src="{% static 'js/recommendations.js' %}" defer></script>{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/cart_style.css' %}?v=7" />
+<link rel="stylesheet" href="{% static 'css/likes_style.css' %}" />
+<link rel="stylesheet" href="{% static 'css/recommendations_style.css' %}" />
+{% endblock %}
+{% block extra_js %}
+<script src="{% static 'js/cart.js' %}?v=7" defer></script>
+<script src="{% static 'js/checkout.js' %}?v=7" defer></script>
+<script src="{% static 'js/product_cart.js' %}" defer></script>
+<script src="{% static 'js/vendor/jquery.min.js' %}" defer></script>
+<script src="{% static 'js/likes.js' %}" defer></script>
+<script src="{% static 'js/recommendations.js' %}" defer></script>
+{% endblock %}
 
 {% block content %}
 <div class="page_hero">
@@ -17,7 +28,7 @@
 
 <section class="cart_layout section_container">
 
-  <!-- Left: item list -->
+  <!-- Item list -->
   <div class="cart_items" id="cart_list"
        data-update-url="{% url 'cart:update' %}"
        data-remove-url="{% url 'cart:remove' %}">
@@ -52,7 +63,7 @@
     {% endfor %}
   </div>
 
-  <!-- Right: summary -->
+  <!-- Order summary -->
   <aside class="cart_summary">
     <h2 class="cart_summary_title">Order Summary</h2>
     <div class="cart_summary_row">
@@ -64,7 +75,7 @@
 
 </section>
 
-<!-- "You might also like" — similar products, filled in by recommendations.js -->
+<!-- Recommendation section -->
 <section class="recommend_section section_container hidden" data-recommend-url="{% url 'recommendations:cart' %}">
   <h2 class="recommend_title">You might also like</h2>
   <div class="recommend_grid"></div>
@@ -75,7 +86,7 @@
   <div class="checkout_modal">
     <button class="checkout_close" id="checkout_close" type="button" aria-label="Close">✕</button>
 
-    <!-- Step 1: details form -->
+    <!-- Details form -->
     <div id="checkout_form_view">
       <h2 class="checkout_heading">Checkout</h2>
       <form id="checkout_form" data-checkout-url="{% url 'cart:checkout' %}" novalidate>
@@ -129,12 +140,12 @@
       </form>
     </div>
 
-    <!-- Step 2: confirmation -->
+    <!-- Order confirmation message -->
     <div id="checkout_done" class="checkout_done hidden">
       <p class="checkout_done_icon">✅</p>
       <h2 class="checkout_heading">Thank you for your order!</h2>
       <p class="checkout_done_text">Your order number is <strong id="checkout_order_number"></strong>.</p>
-      <p class="checkout_done_text">We'll get your stock on its way. 🍹</p>
+      <p class="checkout_done_text">We'll get your stock on its way.</p>
       <a class="button_primary" href="{% url 'catalogue:browse' %}">Continue Shopping</a>
     </div>
   </div>

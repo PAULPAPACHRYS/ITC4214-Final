@@ -1,18 +1,9 @@
-// ----------------------------------------------------------------------------
-// "You might also like" strip on the cart page.
-// On load, ask the recommendations endpoint for products similar to what's in
-// the cart, build a card for each, and reveal the strip. If there are none (or
-// the request fails), the strip stays hidden — nothing is forced on the user.
-// ----------------------------------------------------------------------------
 const recommend_section = document.querySelector('.recommend_section');
 
 if (recommend_section) {
   const grid = recommend_section.querySelector('.recommend_grid');
   const url = recommend_section.dataset.recommendUrl;
 
-  // Same markup as the Browse/Home product cards, so the existing "+ Order" and
-  // Like handlers (already loaded on this page) work on these cards too, and the
-  // shared .product_card styles apply.
   function build_product_card(product) {
     const card = document.createElement('div');
     card.className = 'product_card';
@@ -43,27 +34,23 @@ if (recommend_section) {
     return card;
   }
 
-  // Fetch similar products and (re)fill the strip. Clearing the grid first means
-  // this can run again later — e.g. after the cart changes — and reflect the new
-  // cart. If nothing similar remains, the strip is hidden.
   function load_recommendations() {
     fetch(url, { headers: { 'X-Requested-With': 'XMLHttpRequest' } })
       .then(response => response.json())
       .then(data => {
         grid.innerHTML = '';
         if (!data.ok || data.products.length === 0) {
-          recommend_section.classList.add('hidden');   // nothing to show
+          recommend_section.classList.add('hidden');   //nothing to show
           return;
         }
         data.products.forEach(product => grid.appendChild(build_product_card(product)));
         recommend_section.classList.remove('hidden');
       })
-      .catch(() => {});   // on failure, leave the strip as it is
+      .catch(() => {});   //on failure, leave the strip as it is
   }
 
   load_recommendations();
 
-  // The cart page fires this after an item is removed; refresh so the
-  // suggestions match the new cart (and disappear if nothing similar remains).
+  //the cart page fires this after an item is removed, so the suggestions match the new cart
   document.addEventListener('cart:changed', load_recommendations);
 }
