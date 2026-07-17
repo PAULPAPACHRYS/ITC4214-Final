@@ -1,22 +1,20 @@
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
-
 from catalogue.models import Product
 from catalogue.views import _products_as_dicts
 from orders.models import Order
 
-# ---------------------------------------------------------------------------
-# Content-based similarity scoring.
-#
-# Each candidate product is scored against a product already in the cart by
-# adding up a few weighted signals. Bigger weight = stronger signal. The whole
-# thing is transparent and needs no training data or interaction history — it
-# works purely from the product attributes we already store.
-# ---------------------------------------------------------------------------
-SAME_SUBCATEGORY = 5      # e.g. gin is very similar to another gin (strongest)
-SAME_CATEGORY = 2         # same top-level category, different subcategory
+"""
+Content Similarity Scoring
+
+Every product is scored against a product already in the cart by adding up a weighted score 
+higher score = stronger signal for reccommendation
+it works purely from the product attributes we already store in the database
+"""
+SAME_SUBCATEGORY = 5      # ex: gin is very similar to another gin (strongest)
+SAME_CATEGORY = 2         # same top-level category but different subcategory
 SAME_BRAND = 2
-SHARED_TAG = 1.5          # per tag the two products have in common
+SHARED_TAG = 1.5          # for every tag the two products have in common
 PRICE_NEAR = 1            # price within €2
 PRICE_CLOSE = 0.5         # price within €5
 
@@ -24,13 +22,9 @@ HOW_MANY = 4              # number of suggestions to return
 
 
 def _similarity(target, candidate):
-    """Score how similar `candidate` is to `target` (both Product instances)."""
+    # score how similar the candidate is to the target
     score = 0
 
-    # Category / sub-category. Sharing the sub-category is the strong match;
-    # otherwise sharing only the top-level category is a weaker one. Now that
-    # sub-categories are their own table, both checks are a plain id comparison
-    # (product -> subcategory -> category).
     if target.subcategory_id == candidate.subcategory_id:
         score += SAME_SUBCATEGORY
     elif target.subcategory.category_id == candidate.subcategory.category_id:
@@ -39,7 +33,7 @@ def _similarity(target, candidate):
     if target.brand_id == candidate.brand_id:
         score += SAME_BRAND
 
-    # Tags are rows now, so compare them by id.
+    #tags are rows now, so compare them by id
     target_tags = {t.id for t in target.tags.all()}
     candidate_tags = {t.id for t in candidate.tags.all()}
     score += SHARED_TAG * len(target_tags & candidate_tags)
@@ -54,11 +48,12 @@ def _similarity(target, candidate):
 
 
 def _rank(cart_products, candidates, limit=HOW_MANY):
-    """Rank candidates by total similarity to everything in the cart.
+    """
+    Rank candidates by total similarity to everything in the cart
 
-    A candidate's score is the sum of its similarity to each cart product, so
-    items similar to the cart as a whole rise to the top. Only positive scores
-    are kept, and ties break by id so the result is deterministic.
+    a candidate's score is the sum of its similarity to each cart product, 
+    so items similar to the cart as a whole rise to the top, 
+    only positive scores are kept and ties break by id
     """
     scored = []
     for candidate in candidates:
@@ -71,11 +66,12 @@ def _rank(cart_products, candidates, limit=HOW_MANY):
 
 @login_required
 def for_cart(request):
-    """Return up to HOW_MANY products similar to what's in the user's cart.
+    """
+    Return up to HOW_MANY products similar to what is in the user's cart
 
-    Response JSON: {ok, products: [...]} where each product has the same shape
-    the front-end card builder expects. Products already in the cart are never
-    suggested. If the cart is empty (or nothing scores), products is [].
+    response -> {ok, products: [...]}
+    products already in the cart are never suggested 
+    if the cart is empty or nothing scores then products is empty
     """
     order = Order.objects.filter(user=request.user, is_cart=True).first()
     cart_items = list(
@@ -97,8 +93,6 @@ def for_cart(request):
     ranked = _rank(cart_products, candidates)
     ranked_ids = [p.id for p in ranked]
 
-    # Reuse the catalogue helper so the cards carry price/like data etc., then
-    # restore the ranked order (the helper returns rows id-sorted).
     products = _products_as_dicts(
         Product.objects.filter(id__in=ranked_ids), user=request.user)
     position = {pid: i for i, pid in enumerate(ranked_ids)}

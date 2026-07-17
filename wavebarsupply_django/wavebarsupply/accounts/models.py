@@ -7,15 +7,13 @@ from .validators import clean_email, clean_text, name_validator, phone_validator
 
 
 class UsersManager(BaseUserManager):
-    """Manager required by Django for a custom auth user model."""
 
     def create_user(self, email, password=None, **extra_fields):
         if not email:
             raise ValueError('An email address is required.')
-        # normalize_email() only lowercases the domain, so lowercase it all.
         email = clean_email(self.normalize_email(email))
         user = self.model(email=email, **extra_fields)
-        user.set_password(password)          # hashed with bcrypt (see PASSWORD_HASHERS)
+        user.set_password(password)          # hashed with bcrypt (in settings.py under PASSWORD_HASHERS)
         user.save(using=self._db)
         return user
 
@@ -27,12 +25,6 @@ class UsersManager(BaseUserManager):
 
 
 class Users(AbstractBaseUser, PermissionsMixin):
-    """Site accounts, and also Django's authentication user model.
-
-    Being the auth user model is what lets the built-in UserCreationForm and
-    AuthenticationForm work. The password is stored hashed (bcrypt) by Django's
-    password hashers; login is by email.
-    """
 
     ROLE_CHOICES = [
         ('customer', 'Customer'),
@@ -49,7 +41,6 @@ class Users(AbstractBaseUser, PermissionsMixin):
     phone = models.CharField(max_length=20, blank=True, default='',
                              validators=[phone_validator])
 
-    # Flags Django's auth/admin need.
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
@@ -63,10 +54,6 @@ class Users(AbstractBaseUser, PermissionsMixin):
         verbose_name_plural = 'users'
 
     def save(self, *args, **kwargs):
-        # Tidy the text here as well as in the forms, so a user saved from
-        # anywhere (a form, the shell, a fixture) is stored the same way. The
-        # email in particular MUST be lowercased here, because that is what
-        # makes the unique constraint on it actually work.
         self.email = clean_email(self.email)
         self.first_name = clean_text(self.first_name)
         self.last_name = clean_text(self.last_name)

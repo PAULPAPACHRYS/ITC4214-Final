@@ -1,12 +1,8 @@
 from django import forms
-
 from .models import Preset
 
-
 class ColorInput(forms.TextInput):
-    """A normal text input rendered as the browser's native colour picker."""
     input_type = 'color'
-
 
 class PresetForm(forms.ModelForm):
     class Meta:

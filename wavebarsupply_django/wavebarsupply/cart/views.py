@@ -1,28 +1,22 @@
 from decimal import Decimal
-
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render
 from django.views.decorators.http import require_POST
-
 from catalogue.models import Product
 from orders.models import Order, OrderItem
-
 from .forms import AddToCartForm, CheckoutForm, RemoveCartForm, UpdateCartForm
 
 
 def _get_cart(user):
-    """Return the user's active cart: their single 'pending' Order."""
     order, _ = Order.objects.get_or_create(user=user, is_cart=True)
     return order
-
 
 def _cart_total(order):
     total = Decimal('0.00')
     for item in order.items.all():
         total += item.quantity * item.unit_price
     return total
-
 
 @login_required
 def view_cart(request):
@@ -121,11 +115,6 @@ def remove(request):
 @login_required
 @require_POST
 def checkout(request):
-    """Finalise the cart: record delivery details and mark the order completed.
-
-    This only simulates payment; no card data is stored. Completing the pending
-    order effectively empties the cart (the next visit starts a fresh one).
-    """
     order = Order.objects.filter(user=request.user, is_cart=True).first()
     if order is None or not order.items.exists():
         return JsonResponse({'ok': False, 'error': 'Your cart is empty.'}, status=400)
@@ -139,8 +128,8 @@ def checkout(request):
     order.delivery_address = data['address']
     order.delivery_phone = data['phone']
     order.delivery_email = data['email']
-    order.is_cart = False       # no longer the cart
-    order.status = 'pending'    # a newly placed order is pending
+    order.is_cart = False       #no longer in the cart
+    order.status = 'pending'    #new placed order is pending
     order.save()
 
     return JsonResponse({'ok': True, 'order_number': order.id})

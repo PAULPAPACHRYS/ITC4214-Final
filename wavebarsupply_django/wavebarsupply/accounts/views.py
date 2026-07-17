@@ -10,7 +10,7 @@ from .forms import AccountEditForm, LoginForm, RegisterForm
 
 
 def auth_view(request):
-    """Login + register page (for guests). Logged-in users are sent to Account."""
+    # login + register page (for guests), logged-in users are sent to Account page.
     if request.user.is_authenticated:
         return redirect('accounts:account')
 
@@ -43,18 +43,18 @@ def auth_view(request):
 
 @login_required
 def account(request):
-    """Shows the logged-in user's details and lets them edit them."""
+    # displays the logged-in user's details and lets them edit them
     show_edit = False
     if request.method == 'POST':
         form = AccountEditForm(request.POST, instance=request.user)
         if form.is_valid():
             form.save()
             return redirect('accounts:account')
-        show_edit = True          # keep the edit form open to show errors
+        show_edit = True          #keep the edit form open to show errors
     else:
         form = AccountEditForm(instance=request.user)
 
-    # Dashboard data for the right-hand side of the page.
+    # dashboard data for the right side of the page
     orders = (Order.objects
               .filter(user=request.user, is_cart=False)
               .prefetch_related('items__product')
@@ -66,7 +66,7 @@ def account(request):
                       .filter(likes__user=request.user)
                       .select_related('brand', 'subcategory'))
 
-    # Extra data the edit-preset overlay needs (product search + prefill).
+    # extra data the edit preset overlay needs like product search and prefill
     presets_json = [{**p.to_dict(), 'owned': True} for p in my_presets]
     products_json = [{'id': p.id, 'name': p.name,
                       'brand': p.brand.name, 'subcategory': p.subcategory.name}

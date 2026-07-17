@@ -1,6 +1,6 @@
 from django.db import migrations
 
-# The six built-in cocktails: (name, colour, [ingredient product names]).
+
 DEFAULTS = [
     ('Mojito', '#7BB661', [
         'Bacardi Carta Blanca', 'Fresh Mint Bunch', 'Lime Juice', 'Soda Water',
@@ -26,13 +26,6 @@ DEFAULTS = [
 
 
 def seed_defaults(apps, schema_editor):
-    """Create the default presets so they show up without a manual fixture load.
-
-    Safe to run in any order relative to the presets fixture:
-      * if defaults already exist (e.g. the fixture was loaded), do nothing;
-      * if the catalogue isn't fully loaded yet (fresh install, products come
-        later via loaddata), skip and let the fixture seed them instead.
-    """
     Preset = apps.get_model('presets', 'Preset')
     Product = apps.get_model('catalogue', 'Product')
 
@@ -42,7 +35,7 @@ def seed_defaults(apps, schema_editor):
     needed = {name for _, _, ingredients in DEFAULTS for name in ingredients}
     by_name = {p.name: p for p in Product.objects.filter(name__in=needed)}
     if len(by_name) != len(needed):
-        return   # some ingredient products aren't in the DB yet
+        return
 
     for name, color, ingredients in DEFAULTS:
         preset = Preset.objects.create(name=name, color=color, user=None)

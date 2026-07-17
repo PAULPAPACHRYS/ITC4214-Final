@@ -1,10 +1,8 @@
 from functools import wraps
-
 from django.contrib import messages
 from django.db.models import ProtectedError
 from django.http import Http404
 from django.shortcuts import get_object_or_404, redirect, render
-
 from accounts.models import Users
 from catalogue.models import Brand, Category, Product, Subcategory, Tag
 from likes.models import Like
@@ -13,15 +11,10 @@ from orders.models import Order, OrderItem
 from . import forms
 
 def _objects(config):
-    """Rows for a table: use its custom queryset if it has one, else all rows."""
     getter = config.get('queryset')
     return getter() if getter else config['model'].objects.all()
 
 
-# Registry of the tables managed on the Database page.
-#   columns    -> fields shown in the list view
-#   form       -> ModelForm used to edit (and add, unless add_form is given)
-#   admin_only -> table is only visible/editable by admins (the Users table)
 TABLES = {
     'categories':  {'model': Category,  'label': 'Categories',  'admin_only': False,
                     'columns': ['id', 'name'],
@@ -55,7 +48,6 @@ TABLES = {
 
 
 def staff_required(view):
-    """Allow only logged-in employees and admins."""
     @wraps(view)
     def wrapper(request, *args, **kwargs):
         user = request.user
@@ -68,7 +60,6 @@ def staff_required(view):
 
 
 def _get_config(request, key):
-    """Return the table config, or None if it doesn't exist / isn't allowed."""
     config = TABLES.get(key)
     if config is None:
         return None

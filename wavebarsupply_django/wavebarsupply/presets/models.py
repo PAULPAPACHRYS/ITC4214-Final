@@ -3,15 +3,8 @@ from django.db import models
 
 
 class Preset(models.Model):
-    """A cocktail preset: a named, coloured bundle of ingredient products.
-
-    - user is null for the built-in default presets everyone sees; a non-null
-      user means a preset only that user created and can see.
-    - ingredients is the set of products the cocktail needs. Adding a preset to
-      the cart adds every ingredient, each with quantity = the servings chosen.
-    """
     name = models.CharField(max_length=100)
-    color = models.CharField(max_length=7, default='#2A9D8F')   # hex, e.g. #2A9D8F
+    color = models.CharField(max_length=7, default='#2A9D8F')
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
         null=True, blank=True, related_name='presets')
@@ -24,7 +17,6 @@ class Preset(models.Model):
         return f"{self.name} ({self.user.email if self.user else 'default'})"
 
     def to_dict(self):
-        """Shape used by the front-end to build a preset card."""
         ingredients = list(self.ingredients.all())
         return {
             'id': self.id,

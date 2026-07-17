@@ -2,7 +2,6 @@ from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.views.decorators.http import require_POST
-
 from orders.models import Order, OrderItem
 from .forms import PresetForm
 from .models import Preset
@@ -11,7 +10,7 @@ from .models import Preset
 @login_required
 @require_POST
 def create(request):
-    """Create a preset owned by the current user (used by the overlay form)."""
+    # ceate a preset owned by the currently logged in user
     form = PresetForm(request.POST)
     if not form.is_valid():
         return JsonResponse({'ok': False, 'errors': form.errors}, status=400)
@@ -19,7 +18,7 @@ def create(request):
     preset = form.save(commit=False)
     preset.user = request.user
     preset.save()
-    form.save_m2m()   # attach the chosen ingredients (a ManyToMany field)
+    form.save_m2m()   #attach chosen ingredients
 
     return JsonResponse({'ok': True, 'preset': preset.to_dict()})
 
@@ -27,7 +26,7 @@ def create(request):
 @login_required
 @require_POST
 def edit(request, preset_id):
-    """Update one of the current user's own presets."""
+    # update one of the currently logged in user's own presets
     preset = get_object_or_404(Preset, pk=preset_id, user=request.user)
     form = PresetForm(request.POST, instance=preset)
     if not form.is_valid():
@@ -39,7 +38,7 @@ def edit(request, preset_id):
 @login_required
 @require_POST
 def delete(request, preset_id):
-    """Delete one of the current user's own presets."""
+    # delete one of the currently logged in user's own presets
     preset = get_object_or_404(Preset, pk=preset_id, user=request.user)
     preset.delete()
     return JsonResponse({'ok': True})
@@ -48,10 +47,10 @@ def delete(request, preset_id):
 @login_required
 @require_POST
 def add_to_cart(request):
-    """Add every ingredient of a preset to the cart, quantity = servings each."""
+    # add every ingredient of a preset to the cart, quantity same as servings
     preset = get_object_or_404(Preset, pk=request.POST.get('preset_id'))
 
-    # A user may only use the default presets or their own.
+    # a user can only use the default presets or their own.
     if preset.user_id not in (None, request.user.id):
         return JsonResponse({'ok': False}, status=404)
 

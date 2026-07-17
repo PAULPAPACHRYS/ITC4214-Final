@@ -5,17 +5,6 @@ from django.db import migrations, models
 
 
 def lowercase_emails(apps, schema_editor):
-    """Tidy any address already stored with capitals.
-
-    The unique check on email is case-sensitive, so before this change
-    'Test@Bar.com' and 'test@bar.com' could both exist as separate accounts.
-    Storing every address lowercase is what makes that constraint do its job.
-
-    If two rows differ only by case, the one already holding the lowercase
-    address is left alone and the other is skipped rather than being merged or
-    deleted: which account is the real one is a decision for a person, not for a
-    migration.
-    """
     Users = apps.get_model('accounts', 'Users')
     for user in Users.objects.order_by('id'):
         tidy = (user.email or '').strip().lower()

@@ -1,30 +1,20 @@
 from django import forms
-
+import re
 
 class AddToCartForm(forms.Form):
     product_id = forms.IntegerField(min_value=1)
     quantity = forms.IntegerField(min_value=1)
 
-
 class UpdateCartForm(forms.Form):
     item_id = forms.IntegerField(min_value=1)
     quantity = forms.IntegerField(min_value=1)
-
 
 class RemoveCartForm(forms.Form):
     item_id = forms.IntegerField(min_value=1)
 
 
-import re
-
-
 class CheckoutForm(forms.Form):
-    """Delivery + (simulated) card details collected in the checkout overlay.
-
-    Card details are validated but never stored — this only simulates a payment.
-    """
-
-    # --- Delivery (prefilled from the customer, editable) ---
+    # order delivery details, prefilled from the customer's data (if available)
     name = forms.CharField(
         max_length=100, label='Full Name',
         widget=forms.TextInput(attrs={'maxlength': 100}))
@@ -38,7 +28,7 @@ class CheckoutForm(forms.Form):
         max_length=100, label='Email',
         widget=forms.EmailInput(attrs={'maxlength': 100}))
 
-    # --- Card (simulated) ---
+    # payment card details, these are validated but not stored to the database
     card_number = forms.CharField(
         label='Card Number',
         widget=forms.TextInput(attrs={'maxlength': 16, 'inputmode': 'numeric',

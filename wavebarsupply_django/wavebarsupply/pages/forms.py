@@ -2,12 +2,6 @@ from django import forms
 
 
 class ContactForm(forms.Form):
-    """Built with Django's forms framework so validation is handled server-side.
-
-    max_length is enforced by Django on the server; the matching maxlength on the
-    widgets also stops the browser accepting over-long input.
-    """
-
     email = forms.EmailField(
         max_length=100,
         label='Email Address',

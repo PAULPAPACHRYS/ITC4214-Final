@@ -1,10 +1,8 @@
 import os
 import re
-
 from django import forms
 from django.conf import settings
 from django.contrib.auth.forms import UserCreationForm
-
 from accounts.forms import LOCATION_CHOICES, UserFieldsMixin
 from accounts.validators import name_validator, phone_validator
 from accounts.models import Users
@@ -14,11 +12,6 @@ from orders.models import Order, OrderItem
 
 
 def _style(form):
-    """Give every field the shared input class for consistent styling.
-
-    Fields rendered as a drop-down get the select class instead, so the arrow
-    and padding look right.
-    """
     for field in form.fields.values():
         is_select = isinstance(field.widget, (forms.Select, forms.SelectMultiple))
         css = field.widget.attrs.get('class', '')
@@ -27,20 +20,10 @@ def _style(form):
 
 
 def _clean_text(value):
-    """Tidy a typed-in string: trim the ends and collapse inner runs of spaces.
-
-    Without this, 'Gin ' and 'Gin' and 'Gin  Tonic' are three different values as
-    far as the database is concerned, which quietly defeats the duplicate checks.
-    """
     return ' '.join((value or '').split())
 
 
 def _no_duplicate(model, field, value, instance, message):
-    """Reject a value that another row already has, ignoring case.
-
-    The database's unique constraint is case-sensitive, so on its own it would
-    happily accept both 'Bacardi' and 'bacardi'. This closes that gap.
-    """
     if not value:
         return value
     clash = model.objects.filter(**{f'{field}__iexact': value})
@@ -52,13 +35,6 @@ def _no_duplicate(model, field, value, instance, message):
 
 
 class ProductPriceSelect(forms.Select):
-    """A product drop-down whose options carry the product's price.
-
-    The price is put on each <option> as a data-price attribute, so the script
-    can fill the unit price in as soon as a product is chosen (see
-    static/js/database_form.js).
-    """
-
     def create_option(self, name, value, *args, **kwargs):
         option = super().create_option(name, value, *args, **kwargs)
         product = getattr(value, 'instance', None)
@@ -68,21 +44,13 @@ class ProductPriceSelect(forms.Select):
 
 
 def _images_dir():
-    """The static/images/ folder, created if it does not exist yet."""
     folder = settings.BASE_DIR / 'static' / 'images'
     folder.mkdir(parents=True, exist_ok=True)
     return folder
 
 
 def _save_uploaded_image(upload):
-    """Copy an uploaded picture into static/images/ and return its file name.
-
-    The name is tidied to letters, numbers, dots, dashes and underscores, so an
-    odd name from the person's computer cannot become an odd file name (or a
-    path like ../../something). If a file of that name already exists, a number
-    is added so the existing picture is never overwritten.
-    """
-    base = os.path.basename(upload.name)               # drop any folder part
+    base = os.path.basename(upload.name)
     stem, ext = os.path.splitext(base)
     stem = re.sub(r'[^A-Za-z0-9._-]', '_', stem) or 'image'
     ext = ext.lower()
@@ -91,22 +59,16 @@ def _save_uploaded_image(upload):
     filename = f'{stem}{ext}'
     counter = 1
     while (folder / filename).exists():
-        filename = f'{stem}_{counter}{ext}'            # soft_drinks_1.jpg, etc.
+        filename = f'{stem}_{counter}{ext}'
         counter += 1
 
     with open(folder / filename, 'wb') as destination:
-        for chunk in upload.chunks():                  # chunks() handles big files
+        for chunk in upload.chunks(): #chunk handles larger files
             destination.write(chunk)
     return filename
 
 
 def _image_choices():
-    """The picture files that actually exist in static/images/.
-
-    Turning the image field into a drop-down of real files means a sub-category
-    can only ever point at a picture that is really there - a typed file name
-    could easily be misspelled and would silently show no picture.
-    """
     folder = settings.BASE_DIR / 'static' / 'images'
     allowed = ('.jpg', '.jpeg', '.png', '.webp', '.gif')
     try:
@@ -118,12 +80,6 @@ def _image_choices():
 
 
 class CategoryForm(forms.ModelForm):
-    """A category is just its name, typed in freely.
-
-    Unlike the other tables, nothing here points at another table, so there is
-    nothing to pick from a list: a brand-new category is simply named. The name
-    still has to be unique, so the same category cannot be added twice.
-    """
     class Meta:
         model = Category
         fields = ['name']
@@ -136,28 +92,12 @@ class CategoryForm(forms.ModelForm):
         _style(self)
 
     def clean_name(self):
-        # The name doubles as a code in the Browse page filter (?cat=...), so it
-        # is tidied into a slug: trimmed, lowercased, spaces turned into hyphens.
-        # 'Soft Drinks' typed in here becomes 'soft-drinks'. The model's
-        # slug_validator then rejects anything still not a valid slug.
         name = _clean_text(self.cleaned_data['name']).lower().replace(' ', '-')
         return _no_duplicate(Category, 'name', name, self.instance,
                              'A category with this name already exists.')
 
 
 class SubcategoryForm(forms.ModelForm):
-    """A sub-category belongs to a category, chosen from a drop-down of the
-    categories that exist, and shows a picture.
-
-    The picture can be chosen two ways: pick one of the files already in
-    static/images/ from the drop-down, OR upload a new file, which is copied into
-    static/images/ and then used. Uploading is optional; if a file is uploaded it
-    wins over the drop-down choice.
-    """
-    # Lets the employee add a brand-new picture instead of only choosing an
-    # existing one. It is not a model field - it is handled in save() below.
-    # FileField (not ImageField) is used on purpose, so the project does not
-    # depend on the Pillow library; the file is checked by clean_upload instead.
     upload = forms.FileField(
         required=False, label='...or upload a new picture',
         help_text='Choose an image file to add it to the library and use it here.')
@@ -168,10 +108,7 @@ class SubcategoryForm(forms.ModelForm):
 
     def __init__(self, *a, **k):
         super().__init__(*a, **k)
-        # 'category' is a ForeignKey, so Django already renders it as a
-        # drop-down listing the existing Category rows.
         self.fields['category'].empty_label = '--- choose a category ---'
-        # 'image' is a plain text column, so give it a drop-down of real files.
         self.fields['image'] = forms.ChoiceField(
             choices=_image_choices(), required=False, label='Image')
         _style(self)
@@ -180,7 +117,6 @@ class SubcategoryForm(forms.ModelForm):
         return _clean_text(self.cleaned_data['name'])
 
     def clean_upload(self):
-        """Check an uploaded picture is a sensible type and size."""
         upload = self.cleaned_data.get('upload')
         if not upload:
             return upload
@@ -189,13 +125,11 @@ class SubcategoryForm(forms.ModelForm):
         if ext not in allowed:
             raise forms.ValidationError(
                 'Please upload an image file (jpg, png, webp or gif).')
-        if upload.size > 5 * 1024 * 1024:          # 5 MB
+        if upload.size > 5 * 1024 * 1024: # 5 MB
             raise forms.ValidationError('Please keep the image under 5 MB.')
         return upload
 
     def clean(self):
-        # A sub-category name only has to be unique WITHIN its category: two
-        # categories may each have their own 'Mixers'.
         cleaned = super().clean()
         name, category = cleaned.get('name'), cleaned.get('category')
         if name and category:
@@ -208,9 +142,6 @@ class SubcategoryForm(forms.ModelForm):
         return cleaned
 
     def save(self, commit=True):
-        # If a new picture was uploaded, copy it into static/images/ and point
-        # the image field at it. This runs before the row is saved, so the
-        # sub-category is stored already referring to the new file.
         upload = self.cleaned_data.get('upload')
         if upload:
             filename = _save_uploaded_image(upload)
@@ -237,8 +168,6 @@ class BrandForm(forms.ModelForm):
 
 
 class TagForm(forms.ModelForm):
-    """Add or rename a tag. Tags are lowercase so the same word is one tag."""
-
     class Meta:
         model = Tag
         fields = ['name']
@@ -261,7 +190,6 @@ class LikeForm(forms.ModelForm):
 
     def __init__(self, *a, **k):
         super().__init__(*a, **k)
-        # Both fields are ForeignKeys, so both render as drop-downs.
         self.fields['product'].empty_label = '--- choose a product ---'
         self.fields['user'].empty_label = '--- choose a user ---'
         _style(self)
@@ -277,10 +205,7 @@ class ProductForm(forms.ModelForm):
             'abv': 'Alcohol by volume, between 0 and 100 %.',
             'tags': 'Pick from the tags that exist. To add a new one, use the Tags table.',
         }
-        # The min/max/step below are the same limits the model validators
-        # enforce. Putting them on the inputs means the browser blocks a bad
-        # number before the form is even sent, while the model still checks it
-        # on the server.
+
         widgets = {
             'price':  forms.NumberInput(attrs={'min': '0.01', 'step': '0.01'}),
             'volume': forms.NumberInput(attrs={'min': '1', 'max': '20000', 'step': '1'}),
@@ -289,15 +214,9 @@ class ProductForm(forms.ModelForm):
 
     def __init__(self, *a, **k):
         super().__init__(*a, **k)
-        # brand and subcategory are ForeignKeys: Django renders both as
-        # drop-downs of the existing rows. tags is a many-to-many, so Django
-        # renders it as a multiple-selection list of the tags that exist.
         self.fields['brand'].empty_label = '--- choose a brand ---'
         self.fields['subcategory'].empty_label = '--- choose a sub-category ---'
         self.fields['tags'].required = False
-        # PositiveIntegerField puts min="0" on the input by itself, which would
-        # let the browser accept a volume of 0 (the server would then reject it).
-        # Setting it here keeps the two in step.
         self.fields['volume'].widget.attrs['min'] = '1'
         _style(self)
 
@@ -305,7 +224,6 @@ class ProductForm(forms.ModelForm):
         return _clean_text(self.cleaned_data['name'])
 
     def clean(self):
-        # The same drink, same brand, same size should not be added twice.
         cleaned = super().clean()
         name = cleaned.get('name')
         brand = cleaned.get('brand')
@@ -323,7 +241,6 @@ class ProductForm(forms.ModelForm):
 
 
 class OrderCreateForm(forms.ModelForm):
-    """Adding an order: no status field, so a new order is always 'pending'."""
     class Meta:
         model = Order
         fields = ['user']
@@ -335,14 +252,12 @@ class OrderCreateForm(forms.ModelForm):
 
 
 class OrderEditForm(forms.ModelForm):
-    """Editing an order: status can be changed (e.g. to completed / canceled)."""
     class Meta:
         model = Order
         fields = ['user', 'status']
 
     def __init__(self, *a, **k):
         super().__init__(*a, **k)
-        # user is a ForeignKey and status has fixed choices: both are drop-downs.
         self.fields['user'].empty_label = '--- choose a user ---'
         _style(self)
 
@@ -355,9 +270,8 @@ class OrderItemForm(forms.ModelForm):
             'unit_price': "Filled in from the product's price; change it only "
                           "if this line really is a different price.",
         }
+
         widgets = {
-            # ProductPriceSelect puts each product's price on its <option>, which
-            # is what lets the script fill the unit price in automatically.
             'product': ProductPriceSelect,
             'quantity': forms.NumberInput(attrs={'min': '1', 'step': '1'}),
             'unit_price': forms.NumberInput(attrs={'min': '0', 'step': '0.01'}),
@@ -367,22 +281,12 @@ class OrderItemForm(forms.ModelForm):
         super().__init__(*a, **k)
         self.fields['order'].empty_label = '--- choose an order ---'
         self.fields['product'].empty_label = '--- choose a product ---'
-        # Same as volume above: PositiveIntegerField would otherwise put min="0"
-        # on the input and let the browser accept an order line for 0 items.
         self.fields['quantity'].widget.attrs['min'] = '1'
         _style(self)
 
 
-# --- Users (admin only) ---
-
+# users edit form, only available for admins
 class UserEditForm(UserFieldsMixin, forms.ModelForm):
-    """Edit an existing user, including their role. No password field here.
-
-    bar_location uses the same fixed list of regions the registration form uses,
-    and UserFieldsMixin brings the same name / email / tidying rules, so a user
-    edited here is held to exactly the same standard as one who signed up.
-    """
-
     bar_location = forms.ChoiceField(choices=LOCATION_CHOICES, required=False,
                                      label='Location / Region')
 
@@ -399,10 +303,6 @@ class UserEditForm(UserFieldsMixin, forms.ModelForm):
 
 
 class UserCreateForm(UserFieldsMixin, UserCreationForm):
-    """Add a new user (built-in UserCreationForm) with a chosen role."""
-
-    # These are declared fields, so the validators are attached here explicitly
-    # rather than relying on the ones on the model.
     first_name = forms.CharField(max_length=50, validators=[name_validator])
     last_name = forms.CharField(max_length=50, validators=[name_validator])
     email = forms.EmailField(max_length=100)

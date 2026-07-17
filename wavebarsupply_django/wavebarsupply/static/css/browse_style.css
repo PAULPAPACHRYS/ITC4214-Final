@@ -20,6 +20,9 @@
 
 /* Browse */
 .browse_layout {
+  /* Wider than the site-wide 1200px container so the middle products column
+     gets more room and the cards no longer look cramped on large screens. */
+  max-width: 1400px;
   display: grid;
   grid-template-columns: 230px 1fr 260px;
   column-gap: 24px;
@@ -232,3 +235,34 @@
   margin-bottom: 8px;
 }
 .empty_state p { margin-bottom: 20px; }
+
+/* On phones/small tablets the rigid three-column grid squeezed the middle
+   column so three product cards were crammed together. Below 900px we stack
+   the whole page into one column and drop the product grid to two cards per
+   row so each card keeps a comfortable width. */
+@media (max-width: 900px) {
+  .browse_layout { grid-template-columns: 1fr; }
+
+  /* In a single column the six grid items would otherwise appear as all three
+     headings first, then all three sections. `order` re-pairs each heading with
+     its own section: Filters, filters; Products, products; Presets, presets. */
+  .browse_column_title:nth-of-type(1) { order: 1; }
+  .filter_sidebar                     { order: 2; }
+  .browse_column_title:nth-of-type(2) { order: 3; }
+  .browse_main                        { order: 4; }
+  .browse_column_title:nth-of-type(3) { order: 5; }
+  .preset_column                      { order: 6; }
+
+  /* Once stacked, the filters no longer need to stick or cap their height. */
+  .filter_sidebar {
+    position: static;
+    max-height: none;
+  }
+
+  .product_grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* On the narrowest phones, one product per row reads best. */
+@media (max-width: 520px) {
+  .product_grid { grid-template-columns: 1fr; }
+}

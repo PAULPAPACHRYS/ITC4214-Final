@@ -1,9 +1,7 @@
 from decimal import Decimal
-
 from django.conf import settings
 from django.core.validators import MinValueValidator
 from django.db import models
-
 
 class Order(models.Model):
     STATUS_CHOICES = [
@@ -16,11 +14,13 @@ class Order(models.Model):
     order_date = models.DateField(auto_now_add=True)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
 
-    # True only while this order is the user's in-progress cart. A placed order
-    # has is_cart=False, so a placed 'pending' order is never mistaken for a cart.
+    """
+    is_cart is True only while this order is the user's in-progress cart, 
+    a placed order has is_cart set to False, so a placed 'pending' order is never mistaken for a cart
+    """
     is_cart = models.BooleanField(default=False)
 
-    # Delivery details, filled in when the order is finalised at checkout.
+    #delivery details, filled in when the order is finalised at checkout
     delivery_name = models.CharField(max_length=100, blank=True, default='')
     delivery_address = models.CharField(max_length=200, blank=True, default='')
     delivery_phone = models.CharField(max_length=20, blank=True, default='')
@@ -34,15 +34,13 @@ class Order(models.Model):
 
     @property
     def total(self):
-        """Sum of every line's total (quantity × unit price)."""
         return sum(item.line_total for item in self.items.all())
 
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='items')
     product = models.ForeignKey('catalogue.Product', on_delete=models.PROTECT)
-    # An order line must be for at least one item, and a price can never be
-    # negative.
+    # an order line must be for at least one item and a price can never be negative
     quantity = models.PositiveIntegerField(
         default=1, validators=[MinValueValidator(1)])
     unit_price = models.DecimalField(

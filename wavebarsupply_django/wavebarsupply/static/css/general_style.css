@@ -152,6 +152,26 @@ input, select { font-family: inherit; }
   white-space: nowrap; /* keep "Shop Now" on one line (no vertical stretch) */
 }
 
+/* On narrow screens (phones/small tablets) the fixed-height single row can't
+   fit the logo, links and both buttons, so the Cart button used to spill off
+   the right edge of the page. Letting the bar grow taller and wrap its items
+   onto new lines keeps everything inside the screen. */
+@media (max-width: 900px) {
+  .nav_bar {
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+  .nav_links {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .nav_cta { margin-left: 0; }
+}
+
 /* Product Cards (used on home and browse page) */
 .product_card {
   background: var(--white);
