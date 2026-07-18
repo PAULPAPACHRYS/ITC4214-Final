@@ -1,12 +1,5 @@
-// ----------------------------------------------------------------------------
-// Cocktail presets on the Browse page.
-//   * builds a card per preset (default presets + the user's own),
-//   * each card has a servings stepper and a "+ Order" that adds EVERY ingredient
-//     to the cart (quantity = servings),
-//   * the user's OWN presets also get Edit and Delete buttons,
-//   * logged-in users can create/edit presets via the overlay.
-// All of this is vanilla JS and self-contained in an IIFE.
-// ----------------------------------------------------------------------------
+
+//builds a card per preset (default presets and the user created ones)
 (function () {
   const grid = document.querySelector('.preset_grid');
   if (!grid) return;
@@ -15,19 +8,17 @@
   const AUTHED = document.body.dataset.authenticated === 'true';
   const ADD_URL = grid.dataset.addUrl;
   const CREATE_URL = grid.dataset.createUrl;
-  const EDIT_URL = grid.dataset.editUrl;      // .../presets/0/edit/  (0 is a placeholder)
-  const DELETE_URL = grid.dataset.deleteUrl;  // .../presets/0/delete/
+  const EDIT_URL = grid.dataset.editUrl;
+  const DELETE_URL = grid.dataset.deleteUrl;
 
   const PRESETS = JSON.parse(document.querySelector('#presets_data').textContent);
   const PRODUCTS = JSON.parse(document.querySelector('#products_data').textContent);
 
-  // Build a concrete edit/delete URL for a given preset id from the placeholder.
+  //build a concrete edit/delete URL for a given preset id from the placeholder
   const edit_url = (id) => EDIT_URL.replace('/0/', '/' + id + '/');
   const delete_url = (id) => DELETE_URL.replace('/0/', '/' + id + '/');
 
-  // ---- Build and render preset cards ----------------------------------------
-  // Each unit of a preset's ingredients makes roughly 10 servings, so the figure
-  // shown is (quantity × 10) and therefore moves in steps of 10.
+  // each unit of a preset's ingredients makes roughly 10 servings, so the figure moves in steps of 10
   function servings_line(quantity) {
     return `About <span class="preset_servings_count">${quantity * 10}</span> servings`;
   }
@@ -67,9 +58,7 @@
   }
   render_presets();
 
-  // ---- Search the presets by name -------------------------------------------
-  // Filters the visible cards as the user types. Matching is by preset name and
-  // by ingredient names, so searching e.g. "rum" also finds presets using rum.
+  // filters the visible cards as the user type, matching is by preset name and by ingredient names
   const preset_search = document.querySelector('.preset_search_input');
   const preset_search_clear = document.querySelector('.preset_search_clear');
   const preset_no_match = document.querySelector('.preset_no_match');
@@ -99,7 +88,7 @@
     });
   }
 
-  // ---- Read-only ingredient overlay (opens when a card is clicked) -----------
+  //ingredient overlay (opens when a card is clicked)
   const view_overlay = document.querySelector('.preset_view_overlay');
 
   function open_view(preset) {
@@ -118,7 +107,7 @@
 
   if (view_overlay) {
     view_overlay.querySelector('.preset_view_close').addEventListener('click', close_view);
-    view_overlay.addEventListener('click', (event) => {   // click on the backdrop
+    view_overlay.addEventListener('click', (event) => {   //click on the backdrop
       if (event.target === view_overlay) close_view();
     });
     document.addEventListener('keydown', (event) => {
@@ -126,7 +115,7 @@
     });
   }
 
-  // ---- Servings stepper + "+ Order" + edit/delete ---------------------------
+  //servings stepper and order, edit, delete buttons
   function update_servings(card) {
     let value = parseInt(card.querySelector('.preset_qty').value) || 1;
     if (value < 1) value = 1;
@@ -135,7 +124,6 @@
   }
 
   document.addEventListener('click', (event) => {
-    // + / - stepper (own classes, so the product-card stepper never touches these)
     const step = event.target.closest('.preset_plus, .preset_minus');
     if (step) {
       const card = step.closest('.preset_card');
@@ -148,7 +136,7 @@
       return;
     }
 
-    // Delete the user's own preset
+    // delete the user created preset
     const del = event.target.closest('.preset_delete_button');
     if (del) {
       const card = del.closest('.preset_card');
@@ -170,7 +158,7 @@
       return;
     }
 
-    // Edit the user's own preset -> open the overlay pre-filled
+    // edit the user created preset, open the overlay filled with the info
     const editBtn = event.target.closest('.preset_edit_button');
     if (editBtn) {
       const id = editBtn.closest('.preset_card').dataset.id;
@@ -179,7 +167,7 @@
       return;
     }
 
-    // "+ Order" -> add all ingredients of this preset to the cart
+    //add all ingredients of this preset to the cart
     const order = event.target.closest('.preset_order_button');
     if (order) {
       if (!AUTHED) {
@@ -207,8 +195,6 @@
       return;
     }
 
-    // A plain click anywhere else on the card opens the ingredient overlay
-    // (the quantity input is excluded so the user can still type in it).
     const view_card = event.target.closest('.preset_card');
     if (view_card && !event.target.closest('.preset_qty')) {
       const preset = PRESETS.find(p => String(p.id) === String(view_card.dataset.id));
@@ -216,13 +202,13 @@
     }
   });
 
-  // keep a typed servings value valid and the label in sync
+  //keep a typed servings value valid and the label in sync
   document.addEventListener('input', (event) => {
     const input = event.target.closest('.preset_qty');
     if (input) update_servings(input.closest('.preset_card'));
   });
 
-  // ---- Create / edit overlay (logged-in users only) -------------------------
+  // create or edit overlay (logged-in users only)
   const overlay = document.querySelector('.preset_overlay');
   const add_button = document.querySelector('.preset_add_button');
   if (!overlay || !add_button) return;
@@ -236,8 +222,8 @@
   const color_input = form.querySelector('input[name="color"]');
   const modal_title = overlay.querySelector('.preset_modal_title');
   const submit_button = overlay.querySelector('.preset_submit');
-  const chosen = new Set();   // product ids already added
-  let editing_id = null;      // null = creating, otherwise the preset being edited
+  const chosen = new Set();   //product ids already added
+  let editing_id = null;      //null = creating, otherwise the preset is edited
 
   function reset_form() {
     form.reset();
@@ -284,14 +270,14 @@
 
   add_button.addEventListener('click', open_create);
   overlay.querySelector('.preset_modal_close').addEventListener('click', close_overlay);
-  overlay.addEventListener('click', (event) => {          // click on the backdrop
+  overlay.addEventListener('click', (event) => {          //click on the backdrop
     if (event.target === overlay) close_overlay();
   });
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && !overlay.classList.contains('hidden')) close_overlay();
   });
 
-  // Search the already-loaded catalogue for ingredients to add.
+  // search the loaded catalogue for ingredients to add
   search.addEventListener('input', () => {
     const query = search.value.trim().toLowerCase();
     results.innerHTML = '';
@@ -313,7 +299,7 @@
       });
   });
 
-  // Add an ingredient (click a search result).
+  //add an ingredient (click a search result)
   results.addEventListener('click', (event) => {
     const row = event.target.closest('.preset_result_row');
     if (!row) return;
@@ -321,7 +307,7 @@
     row.disabled = true;
   });
 
-  // Remove an ingredient chip.
+  //remove an ingredient
   selected.addEventListener('click', (event) => {
     const remove = event.target.closest('.preset_chip_remove');
     if (!remove) return;
@@ -330,7 +316,7 @@
     chip.remove();
   });
 
-  // Submit -> create a new preset or save an edited one.
+  // submit then create a new preset or save an edited one
   form.addEventListener('submit', (event) => {
     event.preventDefault();
     error.textContent = '';
@@ -350,7 +336,7 @@
           error.textContent = 'Could not save the preset — check the name and ingredients.';
           return;
         }
-        data.preset.owned = true;   // it's the current user's preset
+        data.preset.owned = true;   //it's the current user's preset
         if (editing_id) {
           // replace the existing card and stored data
           const idx = PRESETS.findIndex(p => String(p.id) === String(editing_id));
@@ -358,8 +344,7 @@
           const oldCard = grid.querySelector(`.preset_card[data-id="${editing_id}"]`);
           if (oldCard) oldCard.replaceWith(build_preset_card(data.preset));
         } else {
-          // A brand-new preset belongs to the user, so it goes to the front,
-          // ahead of the default presets, matching the server-side ordering.
+          //a new preset of the user, so it goes to the front, ahead of the default presets
           PRESETS.unshift(data.preset);
           grid.prepend(build_preset_card(data.preset));
         }
