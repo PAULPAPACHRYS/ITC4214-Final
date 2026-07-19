@@ -131,12 +131,11 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-# Authentication redirects (use namespaced URL names, not hard-coded paths)
-# Use the custom Users table as Django's authentication user model, so the
-# built-in auth forms (UserCreationForm / AuthenticationForm) work with it.
+#authentication redirects
+#use the custom Users table as Django's authentication user model, so the built-in auth forms work with it
 AUTH_USER_MODEL = 'accounts.Users'
 
-# Store passwords with bcrypt (listed first) instead of Django's default PBKDF2.
+#store passwords with bcrypt (listed first) instead of Django's default PBKDF2
 PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
     'django.contrib.auth.hashers.PBKDF2PasswordHasher',
